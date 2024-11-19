@@ -5,12 +5,12 @@ body
   left:30px;
   width:250px;
   border-radius:10px;
-  border:2px;
+  border:2px solid black;
   background-color:#1090ff;
   overflow:hidden;
 }
 .c_p{
   position:absolute;
-  
+  border:2px solid black;
   
 }
