@@ -1,1 +1,9 @@
-
+body
+.c_gl_p{
+  position:absolute;
+  top:100px;
+  left:30px;
+  width:200px;
+  background-color:#1090e0;
+  
+}
