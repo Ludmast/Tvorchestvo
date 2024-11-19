@@ -6,6 +6,11 @@ body
   width:250px;
   border-radius:10px;
   border:2px;
-  background-color:#1090e0;
+  background-color:#1090ff;
+  overflow:hidden;
+}
+.c_p{
+  position:absolute;
+  
   
 }
