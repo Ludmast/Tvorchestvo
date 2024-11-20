@@ -23,17 +23,15 @@ function Sait_load() {
     }  
     //---------------------------------------------------------------------------------------------
     str = "<div id='name_sait1'></div><div id='name_sait2'></div>";
-str += "<div id='name_sait1_teni'></div><div id='name_sait2_teni'></div>";
-str += "<div id='menu_line'></div>";
-str += "<table id = 'menu' ><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1' colspan='2'></td><td id='m2'colspan='2'></td><td id='m3'colspan='2'></td><td id='m4'></td></tr></table >";
-str +="<hr id='line_pomoshnik' color='#80b0ff' />";
-in_load.innerHTML = str;
-    
+    str += "<div id='name_sait1_teni'></div><div id='name_sait2_teni'></div>";
+    str += "<table><tr><td  id='menu_line'><table id = 'menu' ><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1' colspan='2'></td><td id='m2'colspan='2'></td><td id='m3'colspan='2'></td><td id='m4'></td></tr></table ></td><td></td></tr></table>";
+    str +="<hr id='line_pomoshnik' color='#80b0ff' />";
+    in_load.innerHTML = str;
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
-   // name_sait1_teni.innerText = array_name_sait[0];
+    name_sait1_teni.innerText = array_name_sait[0];
     name_sait2.innerText = array_name_sait[1];
-   // name_sait2_teni.innerText = array_name_sait[1];
+    name_sait2_teni.innerText = array_name_sait[1];
     ns_a = 2; ns_b = 1; ns_i = 0;
     ns_c = ns_d = 0;
     //---------------------------------------------------------------------------------------------
