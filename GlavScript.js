@@ -1,9 +1,9 @@
 //=================================================================================================
 function Sait_load() {
-
+    menu_play = false;
     bob.style.backgroundColor = "#306090";
     t = 50;
-    text_size = 30;
+    text_size = 35;
 
     for (i = 0; i < ogl; i++) {
         odin = document.getElementById("p_" + i);
@@ -24,7 +24,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     str = "<div id='name_sait1'></div><div id='name_sait2'></div>";
     str += "<div id='name_sait1_teni'></div><div id='name_sait2_teni'></div>";
-    str += "<table><tr><td  id='menu_line'><table id = 'menu' ><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1' colspan='2'></td><td id='m2'colspan='2'></td><td id='m3'colspan='2'></td><td id='m4'></td></tr></table ></td><td></td></tr></table>";
+    str += "<table><tr><td id='menu_line'><table id = 'menu' ><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1' colspan='2'></td><td id='m2'colspan='2'></td><td id='m3'colspan='2'></td><td id='m4'></td></tr></table ></td></tr></table>";
     str +="<hr id='line_pomoshnik' color='#80b0ff' />";
     in_load.innerHTML = str;
     //---------------------------------------------------------------------------------------------
@@ -50,11 +50,30 @@ function Sait_load() {
     m1.innerHTML = str;
     for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu_1[i];
     //---------------------------------------------------------------------------------------------
-    //--------------------------------------------------------
+    str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'>"
+    for (i = 1; i < ms[1][1]; i++)str += "<div id='m_y_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",1)'onmouseout='menu_(2," + (i + 1) + ",1)'onclick='menu_(3," + (i + 1) + ",1)'></div>";
+    str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
+    m2.innerHTML = str;
+    for (i = 0; i < ms[1][1] - 1; i++)document.getElementById(ms[1][0] + '_' + (i + 1)).innerText = array_menu_2[i];
+    //---------------------------------------------------------------------------------------------
+    str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'>"
+    for (i = 1; i < ms[2][1]; i++)str += "<div id='m_os_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",2)'onmouseout='menu_(2," + (i + 1) + ",2)'onclick='menu_(3," + (i + 1) + ",2)'></div>";
+    str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
+    m3.innerHTML = str;
+    for (i = 0; i < ms[2][1] - 1; i++)document.getElementById(ms[2][0] + '_' + (i + 1)).innerText = array_menu_3[i];
+    //---------------------------------------------------------------------------------------------
+    str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'>"
+    for (i = 1; i < ms[3][1]; i++)str += "<div id='m_s_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",3)'onmouseout='menu_(2," + (i + 1) + ",3)'onclick='menu_(3," + (i + 1) + ",3)'></div>";
+    str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
+    m4.innerHTML = str;
+    for (i = 0; i < ms[3][1] - 1; i++)document.getElementById(ms[3][0] + '_' + (i + 1)).innerText = array_menu_4[i];
+    //---------------------------------------------------------------------------------------------
+
     for (j = 0; j < 4; j++) {
         m = [];
         for (i = 0; i < ms[j][1]; i++) { m[i] = document.getElementById(ms[j][0] + "_" + i); }
         m[0].style.height = (ms[j][1] - 1) * text_size + "px";
+        
         t = 2;
         for (i = 1; i < m.length; i++) {
             m[i].style.top = t + "px";
@@ -62,17 +81,18 @@ function Sait_load() {
         }
     }
     m_i = 0;
+    //---------------------------------------------------------------------------------------------
 }
 //=================================================================================================
 function all_control() {
-    if (m_g_0.style.visibility == 'visible') { if (event.clientY < 70 || event.clientY > (ms[0][1] + 1) * text_size + 2 || event.clientX < ms[0][2] || event.clientX > ms[0][2] + menu_width) menu_vis(); }
-    if (m_y_0.style.visibility == 'visible') { if (event.clientY < 70 || event.clientY > (ms[1][1] + 1) * text_size + 2 || event.clientX < ms[1][2] || event.clientX > ms[1][2] + menu_width) menu_vis(1); }
-    if (m_os_0.style.visibility == 'visible') { if (event.clientY < 70 || event.clientY > (ms[2][1] + 1) * text_size + 2 || event.clientX < ms[2][2] || event.clientX > ms[2][2] + menu_width) menu_vis(2); }
-    if (m_s_0.style.visibility == 'visible') { if (event.clientY < 70 || event.clientY > (ms[3][1] + 1) * text_size + 2 || event.clientX < ms[3][2] || event.clientX > ms[3][2] + menu_width) menu_vis(3); }
+    if (m_g_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[0][1] + 1) * text_size + 2 || window.clientX < m_g.clientX/* ms[0][2]*/ || window.clientX > m_g.clientX + m_g_0.clientWidth/*ms[0][2] + menu_width*/) menu_vis(); }
+    if (m_y_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[1][1] + 1) * text_size + 2 || window.clientX < ms[1][2] || window.clientX > ms[1][2] + menu_width) menu_vis(1); }
+    if (m_os_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[2][1] + 1) * text_size + 2 || window.clientX < ms[2][2] || window.clientX > ms[2][2] + menu_width) menu_vis(2); }
+    if (m_s_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[3][1] + 1) * text_size + 2 || window.clientX < ms[3][2] || window.clientX > ms[3][2] + menu_width) menu_vis(3); }
 }
 //=================================================================================================
-function menu_vis(id_el = 0, deistvie = 0) {
-    if (deistvie == 0) deistvie = 'hidden'; else deistvie = 'visible';
+function menu_vis(id_el = 0, deistvie_ = 0) {
+    if (deistvie_ == 0) deistvie = 'hidden'; else deistvie = 'visible';
     for (i = 0; i < ms[id_el][1]; i++) document.getElementById(ms[id_el][0] + '_' + i).style.visibility = deistvie;
     for (i = 0; i < ms[id_el][3]; i++)document.getElementById(ms[id_el][0] + '_l_' + i).style.visibility = deistvie;
 }
@@ -96,13 +116,14 @@ function menu_(deistvie, nomer, idnomer) {
                 m[0].style.cursor = "pointer";
                 m[0].style.backgroundColor = color_okna;
                 m[0].style.color = color_videl;
-                if (menu_play == false) {
+                //if (menu_play == false) {
                     if (m_g_0.style.visibility == 'visible') menu_vis();
                     else if (m_y_0.style.visibility == 'visible') menu_vis(1);
                     else if (m_os_0.style.visibility == 'visible') menu_vis(2);
                     else if (m_s_0.style.visibility == 'visible') menu_vis(3);
                     menu_vis(idnomer, 1);
-                }
+                //}
+
             }
             else if (nomer == 1) {
                 m[1].style.cursor = "pointer";
@@ -116,7 +137,8 @@ function menu_(deistvie, nomer, idnomer) {
                 m[0].style.cursor = "default";
                 m[0].style.color = "black";
                 m[0].style.backgroundColor = color_menu;
-                if (nomer == 1 && event.clientY < 74) menu_vis(idnomer);
+                
+                if (nomer == 1 && window.clientY < 47) menu_vis(idnomer);
             }
             else {
                 m[nomer].style.backgroundColor = color_okna;
