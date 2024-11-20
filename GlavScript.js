@@ -22,7 +22,7 @@ function Sait_load() {
         t += 45;
     }  
     //---------------------------------------------------------------------------------------------
-    in_load.innerHTML = "<div id='name_sait1'></div><div id='name_sait2'></div><div id='menu_line'></div><table id='menu'><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1'></td><td id='m2'></td><td id='m3'></td><td id='m4'></td></tr></table><hr id='line_pomoshnik' color='#80b0ff' />";
+    in_load.innerHTML = "<div id='name_sait1'></div><div id='name_sait2'></div><table id='menu'><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1'></td><td id='m2'></td><td id='m3'></td><td id='m4'></td></tr></table><div id='menu_line'></div><hr id='line_pomoshnik' color='#80b0ff' />";
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
    // name_sait1_teni.innerText = array_name_sait[0];
