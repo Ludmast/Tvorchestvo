@@ -60,11 +60,13 @@ position:absolute;
     width:70%;
     height: 55px;
     background-color: #5094ff;
+padding-left:10px;
     font-size: 26px;
     font-weight: 700;
 }
 .c_m_g {
     text-align:center;
+    
     padding-left: 5px;
     padding-right:5px;
     visibility: visible;
@@ -72,9 +74,10 @@ position:absolute;
 
 .c_m_o {
     background-color: #a0d0ff;
-    top: 32px;
-    width: 200px;
-    font-size: 20px;
+    top: 47px;
+    width: 260px;
+   font-size:24px;
+   font-weight:600;
     border: 2px solid black;
     position: absolute;
     overflow: hidden;
