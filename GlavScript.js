@@ -7,33 +7,39 @@ function Sait_load() {
     bob.style.overflowX = "hidden";
     t = 250;
     text_size = 35;
-
+    str = 50;
     for (i = 0; i < ogl; i++) {
         odin_og = document.getElementById("p_" + i);
         if (ogl_vibrono == i) {
             odin_og.style.top = t - 3 + 'px';
-            odin_og.style.backgroundColor = '#1070a0';
-            odin_og.style.color = '#a0b0f0';
+            odin_og.style.backgroundColor = '#3090c0';
+            odin_og.style.color = '#b0f0e0';
             odin_og.style.left = '20px';
             odin_og.style.width = '240px';
             odin_og.style.fontSize = '30px';
             odin_og.style.padding = '3px';
+            odin_og.style.paddingLeft = '5px';
             odin_og.style.border = '2px solid black';
             odin_og.style.borderTopRightRadius = '10px';
             odin_og.style.borderBottomRightRadius = '10px';
+
         } else {
             odin_og.style.top = t + 'px';
             
         }
+        str += odin_og.clientHeight+11;
         t += 45;
-    }  
+    }
+    gl_p.style.height = str+'px';
     //---------------------------------------------------------------------------------------------
     str = "<div id='name_sait1_teni' ></div><div id='name_sait2_teni'style='filter:blur(7px)'></div>";
     str += "<div id='name_sait1'></div><div id='name_sait2'></div>";
     
     str += "<table><tr><td id='menu_line'><table id = 'menu' ><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' ></td ><td>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'></td><td>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'></td><td>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'></td></tr><tr><td id='m1' colspan='2'></td><td id='m2'colspan='2'></td><td id='m3'colspan='2'></td><td id='m4'></td></tr></table ></td></tr></table>";
-    str +="<hr id='line_pomoshnik' color='#80b0ff' />";
+    str +="<hr id='line_pomoshnik' color='#80b0ff' /><span id='pomoshniki'></span>";
     in_load.innerHTML = str;
+    //---------------------------------------------------------------------------------------------
+    line_pomoshnik.style.top = innerHeight - 33 + 'px';
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
     name_sait1_teni.innerText = array_name_sait[0];
@@ -154,11 +160,14 @@ function menu_(deistvie, nomer, idnomer) {
                 m[nomer].style.color = 'black';
                 
             }
+                
             break;
         //-----------------------------------------------------------------------------------------
         case 3://click
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
+
+
             break;
         case 4://move
         
@@ -171,6 +180,5 @@ function menu_(deistvie, nomer, idnomer) {
     }
 
 }
-
 
 //=================================================================================================
