@@ -1,23 +1,25 @@
 //=================================================================================================
 function Sait_load() {
     menu_play = false;
-    bob.style.backgroundColor = "#306090";
+    bob.style.backgroundColor = '#306090';
+    //bob.onmousemove = 'all_control()';
+
     t = 50;
     text_size = 35;
 
     for (i = 0; i < ogl; i++) {
         odin = document.getElementById("p_" + i);
         if (ogl_vibrono == i) {
-            odin.style.top = t - 3 + "px";
-            odin.style.backgroundColor = "#1070a0";
-            odin.style.color = "#a0b0f0";
-            odin.style.left = "20px";
-            odin.style.width = "240px";
-            odin.style.fontSize = "30px";
-            odin.style.padding = "7px";
+            odin.style.top = t - 3 + 'px';
+            odin.style.backgroundColor = '#1070a0';
+            odin.style.color = '#a0b0f0';
+            odin.style.left = '20px';
+            odin.style.width = '240px';
+            odin.style.fontSize = '30px';
+            odin.style.padding = '7px';
         } else {
-            odin.style.top = t + "px";
-            odin.style.left = "25px";
+            odin.style.top = t + 'px';
+            odin.style.left = '25px';
         }
         t += 45;
     }  
@@ -35,34 +37,36 @@ function Sait_load() {
     ns_a = 2; ns_b = 1; ns_i = 0;
     ns_c = ns_d = 0;
     //---------------------------------------------------------------------------------------------
-
-    m1_left = 5; m2_left = 89; m3_left = 189; m4_left = 313; m_b = 1;
-    ms = [["m_g", 6, m1_left, 6], ["m_y", 18, m2_left, 4], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
-    //---------------------------------------------------------------------------------------------
     m_g.innerHTML = array_menu[0];
     m_y.innerHTML = array_menu[1];
     m_os.innerHTML = array_menu[2];
     m_s.innerHTML = array_menu[3];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseout='menu_(2,1,0)'>"
+    menu_width = 260;
+
+    m1_left = 20; m2_left = m1_left+ m_g.clientWidth+10; m3_left = m2_left + m_y.clientWidth+10; m4_left = m3_left + m_os.clientWidth+10; m_b = 1;
+    ms = [["m_g", 6, m1_left, 6], ["m_y", 18, m2_left, 4], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
+    //---------------------------------------------------------------------------------------------
+    str = "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseout='menu_(2,1,0)'onmousemove='menu_(4,1,0)'>"
     for (i = 1; i < ms[0][1]; i++)str += "<div id='m_g_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",0)'onmouseout='menu_(2," + (i + 1) + ",0)'onclick='menu_(3," + (i + 1) + ",0)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
     m1.innerHTML = str;
     for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu_1[i];
+    
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'>"
+    str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'onmousemove='menu_(4,1,1)'>"
     for (i = 1; i < ms[1][1]; i++)str += "<div id='m_y_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",1)'onmouseout='menu_(2," + (i + 1) + ",1)'onclick='menu_(3," + (i + 1) + ",1)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
     m2.innerHTML = str;
     for (i = 0; i < ms[1][1] - 1; i++)document.getElementById(ms[1][0] + '_' + (i + 1)).innerText = array_menu_2[i];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'>"
+    str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'onmousemove='menu_(4,1,2)'>"
     for (i = 1; i < ms[2][1]; i++)str += "<div id='m_os_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",2)'onmouseout='menu_(2," + (i + 1) + ",2)'onclick='menu_(3," + (i + 1) + ",2)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
     m3.innerHTML = str;
     for (i = 0; i < ms[2][1] - 1; i++)document.getElementById(ms[2][0] + '_' + (i + 1)).innerText = array_menu_3[i];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'>"
+    str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'onmousemove='menu_(4,1,3)'>"
     for (i = 1; i < ms[3][1]; i++)str += "<div id='m_s_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",3)'onmouseout='menu_(2," + (i + 1) + ",3)'onclick='menu_(3," + (i + 1) + ",3)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_4'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_5'color='white'size='1'/><hr id='m_g_l_4'class='c_m_line_6'color='black'size='1'/><hr id='m_g_l_5'class='c_m_line_7'color='white'size='1'/></div>";
     m4.innerHTML = str;
@@ -83,20 +87,13 @@ function Sait_load() {
     m_i = 0;
     //---------------------------------------------------------------------------------------------
 }
+
 //=================================================================================================
-function all_control() {
-    if (m_g_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[0][1] + 1) * text_size + 2 || window.clientX < m_g.clientX/* ms[0][2]*/ || window.clientX > m_g.clientX + m_g_0.clientWidth/*ms[0][2] + menu_width*/) menu_vis(); }
-    if (m_y_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[1][1] + 1) * text_size + 2 || window.clientX < ms[1][2] || window.clientX > ms[1][2] + menu_width) menu_vis(1); }
-    if (m_os_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[2][1] + 1) * text_size + 2 || window.clientX < ms[2][2] || window.clientX > ms[2][2] + menu_width) menu_vis(2); }
-    if (m_s_0.style.visibility == 'visible') { if (window.clientY < 47 || window.clientY > (ms[3][1] + 1) * text_size + 2 || window.clientX < ms[3][2] || window.clientX > ms[3][2] + menu_width) menu_vis(3); }
-}
-//=================================================================================================
-function menu_vis(id_el = 0, deistvie_ = 0) {
-    if (deistvie_ == 0) deistvie = 'hidden'; else deistvie = 'visible';
+function menu_vis(id_el = 0, deistvie = 0) {
+    if (deistvie == 0) deistvie = 'hidden'; else deistvie = 'visible';
     for (i = 0; i < ms[id_el][1]; i++) document.getElementById(ms[id_el][0] + '_' + i).style.visibility = deistvie;
     for (i = 0; i < ms[id_el][3]; i++)document.getElementById(ms[id_el][0] + '_l_' + i).style.visibility = deistvie;
 }
-//=================================================================================================
 
 //=================================================================================================
 function menu_(deistvie, nomer, idnomer) {
@@ -137,14 +134,16 @@ function menu_(deistvie, nomer, idnomer) {
                 m[0].style.cursor = "default";
                 m[0].style.color = "black";
                 m[0].style.backgroundColor = color_menu;
-                
-                if (nomer == 1 && window.clientY < 47) menu_vis(idnomer);
+
+                if ( event.clientY < 45)
+                    menu_vis(idnomer);
             }
             else {
                 m[nomer].style.backgroundColor = color_okna;
-
                 m[nomer].style.color = 'black';
+                
             }
+                
             break;
         //-----------------------------------------------------------------------------------------
         case 3://click
@@ -152,6 +151,14 @@ function menu_(deistvie, nomer, idnomer) {
             m[nomer].style.color = color_videl;
 
 
+            break;
+        case 4://move
+        
+            if (m_g_0.style.visibility == 'visible') { if (event.clientY < 44 || event.clientY > (ms[0][1] + 1) * text_size - 30 || event.clientX < ms[0][2] || event.clientX > ms[0][2] + menu_width-10) menu_vis(); }
+            if (m_y_0.style.visibility == 'visible') { if (event.clientY < 44 || event.clientY > (ms[1][1] + 1) * text_size - 30 || event.clientX < ms[1][2] || event.clientX > ms[1][2] + menu_width-10) menu_vis(1); }
+            if (m_os_0.style.visibility == 'visible') { if (event.clientY < 44 || event.clientY > (ms[2][1] + 1) * text_size - 30 || event.clientX < ms[2][2] || event.clientX > ms[2][2] + menu_width-10) menu_vis(2); }
+            if (m_s_0.style.visibility == 'visible') { if (event.clientY < 44 || event.clientY > (ms[3][1] + 1) * text_size -30 || event.clientX < ms[3][2] || event.clientX > ms[3][2] + menu_width-10) menu_vis(3); }
+            //должна написать перемещение по m_g, m_y,m_os,m_s
             break;
     }
 
