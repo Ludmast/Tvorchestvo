@@ -154,14 +154,11 @@ function menu_(deistvie, nomer, idnomer) {
                 m[nomer].style.color = 'black';
                 
             }
-                
             break;
         //-----------------------------------------------------------------------------------------
         case 3://click
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
-
-
             break;
         case 4://move
         
@@ -174,5 +171,6 @@ function menu_(deistvie, nomer, idnomer) {
     }
 
 }
+
 
 //=================================================================================================
