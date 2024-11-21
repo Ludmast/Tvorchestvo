@@ -19,9 +19,9 @@ body
 
 #razdel {
     position: absolute;
-    top: 150px;
+    top: 140px;
     padding-left: 10px;
-    font-size: 35px;
+    font-size: 45px;
     font-style: italic;
     color: #c0e0ff
 }
@@ -35,10 +35,12 @@ body
   height:300px;
   border-radius:10px;
   border:2px solid black;
+  border-bottom-right-radius:0px;
   background-color:#1090ff;
   font-size:22px;
   padding-left:10px;
   padding-top:10px;
+
 }
 .c_p{
 position:absolute;
@@ -89,6 +91,8 @@ padding-left:10px;
     left: 0px;
     width: 100%;
     padding-left: 5px;
+    padding-top:1px;
+    padding-bottom:1px;
     border: 0;
     position: absolute;
     overflow: hidden;
@@ -98,70 +102,42 @@ padding-left:10px;
 .c_m_line_0 {
     position: absolute;
     width: 100%;
-    top: 17px;
+    top: 56px;
     visibility: hidden;
 }
 
 .c_m_line_1 {
     position: absolute;
     width: 100%;
-    top: 19px;
+    top: 58px;
     visibility: hidden;
 }
 
 .c_m_line_2 {
     position: absolute;
     width: 100%;
-    top: 46px;
+    top: 126px;
     visibility: hidden;
 }
 
 .c_m_line_3 {
     position: absolute;
     width: 100%;
-    top: 48px;
+    top: 128px;
     visibility: hidden;
 }
 
 .c_m_line_4 {
     position: absolute;
     width: 100%;
-    top: 104px;
+    top: 546px;
     visibility: hidden;
 }
 
 .c_m_line_5 {
     position: absolute;
     width: 100%;
-    top: 106px;
-    visibility: hidden;
-}
-
-.c_m_line_6 {
-    position: absolute;
-    width: 100%;
-    top: 220px;
-    visibility: hidden;
-}
-
-.c_m_line_7 {
-    position: absolute;
-    width: 100%;
-    top: 222px;
-    visibility: hidden;
-}
-
-.c_m_line_8 {
-    position: absolute;
-    width: 100%;
-    top: 423px;
-    visibility: hidden;
-}
-
-.c_m_line_9 {
-    position: absolute;
-    width: 100%;
-    top: 425px;
+    top: 548px;
     visibility: hidden;
 }
 
