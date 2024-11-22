@@ -5,32 +5,33 @@ function Sait_load() {
     
 
     bob.style.overflowX = "hidden";
-    t = 250;
-    text_size = 35;
-    str = 50;
-    for (i = 0; i < ogl; i++) {
-        odin_og = document.getElementById("p_" + i);
-        if (ogl_vibrono == i) {
-            odin_og.style.top = t - 3 + 'px';
-            odin_og.style.backgroundColor = '#3090c0';
-            odin_og.style.color = '#b0f0e0';
-            odin_og.style.left = '20px';
-            odin_og.style.width = '240px';
-            odin_og.style.fontSize = '30px';
-            odin_og.style.padding = '3px';
-            odin_og.style.paddingLeft = '5px';
-            odin_og.style.border = '2px solid black';
-            odin_og.style.borderTopRightRadius = '10px';
-            odin_og.style.borderBottomRightRadius = '10px';
+t = 250;
+text_size = 35;
 
-        } else {
-            odin_og.style.top = t + 'px';
-            
-        }
-        str += odin_og.clientHeight+11;
-        t += 45;
+for (i = 0; i < ogl; i++) {
+    odin_og = document.getElementById("p_" + i);
+    if (ogl_vibrono == i) {
+        odin_og.style.top = t - 3 + 'px';
+        odin_og.style.backgroundColor = '#3090c0';
+        odin_og.style.color = '#b0f0e0';
+        odin_og.style.left = '20px';
+        odin_og.style.width = '240px';
+        odin_og.style.fontSize = '30px';
+        odin_og.style.padding = '3px';
+        odin_og.style.paddingLeft = '5px';
+        odin_og.style.border = '2px solid black';
+        odin_og.style.borderTopRightRadius = '10px';
+        odin_og.style.borderBottomRightRadius = '10px';
+        t -= 6;
+    } else {
+        odin_og.style.top = t + 'px';
+        
     }
-    gl_p.style.height = str+'px';
+    t += odin_og.clientHeight+11;
+    //t += 45;
+}
+gl_p.style.height = t-200+'px';
+    
     //---------------------------------------------------------------------------------------------
     str = "<div id='name_sait1_teni' ></div><div id='name_sait2_teni'style='filter:blur(7px)'></div>";
     str += "<div id='name_sait1'></div><div id='name_sait2'></div>";
