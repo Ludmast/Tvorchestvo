@@ -1,40 +1,50 @@
 //=================================================================================================
 function Sait_load() {
     //menu_play = false;
-    osnova.onmove = 'all_control()';
+    //osnova.onmove = 'all_control()';
     bob.style.backgroundColor = '#306090';
+    bob.style.overflowX = 'hidden';
 
-
-    bob.style.overflowX = "hidden";
+    razdel_teni.innerHTML = razdel.innerHTML;
+    
     t = 250;
     text_size = 35;
-
-    for (i = 0; i < ogl; i++) {
-        odin_og = document.getElementById("p_" + i);
-        if (ogl_vibrono == i) {
-            odin_og.style.top = t - 3 + 'px';
-            odin_og.style.backgroundColor = '#3090c0';
-            odin_og.style.color = '#b0f0e0';
-            odin_og.style.left = '20px';
-            odin_og.style.width = '240px';
-            odin_og.style.fontSize = '30px';
-            odin_og.style.padding = '3px';
-            odin_og.style.paddingLeft = '5px';
-            odin_og.style.border = '2px solid black';
-            odin_og.style.borderTopRightRadius = '10px';
-            odin_og.style.borderBottomRightRadius = '10px';
-            t -= 6;
-        } else {
-            odin_og.style.top = t + 'px';
-
-        }
-        t += odin_og.clientHeight + 11;
-        //t += 45;
-    }
-    gl_p.style.height = t - 200 + 'px';
+    
     //---------------------------------------------------------------------------------------------
+    str = "";
+    //подсветка и сами названия содержания страниц
+    for (i = 0; i < ogl; i++)
+    {
+        for (i = 0; i < ogl; i++) {
+            odin_og = document.getElementById("p_" + i);
+            if (ogl_vibrono == i) {
+                odin_og.style.top = t - 3 + 'px';
+                odin_og.style.backgroundColor = '#3090c0';
+                odin_og.style.color = '#b0f0e0';
+                odin_og.style.left = '15px';
+                odin_og.style.width = '245px';
+                odin_og.style.fontSize = '30px';
+                odin_og.style.padding = '3px';
+                odin_og.style.paddingLeft = '5px';
+                odin_og.style.border = '2px solid black';
+                odin_og.style.borderTopRightRadius = '10px';
+                odin_og.style.borderBottomRightRadius = '10px';
+                ten_vibronogo_p.style.top = t + 'px';
+                ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
+                t -= 6;
+            } else {
+                odin_og.style.top = t + 'px';
+
+            }
+
+            t += odin_og.clientHeight + 11;
+            //t += 45;
+        }
+        gl_p.style.height = t - 200 + 'px';
+        
+    }
     //1 дополнительное окошко с беседами
-    str = "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
+    str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
     //2 дополнительное окошко с новостями
     str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
     //3 дополнительное окошко с закладками
@@ -115,7 +125,7 @@ function Sait_load() {
     }
     m_i = 0;
     //---------------------------------------------------------------------------------------------
-    setTimeout('all_control()', 10);
+    //setTimeout('all_control()', 10);
 }
 //=================================================================================================
 function all_control() {
