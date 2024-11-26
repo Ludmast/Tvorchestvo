@@ -2,6 +2,7 @@
 function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
+
     //---------------------------------------------------------------------------------------------
     razdel_teni.innerHTML = razdel.innerHTML;
     //---------------------------------------------------------------------------------------------
@@ -9,11 +10,15 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     t = 250;
     text_size = 35;
+
+
     //---------------------------------------------------------------------------------------------
+
     str = "";
     //подсветка и сами названия содержания страниц
         for (i = 0; i < ogl; i++) {
             odin_og = document.getElementById("p_" + i);
+            
             if (ogl_vibrono == i) {
                 odin_og.style.top = t - 3 + 'px';
                 odin_og.style.backgroundColor = '#3090c0';
@@ -29,6 +34,7 @@ function Sait_load() {
                 ten_vibronogo_p.style.top = t + 'px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
                 perem = t + 2;
+                
                 str += "<div id='podsvetka_svet_p_" + i + "' class='podsvetka_svet_p'  style='left:20px;top:" + perem + "px;width:";
                 str += -5 + odin_og.clientWidth + "px;'></div>";
                 perem = t + odin_og.clientHeight - 8;
@@ -43,16 +49,19 @@ function Sait_load() {
                 str += "<div id='podsvetka_ten_p_" + i + "' class='podsvetka_ten_p' style='top:" + perem + "px;'></div>";
                 str += "<div id='ten_ot_stranici_na_p_" + i + "' class='ten_str' style='top:" + t + "px;left:258px;height:" + odin_og.clientHeight+"px;'></div>";
             }
+            
             t += odin_og.clientHeight + 11;
+            //t += 45;
         }
         gl_p.style.height = t - 200 + 'px';
-    }
+        
+    
     //1 дополнительное окошко с беседами
-    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
+    //str += "<table id='tabl1' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //2 дополнительное окошко с новостями
-    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
+    //str += "<table id='tabl2' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //3 дополнительное окошко с закладками
-    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
+    //str += "<table id='tabl3' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //тень верхней полоски меню
     str += "<div id='ten_menu'></div>";
     //верхняя полоска меню
@@ -84,6 +93,7 @@ function Sait_load() {
     m_s.innerHTML = array_menu[3];
     //---------------------------------------------------------------------------------------------
     menu_width = 260;
+
     m1_left = 22; m2_left = m1_left + m_g.clientWidth + 12; m3_left = m2_left + m_y.clientWidth + 11; m4_left = m3_left + m_os.clientWidth + 12; m_b = 1;
     ms = [["m_g", 7, m1_left, 4], ["m_y", 18, m2_left, 4], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
     //---------------------------------------------------------------------------------------------
@@ -93,6 +103,7 @@ function Sait_load() {
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_2'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_3'color='white'size='1'/></div>";
     m1.innerHTML = str;
     for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu_1[i];
+
     //---------------------------------------------------------------------------------------------
     str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'onmousemove='menu_(4,1,1)'>"
     for (i = 1; i < ms[1][1]; i++)str += "<div id='m_y_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",1)'onmouseout='menu_(2," + (i + 1) + ",1)'onclick='menu_(3," + (i + 1) + ",1)'></div>";
@@ -112,6 +123,7 @@ function Sait_load() {
     m4.innerHTML = str;
     for (i = 0; i < ms[3][1] - 1; i++)document.getElementById(ms[3][0] + '_' + (i + 1)).innerText = array_menu_4[i];
     //---------------------------------------------------------------------------------------------
+
     for (j = 0; j < 4; j++) {
         m = [];
         for (i = 0; i < ms[j][1]; i++) { m[i] = document.getElementById(ms[j][0] + "_" + i); }
@@ -140,6 +152,7 @@ function all_control() {
 }
 //=================================================================================================
 function menu_vis(id_el = 0, deistvie = 0) {
+
     if (deistvie == 0) deistvie = 'hidden'; else deistvie = 'visible';
     for (i = 0; i < ms[id_el][1]; i++) document.getElementById(ms[id_el][0] + '_' + i).style.visibility = deistvie;
     for (i = 0; i < ms[id_el][3]; i++)document.getElementById(ms[id_el][0] + '_l_' + i).style.visibility = deistvie;
@@ -147,6 +160,7 @@ function menu_vis(id_el = 0, deistvie = 0) {
     ten_m.style.left = ms[id_el][2] + 'px';
     ten_m.style.visibility = deistvie;
 }
+
 //=================================================================================================
 function menu_(deistvie, nomer, idnomer) {
     //---------------------------------------------------------------------------------------------
@@ -173,6 +187,7 @@ function menu_(deistvie, nomer, idnomer) {
                 else if (idnomer != 2 && m_os_0.style.visibility == 'visible') menu_vis(2);
                 else if (idnomer != 3 && m_s_0.style.visibility == 'visible') menu_vis(3);
                 menu_vis(idnomer, 1);
+                
             }
             else if (nomer == 1) {
                 m[1].style.cursor = 'pointer';
@@ -191,17 +206,23 @@ function menu_(deistvie, nomer, idnomer) {
                 if (event.clientY < 44)
                     menu_vis(idnomer);
             }
+
             else {
                 m[nomer].style.backgroundColor = color_okna;
                 m[nomer].style.color = 'black';
+
             }
+
             break;
         //-----------------------------------------------------------------------------------------
         case 3://click
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
+
+
             break;
         case 4://move
+
             if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 2 || event.clientX > ms[0][2] + menu_width - 2) menu_vis(0); }
             if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 28 || event.clientX < ms[1][2] + 2 || event.clientX > ms[1][2] + menu_width - 2) menu_vis(1); }
             if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 28 || event.clientX < ms[2][2] + 2 || event.clientX > ms[2][2] + menu_width - 2) menu_vis(2); }
@@ -209,5 +230,7 @@ function menu_(deistvie, nomer, idnomer) {
             //должна написать перемещение по m_g, m_y,m_os,m_s
             break;
     }
+
 }
+
 //=================================================================================================
