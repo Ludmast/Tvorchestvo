@@ -51,6 +51,7 @@ body
     position: absolute;
     top: 142px;
     padding-left: 12px;
+    
     font-size: 45px;
     font-style: italic;
     color: #102040;
@@ -72,13 +73,44 @@ body
   width:250px;
   height:300px;
   border-radius:10px;
-  border:2px solid black;
+
   border-bottom-right-radius:0px;
   background-color:#c0d0ff;
   font-size:22px;
   padding-left:10px;
   padding-top:10px;
 
+}
+.podsvetka_svet_p {
+    position: absolute;
+    width: 222px;
+    left: 35px;
+    height:8px;
+    background-color: white;
+    filter:blur(5px);
+}
+.podsvetka_ten_p {
+    position: absolute;
+    width: 222px;
+    left: 35px;
+    height: 5px;
+    background-color: black;
+    filter: blur(5px);
+}
+.ten_str {
+    position: absolute;
+    width: 2px;
+    
+    
+    background-color: black;
+    filter: blur(3px);
+}
+#ten_vibronogo_p {
+    position: absolute;
+    width:240px;
+    left: 18px;
+    background-color: black;
+    filter: blur(8px);
 }
 .c_p{
 position:absolute;
@@ -92,7 +124,15 @@ position:absolute;
   border-bottom-left-radius:10px;
   background-color:#a0c0ff;
 }
-
+#ten_stranici {
+    position: absolute;
+    height:100%;
+    left:260px;
+    right:250px;
+    top: 225px;
+    background-color: black;
+    filter: blur(8px);
+}
 #stranica {
     position: absolute;
     height: 100%;
@@ -131,6 +171,24 @@ position:absolute;
     bottom:20px;
     height:1px;
 }
+#ten_menu {
+position:absolute;
+width:100%;
+height:10px;
+top:55px;
+background-color:black;
+filter:blur(14px);
+}
+#ten_m {
+    position: absolute;
+    width: 260px;
+    
+    top: 60px;
+    background-color: black;
+    filter: blur(15px);
+    visibility:hidden;
+}
+
 #menu_line {
     position: absolute;
     top: 0px;
