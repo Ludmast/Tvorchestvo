@@ -81,6 +81,32 @@ body
   padding-top:10px;
 
 }
+
+.podsvetka_svet_p {
+    position: absolute;
+    width: 222px;
+    left: 35px;
+    height:8px;
+    background-color: white;
+    filter:blur(5px);
+}
+.podsvetka_ten_p {
+    position: absolute;
+    width: 222px;
+    left: 35px;
+    height: 5px;
+    background-color: black;
+    filter: blur(5px);
+}
+.ten_str {
+    position: absolute;
+    width: 2px;
+    
+    
+    background-color: black;
+    filter: blur(3px);
+}
+
 #ten_vibronogo_p {
     position: absolute;
     width:240px;
@@ -105,6 +131,7 @@ position:absolute;
     height:100%;
     left:260px;
     right: 250px;
+
     top: 225px;
     background-color: black;
     filter: blur(8px);
