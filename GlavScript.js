@@ -1,6 +1,7 @@
 //=================================================================================================
 function Sait_load() {
     //menu_play = false;
+
     //osnova.onmove =  'all_control()';
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
@@ -22,6 +23,7 @@ function Sait_load() {
         for (i = 0; i < ogl; i++) {
             odin_og = document.getElementById("p_" + i);
             
+
             if (ogl_vibrono == i) {
                 odin_og.style.top = t - 3 + 'px';
                 odin_og.style.backgroundColor = '#3090c0';
@@ -36,6 +38,7 @@ function Sait_load() {
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.top = t + 'px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
+
                 perem = t + 2;
                 
                 str += "<div id='podsvetka_svet_p_" + i + "' class='podsvetka_svet_p'  style='left:20px;top:" + perem + "px;width:";
@@ -58,13 +61,15 @@ function Sait_load() {
         }
         gl_p.style.height = t - 200 + 'px';
         
+
     
+    }
     //1 дополнительное окошко с беседами
-    //str += "<table id='tabl1' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
+    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //2 дополнительное окошко с новостями
-    //str += "<table id='tabl2' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
+    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //3 дополнительное окошко с закладками
-    //str += "<table id='tabl3' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>"
+    //str += "<table id='tabl_reklama' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //тень верхней полоски меню
     str += "<div id='ten_menu'></div>";
     //верхняя полоска меню
