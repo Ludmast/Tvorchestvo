@@ -4,9 +4,34 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
 
     //---------------------------------------------------------------------------------------------
+    str = "";
+    //тень под названием раздела
+    str += "<div id='razdel_teni'></div>";
+    //1 дополнительное окошко с беседами
+    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td></tr ><tr><td id='okno_text_besed' class='c_okno_text'></td></tr></table>";
+    //2 дополнительное окошко с новостями
+    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td></tr ><tr><td id='okno_text_novostei' class='c_okno_text'></td></tr></table>";
+    //3 дополнительное окошко с закладками
+    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td></tr ><tr><td id='okno_text_pometok' class='c_okno_text'></td></tr></table>";
+    in_load_1.innerHTML = str;
+    //---------------------------------------------------------------------------------------------
     razdel_teni.innerHTML = razdel.innerHTML;
     //---------------------------------------------------------------------------------------------
-    ten_stranici.style.width = stranica.clientWidth+'px';
+    okno_name_besedi.innerHTML = 'Беседы';
+    okno_name_novosti.innerHTML = 'Новости';
+    okno_name_pometki.innerHTML = 'Пометки';
+    //ten_besedi.style.left += '2px';
+    //ten_besedi.innerHTML = okno_name_besedi.innerHTML;
+    //---------------------------------------------------------------------------------------------
+    okna_top = 200;
+    okno_besedi.style.top = okna_top + 'px';
+    okna_top += okno_besedi.clientHeight + 10;
+    okno_novosti.style.top = okna_top + 'px';
+    okna_top += okno_novosti.clientHeight + 10;
+    okno_pometki.style.top = okna_top + 'px';
+
+    //---------------------------------------------------------------------------------------------
+    ten_stranici.style.width = stranica.clientWidth + 'px';
     //---------------------------------------------------------------------------------------------
     t = 250;
     text_size = 35;
@@ -56,12 +81,6 @@ function Sait_load() {
         gl_p.style.height = t - 200 + 'px';
         
     
-    //1 дополнительное окошко с беседами
-    //str += "<table id='tabl1' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
-    //2 дополнительное окошко с новостями
-    //str += "<table id='tabl2' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
-    //3 дополнительное окошко с закладками
-    //str += "<table id='tabl3' class='c_tabl'><tr><td id='td_name_pravka1'class='c_td_name'></td></tr ><tr><td id='td_reklama' class='c_td_tabl' align='center'><video id='reklamaVideo'width='100%'height='100%' muted autoplay onended='reklama()'></video></td></tr></table>";
     //тень верхней полоски меню
     str += "<div id='ten_menu'></div>";
     //верхняя полоска меню
@@ -75,10 +94,15 @@ function Sait_load() {
     //развёрнутые списки менюшек
     str += "<div id='m1'></div><div id='m2'></div><div id='m3'></div><div id='m4'></div>";
     //помошник
-    str += "<hr id='line_pomoshnik' color='#80b0ff' /><span id='pomoshnik'></span>";
-    in_load.innerHTML = str;
+    str += "<div id='ten_line_pomoshnik'></div>";
+    str += "<span id='pomoshnik'></span><hr id='line_pomoshnik' color='#80b0ff' />";
+    in_load_2.innerHTML = str;
+
     //---------------------------------------------------------------------------------------------
     line_pomoshnik.style.top = innerHeight - 33 + 'px';
+    pomoshnik.innerHTML = "<span id='ten_pomoshnika'></span><span id='telo'></span><span id='svet_tela'></span><span id='glaz_l'></span><span id='glaz_r'></span><span id='guba_1'></span>";
+    glaz_l.innerHTML = "<span id='svet_glaz_l' class='c_svet_glaz'></span><span id='sheka_l'></span>";
+    glaz_r.innerHTML = "<span id='svet_glaz_r' class='c_svet_glaz'></span><span id='sheka_r'></span>";
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
     name_sait1_teni.innerText = array_name_sait[0];
@@ -139,14 +163,16 @@ function Sait_load() {
     m_i = 0;
     //---------------------------------------------------------------------------------------------
     //setTimeout('all_control()', 10);
+    
 }
 //=================================================================================================
 function all_control() {
     {
-        if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 30 || event.clientX < ms[0][2] || event.clientX > ms[0][2] + menu_width - 10) menu_vis(); }
-        if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 30 || event.clientX < ms[1][2] || event.clientX > ms[1][2] + menu_width - 10) menu_vis(1); }
-        if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 30 || event.clientX < ms[2][2] || event.clientX > ms[2][2] + menu_width - 10) menu_vis(2); }
-        if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 30 || event.clientX < ms[3][2] || event.clientX > ms[3][2] + menu_width - 10) menu_vis(3); }
+
+        if (m_g_0.style.visibility == 'visible') menu_(4,0,0);
+        if (m_y_0.style.visibility == 'visible') menu_(4,0,1);
+        if (m_os_0.style.visibility == 'visible') menu_(4, 0, 2);
+        if (m_s_0.style.visibility == 'visible') menu_(4, 0, 3);
 
     } //setTimeout('all_control()', 10);
 }
