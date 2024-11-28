@@ -166,8 +166,8 @@ position:absolute;
     background-color: #40a0d0;
     right: 5px;
     
-    width: 240px;
-    height: 100px;
+    width: 245px;
+    height: 200px;
     border-radius: 10px;
     
     font-size: 22px;
@@ -187,7 +187,7 @@ position:absolute;
     position: absolute;
     right: 0px;
     left: 0px;
-    bottom: 0px;
+    
     top: 35px;
     background-color:#fff8e0;
     font-language-override: normal;
@@ -197,7 +197,14 @@ position:absolute;
     font-size: 17px;
     visibility: visible;
 }
-
+.c_okno_knopki{
+    position:absolute;
+    width:20px;
+    height:20px;
+    top:3px;
+    
+    border:2px double #306090;
+}
 
 .c_data_novost {
     width: 100%;
@@ -436,4 +443,14 @@ filter:blur(14px);
     width: 100%;
     top: 548px;
     visibility: hidden;
+}
+#predupr{
+    position:absolute;
+    top:300px;
+    left:150px;
+   right:150px;
+    font-size:100px;
+    color:red;
+    text-align:center;
+    border:5px groove red;
 }
