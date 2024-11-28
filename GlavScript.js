@@ -8,12 +8,20 @@ function Sait_load() {
     //тень под названием раздела
     str += "<div id='razdel_teni'></div>";
     //1 дополнительное окошко с беседами
-    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td></tr ><tr><td id='okno_text_besed' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td><td id = 'razvert_1'class='c_okno_knopki'></td ><td id = 'svert_1'class='c_okno_knopki'></td ></tr ><tr><td id='okno_text_besed' class='c_okno_text'></td></tr></table>";
     //2 дополнительное окошко с новостями
-    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td></tr ><tr><td id='okno_text_novostei' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td><td id = 'razvert_2'class='c_okno_knopki'></td ><td id = 'svert_2'class='c_okno_knopki'></td ></tr ><tr><td id='okno_text_novostei' class='c_okno_text'></td></tr></table>";
     //3 дополнительное окошко с закладками
-    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td></tr ><tr><td id='okno_text_pometok' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td><td id = 'razvert_3'class='c_okno_knopki'></td ><td id = 'svert_3'class='c_okno_knopki'></td ></tr ><tr><td id='okno_text_pometok' class='c_okno_text'></td></tr></table>";
     in_load_1.innerHTML = str;
+
+    razvert_1.style.right = '40px';
+    svert_1.style.right = '10px';
+    razvert_2.style.right = '40px';
+    svert_2.style.right = '10px';
+    razvert_3.style.right = '40px';
+    svert_3.style.right = '10px';
+
     //---------------------------------------------------------------------------------------------
     razdel_teni.innerHTML = razdel.innerHTML;
     //---------------------------------------------------------------------------------------------
@@ -96,6 +104,8 @@ function Sait_load() {
     //помошник
     str += "<div id='ten_line_pomoshnik'></div>";
     str += "<span id='pomoshnik'></span><hr id='line_pomoshnik' color='#80b0ff' />";
+    //предупреждение
+    str += "<div id='predupr'>" + predupregd + "</div>";
     in_load_2.innerHTML = str;
 
     //---------------------------------------------------------------------------------------------
@@ -207,13 +217,8 @@ function menu_(deistvie, nomer, idnomer) {
                 m[0].style.cursor = 'pointer';
                 m[0].style.backgroundColor = color_nadpisi;
                 m[0].style.color = color_videl;
-
-                if (idnomer != 0 && m_g_0.style.visibility == 'visible') menu_vis(0);
-                else if (idnomer != 1 && m_y_0.style.visibility == 'visible') menu_vis(1);
-                else if (idnomer != 2 && m_os_0.style.visibility == 'visible') menu_vis(2);
-                else if (idnomer != 3 && m_s_0.style.visibility == 'visible') menu_vis(3);
+                for (i = 0; i < 4;i++)if (idnomer != i && m[1].style.visibility == 'visible') menu_vis(i);
                 menu_vis(idnomer, 1);
-                
             }
             else if (nomer == 1) {
                 m[1].style.cursor = 'pointer';
@@ -259,4 +264,133 @@ function menu_(deistvie, nomer, idnomer) {
 
 }
 
+//=================================================================================================
+random_plus = 0;
+function self_random(nachalo = 1, konec = 2) {
+    d = new Date();
+    otvet = konec - nachalo;
+    otvet = nachalo + d.getSeconds() % otvet;
+    //if (random_plus == 0) random_plus = 1; else random_plus = 0;
+    return otvet;
+}
+//=================================================================================================
+function o(id_element, width = 10, height = 10, left = 100, top = 100, backgroundColor) {
+    id_element.style.position = 'absolute';
+    id_element.style.width = width + 'px';
+    id_element.style.height = height + 'px';
+    id_element.style.left = left + 'px';
+    id_element.style.top = top + 'px';
+    if (backgroundColor != undefined) id_element.style.backgroundColor = backgroundColor;
+}
+//=================================================================================================
+function ob(id_element, border = 2, borderColor = '#101010', borderRadius) {
+    id_element.style.border = border + 'px solid ' + borderColor;
+    if (borderRadius != undefined) id_element.style.borderRadius = borderRadius + 'px';
+}
+//=================================================================================================
+function obr(id1, id2, id3, id4, id5) {
+    id1.style.borderRadius = '50%';
+    if (id2 != undefined) id2.style.borderRadius = '50%';
+    if (id3 != undefined) id3.style.borderRadius = '50%';
+    if (id4 != undefined) id4.style.borderRadius = '50%';
+    if (id5 != undefined) id5.style.borderRadius = '50%';
+}
+//=================================================================================================
+function ot(id_element, FontSize = 20, textColor = '#101010', viravnivanieTexta_po_gorizontali = 'left', viravnivanieTexta_po_vertikali = 'top') {
+    id_element.style.fontSize = FontSize + 'px';
+    id_element.style.color = textColor;
+    id_element.style.textAlign = viravnivanieTexta_po_gorizontali;
+    id_element.style.verticalAlign = viravnivanieTexta_po_vertikali;
+}
+//=================================================================================================
+function ot_otstup(id_element, otstup_sverhu = 2, otstup_snizu = 2, otstup_sleva = 2, otstup_sprava = 2) {
+    id_element.style.paddingTop = otstup_sverhu + 'px';
+    id_element.style.paddingBottom = otstup_snizu + 'px';
+    id_element.style.paddingLeft = otstup_sleva + 'px';
+    id_element.style.paddingRight = otstup_sprava + 'px';
+}
+//=================================================================================================
+function ot_rastoynie(id_element, rastoynie_megdu_strochkami = 6, rastoynie_megdu_slovami = 5, rastoynie_megdu_bykvami = 5) {
+    id_element.style.lineHeight = rastoynie_megdu_strochkami + 'px';
+    id_element.style.wordSpacing = rastoynie_megdu_slovami + 'px';
+    id_element.style.letterSpacing = rastoynie_megdu_bykvami + 'px';
+}
+//=================================================================================================
+function ov(visibl = true, id_element1, id_element2, id_element3, id_element4, id_element5) {
+    if (visibl) visibl = 'visible'; else visibl = 'hidden';
+    id_element1.style.visibility = visibl;
+    if (id_element2 != undefined) id_element2.style.visibility = visibl;
+    if (id_element3 != undefined) id_element3.style.visibility = visibl;
+    if (id_element4 != undefined) id_element4.style.visibility = visibl;
+    if (id_element5 != undefined) id_element5.style.visibility = visibl;
+}
+//=================================================================================================
+function owh(id_element, width = 100, height = 100) {
+    id_element.style.width = width + 'px';
+    id_element.style.height = height + 'px';
+}
+//=================================================================================================
+function olt(id_element, left = 100, top = 100) {
+    id_element.style.left = left + 'px';
+    id_element.style.top = top + 'px';
+}
+//=================================================================================================
+function olr(id_element, left = 100, right = 100) {
+    id_element.style.left = left + 'px';
+    id_element.style.right = right + 'px';
+}
+//=================================================================================================
+function olb(id_element, left = 100, bottom = 100) {
+    id_element.style.left = left + 'px';
+    id_element.style.bottom = bottom + 'px';
+}
+//=================================================================================================
+function otb(id_element, top = 100, bottom = 100) {
+    id_element.style.top = top + 'px';
+    id_element.style.bottom = bottom + 'px';
+}
+//=================================================================================================
+function olrt(id_element, left = 100, right = 100, top = 100) {
+    id_element.style.left = left + 'px';
+    id_element.style.right = right + 'px';
+    id_element.style.top = top + 'px';
+}
+//=================================================================================================
+function oltb(id_element, left = 100, top = 100, bottom = 100) {
+    id_element.style.left = left + 'px';
+    id_element.style.top = top + 'px';
+    id_element.style.bottom = bottom + 'px';
+}
+//=================================================================================================
+
+function olt_glaza(id1 = pom_glaz_l, id2 = pom_glaz_r) {
+    id1.style.left = glazl_l + 'px';
+    id1.style.top = glazl_t + 'px';
+    id2.style.left = glazr_l + 'px';
+    id2.style.top = glazr_t + 'px';
+
+}
+
+//=================================================================================================
+function olt_sheki() {
+    pom_sheka_l.style.left = shekal_l + 'px';
+    pom_sheka_l.style.top = shekal_t + 'px';
+    pom_sheka_r.style.left = shekar_l + 'px';
+    pom_sheka_r.style.top = shekar_t + 'px';
+
+}
+//=================================================================================================
+function pom_gubi(chislo, uvelich) {
+    pom_gb = uvelich;
+    if (uvelich && chislo == 65) uvelich = pom_gb = false; else if (!(uvelich) && chislo == 23) uvelich = pom_gb = true;
+    if (uvelich) { switch (chislo) { case 23: return 30; case 30: return 44; case 44: return 58; case 58: return 65; } }
+    else { switch (chislo) { case 65: return 58; case 58: return 44; case 44: return 30; case 30: return 23; } }
+}
+//=================================================================================================
+function pom_glaz(chislo, uvelich) {
+    pom_gb = uvelich;
+    if (uvelich && chislo == 62) uvelich = pom_gb = false; else if (!(uvelich) && chislo == 20) uvelich = pom_gb = true;
+    if (uvelich) { switch (chislo) { case 20: return 25; case 25: return 41; case 41: return 57; case 57: return 62; } }
+    else { switch (chislo) { case 62: return 57; case 57: return 41; case 41: return 25; case 25: return 20; } }
+}
 //=================================================================================================
