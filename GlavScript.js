@@ -52,7 +52,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     okno_name_besedi.innerHTML = 'Беседы';
     okno_name_novosti.innerHTML = 'Новости';
-    okno_name_pometki.innerHTML = 'Пометки';
+    okno_name_pometki.innerHTML = 'Закладки';// 'Пометки';
     //ten_besedi.style.left += '2px';
     //ten_besedi.innerHTML = okno_name_besedi.innerHTML;
     //---------------------------------------------------------------------------------------------
@@ -74,40 +74,33 @@ function Sait_load() {
 
     str = "";
     //подсветка и сами названия содержания страниц
-        for (i = 0; i < ogl; i++) {
-            odin_og = document.getElementById("p_" + i);
+    for (i = 0; i < ogl; i++) {
+        odin_og = document.getElementById("p_" + i);
             
             if (ogl_vibrono == i) {
-                odin_og.style.top = t - 3 + 'px';
+                odin_og.style.top = t-2  + 'px';
                 odin_og.style.backgroundColor = '#3090c0';
                 odin_og.style.color = '#b0f0e0';
                 odin_og.style.left = '15px';
                 odin_og.style.width = '245px';
-                odin_og.style.fontSize = '30px';
-                odin_og.style.padding = '3px';
+                odin_og.style.fontSize = '28px';
                 odin_og.style.paddingLeft = '5px';
-                odin_og.style.border = '2px solid black';
+                odin_og.style.border = '2px solid #104070';
                 odin_og.style.borderTopRightRadius = '10px';
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.top = t + 'px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
                 perem = t + 2;
                 
-                str += "<div id='podsvetka_svet_p_" + i + "' class='podsvetka_svet_p'  style='left:20px;top:" + perem + "px;width:";
-                str += -5 + odin_og.clientWidth + "px;'></div>";
-                perem = t + odin_og.clientHeight - 8;
-                str += "<div id='podsvetka_ten_p_" + i + "' class='podsvetka_ten_p' style='left:20px;top:" + perem + "px;width:";
-                str += -5+odin_og.clientWidth + "px;'></div>";
-                t -= 6;
+                t -= 4;
             } else {
                 odin_og.style.top = t + 'px';
-                perem = t + 5;
-                str += "<div id='podsvetka_svet_p_" + i + "' class='podsvetka_svet_p'  style='top:" + perem + "px;'></div>";
-                perem = t + odin_og.clientHeight - 3;
-                str += "<div id='podsvetka_ten_p_" + i + "' class='podsvetka_ten_p' style='top:" + perem + "px;'></div>";
-                str += "<div id='ten_ot_stranici_na_p_" + i + "' class='ten_str' style='top:" + t + "px;left:258px;height:" + odin_og.clientHeight+"px;'></div>";
-            }
-            
+                odin_og.onmousemove = 'p_videlen(1,i)';
+                //
+                
+        }
+        perem = odin_og.clientHeight + 3;        
+        str += "<div id='ten_ot_stranici_na_p_" + i + "' class='ten_str' style='top:" + t + "px;height:" + perem + "px;'></div>";
             t += odin_og.clientHeight + 11;
             //t += 45;
         }
@@ -132,7 +125,9 @@ function Sait_load() {
     //предупреждение
     str += "<div id='predupr'>" + predupregd + "</div>";
     in_load_2.innerHTML = str;
+    ten_p = document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'hidden';
 
+    //ten_p.style.top = ;
     //---------------------------------------------------------------------------------------------
     line_pomoshnik.style.top = innerHeight - 33 + 'px';
     pomoshnik.innerHTML = "<span id='ten_pomoshnika'></span><span id='telo'></span><span id='svet_tela'></span><span id='glaz_l'></span><span id='glaz_r'></span><span id='guba_1'></span>";
@@ -300,6 +295,71 @@ function menu_(deistvie, nomer, idnomer) {
 
 }
 
+//=================================================================================================
+//=================================================================================================
+function p_videlen(deystvie, idnomer) {
+    videl_chast = '#6080c0';
+    ne_videl_chast = '#a0c0ff';
+
+    videl_text = '#c0e0ff';
+    ne_videl_text='#104070';
+    odin_og = document.getElementById("p_" + idnomer);
+    switch (deystvie) {
+        case 1://over
+            odin_og.style.cursor = 'pointer';
+            if (ogl_vibrono != idnomer) {
+                odin_og.style.backgroundColor = videl_chast;
+                odin_og.style.color = videl_text;
+            }
+            break;
+        case 2://out
+            if (ogl_vibrono != idnomer) {
+                odin_og.style.backgroundColor = ne_videl_chast;
+                odin_og.style.color = ne_videl_text;
+            }
+            break;
+        case 3://click
+            if (ogl_vibrono != idnomer) {
+                perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
+                ten_vibronogo_p.style.top = perem+'px';
+                perem -= 4;
+                
+                odin_og.style.top = perem + 'px';
+                    odin_og.style.backgroundColor = '#3090c0';
+                    odin_og.style.color = '#b0f0e0';
+                    odin_og.style.left = '15px';
+                    odin_og.style.width = '245px';
+                    odin_og.style.fontSize = '28px';
+                    odin_og.style.paddingLeft = '5px';
+                    odin_og.style.border = '2px solid #104070';
+                    odin_og.style.borderTopRightRadius = '10px';
+                    odin_og.style.borderBottomRightRadius = '10px';
+                    
+                ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
+                document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'visible';
+                    
+                odin_og=document.getElementById('p_' + ogl_vibrono);
+                odin_og.style.width = '220px';
+                perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
+
+                perem -= 0;
+                perem += 4;
+                odin_og.style.top = perem + 'px';
+                odin_og.style.fontSize='24px';
+                odin_og.style.left='30px';
+                odin_og.style.color='#104070';
+                odin_og.style.borderRight='0px';
+                odin_og.style.borderTopRightRadius='0px';
+                odin_og.style.borderBottomRightRadius='0px';
+
+                odin_og.style.backgroundColor='#a0c0ff';
+                    
+                ogl_vibrono = idnomer;
+                document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'hidden';
+
+            }
+    }
+}
 //=================================================================================================
 random_plus = 0;
 function self_random(nachalo = 1, konec = 2) {
