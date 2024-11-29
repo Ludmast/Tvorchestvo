@@ -70,7 +70,7 @@ body
   position:absolute;
   top:200px;
   left:10px;
-  width:250px;
+  width:260px;
   height:300px;
   border-radius:10px;
 
@@ -100,10 +100,10 @@ body
 .ten_str {
     position: absolute;
     width: 2px;
-    
-    
+    left: 257px;
     background-color: black;
     filter: blur(3px);
+    visibility:visible;
 }
 #ten_vibronogo_p {
     position: absolute;
@@ -114,14 +114,16 @@ body
 }
 .c_p{
 position:absolute;
-  border:2px solid black;
+  border:2px solid #104070;
   width:222px;
   padding:3px;
   font-size:24px;
   left:30px;
+  color:#104070;
   border-right:0px;
   border-top-left-radius:10px;
   border-bottom-left-radius:10px;
+  
   background-color:#a0c0ff;
 }
 #ten_stranici {
