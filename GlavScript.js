@@ -18,26 +18,27 @@ function Sait_load() {
     //тень под названием раздела
     str += "<div id='razdel_teni'></div>";
     //кнопки на 1 окне 
-    str_plus = "<td id='razvert_1'class='c_okno_knopki'><span id='razvert_1_a'class='c_razvert_a'></span><span id='razvert_1_b'class='c_razvert_b'></span></td>";
-    str_plus += "<td id='svert_1'class='c_okno_knopki'><span id='svert_1_a'class='c_svert_a'></span><span id='svert_1_b'class='c_svert_b'></span></td>";
+    str_plus = "<td id='razvert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,0)' onmouseout = 'kn_okna_videlen(2,0)'onmousedown='kn_okna_videlen(3,0)'><span id='razvert_1_a'class='c_razvert_a'></span><span id='razvert_1_b'class='c_razvert_b'></span></td>";
+    str_plus += "<td id='svert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,1)' onmouseout = 'kn_okna_videlen(2,1)'onmousedown='kn_okna_videlen(3,1)'><span id='svert_1_a'class='c_svert_a'></span><span id='svert_1_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 1 окна
-    str_plus +="<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
+    str_plus += "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
+
     //1 дополнительное окошко с беседами
-    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besed' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
     //кнопки на 2 окне 
-    str_plus = "<td id='razvert_2'class='c_okno_knopki'><span id='razvert_2_a'class='c_razvert_a'></span><span id='razvert_2_b'class='c_razvert_b'></span></td>";
-    str_plus += "<td id='svert_2'class='c_okno_knopki'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
+    str_plus = "<td id='razvert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,2)' onmouseout = 'kn_okna_videlen(2,2)'onmousedown='kn_okna_videlen(3,2)'><span id='razvert_2_a'class='c_razvert_a'></span><span id='razvert_2_b'class='c_razvert_b'></span></td>";
+    str_plus += "<td id='svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,3)' onmouseout = 'kn_okna_videlen(2,3)'onmousedown='kn_okna_videlen(3,3)'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 2 окна
     str_plus += "<td><span id='svet_2_okna'class='c_svet_okna'></span><span id='ten_2_okna'class='c_ten_okna'></span></td>"
     //2 дополнительное окошко с новостями
-    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novostei' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
     //кнопки на 1 окне 
-    str_plus = "<td id='razvert_3'class='c_okno_knopki'><span id='razvert_3_a'class='c_razvert_a'></span><span id='razvert_3_b'class='c_razvert_b'></span></td>";
-    str_plus += "<td id='svert_3'class='c_okno_knopki'><span id='svert_3_a'class='c_svert_a'></span><span id='svert_3_b'class='c_svert_b'></span></td>";
+    str_plus = "<td id='razvert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,4)' onmouseout = 'kn_okna_videlen(2,4)'onmousedown='kn_okna_videlen(3,4)'><span id='razvert_3_a'class='c_razvert_a'></span><span id='razvert_3_b'class='c_razvert_b'></span></td>";
+    str_plus += "<td id='svert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,5)' onmouseout = 'kn_okna_videlen(2,5)'onmousedown='kn_okna_videlen(3,5)'><span id='svert_3_a'class='c_svert_a'></span><span id='svert_3_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 3 окна
     str_plus += "<td><span id='svet_3_okna'class='c_svet_okna'></span><span id='ten_3_okna'class='c_ten_okna'></span></td>"
     //3 дополнительное окошко с закладками
-    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_pometok' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_pometki' class='c_okno_text'></td></tr></table>";
     in_load_1.innerHTML = str;
 
     razvert_1.style.right = '40px';
@@ -52,7 +53,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     okno_name_besedi.innerHTML = 'Беседы';
     okno_name_novosti.innerHTML = 'Новости';
-    okno_name_pometki.innerHTML = 'Закладки';// 'Пометки';
+    okno_name_pometki.innerHTML = 'Заметки';// 'Пометки';
     //ten_besedi.style.left += '2px';
     //ten_besedi.innerHTML = okno_name_besedi.innerHTML;
     //---------------------------------------------------------------------------------------------
@@ -101,7 +102,7 @@ function Sait_load() {
         }
         perem = odin_og.clientHeight + 3;        
         str += "<div id='ten_ot_stranici_na_p_" + i + "' class='ten_str' style='top:" + t + "px;height:" + perem + "px;'></div>";
-            t += odin_og.clientHeight + 11;
+            t += odin_og.clientHeight + 15;
             //t += 45;
         }
         gl_p.style.height = t - 200 + 'px';
@@ -109,14 +110,39 @@ function Sait_load() {
     
     //тень верхней полоски меню
     str += "<div id='ten_menu'></div>";
+    //---------------------------------------------------------------------------------------------
+    //копия кнопки на 1 окне 
+    str_plus = "<td id='kopiy_razvert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,6)' onmouseout = 'kn_okna_videlen(2,6)'onmousedown='kn_okna_videlen(3,6)'><span id='kopiy_razvert_1_a'class='c_razvert_c'></span><span id='kopiy_razvert_1_b'class='c_razvert_d'></span></td>";
+    str_plus += "<td id='kopiy_svert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,7)' onmouseout = 'kn_okna_videlen(2,7)'onmousedown='kn_okna_videlen(3,7)'><span id='kopiy_svert_1_a'class='c_svert_a'></span><span id='kopiy_svert_1_b'class='c_svert_b'></span></td>";
+    //копия свет и тень на заголовке 1 окна
+    str_plus += "<td><span id='kopiy_svet_1_okna'class='c_svet_okna'></span><span id='kopiy_ten_1_okna'class='c_ten_okna'></span></td>"
+    //копия 1 дополнительное окошко с беседами
+    str += "<table id='kopiy_okno_besedi' class='c_kopiy_okno'><tr><td id='kopiy_okno_name_besedi'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='kopiy_okno_text_besedi' class='c_okno_text'></td></tr></table>";
+    //копия кнопки на 2 окне
+    str_plus = "<td id='kopiy_razvert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,8)' onmouseout = 'kn_okna_videlen(2,8)'onmousedown='kn_okna_videlen(3,8)'><span id='kopiy_razvert_2_a'class='c_razvert_c'></span><span id='kopiy_razvert_2_b'class='c_razvert_d'></span></td>";
+    str_plus += "<td id='kopiy_svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,9)' onmouseout = 'kn_okna_videlen(2,9)'onmousedown='kn_okna_videlen(3,9)'><span id='kopiy_svert_2_a'class='c_svert_a'></span><span id='kopiy_svert_2_b'class='c_svert_b'></span></td>";
+    //копия свет и тень на заголовке 2 окна
+    str_plus += "<td><span id='kopiy_svet_2_okna'class='c_svet_okna'></span><span id='kopiy_ten_2_okna'class='c_ten_okna'></span></td>"
+    //копия 2 дополнительное окошко с новостями
+    str += "<table id='kopiy_okno_novosti' class='c_kopiy_okno'><tr><td id='kopiy_okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='kopiy_okno_text_novosti' class='c_kopiy_okno_text'></td></tr></table>";
+    //копия кнопки на 1 окне
+    str_plus = "<td id='kopiy_razvert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,10)' onmouseout = 'kn_okna_videlen(2,10)'onmousedown='kn_okna_videlen(3,10)'><span id='kopiy_razvert_3_a'class='c_razvert_c'></span><span id='kopiy_razvert_3_b'class='c_razvert_d'></span></td>";
+    str_plus += "<td id='kopiy_svert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,11)' onmouseout = 'kn_okna_videlen(2,11)'onmousedown='kn_okna_videlen(3,11)'><span id='kopiy_svert_3_a'class='c_svert_a'></span><span id='kopiy_svert_3_b'class='c_svert_b'></span></td>";
+    //копия свет и тень на заголовке 3 окна
+    str_plus += "<td><span id='kopiy_svet_3_okna'class='c_svet_okna'></span><span id='kopiy_ten_3_okna'class='c_ten_okna'></span></td>"
+    //копия 3 дополнительное окошко с закладками
+    str += "<table id='kopiy_okno_pometki' class='c_kopiy_okno'><tr><td id='kopiy_okno_name_pometki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='kopiy_okno_text_pometki' class='c_okno_text'></td></tr></table>";
+
+    //---------------------------------------------------------------------------------------------
     //верхняя полоска меню
     str += "<table><tr><td id='menu_line'onmouseout = 'menu_(2,0,0)'><table id = 'menu' onmouseout = 'menu_(2,0,0)'><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' onmousemove='menu_(4,0,0)'></td ><td id='m_razdelitel'align='center'>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'onmousemove='menu_(4,0,1)'></td><td align='center'>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'onmousemove='menu_(4,0,2)'></td><td align='center'>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'onmousemove='menu_(4,0,3)'></td></tr></table ></td></tr></table>";
-    //------------------
+    //---------------------------------------------------------------------------------------------
     //тени названия сайта
     str += "<div id='name_sait1_teni' ></div><div id='name_sait2_teni'style='filter:blur(7px)'></div>";
     //название сайта
     str += "<div id='name_sait1'></div><div id='name_sait2'></div>";
-    //------------------
+    //---------------------------------------------------------------------------------------------
+
     //развёрнутые списки менюшек
     str += "<div id='m1'></div><div id='m2'></div><div id='m3'></div><div id='m4'></div>";
     //помошник
@@ -126,7 +152,31 @@ function Sait_load() {
     str += "<div id='predupr'>" + predupregd + "</div>";
     in_load_2.innerHTML = str;
     ten_p = document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'hidden';
-
+    //---------------------------------------------------------------------------------------------
+    //копии дополнительных окон
+    okna_top = 100;
+    kopiy_okno_besedi.style.top = okna_top + 'px';
+    kopiy_okno_besedi.style.right = '500px';
+    kopiy_okno_besedi.style.visibility = kopiy_okno_name_besedi.style.visibility = kopiy_okno_text_besedi.style.visibility = 'hidden';
+    
+    okna_top += 110;
+    kopiy_okno_novosti.style.top = okna_top + 'px';
+    kopiy_okno_novosti.style.right = '400px';
+    kopiy_okno_novosti.style.visibility = kopiy_okno_name_novosti.style.visibility = kopiy_okno_text_novosti.style.visibility = 'hidden';
+    okna_top += 110;
+    kopiy_okno_pometki.style.top = okna_top + 'px';
+    kopiy_okno_pometki.style.right = '300px';
+    kopiy_okno_pometki.style.visibility = kopiy_okno_name_pometki.style.visibility = kopiy_okno_text_pometki.style.visibility = 'hidden';
+    kopiy_razvert_1.style.right = '40px';
+    kopiy_svert_1.style.right = '10px';
+    kopiy_razvert_2.style.right = '40px';
+    kopiy_svert_2.style.right = '10px';
+    kopiy_razvert_3.style.right = '40px';
+    kopiy_svert_3.style.right = '10px';
+    
+    kopiy_okno_name_besedi.innerHTML = okno_name_besedi.innerHTML;
+    kopiy_okno_name_novosti.innerHTML = okno_name_novosti.innerHTML;
+    kopiy_okno_name_pometki.innerHTML = okno_name_pometki.innerHTML;
     //ten_p.style.top = ;
     //---------------------------------------------------------------------------------------------
     line_pomoshnik.style.top = innerHeight - 33 + 'px';
@@ -177,12 +227,16 @@ function Sait_load() {
     m4.innerHTML = str;
     for (i = 0; i < ms[3][1] - 1; i++)document.getElementById(ms[3][0] + '_' + (i + 1)).innerText = array_menu_4[i];
     //---------------------------------------------------------------------------------------------
-
+    
     for (j = 0; j < 4; j++) {
         m = [];
         for (i = 0; i < ms[j][1]; i++) { m[i] = document.getElementById(ms[j][0] + "_" + i); }
         m[0].style.height = (ms[j][1] - 1) * text_size + 'px';
         m[0].style.left = ms[j][2] + 'px';
+        mm = document.getElementById(ms[j][0]).clientWidth;
+        
+        //bob.innerHTML = mm;
+        if (m[0].clientWidth <= mm) m[0].style.width = mm + 10 + 'px';
 
         t = 2;
         for (i = 1; i < m.length; i++) {
@@ -296,6 +350,67 @@ function menu_(deistvie, nomer, idnomer) {
 }
 
 //=================================================================================================
+function kn_okna_videlen(deistvie, idnomer) {
+    ne_videl_kn = '#40a0d0';
+    videl_kn = '#90e0ff';
+    nagatay_kn = '#ffe0a0';
+    ne_videl_ris = '#c0ffe0';
+    switch (idnomer) {
+        case 0: odin_kn = razvert_1; odin_dr = razvert_1_b; break;
+        case 1: odin_kn = svert_1; odin_dr = svert_1_a; break;
+        case 2: odin_kn = razvert_2; odin_dr = razvert_2_b; break;
+        case 3: odin_kn = svert_2; odin_dr = svert_2_a; break;
+        case 4: odin_kn = razvert_3; odin_dr = razvert_3_b; break;
+        case 5: odin_kn = svert_3; odin_dr = svert_3_a; break;
+        case 6: odin_kn = kopiy_razvert_1; odin_dr = kopiy_razvert_1_a; break;
+        case 7: odin_kn = kopiy_svert_1; odin_dr = kopiy_svert_1_a; break;
+        case 8: odin_kn = kopiy_razvert_2; odin_dr = kopiy_razvert_2_a; break;
+        case 9: odin_kn = kopiy_svert_2; odin_dr = kopiy_svert_2_a; break;
+        case 10: odin_kn = kopiy_razvert_3; odin_dr = kopiy_razvert_3_a; break;
+        default: odin_kn = kopiy_svert_3; odin_dr = kopiy_svert_3_a; break;
+    }
+    switch (deistvie) {
+        case 1://over
+            odin_kn.style.backgroundColor = videl_kn;
+            odin_dr.style.backgroundColor = ne_videl_kn;
+            break;
+        case 2://out
+            odin_kn.style.backgroundColor = ne_videl_kn;
+            odin_dr.style.backgroundColor = ne_videl_ris;
+            break;
+        case 3://click
+            odin_kn.style.backgroundColor = nagatay_kn;
+            if (idnomer == 0) {
+                kopiy_okno_besedi.style.visibility = kopiy_okno_name_besedi.style.visibility = kopiy_okno_text_besedi.style.visibility = 'visible';
+                okno_besedi.style.visibility = okno_name_besedi.style.visibility = okno_text_besedi.style.visibility = 'hidden';
+                 
+            } else if (idnomer == 2) {
+                kopiy_okno_novosti.style.visibility = kopiy_okno_name_novosti.style.visibility = kopiy_okno_text_novosti.style.visibility = 'visible';
+                okno_novosti.style.visibility = okno_name_novosti.style.visibility = okno_text_novosti.style.visibility = 'hidden';
+            }
+            else if (idnomer == 4) {
+                kopiy_okno_pometki.style.visibility = kopiy_okno_name_pometki.style.visibility = kopiy_okno_text_pometki.style.visibility = 'visible';
+                okno_pometki.style.visibility = okno_name_pometki.style.visibility = okno_text_pometki.style.visibility = 'hidden';
+            }
+            else if (idnomer == 6) {
+                
+                okno_besedi.style.visibility = okno_name_besedi.style.visibility = okno_text_besedi.style.visibility = 'visible';
+                kopiy_okno_besedi.style.visibility = kopiy_okno_name_besedi.style.visibility = kopiy_okno_text_besedi.style.visibility = 'hidden';
+
+            } else if (idnomer == 8) {
+                
+                okno_novosti.style.visibility = okno_name_novosti.style.visibility = okno_text_novosti.style.visibility = 'visible';
+                kopiy_okno_novosti.style.visibility = kopiy_okno_name_novosti.style.visibility = kopiy_okno_text_novosti.style.visibility = 'hidden';
+            }
+            else if (idnomer == 10) {
+                
+                okno_pometki.style.visibility = okno_name_pometki.style.visibility = okno_text_pometki.style.visibility = 'visible';
+                kopiy_okno_pometki.style.visibility = kopiy_okno_name_pometki.style.visibility = kopiy_okno_text_pometki.style.visibility = 'hidden';
+            }
+
+            break;
+    }
+}
 //=================================================================================================
 function p_videlen(deystvie, idnomer) {
     videl_chast = '#6080c0';
@@ -361,6 +476,7 @@ function p_videlen(deystvie, idnomer) {
     }
 }
 //=================================================================================================
+
 random_plus = 0;
 function self_random(nachalo = 1, konec = 2) {
     d = new Date();
