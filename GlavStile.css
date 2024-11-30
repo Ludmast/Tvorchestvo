@@ -17,6 +17,7 @@ body
     font-weight: 800;
     font-style: italic;
     color: #c0ffe0;
+    
 }
 #name_sait2 {
     position: absolute;
@@ -181,19 +182,41 @@ position:absolute;
     background-color: black;
     filter: blur(3px);
 }
+.c_kopiy_okno {
+    position: absolute;
+    background-color: #40a0d0;
+    width: 300px;
+    height: 400px;
+    border-radius: 10px;
+    border: 2px solid #104070;
+    font-size: 22px;
+    font-weight: 500;
+    
+    visibility: visible;
+}
+.c_kopiy_okno_text {
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 35px;
+    background-color: #fff8e0;
+    font-language-override: normal;
+    font-display: auto;
+    overflow: hidden;
+    font-size: 17px;
+    visibility: visible;
+}
 
 .c_okno {
     position: absolute;
     background-color: #40a0d0;
     right: 5px;
-    
     width: 245px;
     height: 200px;
     border-radius: 10px;
-    
+    border: 2px solid #104070;
     font-size: 22px;
     font-weight: 500;
-    border: 10px;
     visibility: visible;
 }
 
@@ -493,6 +516,24 @@ filter:blur(14px);
     background-color: #c0ffe0;
 
 }
+.c_razvert_c {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    right: 2px;
+    bottom: 2px;
+    background-color:#c0ffe0;
+}
+
+.c_razvert_d {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    left: 2px;
+    top: 2px;
+    border:2px dotted #306090;
+}
+
 .c_svert_a {
     position: absolute;
     width: 5px;
