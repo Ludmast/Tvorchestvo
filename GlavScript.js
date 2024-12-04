@@ -27,21 +27,21 @@ function Sait_load() {
     str_plus += "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
 
     //1 дополнительное окошко с беседами
-    str += "<table id='okno_besedi' class='c_okno'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_besedi' class='c_okno'onmousemove='okno_izmen(0,3)'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
     //кнопки на 2 окне 
     str_plus = "<td id='razvert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,2)' onmouseout = 'kn_okna_videlen(2,2)'onmousedown='kn_okna_videlen(4,2)'><span id='razvert_2_a'class='c_razvert_a'></span><span id='razvert_2_b'class='c_razvert_b'></span></td>";
     str_plus += "<td id='svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,3)' onmouseout = 'kn_okna_videlen(2,3)'onmousedown='kn_okna_videlen(4,3)'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 2 окна
     str_plus += "<td><span id='svet_2_okna'class='c_svet_okna'></span><span id='ten_2_okna'class='c_ten_okna'></span></td>"
     //2 дополнительное окошко с новостями
-    str += "<table id='okno_novosti' class='c_okno'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_novosti' class='c_okno'onmousemove='okno_izmen(1,3)'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
     //кнопки на 1 окне 
     str_plus = "<td id='razvert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,4)' onmouseout = 'kn_okna_videlen(2,4)'onmousedown='kn_okna_videlen(4,4)'><span id='razvert_3_a'class='c_razvert_a'></span><span id='razvert_3_b'class='c_razvert_b'></span></td>";
     str_plus += "<td id='svert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,5)' onmouseout = 'kn_okna_videlen(2,5)'onmousedown='kn_okna_videlen(4,5)'><span id='svert_3_a'class='c_svert_a'></span><span id='svert_3_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 3 окна
     str_plus += "<td><span id='svet_3_okna'class='c_svet_okna'></span><span id='ten_3_okna'class='c_ten_okna'></span></td>"
     //3 дополнительное окошко с закладками
-    str += "<table id='okno_pometki' class='c_okno'><tr><td id='okno_name_pometki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_pometki' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_pometki' class='c_okno'onmousemove='okno_izmen(2,3)'><tr><td id='okno_name_pometki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_pometki' class='c_okno_text'></td></tr></table>";
     in_load_1.innerHTML = str;
     //---------------------------------------------------------------------------------------------
     razvert_1.style.right = '40px';
@@ -172,18 +172,21 @@ function Sait_load() {
     ten_p = document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'hidden';
     //---------------------------------------------------------------------------------------------
     //копии дополнительных окон
-    okno_top = 100;
+    okno_top = 170;
     kopiy_okno_besedi.style.top = okno_top + 'px';
-    kopiy_okno_besedi.style.right = '500px';
+    kopiy_okno_besedi.style.right = '240px';
+    kopiy_okno_besedi.style.height = okno_besedi.clientHeight + 'px';
     kopiy_okno_besedi.style.visibility = kopiy_okno_name_besedi.style.visibility = kopiy_okno_text_besedi.style.visibility = 'hidden';
-    
-    okno_top += 110;
+
+    okno_top += 30;
     kopiy_okno_novosti.style.top = okno_top + 'px';
-    kopiy_okno_novosti.style.right = '400px';
+    kopiy_okno_novosti.style.right = '220px';
+    kopiy_okno_novosti.style.height = okno_novosti.clientHeight + 'px';
     kopiy_okno_novosti.style.visibility = kopiy_okno_name_novosti.style.visibility = kopiy_okno_text_novosti.style.visibility = 'hidden';
-    okno_top += 110;
+    okno_top += 30;
     kopiy_okno_pometki.style.top = okno_top + 'px';
-    kopiy_okno_pometki.style.right = '300px';
+    kopiy_okno_pometki.style.right = '200px';
+    kopiy_okno_pometki.style.height = okno_pometki.clientHeight + 'px';
     kopiy_okno_pometki.style.visibility = kopiy_okno_name_pometki.style.visibility = kopiy_okno_text_pometki.style.visibility = 'hidden';
     kopiy_razvert_1.style.right = '40px';
     kopiy_svert_1.style.right = '10px';
@@ -275,57 +278,36 @@ function Sait_load() {
 function stranica_izmen(deistvie) {
 
     switch (deistvie) {
-       case 3://move
-            
-        
-    if (event.clientX < stranica_left + 5 || event.clientX > stranica_left + stranica.clientWidth - 5) {
-        stranica.style.cursor = 'ew-resize'
-    }else                stranica.style.cursor = 'default';
-             //   if (event.clientX > stranica_left + stranica.clientWidth - 5) {
-             //       deform_right_move = true;
-                    //stranica.draggable = true;
-
-             //   }
-             
-        /*        if (deform_right_down)
-                {
-                   // stranica_width = stranica.style.width.slice(0, stranica.style.width.length - 2);
-                   // stranica_width -= 0;
-                   // if (deform_stranici_right > event.clientX)stranica_width += 3; else stranica_width -= 3;
-                    //stranica_width = event.clientX - stranica_width - stranica_left;
-                    stranica.style.width = event.clientX - stranica_left + 'px';
-                    deform_stranici_right = event.clientX;
-                }
-
-            }
-            else {
-                
-                
-            }
-            */
+        case 3://move
+            if (event.clientX < stranica_left + 5 || event.clientX > stranica_left + stranica.clientWidth - 5) stranica.style.cursor = 'ew-resize';
+                else stranica.style.cursor = 'default';
+         
             break;
         case 2://down
 
-            if (deform_right_move) {
-                deform_right_down = true;
-             //   stranica_width = stranica.clientWidth;
-
-                
-                
-               // stranica.style.width = stranica_width + 2 + 'px';
-
-            }
-            //break;
+            break;
         case 5://up
-            if (deform_right_down) {
-                deform_right_down = false;
-                deform_right_move = false;
-                //stranica.draggable = false;
-                stranica.style.cursor = 'default';
-            }
+            
             break;
     }
 
+}
+//=================================================================================================
+function okno_izmen(idnomer,deistvie) {
+    switch (deistvie) {
+        case 3://move
+           
+            if (idnomer == 0) {
+                ok = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2);
+                ok -= 0;
+                ok += okno_besedi.clientHeight;
+                
+                if (event.clientY > ok - 5 && event.clientY < ok) okno_besedi.style.cursor = 'ns-resize';
+                else okno_besedi.style.cursor = 'default';
+            }
+            
+                break;
+    }
 }
 //=================================================================================================
 function all_control(deistvie) {
@@ -340,39 +322,60 @@ function all_control(deistvie) {
                 case 3://move
 
                     if (deform_stranica_right_down) {
-                        // stranica_width = stranica.style.width.slice(0, stranica.style.width.length - 2);
-                        // stranica_width -= 0;
-                        // if (deform_stranici_right > event.clientX)stranica_width += 3; else stranica_width -= 3;
-                        //stranica_width = event.clientX - stranica_width - stranica_left;
-
-                        {
-                            
-                            stranica.style.width = event.clientX- stranica_left + 'px';
-                            
-                            
-                            //stranici_right = event.clientX;
-                            if (stranica.clientWidth < 200) {
-                                stranica.style.width = '200px';
-                            } else if (osnova.clientWidth - 80 < event.clientX) {
-                                stranica.style.width = osnova.clientWidth - 80 - stranica_left + 'px';
-                            }
-                            ten_stranici.style.width = stranica.style.width;
+                        stranica.style.width = event.clientX - stranica_left + 'px';
+                        if (stranica.clientWidth < 200) {
+                            stranica.style.width = '200px';
                         }
-                        if (deistvie == 2) deform_right_down = false;
-                    }else              if (event.clientY > stranica_top && (event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10)) {
-                        stranica.style.cursor = 'ew-resize';
-                        deform_stranica_right_move = true;
+                        else if (osnova.clientWidth - 80 < event.clientX) {
+                            stranica.style.width = osnova.clientWidth - 80 - stranica_left + 'px';
+                        }
+                        ten_stranici.style.width = stranica.style.width;
+                    }
+                    else if (deform_okno_besedi_down) {
+
+                        okno_besedi.style.height = event.clientY-okb + 'px';
+                        
+                    }
+                    if (event.clientY > stranica_top && (event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10)) {
+                        osnova.style.cursor = stranica.style.cursor = 'ew-resize';
+                    }
+                    else if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5 && event.clientY > okb - 5 && event.clientY < okb + 10) {
+                        osnova.style.cursor = okno_besedi.style.cursor = 'ns-resize';
                     }
                     break;
                 case 4://down
-                    if (deform_stranica_right_move) { deform_stranica_right_down = true; }
+                   // bob.innerHTML = okno_besedi.style.top;
+                    if (event.clientY > stranica_top && (event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10)) {
+                        stranica.style.cursor = 'ew-resize';
+                        
+                        event.returnValue = false;
+                        deform_stranica_right_down = true;
+                    } else {
+                        if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5) {
+                            if (okno_besedi.style.visibility = 'visible') {
+                                okb = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2);
+                                okb -= 0;
+                                
+                                if (event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight + 10) {
+                                    event.returnValue = false;
+                                    deform_okno_besedi_down = true;
+
+                                    osnova.style.cursor = okno_besedi.style.cursor = 'ns-resize';
+                                }
+                            }
+                            }
+                        }
                     break;
                 case 5://up
                     if (deform_stranica_right_down) {
+                        event.returnValue = true;
                         deform_stranica_right_down = false;
-                        deform_stranica_right_move = false;
-                        stranica.style.cursor = 'default';
-
+                        osnova.style.cursor = stranica.style.cursor = 'default';
+                    }
+                    if (deform_okno_besedi_down) {
+                        event.returnValue = true;
+                        deform_okno_besedi_down = false;
+                        osnova.style.cursor = okno_besedi.style.cursor = 'default';
                     }
                     break;
             }
@@ -469,19 +472,18 @@ function menu_(deistvie, nomer, idnomer) {
 
 }
 //=================================================================================================
-function okno_perebor(nomer) {
-    if (nomer == 0) { ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki; }
-    else { ok1 = okno_s_boku_1; ok2 = okno_s_boku_2; ok3 = okno_s_boku_3; }
-    n1 = ok1.style.top.slice(0, ok1.style.top.length - 2); n1 -= 0; 
-    n2 = ok2.style.top.slice(0, ok2.style.top.length - 2); n2 -= 0; 
-    n3 = ok3.style.top.slice(0, ok3.style.top.length - 2); n3 -= 0; 
+function okno_izmenenie(idnomer) {
+    ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki;
+    n1 = ok1.style.top.slice(0, ok1.style.top.length - 2); n1 -= 0;
+    n2 = ok2.style.top.slice(0, ok2.style.top.length - 2); n2 -= 0;
+    n3 = ok3.style.top.slice(0, ok3.style.top.length - 2); n3 -= 0;
     if (ok1.style.visibility == 'visible') {
         if (ok2.style.visibility == 'visible') {
             if (ok3.style.visibility == 'visible') {
-                if (n1 < n2) {
-                    if (n1 < n3) {
+                if (n1 <= n2) {
+                    if (n1 <= n3) {
                         ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        if (n2 < n3) {
+                        if (n2 <= n3) {
                             ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
                             ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
                         } else {
@@ -495,9 +497,9 @@ function okno_perebor(nomer) {
                         ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
                     }
                 } else {
-                    if (n2 < n3) {
+                    if (n2 <= n3) {
                         ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        if (n1 < n3) {
+                        if (n1 <= n3) {
                             ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
                             ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
                         } else {
@@ -511,7 +513,7 @@ function okno_perebor(nomer) {
                     }
                 }
             } else {
-                if (n1 < n2) {
+                if (n1 <= n2) {
                     ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
                     ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
                 } else {
@@ -521,7 +523,7 @@ function okno_perebor(nomer) {
             }
         } else {
             if (ok3.style.visibility == 'visible') {
-                if (n1 < n3) {
+                if (n1 <= n3) {
                     ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
                     ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
                 } else {
@@ -533,7 +535,86 @@ function okno_perebor(nomer) {
     } else {
         if (ok2.style.visibility == 'visible') {
             if (ok3.style.visibility == 'visible') {
-                if (n2 < n3) {
+                if (n2 <= n3) {
+                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                } else {
+                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                }
+            } else { ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10; }
+        } else {
+            if (ok3.style.visibility == 'visible') { ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10; }
+        }
+    }
+}
+
+//=================================================================================================
+function okno_perebor(nomer) {
+    if (nomer == 0) { ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki; }
+    else { ok1 = okno_s_boku_1; ok2 = okno_s_boku_2; ok3 = okno_s_boku_3; }
+    n1 = ok1.style.top.slice(0, ok1.style.top.length - 2); n1 -= 0; 
+    n2 = ok2.style.top.slice(0, ok2.style.top.length - 2); n2 -= 0; 
+    n3 = ok3.style.top.slice(0, ok3.style.top.length - 2); n3 -= 0; 
+    if (ok1.style.visibility == 'visible') {
+        if (ok2.style.visibility == 'visible') {
+            if (ok3.style.visibility == 'visible') {
+                if (n1 <= n2) {
+                    if (n1 <= n3) {
+                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                        if (n2 <= n3) {
+                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                        } else {
+                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                        }
+                    }
+                    else {
+                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                    }
+                } else {
+                    if (n2 <= n3) {
+                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                        if (n1 <= n3) {
+                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                        } else {
+                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                        }
+                    } else {
+                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                    }
+                }
+            } else {
+                if (n1 <= n2) {
+                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                } else {
+                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
+                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                }
+            }
+        } else {
+            if (ok3.style.visibility == 'visible') {
+                if (n1 <= n3) {
+                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                } else {
+                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
+                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+                }
+            } else { ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10; }
+        }
+    } else {
+        if (ok2.style.visibility == 'visible') {
+            if (ok3.style.visibility == 'visible') {
+                if (n2 <= n3) {
                     ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
                     ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
                 } else {
@@ -590,31 +671,47 @@ function kn_okna_videlen(deistvie, idnomer) {
             break;
         case 4://down
             okno_svert = 200;
+            
             if (idnomer == 0) {
                 okno_vidimost(3, 0); okno_vidimost(0, 1);
-                
+
                 okno_perebor(0); okno_perebor(1);
        }
             else if (idnomer == 2) {
                 okno_vidimost(4, 0); okno_vidimost(1, 1);
-                
+
                 okno_perebor(0); okno_perebor(1);
     }
             else if (idnomer == 4) {
                 okno_vidimost(5, 0); okno_vidimost(2, 1);
-                
+
                 okno_perebor(0); okno_perebor(1);
             }
             else if (idnomer == 6) {
-                okno_vidimost(0, 0); okno_vidimost(3, 1);
                 
+                if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
+                if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
+                if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
+                okno_besedi.style.top = okno_svert + 'px';
+                okno_svert = 200;
+                okno_vidimost(0, 0); okno_vidimost(3, 1);
                 okno_perebor(0); okno_perebor(1);
         }
             else if (idnomer == 8) {
+                if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
+                if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
+                if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
+                okno_novosti.style.top = okno_svert + 'px';
+                okno_svert = 200;
                 okno_vidimost(1, 0); okno_vidimost(4, 1);
-                okno_perebor(0); okno_perebor(1);
+                 okno_perebor(0); okno_perebor(1);
             }
             else if (idnomer == 10) {
+                if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
+                if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
+                if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
+                okno_pometki.style.top = okno_svert + 'px';
+                okno_svert = 200;
                 okno_vidimost(2, 0); okno_vidimost(5, 1);
                 okno_perebor(0); okno_perebor(1);
             }
@@ -671,26 +768,31 @@ function okno_s_boku_videl(idnomer, deistvie) {
             break;
         case 4://down
             okno_svert = 200;
-               
+            if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
+            if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
+            if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
 
             if (idnomer == 0) {
 
                 okno_s_boku_1.style.paddingRight = '15px';
                 
                 okno_s_boku_1.style.visibility = 'hidden';
+                okno_besedi.style.top = okno_svert + 'px';
                 okno_vidimost(0, 0);
             }
             else if (idnomer == 1) {
                 okno_s_boku_2.style.paddingRight = '15px';
                 okno_s_boku_2.style.visibility = 'hidden';
+                okno_novosti.style.top = okno_svert + 'px';
                 okno_vidimost(1, 0);
             } else
             {
                 okno_s_boku_3.style.paddingRight = '15px';
                 okno_s_boku_3.style.visibility = 'hidden';
-                    
+                okno_pometki.style.top = okno_svert + 'px';
                 okno_vidimost(2, 0);
             }
+            okno_svert = 200;
             okno_perebor(0); okno_perebor(1);
             break;
 
