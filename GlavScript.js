@@ -352,7 +352,7 @@ function all_control(deistvie) {
                         deform_stranica_right_down = true;
                     } else {
                         if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5) {
-                            if (okno_besedi.style.visibility = 'visible') {
+                            if (okno_besedi.style.visibility == 'visible') {
                                 okb = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2);
                                 okb -= 0;
                                 
