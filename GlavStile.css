@@ -204,8 +204,8 @@ position:absolute;
 .c_kopiy_okno {
     position: absolute;
     background-color: #40a0d0;
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    
     border-radius: 10px;
     border: 2px solid #104070;
     font-size: 22px;
