@@ -273,6 +273,41 @@ function Sait_load() {
     stranici_right = stranica_left + stranica.clientHeight;
     deform_stranica_right_move = false;
     deform_stranica_right_down = false;
+    deform_okno_besedi_down = false;
+    deform_okno_novosti_down = false;
+    deform_okno_pometki_down = false;
+    oks1 = top_ok(6);
+    oks2 = top_ok(7);
+    oks3 = top_ok(8);
+    okb = top_ok(0);
+    okn = top_ok(1);
+    okp = top_ok(2);
+}
+//=================================================================================================
+function top_ok(idnomer) {
+    switch (idnomer) {
+        //besedi
+        case 0: idnomer = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2); break;
+        //novosti
+        case 1: idnomer = okno_novosti.style.top.slice(0, okno_novosti.style.top.length - 2); break;
+        //pometki
+        case 2: idnomer = okno_pometki.style.top.slice(0, okno_pometki.style.top.length - 2); break;
+        //kopiy_besedi
+        case 3: idnomer = kopiy_okno_besedi.style.top.slice(0, kopiy_okno_besedi.style.top.length - 2); break;
+        //kopiy_novosti
+        case 4: idnomer = kopiy_okno_novosti.style.top.slice(0, kopiy_okno_novosti.style.top.length - 2); break;
+        //kopiy_pometki
+        case 5: idnomer = kopiy_okno_pometki.style.top.slice(0, kopiy_okno_pometki.style.top.length - 2); break;
+        //okno_s_boku_1
+        case 6: idnomer = okno_s_boku_1.style.top.slice(0, okno_s_boku_1.style.top.length - 2); break;
+        //okno_s_boku_2
+        case 7: idnomer = okno_s_boku_2.style.top.slice(0, okno_s_boku_2.style.top.length - 2); break;
+        //okno_s_boku_3
+        case 8: idnomer = okno_s_boku_3.style.top.slice(0, okno_s_boku_3.style.top.length - 2); break;
+
+    }
+    idnomer -= 0;
+    return idnomer;
 }
 //=================================================================================================
 function stranica_izmen(deistvie) {
@@ -298,17 +333,54 @@ function okno_izmen(idnomer,deistvie) {
         case 3://move
            
             if (idnomer == 0) {
-                ok = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2);
-                ok -= 0;
-                ok += okno_besedi.clientHeight;
-                
-                if (event.clientY > ok - 5 && event.clientY < ok) okno_besedi.style.cursor = 'ns-resize';
+
+                if (event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight) okno_besedi.style.cursor = 'ns-resize';
                 else okno_besedi.style.cursor = 'default';
             }
             
                 break;
     }
 }
+//=================================================================================================
+function okno_izmen_top(idnomer, chislo) {
+
+    if (okno_besedi.style.visibility == 'visible' && idnomer!=0) {
+        if ((idnomer == 1 && okb > okn) || (idnomer == 2 && okb > okp)) {
+            okb += chislo;
+            okno_besedi.style.top = okb + 'px';
+        }
+
+    }
+        if (okno_novosti.style.visibility == 'visible' && idnomer!=1) {
+            if ((idnomer == 0 && okn > okb) || (idnomer == 2 && okn > okp)) {
+                okn += chislo;
+                okno_novosti.style.top = okn + 'px';
+            }
+            
+    }
+    if (okno_pometki.style.visibility == 'visible' && idnomer!=2) {
+        if ((idnomer == 0 && okp > okb) || (idnomer == 1 && okp > okn)) {
+            okp += chislo;
+            okno_pometki.style.top = okp + 'px';
+        }
+
+    }
+    if (okno_s_boku_1.style.visibility == 'visible') {
+        oks1 += chislo;
+        okno_s_boku_1.style.top = oks1 + 'px';
+    }
+    if (okno_s_boku_2.style.visibility == 'visible') {
+        oks2 += chislo;
+        okno_s_boku_2.style.top = oks2 + 'px';
+    }
+    if (okno_s_boku_3.style.visibility == 'visible') {
+        oks3 += chislo;
+        okno_s_boku_3.style.top = oks3 + 'px';
+    }
+    
+    
+}
+
 //=================================================================================================
 function all_control(deistvie) {
     {
@@ -319,6 +391,7 @@ function all_control(deistvie) {
             if (m_s_0.style.visibility == 'visible') menu_(3, 1, 3);
         } else {
             switch (deistvie) {
+                //---------------------------------------------------------------------------------------------
                 case 3://move
 
                     if (deform_stranica_right_down) {
@@ -332,17 +405,32 @@ function all_control(deistvie) {
                         ten_stranici.style.width = stranica.style.width;
                     }
                     else if (deform_okno_besedi_down) {
-
-                        okno_besedi.style.height = event.clientY-okb + 'px';
-                        
+                        perem = okno_besedi.clientHeight;
+                        okno_besedi.style.height = event.clientY - okb + 'px';
+                        okno_izmen_top(0, okno_besedi.clientHeight-perem);                    
                     }
-                    if (event.clientY > stranica_top && (event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10)) {
+                    else if (deform_okno_novosti_down) {
+                        perem = okno_novosti.clientHeight;
+                        okno_novosti.style.height = event.clientY - okn + 'px';
+                        okno_izmen_top(1, okno_novosti.clientHeight - perem);
+                    }
+                    else if (deform_okno_pometki_down) {
+                        perem = okno_pometki.clientHeight;
+                        okno_pometki.style.height = event.clientY - okp + 'px';
+                        okno_izmen_top(2, okno_pometki.clientHeight - perem);
+                    }
+
+                    //---------------------------------------------------------------------------------------------
+                    if (event.clientY > stranica_top && event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10) {
                         osnova.style.cursor = stranica.style.cursor = 'ew-resize';
                     }
-                    else if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5 && event.clientY > okb - 5 && event.clientY < okb + 10) {
-                        osnova.style.cursor = okno_besedi.style.cursor = 'ns-resize';
+                    else if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5 && ((event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight+10) || (event.clientY > okn + okno_novosti.clientHeight - 5 && event.clientY < okn + okno_novosti.clientHeight+10) || (event.clientY > okp + okno_pometki.clientHeight - 5 && event.clientY < okp + okno_pometki.clientHeight+10))) {
+                        osnova.style.cursor = 'ns-resize';
                     }
+                    else osnova.style.cursor = stranica.style.cursor = 'default'; 
+                    //---------------------------------------------------------------------------------------------
                     break;
+                //---------------------------------------------------------------------------------------------
                 case 4://down
                    // bob.innerHTML = okno_besedi.style.top;
                     if (event.clientY > stranica_top && (event.clientX > stranica_left + stranica.clientWidth - 5 && event.clientX < stranica_left + stranica.clientWidth + 10)) {
@@ -352,20 +440,34 @@ function all_control(deistvie) {
                         deform_stranica_right_down = true;
                     } else {
                         if (event.clientX > osnova.clientWidth - 250 && event.clientX < osnova.clientWidth - 5) {
-                            if (okno_besedi.style.visibility == 'visible') {
-                                okb = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2);
-                                okb -= 0;
-                                
+                            
+
+
                                 if (event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight + 10) {
                                     event.returnValue = false;
                                     deform_okno_besedi_down = true;
 
-                                    osnova.style.cursor = okno_besedi.style.cursor = 'ns-resize';
+                                    osnova.style.cursor = 'ns-resize';
                                 }
-                            }
-                            }
+                             else if (event.clientY > okn + okno_novosti.clientHeight - 5 && event.clientY < okn + okno_novosti.clientHeight + 10) {
+                                    event.returnValue = false;
+                                    deform_okno_novosti_down = true;
+
+                                    osnova.style.cursor = 'ns-resize';
+                                }
+                                else if (event.clientY > okp + okno_pometki.clientHeight - 5 && event.clientY < okp + okno_pometki.clientHeight + 10) {
+                                    event.returnValue = false;
+                                    deform_okno_pometki_down = true;
+
+                                    osnova.style.cursor = 'ns-resize';
+                                }
+
+                            
+
                         }
+                    }
                     break;
+                //---------------------------------------------------------------------------------------------
                 case 5://up
                     if (deform_stranica_right_down) {
                         event.returnValue = true;
@@ -377,7 +479,19 @@ function all_control(deistvie) {
                         deform_okno_besedi_down = false;
                         osnova.style.cursor = okno_besedi.style.cursor = 'default';
                     }
+                    if (deform_okno_novosti_down) {
+                        event.returnValue = true;
+                        deform_okno_novosti_down = false;
+                        osnova.style.cursor = okno_novosti.style.cursor = 'default';
+                    }
+                    if (deform_okno_pometki_down) {
+                        event.returnValue = true;
+                        deform_okno_pometki_down = false;
+                        osnova.style.cursor = okno_pometki.style.cursor = 'default';
+                    }
+
                     break;
+                //-----------------------------------------------------------------------------------------
             }
         }
 
@@ -471,97 +585,24 @@ function menu_(deistvie, nomer, idnomer) {
     }
 
 }
-//=================================================================================================
-function okno_izmenenie(idnomer) {
-    ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki;
-    n1 = ok1.style.top.slice(0, ok1.style.top.length - 2); n1 -= 0;
-    n2 = ok2.style.top.slice(0, ok2.style.top.length - 2); n2 -= 0;
-    n3 = ok3.style.top.slice(0, ok3.style.top.length - 2); n3 -= 0;
-    if (ok1.style.visibility == 'visible') {
-        if (ok2.style.visibility == 'visible') {
-            if (ok3.style.visibility == 'visible') {
-                if (n1 <= n2) {
-                    if (n1 <= n3) {
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        if (n2 <= n3) {
-                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        } else {
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        }
-                    }
-                    else {
-                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    }
-                } else {
-                    if (n2 <= n3) {
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        if (n1 <= n3) {
-                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        } else {
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        }
-                    } else {
-                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    }
-                }
-            } else {
-                if (n1 <= n2) {
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                } else {
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                }
-            }
-        } else {
-            if (ok3.style.visibility == 'visible') {
-                if (n1 <= n3) {
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                } else {
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                }
-            } else { ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10; }
-        }
-    } else {
-        if (ok2.style.visibility == 'visible') {
-            if (ok3.style.visibility == 'visible') {
-                if (n2 <= n3) {
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                } else {
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                }
-            } else { ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10; }
-        } else {
-            if (ok3.style.visibility == 'visible') { ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10; }
-        }
-    }
-}
 
 //=================================================================================================
 function okno_perebor(nomer) {
-    if (nomer == 0) { ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki; }
-    else { ok1 = okno_s_boku_1; ok2 = okno_s_boku_2; ok3 = okno_s_boku_3; }
-    n1 = ok1.style.top.slice(0, ok1.style.top.length - 2); n1 -= 0; 
-    n2 = ok2.style.top.slice(0, ok2.style.top.length - 2); n2 -= 0; 
-    n3 = ok3.style.top.slice(0, ok3.style.top.length - 2); n3 -= 0; 
+    if (nomer == 0) {
+        ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_pometki;
+        n1 = okb; n2 = okn; n3 = okp;
+    }
+    else {
+        ok1 = okno_s_boku_1; ok2 = okno_s_boku_2; ok3 = okno_s_boku_3;
+        n1 = oks1; n2 = oks2; n3 = oks3;
+    }
     if (ok1.style.visibility == 'visible') {
         if (ok2.style.visibility == 'visible') {
             if (ok3.style.visibility == 'visible') {
                 if (n1 <= n2) {
                     if (n1 <= n3) {
                         ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
+
                         if (n2 <= n3) {
                             ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
                             ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
@@ -626,6 +667,8 @@ function okno_perebor(nomer) {
             if (ok3.style.visibility == 'visible') { ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10; }
         }
     }
+    if (nomer == 0) { okb = top_ok(0); okn = top_ok(1); okp = top_ok(2); }
+    else { oks1 = top_ok(6); oks2 = top_ok(7); oks3 = top_ok(8); }
 }
 
 //=================================================================================================
@@ -661,14 +704,17 @@ function kn_okna_videlen(deistvie, idnomer) {
         default: odin_kn = kopiy_svert_3; odin_dr = kopiy_svert_3_a; break;
     }
     switch (deistvie) {
+        //-----------------------------------------------------------------------------------------
         case 1://over
             odin_kn.style.backgroundColor = videl_kn;
             odin_dr.style.backgroundColor = ne_videl_kn;
             break;
+        //-----------------------------------------------------------------------------------------
         case 2://out
             odin_kn.style.backgroundColor = ne_videl_kn;
             odin_dr.style.backgroundColor = ne_videl_ris;
             break;
+        //-----------------------------------------------------------------------------------------
         case 4://down
             okno_svert = 200;
             
@@ -693,6 +739,7 @@ function kn_okna_videlen(deistvie, idnomer) {
                 if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
                 if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
                 okno_besedi.style.top = okno_svert + 'px';
+                okb = top_ok(0);
                 okno_svert = 200;
                 okno_vidimost(0, 0); okno_vidimost(3, 1);
                 okno_perebor(0); okno_perebor(1);
@@ -702,6 +749,7 @@ function kn_okna_videlen(deistvie, idnomer) {
                 if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
                 if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
                 okno_novosti.style.top = okno_svert + 'px';
+                okn = top_ok(1);
                 okno_svert = 200;
                 okno_vidimost(1, 0); okno_vidimost(4, 1);
                  okno_perebor(0); okno_perebor(1);
@@ -711,6 +759,7 @@ function kn_okna_videlen(deistvie, idnomer) {
                 if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
                 if (okno_pometki.style.visibility == 'visible') okno_svert += okno_pometki.clientHeight + 10;
                 okno_pometki.style.top = okno_svert + 'px';
+                okp = top_ok(2);
                 okno_svert = 200;
                 okno_vidimost(2, 0); okno_vidimost(5, 1);
                 okno_perebor(0); okno_perebor(1);
@@ -723,22 +772,25 @@ function kn_okna_videlen(deistvie, idnomer) {
                     okno_s_boku_1.style.visibility = 'visible';
                     
                     okno_s_boku_1.style.top = okno_svert + 'px';
+                    oks1 = top_ok(6);
                 }
                 else if (idnomer == 3 || idnomer == 9) {
                     
                     okno_s_boku_2.style.visibility = 'visible';
-                    //okno_perebor(0); okno_perebor(1);
+                    
                     okno_s_boku_2.style.top = okno_svert + 'px';
+                  oks2 = top_ok(7);
                 }
                 else {
                     
                     okno_s_boku_3.style.visibility = 'visible';
-                    //okno_perebor(0); okno_perebor(1);
+                    
                     okno_s_boku_3.style.top = okno_svert + 'px';
+                    oks3 = top_ok(8);
                 }
             }
             break;
-
+        //-----------------------------------------------------------------------------------------
     }
 }
 //=================================================================================================
@@ -747,6 +799,7 @@ function okno_s_boku_videl(idnomer, deistvie) {
     ne_videl_okno = '#40a0d0';
     videl_text = '#104070'; 
     switch (deistvie) {
+        //-----------------------------------------------------------------------------------------
         case 1://over
             if (idnomer == 0) {
                 okno_s_boku_1.style.paddingRight = '30px';
@@ -754,6 +807,7 @@ function okno_s_boku_videl(idnomer, deistvie) {
             else if (idnomer == 1) { okno_s_boku_2.style.paddingRight = '30px'; }
             else { okno_s_boku_3.style.paddingRight = '30px'; }
             break;
+        //-----------------------------------------------------------------------------------------
         case 2://out
             if (idnomer == 0) {
                 okno_s_boku_1.style.paddingRight = '15px';
@@ -766,6 +820,7 @@ function okno_s_boku_videl(idnomer, deistvie) {
             break;
 
             break;
+        //-----------------------------------------------------------------------------------------
         case 4://down
             okno_svert = 200;
             if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
@@ -778,25 +833,28 @@ function okno_s_boku_videl(idnomer, deistvie) {
                 
                 okno_s_boku_1.style.visibility = 'hidden';
                 okno_besedi.style.top = okno_svert + 'px';
+                okb = top_ok(0);
                 okno_vidimost(0, 0);
             }
             else if (idnomer == 1) {
                 okno_s_boku_2.style.paddingRight = '15px';
                 okno_s_boku_2.style.visibility = 'hidden';
                 okno_novosti.style.top = okno_svert + 'px';
+                okn = top_ok(1);
+
                 okno_vidimost(1, 0);
             } else
             {
                 okno_s_boku_3.style.paddingRight = '15px';
                 okno_s_boku_3.style.visibility = 'hidden';
                 okno_pometki.style.top = okno_svert + 'px';
+                okp = top_ok(2);
                 okno_vidimost(2, 0);
             }
             okno_svert = 200;
             okno_perebor(0); okno_perebor(1);
             break;
-
-            break;
+        //-----------------------------------------------------------------------------------------
     }
 }
 //=================================================================================================
@@ -808,6 +866,8 @@ function p_videlen(deystvie, idnomer) {
     ne_videl_text='#104070';
     odin_og = document.getElementById("p_" + idnomer);
     switch (deystvie) {
+        //-----------------------------------------------------------------------------------------
+
         case 1://over
             odin_og.style.cursor = 'pointer';
             if (ogl_vibrono != idnomer) {
@@ -815,52 +875,56 @@ function p_videlen(deystvie, idnomer) {
                 odin_og.style.color = videl_text;
             }
             break;
+        //-----------------------------------------------------------------------------------------
         case 2://out
             if (ogl_vibrono != idnomer) {
                 odin_og.style.backgroundColor = ne_videl_chast;
                 odin_og.style.color = ne_videl_text;
             }
             break;
+        //-----------------------------------------------------------------------------------------
         case 4://down
             if (ogl_vibrono != idnomer) {
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
-                ten_vibronogo_p.style.top = perem+'px';
+                ten_vibronogo_p.style.top = perem + 'px';
                 perem -= 4;
-                
+
                 odin_og.style.top = perem + 'px';
-                    odin_og.style.backgroundColor = '#3090c0';
-                    odin_og.style.color = '#b0f0e0';
-                    odin_og.style.left = '15px';
-                    odin_og.style.width = '245px';
-                    odin_og.style.fontSize = '28px';
-                    odin_og.style.paddingLeft = '5px';
-                    odin_og.style.border = '2px solid #104070';
-                    odin_og.style.borderTopRightRadius = '10px';
-                    odin_og.style.borderBottomRightRadius = '10px';
-                    
+                odin_og.style.backgroundColor = '#3090c0';
+                odin_og.style.color = '#b0f0e0';
+                odin_og.style.left = '15px';
+                odin_og.style.width = '245px';
+                odin_og.style.fontSize = '28px';
+                odin_og.style.paddingLeft = '5px';
+                odin_og.style.border = '2px solid #104070';
+                odin_og.style.borderTopRightRadius = '10px';
+                odin_og.style.borderBottomRightRadius = '10px';
+
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
                 document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'visible';
-                    
-                odin_og=document.getElementById('p_' + ogl_vibrono);
+
+                odin_og = document.getElementById('p_' + ogl_vibrono);
                 odin_og.style.width = '220px';
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
 
                 perem -= 0;
                 perem += 4;
                 odin_og.style.top = perem + 'px';
-                odin_og.style.fontSize='24px';
-                odin_og.style.left='30px';
-                odin_og.style.color='#104070';
-                odin_og.style.borderRight='0px';
-                odin_og.style.borderTopRightRadius='0px';
-                odin_og.style.borderBottomRightRadius='0px';
+                odin_og.style.fontSize = '24px';
+                odin_og.style.left = '30px';
+                odin_og.style.color = '#104070';
+                odin_og.style.borderRight = '0px';
+                odin_og.style.borderTopRightRadius = '0px';
+                odin_og.style.borderBottomRightRadius = '0px';
 
-                odin_og.style.backgroundColor='#a0c0ff';
-                    
+                odin_og.style.backgroundColor = '#a0c0ff';
+
                 ogl_vibrono = idnomer;
                 document.getElementById('ten_ot_stranici_na_p_' + ogl_vibrono).style.visibility = 'hidden';
 
             }
+            break;
+        //-----------------------------------------------------------------------------------------   
     }
 }
 //=================================================================================================
