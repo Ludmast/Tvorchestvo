@@ -67,36 +67,18 @@ body
 }
 
 
-#gl_p{
+.c_gl_p{
   position:absolute;
   top:200px;
   left:10px;
   width:260px;
   height:300px;
   border-radius:10px;
-
-  border-bottom-right-radius:0px;
   background-color:#c0d0ff;
   font-size:22px;
   padding-left:10px;
   padding-top:10px;
 
-}
-.podsvetka_svet_p {
-    position: absolute;
-    width: 222px;
-    left: 35px;
-    height:8px;
-    background-color: white;
-    filter:blur(5px);
-}
-.podsvetka_ten_p {
-    position: absolute;
-    width: 222px;
-    left: 35px;
-    height: 5px;
-    background-color: black;
-    filter: blur(5px);
 }
 .ten_str {
     position: absolute;
@@ -127,6 +109,16 @@ position:absolute;
   
   background-color:#a0c0ff;
 }
+.c_ten {
+    position: absolute;
+    width:350px;
+    height:200px;
+    top:0px;
+    left:0px;
+    background-color:black;
+    filter: blur(8px);
+    visibility:hidden;
+}
 #ten_stranici {
     position: absolute;
     height:100%;
@@ -136,6 +128,7 @@ position:absolute;
     background-color: black;
     filter: blur(8px);
 }
+
 #stranica {
     position: absolute;
     height: 100%;
