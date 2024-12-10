@@ -115,7 +115,8 @@ position:absolute;
     top:0px;
     left:0px;
     background-color:black;
-    filter: blur(8px);
+    border-radius:10px;
+    filter: blur(10px);
     visibility:hidden;
 }
 #ten_stranici {
