@@ -9,6 +9,7 @@ body
     padding:0px;
     
 }
+
 #name_sait1 {
     position: absolute;
     right: 60px;
@@ -46,7 +47,18 @@ body
     font-style: italic;
     color: #c0ffe0;
 }
-
+#okna {
+    position: absolute;
+    width: 260px;
+    height: 100%;
+    right: 0px;
+    border: 2px solid #104070;
+    border-right:0px;
+    border-top:0px;
+    border-bottom:0px;
+    background-color: #5080b0;
+    visibility: visible;
+}
 
 #razdel_teni {
     position: absolute;
@@ -69,8 +81,8 @@ body
 .c_gl_p{
   position:absolute;
   top:200px;
-  left:50px;
-  width:262px;
+  left:30px;
+  width:400px;
   height:300px;
   border-radius:10px;
   background-color:#c0d0ff;
@@ -79,33 +91,33 @@ body
   padding-top:10px;
   color:black;
 }
-.ten_str {
-    position: absolute;
-    width: 2px;
-    left: 297px;
-    background-color: black;
-    filter: blur(3px);
-    visibility:visible;
-}
+
 #ten_vibronogo_p {
     position: absolute;
-    width:245px;
+    width:430px;
     left: 18px;
     background-color: black;
     filter: blur(8px);
 }
+.c_ten_p {
+    position: absolute;
+    width: 6px;
+    left: 444px;
+    
+    background-color: black;
+    filter: blur(3px);
+}
 .c_p{
 position:absolute;
   border:2px solid #104070;
-  width:222px;
+  width:380px;
   padding:3px;
   font-size:24px;
-  left:70px;
+  left:60px;
   color:#104070;
-  border-right:0px;
   border-top-left-radius:10px;
   border-bottom-left-radius:10px;
-  
+  text-align:left;
   background-color:#a0c0ff;
 }
 .c_ten {
@@ -122,7 +134,7 @@ position:absolute;
 #ten_stranici {
     position: absolute;
     height:100%;
-    left:300px;
+    left:180px;
     right:250px;
     top: 225px;
     background-color: black;
@@ -132,8 +144,8 @@ position:absolute;
 #stranica {
     position: absolute;
     height: 100%;
-    left: 300px;
-    right: 250px;
+    left: 180px;
+    right: 270px;
     top: 220px;
     overflow: hidden;
     border-radius: 5px;
@@ -180,7 +192,7 @@ position:absolute;
     
     filter: blur(3px);
 }
-.c_okno_s_boku {
+.c_okno_snizu {
     position: absolute;
     background-color: #40a0d0;
     color: #d0ffe0;
@@ -197,30 +209,6 @@ position:absolute;
     font-weight: 500;
     line-height:17px;
     visibility: hidden;
-}
-.c_kopiy_okno {
-    position: absolute;
-    background-color: #40a0d0;
-    width: 350px;
-    
-    border-radius: 10px;
-    border: 2px solid #104070;
-    font-size: 22px;
-    font-weight: 500;
-    
-    visibility: visible;
-}
-.c_kopiy_okno_text {
-    position: absolute;
-    right: 0px;
-    left: 0px;
-    top: 35px;
-    background-color: #fff8e0;
-    font-language-override: normal;
-    font-display: auto;
-    overflow: hidden;
-    font-size: 17px;
-    visibility: visible;
 }
 
 .c_okno {
@@ -272,8 +260,8 @@ position:absolute;
 }
 #ten_line_pomoshnik {
     position: absolute;
-    left: 0;
-    width: 210px;
+    left: 0px;
+    width: 170px;
     bottom: 15px;
     height: 5px;
     background-color: black;
@@ -283,14 +271,14 @@ position:absolute;
     position: absolute;
     left: 0;
 
-    width: 200px;
+    width: 160px;
     bottom:20px;
     height:1px;
 }
 #pomoshnik {
     position: absolute;
     bottom: 14px;
-    left: 80px;
+    left: 40px;
 }
 #ten_pomoshnika{
     position:absolute;
@@ -514,61 +502,26 @@ filter:blur(14px);
     text-align:center;
     border:5px groove red;
 }
-.c_razvert_a {
-    position: absolute;
-    width: 4px;
-    height: 4px;
-    right: 2px;
-    bottom: 2px;
-    border: 2px dotted #306090;
-}
-
-.c_razvert_b {
-    position: absolute;
-    width: 14px;
-    height: 14px;
-    left: 2px;
-    top: 2px;
-    background-color: #c0ffe0;
-
-}
-.c_razvert_c {
-    position: absolute;
-    width: 8px;
-    height: 8px;
-    right: 2px;
-    bottom: 2px;
-    background-color:#c0ffe0;
-}
-
-.c_razvert_d {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    left: 2px;
-    top: 2px;
-    border:2px dotted #306090;
-}
 
 .c_svert_a {
     position: absolute;
-    width: 5px;
-    height: 12px;
-    right: 6px;
-    bottom: 5px;
+    width: 12px;
+    height: 5px;
+    right: 5px;
+    bottom: 6px;
     background-color: #c0ffe0;
     border-top-left-radius:3px;
-    border-bottom-left-radius:3px;
-    border-top-right-radius:0px;
+    border-bottom-left-radius:0px;
+    border-top-right-radius:3px;
     border-bottom-right-radius:0px;
 }
 
 .c_svert_b {
     position: absolute;
-    width: 2px;
-    height: 18px;
-    right: 4px;
-    top: 2px;
+    width: 18px;
+    height: 2px;
+    right: 2px;
+    bottom: 4px;
     
     background-color: #306090;
 }
