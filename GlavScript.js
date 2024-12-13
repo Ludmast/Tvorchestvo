@@ -20,7 +20,8 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     str += "<span id='okno_snizu_1'class='c_okno_snizu'onmouseover='okno_snizu_videl(0,1)'onmouseout='okno_snizu_videl(0,2)'onmousedown='okno_snizu_videl(0,4)'></span><span id='okno_snizu_2'class='c_okno_snizu'onmouseover='okno_snizu_videl(1,1)'onmouseout='okno_snizu_videl(1,2)'onmousedown='okno_snizu_videl(1,4)'></span><span id='okno_snizu_3'class='c_okno_snizu'onmouseover='okno_snizu_videl(2,1)'onmouseout='okno_snizu_videl(2,2)'onmousedown='okno_snizu_videl(2,4)'></span>"
     //---------------------------------------------------------------------------------------------
-    //кнопки на 1 окне 
+
+    //кнопки на 1 окне
     str_plus = "<td id='svert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,0)' onmouseout = 'kn_okna_videlen(2,0)'onmousedown='kn_okna_videlen(4,0)'><span id='svert_1_a'class='c_svert_a'></span><span id='svert_1_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 1 окна
     str_plus += "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
@@ -38,6 +39,9 @@ function Sait_load() {
     str_plus += "<td><span id='svet_3_okna'class='c_svet_okna'></span><span id='ten_3_okna'class='c_ten_okna'></span></td>"
     //3 дополнительное окошко с закладками
     str += "<table id='okno_zametki' class='c_okno'onmousemove='okno_izmen(2,3)'><tr><td id='okno_name_zametki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_zametki' class='c_okno_text'></td></tr></table>";
+    //---------------------------------------------------------------------------------------------
+    //кнопка для двищения оконной панели
+    str += "<div id='dvigenie_paneli'></div><div id='peremeshenie_paneli'></div>";
     //---------------------------------------------------------------------------------------------
     //тень страницы
     str += "<div id='ten_stranici'></div><div id='ten'></div>"; 
@@ -58,11 +62,15 @@ function Sait_load() {
     okno_besedi.style.visibility = okno_novosti.style.visibility = okno_zametki.style.visibility = 'visible';
     okno_snizu_1.style.visibility = okno_snizu_2.style.visibility = okno_snizu_3.style.visibility = 'visible';
     //---------------------------------------------------------------------------------------------
+    okno_snizu_1.innerHTML = 'Б е с е д ы';
+    okno_snizu_2.innerHTML = 'Н о в о с т и';
+    okno_snizu_3.innerHTML = 'З а м е т к и';
+    //---------------------------------------------------------------------------------------------
     okno_name_besedi.innerHTML = 'Беседы';
     okno_name_novosti.innerHTML = 'Новости';
     okno_name_zametki.innerHTML = 'Заметки';
     //---------------------------------------------------------------------------------------------
-    okno_top = 200;
+    okno_top = 210;
     okno_besedi.style.top = okno_top + 'px';
     okno_top += okno_besedi.clientHeight + 10;
     okno_novosti.style.top = okno_top + 'px';
@@ -118,9 +126,9 @@ function Sait_load() {
             ten_vibronogo_p.style.left = odin_og.style.left;
 
             ten_vibronogo_p.style.top = t + 'px';
-            ten_vibronogo_p.style.height = odin_og.clientHeight +4+  'px';
+            ten_vibronogo_p.style.height = odin_og.clientHeight +5+  'px';
             //perem = t + 2;
-            t -= 4;
+            t -= 5;
         } else {
             odin_og.style.top = t + 'px';
             odin_ogt = document.getElementById("tp_" + i);
@@ -133,7 +141,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     gl_p.innerHTML = 'Содержимое раздела:';
     gl_p.style.height = t - 200 + 'px';
-    
+    text_stranici.style.paddingTop = gl_p.clientHeight/2 + 'px';
 
     ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
     ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
@@ -252,7 +260,7 @@ function Sait_load() {
     }
     m_i = 0;
     //---------------------------------------------------------------------------------------------
-    //setTimeout('all_control()', 10);
+    
     
 
 
@@ -266,11 +274,44 @@ function Sait_load() {
     
     peremeshenie_okon_down = false;
     
-    oks1 = top_ok(6);
-    oks2 = top_ok(7);
-    oks3 = top_ok(8);
+    //oks1 = top_ok(6);
+    //oks2 = top_ok(7);
+    //oks3 = top_ok(8);
+    staroe_x = innerWidth;
+    staroe_y = innerHeight;
+    peremeshenie_vniz = 0;
+    setTimeout('izmen_win()', 4);
     
+}
+//=================================================================================================
+function izmen_win() {
+    if (staroe_x != innerWidth) {
     
+        ten_stranici.style.width = stranica.clientWidth + 'px';
+        staroe_x = innerWidth;
+    }
+    if (staroe_y != innerHeight) {
+      
+        line_pomoshnik.style.top = innerHeight - 33 + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 20 + 'px';
+        pomoshnik.style.top = innerHeight - 14 + 'px';
+        staroe_y = innerHeight;
+    }
+    if (scrollY) {
+        line_pomoshnik.style.top = innerHeight - 33 + scrollY + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 20 + scrollY + 'px';
+        pomoshnik.style.top = innerHeight-14 + scrollY + 'px';
+        menu_line.style.height = 55 + scrollY + 'px';
+        okna.style.top =menu.style.top = scrollY + 'px';
+        m_g_0.style.top = m_y_0.style.top = m_os_0.style.top = m_s_0.style.top = 44 + scrollY + 'px';
+        ten_m.style.top = 60 + scrollY + 'px';
+        ten_menu.style.top = 55 + scrollY + 'px';
+        name_sait1.style.top = name_sait1_teni.style.top = 60 + scrollY + 'px';
+        name_sait2.style.top = name_sait2_teni.style.top = 120 + scrollY + 'px';
+        dvigenie_paneli.style.top = 130 + scrollY + 'px';
+        peremeshenie_paneli.style.top = 170 + scrollY + 'px';    
+    }
+    setTimeout('izmen_win()', 4);
 }
 //=================================================================================================
 function p_videlen(deystvie, idnomer) {
@@ -299,7 +340,7 @@ function p_videlen(deystvie, idnomer) {
         case 4://down
             if (ogl_vibrono != idnomer) {
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
-                ten_vibronogo_p.style.top = perem + 'px';
+                ten_vibronogo_p.style.top = perem-4 + 'px';
                 perem -= 7;
                 odin_og.style.top = perem + 'px';
                 odin_og.style.backgroundColor = '#3090c0';
@@ -314,7 +355,7 @@ function p_videlen(deystvie, idnomer) {
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.width = '430px';
 
-                ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
+                ten_vibronogo_p.style.height = odin_og.clientHeight +4+ 'px';
                 odin_og = document.getElementById('p_' + ogl_vibrono);
                 odin_og.style.width = '378px';
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
@@ -365,80 +406,10 @@ function all_control(deistvie) {
     }
 }
 //=================================================================================================
-function menu_(deistvie, nomer, idnomer) {
-    //---------------------------------------------------------------------------------------------
-    color_okna = "#a0d0ff";
-    color_nadpisi = "#607090";
-    color_videl = "#f0ffc0";
-    color_menu = menu.style.backgroundColor;
-    //---------------------------------------------------------------------------------------------
-    m = [];
-    m[0] = document.getElementById(ms[idnomer][0]);
-    for (i = 1; i < ms[idnomer][1] + 1; i++) m[i] = document.getElementById(ms[idnomer][0] + '_' + (i - 1));
-    //---------------------------------------------------------------------------------------------
-    switch (deistvie) {
-        //-----------------------------------------------------------------------------------------
-        case 1://over
-            if (nomer == 0) {
-
-                m[0].style.cursor = 'pointer';
-                m[0].style.backgroundColor = color_nadpisi;
-                m[0].style.color = color_videl;
-                if (idnomer != 0 && m_g_0.style.visibility == 'visible') menu_vis(0);
-                else if (idnomer != 1 && m_y_0.style.visibility == 'visible') menu_vis(1);
-                else if (idnomer != 2 && m_os_0.style.visibility == 'visible') menu_vis(2);
-                else if (idnomer != 3 && m_s_0.style.visibility == 'visible') menu_vis(3);
-                menu_vis(idnomer, 1);
-            }
-            else if (nomer == 1) {
-                m[1].style.cursor = 'pointer';
-                m[0].style.backgroundColor = color_nadpisi;
-                m[0].style.color = color_videl;
-            }
-            else m[nomer].style.backgroundColor = color_videl;
-            break;
-        //-----------------------------------------------------------------------------------------
-        case 2://out
-            if (nomer < 2) {
-                m[0].style.cursor = 'default';
-                m[0].style.color = 'black';
-                m[0].style.backgroundColor = color_menu;
-                if (event.clientY < 44) menu_vis(idnomer);
-            }
-            else {
-                m[nomer].style.backgroundColor = color_okna;
-                m[nomer].style.color = 'black';
-            }
-            break;
-        //-----------------------------------------------------------------------------------------
-        case 3://move
-            if (nomer == 0) {
-                if (idnomer == 0 && m_g_0.style.visibility == 'hidden') menu_vis(0, 1);
-                else if (idnomer == 1 && m_y_0.style.visibility == 'hidden') menu_vis(1, 1);
-                else if (idnomer == 2 && m_os_0.style.visibility == 'hidden') menu_vis(2, 1);
-                else if (idnomer == 3 && m_s_0.style.visibility == 'hidden') menu_vis(3, 1);
-            }
-            else {
-                if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 2 || event.clientX > ms[0][2] + menu_width - 2) menu_vis(0); }
-                if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 28 || event.clientX < ms[1][2] + 2 || event.clientX > ms[1][2] + menu_width - 2) menu_vis(1); }
-                if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 28 || event.clientX < ms[2][2] + 2 || event.clientX > ms[2][2] + menu_width - 2) menu_vis(2); }
-                if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 28 || event.clientX < ms[3][2] + 2 || event.clientX > ms[3][2] + menu_width - 2) menu_vis(3); }
-            }
-            break;
-        //-----------------------------------------------------------------------------------------
-        case 4://down
-            m[nomer].style.backgroundColor = 'black';
-            m[nomer].style.color = color_videl;
-            break;
-        //-----------------------------------------------------------------------------------------
-    }
-}
-//=================================================================================================
 function stranica_izmen(deistvie) {
     switch (deistvie) {
         case 3://move
-            if (event.clientX < stranica_left + 5 || event.clientX > stranica_left + stranica.clientWidth - 5) stranica.style.cursor = 'ew-resize';
-            else stranica.style.cursor = 'default';
+
             break;
         case 2://down
 
@@ -891,6 +862,76 @@ function self_random(nachalo = 1, konec = 2) {
     //if (random_plus == 0) random_plus = 1; else random_plus = 0;
     return otvet;
 }
+//=================================================================================================
+function menu_(deistvie, nomer, idnomer) {
+    //---------------------------------------------------------------------------------------------
+    color_okna = "#a0d0ff";
+    color_nadpisi = "#607090";
+    color_videl = "#f0ffc0";
+    color_menu = menu.style.backgroundColor;
+    //---------------------------------------------------------------------------------------------
+    m = [];
+    m[0] = document.getElementById(ms[idnomer][0]);
+    for (i = 1; i < ms[idnomer][1] + 1; i++) m[i] = document.getElementById(ms[idnomer][0] + '_' + (i - 1));
+    //---------------------------------------------------------------------------------------------
+    switch (deistvie) {
+        //-----------------------------------------------------------------------------------------
+        case 1://over
+            if (nomer == 0) {
+
+                m[0].style.cursor = 'pointer';
+                m[0].style.backgroundColor = color_nadpisi;
+                m[0].style.color = color_videl;
+                if (idnomer != 0 && m_g_0.style.visibility == 'visible') menu_vis(0);
+                else if (idnomer != 1 && m_y_0.style.visibility == 'visible') menu_vis(1);
+                else if (idnomer != 2 && m_os_0.style.visibility == 'visible') menu_vis(2);
+                else if (idnomer != 3 && m_s_0.style.visibility == 'visible') menu_vis(3);
+                menu_vis(idnomer, 1);
+            }
+            else if (nomer == 1) {
+                m[1].style.cursor = 'pointer';
+                m[0].style.backgroundColor = color_nadpisi;
+                m[0].style.color = color_videl;
+            }
+            else m[nomer].style.backgroundColor = color_videl;
+            break;
+        //-----------------------------------------------------------------------------------------
+        case 2://out
+            if (nomer < 2) {
+                m[0].style.cursor = 'default';
+                m[0].style.color = 'black';
+                m[0].style.backgroundColor = color_menu;
+                if (event.clientY < 44) menu_vis(idnomer);
+            }
+            else {
+                m[nomer].style.backgroundColor = color_okna;
+                m[nomer].style.color = 'black';
+            }
+            break;
+        //-----------------------------------------------------------------------------------------
+        case 3://move
+            if (nomer == 0) {
+                if (idnomer == 0 && m_g_0.style.visibility == 'hidden') menu_vis(0, 1);
+                else if (idnomer == 1 && m_y_0.style.visibility == 'hidden') menu_vis(1, 1);
+                else if (idnomer == 2 && m_os_0.style.visibility == 'hidden') menu_vis(2, 1);
+                else if (idnomer == 3 && m_s_0.style.visibility == 'hidden') menu_vis(3, 1);
+            }
+            else {
+                if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 2 || event.clientX > ms[0][2] + menu_width - 2) menu_vis(0); }
+                if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 28 || event.clientX < ms[1][2] + 2 || event.clientX > ms[1][2] + menu_width - 2) menu_vis(1); }
+                if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 28 || event.clientX < ms[2][2] + 2 || event.clientX > ms[2][2] + menu_width - 2) menu_vis(2); }
+                if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 28 || event.clientX < ms[3][2] + 2 || event.clientX > ms[3][2] + menu_width - 2) menu_vis(3); }
+            }
+            break;
+        //-----------------------------------------------------------------------------------------
+        case 4://down
+            m[nomer].style.backgroundColor = 'black';
+            m[nomer].style.color = color_videl;
+            break;
+        //-----------------------------------------------------------------------------------------
+    }
+}
+
 //=================================================================================================
 function o(id_element, width = 10, height = 10, left = 100, top = 100, backgroundColor) {
     id_element.style.position = 'absolute';
