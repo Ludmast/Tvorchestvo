@@ -265,6 +265,8 @@ function okno_izmen(idnomer,deistvie) {
             if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10 && idnomer == 2 && event.clientY > okz + okno_zametki.clientHeight - 5) okno_zametki.style.cursor = 'ns-resize';
             else okno_zametki.style.cursor = 'default';
             if (deform_okno_besedi_down) panel_izmen(3);
+            if (deform_okno_novosti_down) panel_izmen(3);
+            if(deform_okno_zametki_down) panel_izmen(3);
             
             break;
         case 4://down
@@ -289,7 +291,17 @@ function panel_izmen(deistvie) {
                 perem = okno_besedi.clientHeight;
                 if (event.clientY - okb < 100) okno_besedi.style.height = '100px';
                 else okno_besedi.style.height = event.clientY - okb + 'px';
-                okno_izmen_top(0, okno_besedi.clientHeight-perem);
+                okno_izmen_top(0, okno_besedi.clientHeight - perem);
+            } else if (deform_okno_novosti_down) {
+                perem = okno_novosti.clientHeight;
+                if (event.clientY - okn < 100) okno_novosti.style.height = '100px';
+                else okno_novosti.style.height = event.clientY - okn + 'px';
+                okno_izmen_top(1, okno_novosti.clientHeight - perem);
+            } else if (deform_okno_zametki_down) {
+                perem = okno_zametki.clientHeight;
+                if (event.clientY - okz < 100) okno_zametki.style.height = '100px';
+                else okno_zametki.style.height = event.clientY - okz + 'px';
+                okno_izmen_top(2, okno_zametki.clientHeight - perem);
             }
 
             break;
@@ -297,7 +309,7 @@ function panel_izmen(deistvie) {
             if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10) {
                 if (okno_besedi.style.visibility == 'visible' && event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight + 5) deform_okno_besedi_down = true;
                 else if (okno_novosti.style.visibility == 'visible' && event.clientY > okn + okno_novosti.clientHeight - 5 && event.clientY < okn + okno_novosti.clientHeight + 5) deform_okno_novosti_down = true;
-                else if (okno_zametki.style.visibility == 'visible' && event.clientY > okz + okno_zametki.clientHeight - 5 && event.clientY < okz + okno_zametki.clientHeight + 5) deform_okno_zametki_down
+                else if (okno_zametki.style.visibility == 'visible' && event.clientY > okz + okno_zametki.clientHeight - 5 && event.clientY < okz + okno_zametki.clientHeight + 5) deform_okno_zametki_down = true;
                 event.returnValue = false;
             }
             break;
