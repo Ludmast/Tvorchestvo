@@ -14,7 +14,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
-    str += "<div id='okna'></div>";
+    str += "<div id='okna'onmousemove='panel_izmen(3)'onmousedown='panel_izmen(4)'onmouseup='panel_izmen(5)'></div > ";
     //---------------------------------------------------------------------------------------------
     str += "<span id='okno_snizu_1'class='c_okno_snizu'onmouseover='okno_snizu_videl(0,1)'onmouseout='okno_snizu_videl(0,2)'onmousedown='okno_snizu_videl(0,4)'></span><span id='okno_snizu_2'class='c_okno_snizu'onmouseover='okno_snizu_videl(1,1)'onmouseout='okno_snizu_videl(1,2)'onmousedown='okno_snizu_videl(1,4)'></span><span id='okno_snizu_3'class='c_okno_snizu'onmouseover='okno_snizu_videl(2,1)'onmouseout='okno_snizu_videl(2,2)'onmousedown='okno_snizu_videl(2,4)'></span>"
     //---------------------------------------------------------------------------------------------
@@ -23,19 +23,19 @@ function Sait_load() {
     //свет и тень на заголовке 1 окна
     str_plus += "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
     //1 дополнительное окошко с беседами
-    str += "<table id='okno_besedi' class='c_okno'onmousemove='okno_izmen(0,3)'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_besedi' class='c_okno'onmousemove='okno_izmen(0,3)'onmousedown='okno_izmen(0,4)'onmouseup='okno_izmen(0,5)'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
     //кнопки на 2 окне 
     str_plus = "<td id='svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,1)' onmouseout = 'kn_okna_videlen(2,1)'onmousedown='kn_okna_videlen(4,1)'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 2 окна
     str_plus += "<td><span id='svet_2_okna'class='c_svet_okna'></span><span id='ten_2_okna'class='c_ten_okna'></span></td>"
     //2 дополнительное окошко с новостями
-    str += "<table id='okno_novosti' class='c_okno'onmousemove='okno_izmen(1,3)'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_novosti' class='c_okno'onmousemove='okno_izmen(1,3)'onmousedown='okno_izmen(1,4)'onmouseup='okno_izmen(1,5)'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
     //кнопки на 1 окне 
     str_plus = "<td id='svert_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,2)' onmouseout = 'kn_okna_videlen(2,2)'onmousedown='kn_okna_videlen(4,2)'><span id='svert_3_a'class='c_svert_a'></span><span id='svert_3_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 3 окна
     str_plus += "<td><span id='svet_3_okna'class='c_svet_okna'></span><span id='ten_3_okna'class='c_ten_okna'></span></td>"
     //3 дополнительное окошко с закладками
-    str += "<table id='okno_zametki' class='c_okno'onmousemove='okno_izmen(2,3)'><tr><td id='okno_name_zametki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_zametki' class='c_okno_text'></td></tr></table>";
+    str += "<table id='okno_zametki' class='c_okno'onmousemove='okno_izmen(2,3)'onmousedown='okno_izmen(2,4)'onmouseup='okno_izmen(2,5)'><tr><td id='okno_name_zametki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_zametki' class='c_okno_text'></td></tr></table>";
     //---------------------------------------------------------------------------------------------
     //кнопка для двищения оконной панели
     str += "<div id='dvigenie_paneli'></div><div id='peremeshenie_paneli'></div>";
@@ -234,11 +234,11 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     stranici_right = stranica_left + stranica.clientHeight;
     stranica_left_p = stranica_left;
-    deform_stranica_left_down = false;
+    
     gl_p_vis_hidden = false;
     deform_okno_besedi_down = false;
     deform_okno_novosti_down = false;
-    deform_okno_pometki_down = false;
+    deform_okno_zametki_down = false;
     peremeshenie_okon_down = false;
     okb = top_ok(0);
     okn = top_ok(1);
@@ -249,21 +249,63 @@ function Sait_load() {
     staroe_x = innerWidth;
     staroe_y = innerHeight;
     peremeshenie_vniz = 0;
+    posle_scroll = false;
     setTimeout('izmen_win()', 4);
 }
 //=================================================================================================
-function okno_izmen(deistvie, idnomer) {
+function okno_izmen(idnomer,deistvie) {
     switch (deistvie) {
-        case 2://move
-
+        case 3://move
+            // bob.innerHTML = event.clientY;
+            
+            if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10&&idnomer == 0 && event.clientY > okb + okno_besedi.clientHeight - 5) okno_besedi.style.cursor = 'ns-resize';
+            else okno_besedi.style.cursor = 'default';
+            if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10 && idnomer == 1 && event.clientY > okn + okno_novosti.clientHeight - 5) okno_novosti.style.cursor = 'ns-resize';
+            else okno_novosti.style.cursor = 'default';
+            if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10 && idnomer == 2 && event.clientY > okz + okno_zametki.clientHeight - 5) okno_zametki.style.cursor = 'ns-resize';
+            else okno_zametki.style.cursor = 'default';
+            if (deform_okno_besedi_down) panel_izmen(3);
+            
+            break;
+        case 4://down
+            panel_izmen(4);
+            break;
+        case 5://up
+            panel_izmen(5);
             break;
     }
 }
 //=================================================================================================
-function panel_izmen(deistvie, idnomer) {
+function panel_izmen(deistvie) {
     switch (deistvie) {
-        case 2://move
+        
+        case 3://move
+            if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10 &&
+                ((okno_besedi.style.visibility == 'visible' && event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight + 5) ||
+                    (okno_novosti.style.visibility == 'visible' && event.clientY > okn + okno_novosti.clientHeight - 5 && event.clientY < okn + okno_novosti.clientHeight + 5) ||
+                    (okno_zametki.style.visibility == 'visible' && event.clientY > okz + okno_zametki.clientHeight - 5 && event.clientY < okz + okno_zametki.clientHeight + 5))) okna.style.cursor = 'ns-resize';
+            else okna.style.cursor = 'default';
+            if (deform_okno_besedi_down) {
+                perem = okno_besedi.clientHeight;
+                if (event.clientY - okb < 100) okno_besedi.style.height = '100px';
+                else okno_besedi.style.height = event.clientY - okb + 'px';
+                okno_izmen_top(0, okno_besedi.clientHeight-perem);
+            }
 
+            break;
+        case 4://down
+            if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10) {
+                if (okno_besedi.style.visibility == 'visible' && event.clientY > okb + okno_besedi.clientHeight - 5 && event.clientY < okb + okno_besedi.clientHeight + 5) deform_okno_besedi_down = true;
+                else if (okno_novosti.style.visibility == 'visible' && event.clientY > okn + okno_novosti.clientHeight - 5 && event.clientY < okn + okno_novosti.clientHeight + 5) deform_okno_novosti_down = true;
+                else if (okno_zametki.style.visibility == 'visible' && event.clientY > okz + okno_zametki.clientHeight - 5 && event.clientY < okz + okno_zametki.clientHeight + 5) deform_okno_zametki_down
+                event.returnValue = false;
+            }
+            break;
+        case 5://up
+            if (deform_okno_besedi_down) deform_okno_besedi_down = false;
+            if (deform_okno_novosti_down) deform_okno_novosti_down = false;
+            if (deform_okno_zametki_down) deform_okno_zametki_down = false;
+            event.returnValue = true;
             break;
     }
 }
@@ -279,7 +321,7 @@ function all_control(deistvie) {
             switch (deistvie) {
                 //---------------------------------------------------------------------------------------------
                 case 3://move
-
+                    if (event.clientX < osnova.clientWidth - okna.clientWidth) panel_izmen(5);
                     //---------------------------------------------------------------------------------------------
                     break;
                 //---------------------------------------------------------------------------------------------
@@ -583,8 +625,20 @@ function okno_izmen_top(idnomer, chislo) {
     if (okno_zametki.style.visibility == 'visible' && idnomer != 2) {
         if ((idnomer == 0 && okz > okb) || (idnomer == 1 && okz > okn)) {
             okz += chislo;
-            okno_pometki.style.top = okz + 'px';
+            okno_zametki.style.top = okz + 'px';
         }
+    }
+    if (okno_snizu_1.style.visibility == 'visible') {
+        oks1 += chislo;
+        okno_snizu_1.style.top = oks1 + 'px';
+    }
+    if (okno_snizu_2.style.visibility == 'visible') {
+        oks2 += chislo;
+        okno_snizu_2.style.top = oks2 + 'px';
+    }
+    if (okno_snizu_3.style.visibility == 'visible') {
+        oks3 += chislo;
+        okno_snizu_3.style.top = oks3 + 'px';
     }
 }
 //=================================================================================================
@@ -699,7 +753,12 @@ function izmen_win() {
         name_sait2.style.top = name_sait2_teni.style.top = 120 + scrollY + 'px';
         dvigenie_paneli.style.top = 130 + scrollY + 'px';
         peremeshenie_paneli.style.top = 170 + scrollY + 'px';
-    } else if (scrollY < 2) {
+        posle_scroll = true;
+    } else if (posle_scroll && scrollY < 2) {
+        posle_scroll = false;
+        line_pomoshnik.style.top = innerHeight - 33 + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 20 + 'px';
+        pomoshnik.style.top = innerHeight - 14  + 'px';
         menu_line.style.height = '55px';
         okna.style.top = menu.style.top = '0px';
         m_g_0.style.top = m_y_0.style.top = m_os_0.style.top = m_s_0.style.top = '44px';
