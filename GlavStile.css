@@ -63,22 +63,22 @@ body
     position: absolute;
     width: 25px;
     height: 35px;
-    top: 130px;
+    top: 160px;
     right: 250px;
     border: 2px solid #104070;
     background-color: #5080b0;
     border-radius: 8px;
     
 }
-#peremeshenie_paneli {
-    position: absolute;
-    width: 25px;
-    height: 25px;
-    top: 170px;
-    right: 250px;
-    border: 2px solid #104070;
-    background-color: #5080b0;
-    border-radius: 8px;
+#dvig_ris{
+    position:absolute;
+    width:5px;
+    height:25px;
+    top:5px;
+    left:8px;
+    border:2px solid #104070;
+    border-top:0px;
+    border-bottom:0px;
 }
 #razdel_teni {
     position: absolute;
