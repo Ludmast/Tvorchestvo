@@ -11,6 +11,7 @@ array_menu_4 = ["Инструкция по сайту", "Донаты", "Об а
 function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
+    okna_width = 270;
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -38,7 +39,7 @@ function Sait_load() {
     str += "<table id='okno_zametki' class='c_okno'onmousemove='okno_izmen(2,3)'onmousedown='okno_izmen(2,4)'onmouseup='okno_izmen(2,5)'><tr><td id='okno_name_zametki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_zametki' class='c_okno_text'></td></tr></table>";
     //---------------------------------------------------------------------------------------------
     //кнопка для двищения оконной панели
-    str += "<div id='dvigenie_paneli'></div><div id='peremeshenie_paneli'></div>";
+    str += "<div id='dvigenie_paneli'onmouseover='kn_dvig_panel(1)'onmouseout='kn_dvig_panel(2)'onmousemove='kn_dvig_panel(3)'onmousedown='kn_dvig_panel(4)'onmouseup='kn_dvig_panel(5)'><div id='dvig_ris'></div></div>";
     //---------------------------------------------------------------------------------------------
     //тень страницы
     str += "<div id='ten_stranici'></div><div id='ten'></div>"; 
@@ -63,7 +64,7 @@ function Sait_load() {
     okno_name_novosti.innerHTML = 'Новости';
     okno_name_zametki.innerHTML = 'Заметки';
     //---------------------------------------------------------------------------------------------
-    okno_top = 210;
+    okno_top = 200;
     okno_besedi.style.top = okno_top + 'px';
     okno_top += okno_besedi.clientHeight + 10;
     okno_novosti.style.top = okno_top + 'px';
@@ -240,6 +241,7 @@ function Sait_load() {
     deform_okno_novosti_down = false;
     deform_okno_zametki_down = false;
     peremeshenie_okon_down = false;
+    okna_svernuti = false;
     okb = top_ok(0);
     okn = top_ok(1);
     okz = top_ok(2);
@@ -348,6 +350,27 @@ function all_control(deistvie) {
     }
 }
 
+//=================================================================================================
+function kn_dvig_panel(deistvie) {
+    color_kn = '#5080b0';
+    color_videl = '#80b0e0';
+    switch (deistvie) {
+        case 1://over
+            dvigenie_paneli.style.backgroundColor = color_videl;
+            dvigenie_paneli.style.cursor = 'ew-resize';
+            break;
+        case 2://out
+            dvigenie_paneli.style.backgroundColor = color_kn;
+            break;
+        case 5://move
+            break;
+        case 4://douwn
+            break;
+        case 5://up
+
+            break;
+    }
+}
 
 //=================================================================================================
 function kn_okna_videlen(deistvie, idnomer) {
@@ -391,6 +414,14 @@ function kn_okna_videlen(deistvie, idnomer) {
                 okno_snizu_3.style.top = okno_svert + 'px';
                 oks3 = top_ok(5);
             }
+            if (okno_snizu_1.style.visibility == 'visible' && okno_snizu_2.style.visibility == 'visible' && okno_snizu_3.style.visibility == 'visible') {
+                perem = okna.clientWidth;
+                okna.style.width = okno_snizu_1.clientWidth + 25 + 'px';
+                dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
+                stranica.style.width = stranica.clientWidth + perem - okna.clientWidth + 'px';
+                ten_stranici.style.width = stranica.clientWidth + 'px';
+                okna_svernuti = true;
+            }
             break;
         //-----------------------------------------------------------------------------------------
     }
@@ -416,6 +447,14 @@ function okno_snizu_videl(idnomer, deistvie) {
         //-----------------------------------------------------------------------------------------
         case 4://down
             okno_svert = 200;
+            if (okna_svernuti) {
+                perem = okna.clientWidth;
+                okna.style.width = okna_width + 'px';
+                dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
+                stranica.style.width = stranica.clientWidth - okna.clientWidth + perem + 'px';
+                ten_stranici.style.width = stranica.clientWidth + 'px';
+                okna_svernuti = false;
+            }
             if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
             if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
             if (okno_zametki.style.visibility == 'visible') okno_svert += okno_zametki.clientHeight + 10;
@@ -763,8 +802,8 @@ function izmen_win() {
         ten_menu.style.top = 55 + scrollY + 'px';
         name_sait1.style.top = name_sait1_teni.style.top = 60 + scrollY + 'px';
         name_sait2.style.top = name_sait2_teni.style.top = 120 + scrollY + 'px';
-        dvigenie_paneli.style.top = 130 + scrollY + 'px';
-        peremeshenie_paneli.style.top = 170 + scrollY + 'px';
+        dvigenie_paneli.style.top = 160 + scrollY + 'px';
+
         posle_scroll = true;
     } else if (posle_scroll && scrollY < 2) {
         posle_scroll = false;
@@ -778,8 +817,7 @@ function izmen_win() {
         ten_menu.style.top = '55px';
         name_sait1.style.top = name_sait1_teni.style.top = '60px';
         name_sait2.style.top = name_sait2_teni.style.top = '120px';
-        dvigenie_paneli.style.top = '130px';
-        peremeshenie_paneli.style.top = '170px';
+        dvigenie_paneli.style.top = '160px';
     }
     setTimeout('izmen_win()', 4);
 }
