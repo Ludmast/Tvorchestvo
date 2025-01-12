@@ -841,18 +841,12 @@ function izmen_win() {
         if (m_s_0.clientWidth <= m_s.clientWidth) m_s_0.style.width = m_s.clientWidth + 10 + 'px';
         else if (m_s_0.clientWidth > menu_width) m_s_0.style.width = menu_width + 'px';
         //-----------------------------------------------------------------------------------
-        //okna.style.left = osnova.clientWidth - okna.clientWidth + 'px';
-        
         stranica.style.width = osnova.clientWidth - okna.clientWidth- 135 + 'px';
         ten_stranici.style.width = stranica.clientWidth + 'px';
         dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
-        okno_besedi.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
+        okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
         //-----------------------------------------------------------------------------------
         staroe_x = innerWidth;
-        
-        //okna.style.width = osnova.clientWidth - stranica.clientWidth - 135 + 'px';
-        //okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
-        //okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = okna.clientWidth - 30 + 'px';
     }
     if (staroe_y != innerHeight) {
         line_pomoshnik.style.top = innerHeight - 33 + 'px';
