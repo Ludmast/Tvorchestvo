@@ -230,8 +230,8 @@ position:absolute;
 .c_okno {
     position: absolute;
     background-color: #40a0d0;
-    right: 5px;
-    width: 245px;
+    right: 10px;
+    width: 240px;
     height: 200px;
     border-radius: 10px;
     border: 2px solid #104070;
@@ -261,13 +261,13 @@ position:absolute;
     font-size: 17px;
     visibility: visible;
 }
-.c_okno_knopki{
-    position:absolute;
-    width:20px;
-    height:20px;
-    top:3px;
-    
-    border:2px groove #306090;
+.c_okno_knopki {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    border: 2px groove #306090;
+    background-color: #40a0d0;
 }
 
 #ten_line_pomoshnik {
@@ -504,6 +504,20 @@ filter:blur(14px);
     top: 548px;
     visibility: hidden;
 }
+.c_m_line_6 {
+    position: absolute;
+    width: 100%;
+    top: 616px;
+    visibility: hidden;
+}
+
+.c_m_line_7 {
+    position: absolute;
+    width: 100%;
+    top: 618px;
+    visibility: hidden;
+}
+
 #predupr{
     position:absolute;
     top:300px;
@@ -514,7 +528,30 @@ filter:blur(14px);
     text-align:center;
     border:5px groove red;
 }
-
+.c_na_meste_a{
+    position:absolute;
+    width:9px;
+    height:6px;
+    right:3px;
+    top:8px;
+    background-color:#c0ffe0;
+}
+.c_na_meste_b {
+    position: absolute;
+    width:5px;
+    height:2px;
+    top:10px;
+    left:3px;
+    background-color:#306090;
+}
+.c_na_meste_c {
+    position: absolute;
+    width: 2px;
+    height: 10px;
+    left: 8px;
+    top: 6px;
+    background-color: #306090;
+} 
 .c_svert_a {
     position: absolute;
     width: 5px;
