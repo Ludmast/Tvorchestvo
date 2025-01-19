@@ -17,7 +17,7 @@ function Sait_load() {
     //список содержимого раздела
     str += "<div id='okna'onmousemove='panel_izmen(3)'onmousedown='panel_izmen(4)'onmouseup='panel_izmen(5)'></div > ";
     //---------------------------------------------------------------------------------------------
-    str += "<span id='okno_snizu_1'class='c_okno_snizu'onmouseover='okno_snizu_videl(0,1)'onmouseout='okno_snizu_videl(0,2)'onmousedown='okno_snizu_videl(0,4)'></span><span id='okno_snizu_2'class='c_okno_snizu'onmouseover='okno_snizu_videl(1,1)'onmouseout='okno_snizu_videl(1,2)'onmousedown='okno_snizu_videl(1,4)'></span><span id='okno_snizu_3'class='c_okno_snizu'onmouseover='okno_snizu_videl(2,1)'onmouseout='okno_snizu_videl(2,2)'onmousedown='okno_snizu_videl(2,4)'></span>"
+    //str += "<span id='okno_snizu_1'class='c_okno_snizu'onmouseover='okno_snizu_videl(0,1)'onmouseout='okno_snizu_videl(0,2)'onmousedown='okno_snizu_videl(0,4)'></span><span id='okno_snizu_2'class='c_okno_snizu'onmouseover='okno_snizu_videl(1,1)'onmouseout='okno_snizu_videl(1,2)'onmousedown='okno_snizu_videl(1,4)'></span><span id='okno_snizu_3'class='c_okno_snizu'onmouseover='okno_snizu_videl(2,1)'onmouseout='okno_snizu_videl(2,2)'onmousedown='okno_snizu_videl(2,4)'></span>"
     //---------------------------------------------------------------------------------------------
     //кнопки на 3 окне 
     str_plus = "<td id='na_meste_3'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,5)' onmouseout = 'kn_okna_videlen(2,5)'onmousedown='kn_okna_videlen(4,5)'><span id='na_meste_3_a'class='c_na_meste_a'></span><span id='na_meste_3_b'class='c_na_meste_b'></span><span id='na_meste_3_c'class='c_na_meste_c'></span></td>";
@@ -27,17 +27,17 @@ function Sait_load() {
     //3 дополнительное окошко с закладками
     str += "<table id='okno_zametki' class='c_okno'onmousemove='okno_izmen(2,3)'onmousedown='okno_izmen(2,4)'onmouseup='okno_izmen(2,5)'><tr><td id='okno_name_zametki'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_zametki' class='c_okno_text'></td></tr></table>";
     //кнопки на 2 окне 
-    str_plus = "<td id='na_meste_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,4)' onmouseout = 'kn_okna_videlen(2,4)'onmousedown='kn_okna_videlen(4,4)'><span id='na_meste_2_a'class='c_na_meste_a'></span><span id='na_meste_2_b'class='c_na_meste_b'></span><span id='na_meste_2_c'class='c_na_meste_c'></span></td>";
-    str_plus += "<td id='svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,1)' onmouseout = 'kn_okna_videlen(2,1)'onmousedown='kn_okna_videlen(4,1)'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
+    //str_plus = "<td id='na_meste_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,4)' onmouseout = 'kn_okna_videlen(2,4)'onmousedown='kn_okna_videlen(4,4)'><span id='na_meste_2_a'class='c_na_meste_a'></span><span id='na_meste_2_b'class='c_na_meste_b'></span><span id='na_meste_2_c'class='c_na_meste_c'></span></td>";
+    //str_plus += "<td id='svert_2'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,1)' onmouseout = 'kn_okna_videlen(2,1)'onmousedown='kn_okna_videlen(4,1)'><span id='svert_2_a'class='c_svert_a'></span><span id='svert_2_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 2 окна
-    str_plus += "<td><span id='svet_2_okna'class='c_svet_okna'></span><span id='ten_2_okna'class='c_ten_okna'></span></td>"
+    str_plus = "<td><span id='svet_2_okna'class='c_svet_okna'></span><span id='ten_2_okna'class='c_ten_okna'></span></td>"
     //2 дополнительное окошко с новостями
     str += "<table id='okno_novosti' class='c_okno'onmousemove='okno_izmen(1,3)'onmousedown='okno_izmen(1,4)'onmouseup='okno_izmen(1,5)'><tr><td id='okno_name_novosti'class='c_okno_name'></td>" + str_plus + "</tr><tr><td id='okno_text_novosti' class='c_okno_text'></td></tr></table>";
     //кнопки на 1 окне
-    str_plus = "<td id='na_meste_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,3)' onmouseout = 'kn_okna_videlen(2,3)'onmousedown='kn_okna_videlen(4,3)'><span id='na_meste_1_a'class='c_na_meste_a'></span><span id='na_meste_1_b'class='c_na_meste_b'></span><span id='na_meste_1_c'class='c_na_meste_c'></span></td>";
-    str_plus += "<td id='svert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,0)' onmouseout = 'kn_okna_videlen(2,0)'onmousedown='kn_okna_videlen(4,0)'><span id='svert_1_a'class='c_svert_a'></span><span id='svert_1_b'class='c_svert_b'></span></td>";
+    //str_plus = "<td id='na_meste_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,3)' onmouseout = 'kn_okna_videlen(2,3)'onmousedown='kn_okna_videlen(4,3)'><span id='na_meste_1_a'class='c_na_meste_a'></span><span id='na_meste_1_b'class='c_na_meste_b'></span><span id='na_meste_1_c'class='c_na_meste_c'></span></td>";
+    //str_plus += "<td id='svert_1'class='c_okno_knopki'onmouseover = 'kn_okna_videlen(1,0)' onmouseout = 'kn_okna_videlen(2,0)'onmousedown='kn_okna_videlen(4,0)'><span id='svert_1_a'class='c_svert_a'></span><span id='svert_1_b'class='c_svert_b'></span></td>";
     //свет и тень на заголовке 1 окна
-    str_plus += "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
+    str_plus = "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
     //1 дополнительное окошко с беседами
     str += "<table id='okno_besedi' class='c_okno'onmousemove='okno_izmen(0,3)'onmousedown='okno_izmen(0,4)'onmouseup='okno_izmen(0,5)'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
      //---------------------------------------------------------------------------------------------
@@ -52,37 +52,37 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     in_load_1.innerHTML = str;
     //---------------------------------------------------------------------------------------------
-    na_meste_1.style.right = '40px';
-    na_meste_2.style.right = '40px';
+   // na_meste_1.style.right = '40px';
+   // na_meste_2.style.right = '40px';
     na_meste_3.style.right = '40px';
-    svert_1.style.right = '10px';
-    svert_2.style.right = '10px';
+   // svert_1.style.right = '10px';
+   // svert_2.style.right = '10px';
     svert_3.style.right = '10px';
     //---------------------------------------------------------------------------------------------
     okno_besedi.style.visibility = okno_novosti.style.visibility = okno_zametki.style.visibility = 'visible';
-    okno_snizu_1.style.visibility = okno_snizu_2.style.visibility = okno_snizu_3.style.visibility = 'hidden';
+    //okno_snizu_1.style.visibility = okno_snizu_2.style.visibility = okno_snizu_3.style.visibility = 'hidden';
     //---------------------------------------------------------------------------------------------
-    okno_snizu_1.innerHTML = 'Б е с е д ы';
-    okno_snizu_2.innerHTML = 'Н о в о с т и';
-    okno_snizu_3.innerHTML = 'З а м е т к и';
+    //okno_snizu_1.innerHTML = 'Б е с е д ы';
+    //okno_snizu_2.innerHTML = 'Н о в о с т и';
+    //okno_snizu_3.innerHTML = 'З а м е т к и';
     //---------------------------------------------------------------------------------------------
     okno_name_besedi.innerHTML = 'Беседы';
     okno_name_novosti.innerHTML = 'Новости';
     okno_name_zametki.innerHTML = 'Заметки';
     //---------------------------------------------------------------------------------------------
-    okno_top = 200;
+    okno_top = 210;
     okno_besedi.style.top = okno_top + 'px';
     okno_top += okno_besedi.clientHeight + 10;
     okno_novosti.style.top = okno_top + 'px';
     okno_top += okno_novosti.clientHeight + 10;
     okno_zametki.style.top = okno_top + 'px';
     //---------------------------------------------------------------------------------------------
-    okno_top += okno_zametki.clientHeight + 10;
-    okno_snizu_1.style.top = okno_top + 'px';
-    okno_top += okno_snizu_1.clientHeight + 10;
-    okno_snizu_2.style.top = okno_top+'px';
-    okno_top += okno_snizu_2.clientHeight + 10;
-    okno_snizu_3.style.top = okno_top + 'px';
+    //okno_top += okno_zametki.clientHeight + 10;
+    //okno_snizu_1.style.top = okno_top + 'px';
+    //okno_top += okno_snizu_1.clientHeight + 10;
+    //okno_snizu_2.style.top = okno_top+'px';
+    //okno_top += okno_snizu_2.clientHeight + 10;
+    //okno_snizu_3.style.top = okno_top + 'px';
     //---------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------
     ten_stranici.style.width = stranica.clientWidth + 'px';
@@ -247,14 +247,15 @@ function Sait_load() {
     deform_okno_novosti_down = false;
     deform_okno_zametki_down = false;
     peremeshenie_okon_down = false;
+    peremeshenie_okon_svernut = false;
+    peremeshenie_okon_fiksaciy = 0;
+
     okna_svernuti = false;
     okb = top_ok(0);
     okn = top_ok(1);
     okz = top_ok(2);
     okgran = 45;
-    oks1 = top_ok(3);
-    oks2 = top_ok(4);
-    oks3 = top_ok(5);
+
     staroe_x = innerWidth;
     staroe_y = innerHeight;
     peremeshenie_vniz = 0;
@@ -299,18 +300,28 @@ function panel_izmen(deistvie) {
             else okna.style.cursor = 'default';
             if (deform_okno_besedi_down) {
                 perem = okno_besedi.clientHeight;
-                if (event.clientY - okb < okgran) okno_besedi.style.height = okgran+'px';
-                else okno_besedi.style.height = event.clientY - okb + 'px';
+                if (event.clientY - okb < okgran) okno_besedi.style.height = okgran + 'px';
+                else {
+                    if (event.clientY - okb > osnova.clientHeight - 240 - okno_novosti.clientHeight - okno_zametki.clientHeight) okno_besedi.style.height = osnova.clientHeight - 240 - okno_novosti.clientHeight - okno_zametki.clientHeight + 'px';
+                    else okno_besedi.style.height = event.clientY - okb + 'px';
+
+                }
                 okno_izmen_top(0, okno_besedi.clientHeight - perem);
             } else if (deform_okno_novosti_down) {
                 perem = okno_novosti.clientHeight;
-                if (event.clientY - okn < okgran) okno_novosti.style.height = okgran+'px';
-                else okno_novosti.style.height = event.clientY - okn + 'px';
+                if (event.clientY - okn < okgran) okno_novosti.style.height = okgran + 'px';
+                else {
+                    if (event.clientY - okn > osnova.clientHeight - 240 - okno_besedi.clientHeight - okno_zametki.clientHeight) okno_novosti.style.height = osnova.clientHeight - 240 - okno_besedi.clientHeight - okno_zametki.clientHeight + 'px';
+                    else okno_novosti.style.height = event.clientY - okn + 'px';
+                }
                 okno_izmen_top(1, okno_novosti.clientHeight - perem);
             } else if (deform_okno_zametki_down) {
                 perem = okno_zametki.clientHeight;
-                if (event.clientY - okz < okgran) okno_zametki.style.height = okgran+'px';
-                else okno_zametki.style.height = event.clientY - okz + 'px';
+                if (event.clientY - okz < okgran) okno_zametki.style.height = okgran + 'px';
+                else {
+                    if (event.clientY - okz > osnova.clientHeight - 240 - okno_besedi.clientHeight - okno_novosti.clientHeight) okno_zametki.style.height = osnova.clientHeight - 240 - okno_besedi.clientHeight - okno_novosti.clientHeight + 'px';
+                    else okno_zametki.style.height = event.clientY - okz + 'px';
+                }
                 okno_izmen_top(2, okno_zametki.clientHeight - perem);
             }
 
@@ -353,12 +364,12 @@ function all_control(deistvie) {
 
                             okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
                             okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = okna.clientWidth - 30 + 'px';
-                        } else if (event.clientX > osnova.clientWidth - okno_snizu_1.clientWidth - 25) {
+                       // } else if (event.clientX > osnova.clientWidth - okno_snizu_1.clientWidth - 25) {
                         } else {
 
                             dvigenie_paneli.style.left = event.clientX - 10 + 'px';
                             okna.style.width = osnova.clientWidth - event.clientX + 'px';
-
+                            
                             okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
                             if (event.clientX < osnova.clientWidth - 150) {
                                 okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = okna.clientWidth - 30 + 'px';
@@ -366,6 +377,7 @@ function all_control(deistvie) {
 
                             stranica.style.width = ten_stranici.style.width = osnova.clientWidth - okna.clientWidth - 135 + 'px';
                         }   
+                        okna.style.left = event.clientX + 'px';
                     }
                     //---------------------------------------------------------------------------------------------
                     break;
@@ -399,10 +411,29 @@ function kn_dvig_panel(deistvie) {
             break;
         case 4://douwn
             peremeshenie_okon_down = true;
+            peremeshenie_okon_fiksaciy = event.clientX;
             event.returnValue = false;
             break;
         case 5://up
             peremeshenie_okon_down = false;
+            if (peremeshenie_okon_fiksaciy == event.clientX) {
+                if (peremeshenie_okon_svernut) {
+                    okna.style.left = osnova.clientWidth - 270 + 'px';
+                    okna.style.width = '270px';
+                    okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - 250 + 'px';
+                    okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = '240px';
+                    dvigenie_paneli.style.left = osnova.clientWidth - 280 + 'px';
+                    ten_stranici.style.width = stranica.style.width = osnova.clientWidth - 405 + 'px';
+                    peremeshenie_okon_svernut = false;
+
+                } else {
+                    okna.style.left = osnova.clientWidth - 30 + 'px';
+                    okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - 10 + 'px';
+                    dvigenie_paneli.style.left = osnova.clientWidth - 40 + 'px';
+                    ten_stranici.style.width = stranica.style.width = osnova.clientWidth - 165 + 'px';
+                    peremeshenie_okon_svernut = true;
+                }
+            }
             event.returnValue = true;
             break;
     }
@@ -435,91 +466,8 @@ function kn_okna_videlen(deistvie, idnomer) {
             break;
         //-----------------------------------------------------------------------------------------
         case 4://down
-            okno_svert = 200;
-            switch (idnomer) { case 0: okno_vidimost(0, 1); break; case 1: okno_vidimost(1, 1); break; case 2: okno_vidimost(2, 1); break; }
-            okno_perebor(0); okno_perebor(1); 
-            if (idnomer == 0) {
-                okno_snizu_1.style.visibility = 'visible';
-                okno_snizu_1.style.top = okno_svert + 'px';
-                oks1 = top_ok(3);
-            }
-            else if (idnomer == 1) {
-                okno_snizu_2.style.visibility = 'visible';
-                okno_snizu_2.style.top = okno_svert + 'px';
-                oks2 = top_ok(4);
-            }
-            else if (idnomer == 2) {
-                okno_snizu_3.style.visibility = 'visible';
-                okno_snizu_3.style.top = okno_svert + 'px';
-                oks3 = top_ok(5);
-            }
-            if (okno_snizu_1.style.visibility == 'visible' && okno_snizu_2.style.visibility == 'visible' && okno_snizu_3.style.visibility == 'visible') {
-                perem = okna.clientWidth;
-                okna.style.width = okno_snizu_1.clientWidth + 25 + 'px';
-                dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
-                stranica.style.width = stranica.clientWidth + perem - okna.clientWidth + 'px';
-                ten_stranici.style.width = stranica.clientWidth + 'px';
-                okna_svernuti = true;
-            }
-            break;
-        //-----------------------------------------------------------------------------------------
-    }
-}
-//=================================================================================================
-function okno_snizu_videl(idnomer, deistvie) {
-    videl_okno = '#d0ffe0';
-    ne_videl_okno = '#40a0d0';
-    videl_text = '#104070'; 
-    switch (deistvie) {
-        //-----------------------------------------------------------------------------------------
-        case 1://over
-            if (idnomer == 0) { okno_snizu_1.style.paddingRight = '30px'; }
-            else if (idnomer == 1) { okno_snizu_2.style.paddingRight = '30px'; }
-            else { okno_snizu_3.style.paddingRight = '30px'; }
-            break;
-        //-----------------------------------------------------------------------------------------
-        case 2://out
-            if (idnomer == 0) { okno_snizu_1.style.paddingRight = '15px'; }
-            else if (idnomer == 1) { okno_snizu_2.style.paddingRight = '15px'; }
-            else { okno_snizu_3.style.paddingRight = '15px'; }
-            break;
-        //-----------------------------------------------------------------------------------------
-        case 4://down
-            okno_svert = 200;
-            if (okna_svernuti) {
-                perem = okna.clientWidth;
-                okna.style.width = okno_besedi.clientWidth+30 + 'px';
-                dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
-                stranica.style.width = stranica.clientWidth - okna.clientWidth + perem + 'px';
-                ten_stranici.style.width = stranica.clientWidth + 'px';
-                okna_svernuti = false;
-            }
-            if (okno_besedi.style.visibility == 'visible') okno_svert += okno_besedi.clientHeight + 10;
-            if (okno_novosti.style.visibility == 'visible') okno_svert += okno_novosti.clientHeight + 10;
-            if (okno_zametki.style.visibility == 'visible') okno_svert += okno_zametki.clientHeight + 10;
-            if (idnomer == 0) {
-                okno_snizu_1.style.paddingRight = '15px';
-                okno_snizu_1.style.visibility = 'hidden';
-                okno_besedi.style.top = okno_svert + 'px';
-                okb = top_ok(0);
-                okno_vidimost(0, 0);
-            }
-            else if (idnomer == 1) {
-                okno_snizu_2.style.paddingRight = '15px';
-                okno_snizu_2.style.visibility = 'hidden';
-                okno_novosti.style.top = okno_svert + 'px';
-                okn = top_ok(1);
-                okno_vidimost(1, 0);
-            } else
-            {
-                okno_snizu_3.style.paddingRight = '15px';
-                okno_snizu_3.style.visibility = 'hidden';
-                okno_zametki.style.top = okno_svert + 'px';
-                okz = top_ok(2);
-                okno_vidimost(2, 0);
-            }
-            okno_svert = 200;
-            okno_perebor(0); okno_perebor(1);
+            okno_svert = 210;
+            
             break;
         //-----------------------------------------------------------------------------------------
     }
@@ -596,108 +544,12 @@ function top_ok(idnomer) {
         case 1: idnomer = okno_novosti.style.top.slice(0, okno_novosti.style.top.length - 2); break;
         //pometki
         case 2: idnomer = okno_zametki.style.top.slice(0, okno_zametki.style.top.length - 2); break;
-        //okno_s_boku_1
-        case 3: idnomer = okno_snizu_1.style.top.slice(0, okno_snizu_1.style.top.length - 2); break;
-        //okno_s_boku_2
-        case 4: idnomer = okno_snizu_2.style.top.slice(0, okno_snizu_2.style.top.length - 2); break;
-        //okno_s_boku_3
-        case 5: idnomer = okno_snizu_3.style.top.slice(0, okno_snizu_3.style.top.length - 2); break;
+        
     }
     idnomer -= 0;
     return idnomer;
 }
-//=================================================================================================
-function okno_perebor(nomer) {
-    if (nomer == 0) {
-        ok1 = okno_besedi; ok2 = okno_novosti; ok3 = okno_zametki;
-        n1 = okb; n2 = okn; n3 = okz;
-    }
-    else {
-        ok1 = okno_snizu_1; ok2 = okno_snizu_2; ok3 = okno_snizu_3;
-        n1 = oks1; n2 = oks2; n3 = oks3;
-    }
-    if (ok1.style.visibility == 'visible') {
-        if (ok2.style.visibility == 'visible') {
-            if (ok3.style.visibility == 'visible') {
-                if (n1 <= n2) {
-                    if (n1 <= n3) {
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
 
-                        if (n2 <= n3) {
-                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        } else {
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                            ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        }
-                    }
-                    else {
-                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    }
-                } else {
-                    if (n2 <= n3) {
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        if (n1 <= n3) {
-                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        } else {
-                            ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                            ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                        }
-                    } else {
-                        ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                        ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                        ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    }
-                }
-            } else {
-                if (n1 <= n2) {
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                } else {
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                }
-            }
-        } else {
-            if (ok3.style.visibility == 'visible') {
-                if (n1 <= n3) {
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                } else {
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                    ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10;
-                }
-            } else { ok1.style.top = okno_svert + 'px'; okno_svert += ok1.clientHeight + 10; }
-        }
-    } else {
-        if (ok2.style.visibility == 'visible') {
-            if (ok3.style.visibility == 'visible') {
-                if (n2 <= n3) {
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                } else {
-                    ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10;
-                    ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10;
-                }
-            } else { ok2.style.top = okno_svert + 'px'; okno_svert += ok2.clientHeight + 10; }
-        } else {
-            if (ok3.style.visibility == 'visible') { ok3.style.top = okno_svert + 'px'; okno_svert += ok3.clientHeight + 10; }
-        }
-    }
-    if (nomer == 0) { okb = top_ok(0); okn = top_ok(1); okz = top_ok(2); }
-    else { oks1 = top_ok(3); oks2 = top_ok(4); oks3 = top_ok(5); }
-}
-//=================================================================================================
-function okno_vidimost(idnomer, vidimo) {
-    switch (idnomer) {
-        case 0: okno_besedi.style.visibility = okno_name_besedi.style.visibility = okno_text_besedi.style.visibility = vidimo == 0 ? 'visible' : 'hidden'; break;
-        case 1: okno_novosti.style.visibility = okno_name_novosti.style.visibility = okno_text_novosti.style.visibility = vidimo == 0 ? 'visible' : 'hidden'; break;
-        case 2: okno_zametki.style.visibility = okno_name_zametki.style.visibility = okno_text_zametki.style.visibility = vidimo == 0 ? 'visible' : 'hidden'; break;
-    }
-}
 //=================================================================================================
 function okno_izmen_top(idnomer, chislo) {
     if (okno_besedi.style.visibility == 'visible' && idnomer != 0) {
@@ -856,9 +708,9 @@ function izmen_win() {
         name_sait1.style.top = name_sait1_teni.style.top = 60 + scrollY + 'px';
         name_sait2.style.top = name_sait2_teni.style.top = 120 + scrollY + 'px';
         dvigenie_paneli.style.top = 160 + scrollY + 'px';
-        okno_besedi.style.top = 200 + scrollY + 'px';
-        okno_novosti.style.top = 210 + okno_besedi.clientHeight + scrollY + 'px';
-        okno_zametki.style.top = 220 + okno_besedi.clientHeight + okno_novosti.clientHeight + scrollY + 'px';
+        okno_besedi.style.top = 210 + scrollY + 'px';
+        okno_novosti.style.top = 220 + okno_besedi.clientHeight + scrollY + 'px';
+        okno_zametki.style.top = 230 + okno_besedi.clientHeight + okno_novosti.clientHeight + scrollY + 'px';
         posle_scroll = true;
     } else if (posle_scroll && scrollY < 2) {
         posle_scroll = false;
@@ -873,6 +725,10 @@ function izmen_win() {
         name_sait1.style.top = name_sait1_teni.style.top = '60px';
         name_sait2.style.top = name_sait2_teni.style.top = '120px';
         dvigenie_paneli.style.top = '160px';
+        okno_besedi.style.top = '210px';
+        okno_novosti.style.top = 220 + okno_besedi.clientHeight + scrollY+'px';
+        okno_zametki.style.top = 230 + okno_besedi.clientHeight + okno_novosti.clientHeight + scrollY + 'px';
+
     }
     setTimeout('izmen_win()', 4);
 }
