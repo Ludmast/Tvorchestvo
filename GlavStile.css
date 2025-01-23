@@ -117,6 +117,7 @@ body
     width:430px;
     left: 18px;
     background-color: black;
+    border-radius:40%;
     filter: blur(8px);
 }
 .c_ten_p {
@@ -189,6 +190,27 @@ position:absolute;
     padding-right: 10px;
     visibility: visible;
 }
+.metka{
+    background:#a0ff00;
+}
+.reshenie{
+    background:#80c0ff;
+}
+.paragraf{
+    background:#ff9080;
+}
+.ssilka{
+    background:#ffd800;
+}
+.ts{
+    display:none;
+
+}
+h2 {
+    color: indianred;
+    text-align: center;
+    line-height: 35px;
+}
 .c_svet_okna{
     position:absolute;
     top:3px;
@@ -215,7 +237,7 @@ position:absolute;
     background-color: #40a0d0;
     right: 10px;
     width: 240px;
-    height: 200px;
+    height:200px;
     border-radius: 10px;
     border: 2px solid #104070;
     font-size: 22px;
