@@ -13,6 +13,8 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
     //---------------------------------------------------------------------------------------------
+    ts1_1.style.display = "block";
+    //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
     str += "<div id='okna'onmousemove='panel_izmen(3)'onmousedown='panel_izmen(4)'onmouseup='panel_izmen(5)'></div > ";
@@ -40,12 +42,12 @@ function Sait_load() {
     str_plus = "<td><span id='svet_1_okna'class='c_svet_okna'></span><span id='ten_1_okna'class='c_ten_okna'></span></td>"
     //1 дополнительное окошко с беседами
     str += "<table id='okno_besedi' class='c_okno'onmousemove='okno_izmen(0,3)'onmousedown='okno_izmen(0,4)'onmouseup='okno_izmen(0,5)'><tr><td id='okno_name_besedi'class='c_okno_name'></td>"+str_plus+"</tr><tr><td id='okno_text_besedi' class='c_okno_text'></td></tr></table>";
-     //---------------------------------------------------------------------------------------------
-    //кнопка для двищения оконной панели
-    str += "<div id='dvigenie_paneli'onmouseover='kn_dvig_panel(1)'onmouseout='kn_dvig_panel(2)'onmousemove='kn_dvig_panel(3)'onmousedown='kn_dvig_panel(4)'onmouseup='kn_dvig_panel(5)'><div id='dvig_ris'></div></div>";
     //---------------------------------------------------------------------------------------------
     //тень страницы
     str += "<div id='ten_stranici'></div><div id='ten'></div>"; 
+    //---------------------------------------------------------------------------------------------
+    //кнопка для двищения оконной панели
+    str += "<div id='dvigenie_paneli'onmouseover='kn_dvig_panel(1)'onmouseout='kn_dvig_panel(2)'onmousemove='kn_dvig_panel(3)'onmousedown='kn_dvig_panel(4)'onmouseup='kn_dvig_panel(5)'><div id='dvig_ris'></div></div>";
     //---------------------------------------------------------------------------------------------
     //тень содержимого раздела 2
     str += "<div id='ten1_gl_p'></div>";
@@ -70,7 +72,10 @@ function Sait_load() {
     okno_name_novosti.innerHTML = 'Новости';
     okno_name_zametki.innerHTML = 'Заметки';
     //---------------------------------------------------------------------------------------------
+    if (osnova.clientHeight < 840) okno_besedi.style.height = okno_novosti.style.height = okno_zametki.style.height = (osnova.clientHeight - 240) / 3 + 'px';
+    //---------------------------------------------------------------------------------------------
     okno_top = 210;
+    
     okno_besedi.style.top = okno_top + 'px';
     okno_top += okno_besedi.clientHeight + 10;
     okno_novosti.style.top = okno_top + 'px';
@@ -85,10 +90,12 @@ function Sait_load() {
     //okno_snizu_3.style.top = okno_top + 'px';
     //---------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------
+    stranica.style.width = osnova.clientWidth - 135 - okna.clientWidth + 'px';
     ten_stranici.style.width = stranica.clientWidth + 'px';
     //---------------------------------------------------------------------------------------------
     stranica_left = 300;
     stranica_top = 220;
+    
     //---------------------------------------------------------------------------------------------
     t = 250; 
     text_size = 35;
@@ -133,7 +140,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     gl_p.innerHTML = 'Содержимое раздела:';
     gl_p.style.height = t - 200 + 'px';
-    text_stranici.style.paddingTop = gl_p.clientHeight/2 + 'px';
+    text_stranici.style.paddingTop = gl_p.clientHeight/2+50 + 'px';
     ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
     ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
     ten1_gl_p.style.top = ten2_gl_p.style.top = '202px';
@@ -143,6 +150,7 @@ function Sait_load() {
     ten1_gl_p.style.borderRadius = ten2_gl_p.style.borderRadius = '10px';
     ten1_gl_p.style.filter = 'blur(12px)';
     ten2_gl_p.style.filter = 'blur(2px)';
+    
     //---------------------------------------------------------------------------------------------
     str = "";
     //тень под названием раздела
@@ -260,8 +268,20 @@ function Sait_load() {
     staroe_y = innerHeight;
     peremeshenie_vniz = 0;
     posle_scroll = false;
+   
 
+
+    
     setTimeout('izmen_win()', 4);
+    pom_etap_vipolnen = false;
+    pom_etap = 1;
+    pom_et_nomer = 0;
+    //pom_lico();
+}
+
+//=================================================================================================
+function sait_load_dopolnit() {
+
 }
 //=================================================================================================
 function okno_izmen(idnomer,deistvie) {
@@ -518,7 +538,9 @@ function p_videlen(deystvie, idnomer) {
             break;
         //-----------------------------------------------------------------------------------------
         case 4://down
+
             if (ogl_vibrono != idnomer) {
+                
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
                 ten_vibronogo_p.style.top = perem - 4 + 'px';
                 perem -= 7;
@@ -535,7 +557,10 @@ function p_videlen(deystvie, idnomer) {
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.width = '430px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
+                document.getElementById('ts' + '1_' + (idnomer+1)).style.display = 'block';
+                document.getElementById('ts' + '1_' + (ogl_vibrono+1)).style.display = 'none';
                 odin_og = document.getElementById('p_' + ogl_vibrono);
+                
                 odin_og.style.width = '378px';
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2);
                 perem -= 0;
@@ -720,6 +745,13 @@ function izmen_win() {
         staroe_x = innerWidth;
     }
     if (staroe_y != innerHeight) {
+        if (osnova.clientHeight < 840) {
+            if (osnova.clientHeight < 380) okno_vidimost(1); else if (okno_besedi.style.visibility=='hidden') okno_vidimost(0);
+
+            okno_besedi.style.height = okno_novosti.style.height = okno_zametki.style.height = (osnova.clientHeight - 240) / 3 + 'px';
+            okno_novosti.style.top = 220 + okno_besedi.clientHeight + 'px';
+            okno_zametki.style.top = 230 + okno_besedi.clientHeight + okno_novosti.clientHeight + 'px';
+        }
         line_pomoshnik.style.top = innerHeight - 33 + 'px';
         ten_line_pomoshnik.style.top = innerHeight - 20 + 'px';
         pomoshnik.style.top = innerHeight - 14 + 'px';
@@ -881,4 +913,6 @@ function pom_glaz(chislo, uvelich) {
     if (uvelich) { switch (chislo) { case 20: return 25; case 25: return 41; case 41: return 57; case 57: return 62; } }
     else { switch (chislo) { case 62: return 57; case 57: return 41; case 41: return 25; case 25: return 20; } }
 }
+
+
 //=================================================================================================
