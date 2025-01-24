@@ -191,25 +191,67 @@ position:absolute;
     visibility: visible;
 }
 .metka{
-    background:#a0ff00;
+    background:#c0ff20;
+    padding-bottom:5px;
+    padding-left:5px;
+    padding-right:5px;
 }
-.reshenie{
-    background:#80c0ff;
+.reshenie {
+    background: #a0e0ff;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-.paragraf{
-    background:#ff9080;
+.paragraf {
+    background: #ffb0a0;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
-.ssilka{
-    background:#ffd800;
+.ssilka {
+    background: #fff040;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.interes {
+    background: #c0c0c0;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 .ts{
     display:none;
 
 }
+
 h2 {
     color: indianred;
     text-align: center;
     line-height: 35px;
+}
+#ten_kn_nazad {
+    position: absolute;
+    background-color: black;
+    width: 50px;
+    height: 60px;
+    border-radius: 40%;
+    filter:blur(5px);
+    
+}
+#kn_nazad {
+    position: absolute;
+    background-color: #5080b0;
+    border: 2px solid #104070;
+    width: 45px;
+    height: 45px;
+    border-radius: 40%;
+    color:#104070;
+    font-size: 40px;
+    font-weight: 800;
+    text-align:center;
+    padding-top:10px;
+    
 }
 .c_svet_okna{
     position:absolute;
