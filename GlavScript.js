@@ -3,7 +3,7 @@ array_name_sait = ["Творчество", "во всём!"];
 predupregd = 'Сайт находится в разработке';
 //=================================================================================================
 array_menu = ["Главное", "Обучение", "Обсуждение", "Справка"];
-array_menu_1 = ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "Регистрация"];
+array_menu_1 = ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "История просмотра", "Регистрация"];
 array_menu_2 = ["Обучение от умельцев", "Творчество", "Программирование", "Алгебра и Геометрия", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика", "Астрономия", "Языки стран мира", "Черчение", "Музыка", "Физкультура", "Для самых маленьких","Энциклопедии","Заметки"];
 array_menu_3 = ["Беседы", "Предложения/критика", "Написать письмо"];
 array_menu_4 = ["Инструкция по сайту", "Донаты", "Об авторе сайта"];
@@ -12,8 +12,16 @@ function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
     okna_width = 270;
+    
     //---------------------------------------------------------------------------------------------
-    ts1_1.style.display = "block";
+    if (localStorage.getItem('n_razdela')) {
+        ogl_vibrono = localStorage.getItem('n_razdela') -1;
+        document.getElementById('ts1_' + localStorage.getItem('n_razdela')).style.display = "block";
+    }
+
+    else {
+        ogl_vibrono = 0; ts1_1.style.display = "block";
+    }
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -191,7 +199,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     menu_width = 300;
     m1_left = 22; m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4; m3_left = m2_left + m_y.clientWidth + m_razdelitel.clientWidth + 4; m4_left = m3_left + m_os.clientWidth + m_razdelitel.clientWidth + 4; m_b = 1;
-    ms = [["m_g", 7, m1_left, 4], ["m_y", 20, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
+    ms = [["m_g", 8, m1_left, 4], ["m_y", 20, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
     //---------------------------------------------------------------------------------------------
     str = "<div id='ten_m'></div>";
     str += "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseleave='menu_(2,1,0)'onmousemove='menu_(3,1,0)'>"
@@ -573,7 +581,8 @@ function p_videlen(deystvie, idnomer) {
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.width = '430px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
-                document.getElementById('ts' + '1_' + (idnomer+1)).style.display = 'block';
+                localStorage.setItem('n_razdela', (idnomer + 1));
+                document.getElementById('ts' + '1_' + (idnomer + 1)).style.display = 'block';
                 document.getElementById('ts' + '1_' + (ogl_vibrono + 1)).style.display = 'none';
                 okna.style.height = limit + stranica.clientHeight + 'px';
                 odin_og = document.getElementById('p_' + ogl_vibrono);
@@ -788,6 +797,7 @@ function izmen_win() {
         ten_line_pomoshnik.style.top = innerHeight - 20 + scrollY + 'px';
         pomoshnik.style.top = innerHeight - 14 + scrollY + 'px';
         ten_stranici.style.height = stranica.clientHeight + 'px';
+        okna.style.height = limit + stranica.clientHeight + 'px';
         if (scrollY > 150) {
             dvigenie_paneli.style.top = 10 + scrollY + 'px';
             okno_besedi.style.top = 60 + scrollY + 'px';
