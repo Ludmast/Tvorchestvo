@@ -13,6 +13,7 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
     
+    
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -45,18 +46,51 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     in_load_1.innerHTML = str;
     //---------------------------------------------------------------------------------------------
+    minus = plus = 0;
+    okb = top_ok(0);
+    okn = top_ok(1);
+    okz = top_ok(2);
+    okgran = 45;
+
+    //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('n_razdela')) {
         ogl_vibrono = localStorage.getItem('n_razdela') - 1;
         document.getElementById('ts1_' + localStorage.getItem('n_razdela')).style.display = "block";
-        if (scrollY > 150) okno_top = 50; else okno_top = 210 - scrollY;
-      //  bob.innerHTML = scrollY;
+        if (scrollY > 150) okno_top = 60; else okno_top = 210 - scrollY;
+        //  bob.innerHTML = scrollY;
     }
 
     else {
         ogl_vibrono = 0;
         ts1_1.style.display = "block";
         okno_top = 210;
+
     }
+
+
+    //---------------------------------------------------------------------------------------------
+    if (localStorage.getItem('okno_b')) {
+        okno_besedi.style.height = localStorage.getItem('okno_b');
+    }
+    //---------------------------------------------------------------------------------------------
+    if (localStorage.getItem('okno_n')) {
+        okno_novosti.style.height = localStorage.getItem('okno_n');
+    }
+    //---------------------------------------------------------------------------------------------
+    if (localStorage.getItem('okno_z')) {
+        okno_zametki.style.height = localStorage.getItem('okno_z');
+    }
+    //---------------------------------------------------------------------------------------------
+    if (osnova.clientHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30) okna_umen();
+    //---------------------------------------------------------------------------------------------
+    perem = okno_top;
+    okno_besedi.style.top = perem + 'px';
+
+    perem += okno_besedi.clientHeight + 10;
+    okno_novosti.style.top = perem + 'px';
+    perem += okno_novosti.clientHeight + 10;
+    okno_zametki.style.top = perem + 'px';
+
     //---------------------------------------------------------------------------------------------
 
     limit = 350;
@@ -74,12 +108,6 @@ function Sait_load() {
     if (osnova.clientHeight < 840) okno_besedi.style.height = okno_novosti.style.height = okno_zametki.style.height = (osnova.clientHeight - 240) / 3 + 'px';
     //---------------------------------------------------------------------------------------------
     
-    perem = okno_top;
-    okno_besedi.style.top = perem + 'px';
-    perem += okno_besedi.clientHeight + 10;
-    okno_novosti.style.top = perem + 'px';
-    perem += okno_novosti.clientHeight + 10;
-    okno_zametki.style.top = perem + 'px';
     perem = 0;
     //---------------------------------------------------------------------------------------------
     stranica.style.width = osnova.clientWidth - 135 - okna.clientWidth + 'px';
@@ -262,11 +290,7 @@ function Sait_load() {
     peremeshenie_okon_fiksaciy = 0;
 
     okna_svernuti = false;
-    okb = top_ok(0);
-    okn = top_ok(1);
-    okz = top_ok(2);
-    okgran = 45;
-
+    
     staroe_x = innerWidth;
     staroe_y = innerHeight;
     peremeshenie_vniz = 0;
@@ -427,10 +451,19 @@ function panel_izmen(deistvie) {
             }
             break;
         case 5://up
-           
-            if (deform_okno_besedi_down) deform_okno_besedi_down = false;
-            if (deform_okno_novosti_down) deform_okno_novosti_down = false;
-            if (deform_okno_zametki_down) deform_okno_zametki_down = false;
+
+            if (deform_okno_besedi_down) {
+                deform_okno_besedi_down = false;
+                localStorage.setItem('okno_b', okno_besedi.style.height);
+            }
+            if (deform_okno_novosti_down) {
+                deform_okno_novosti_down = false;
+                localStorage.setItem('okno_n', okno_novosti.style.height);
+            }
+            if (deform_okno_zametki_down) {
+                deform_okno_zametki_down = false;
+                localStorage.setItem('okno_z', okno_zametki.style.height);
+            }
             event.returnValue = true;
             break;
     }
