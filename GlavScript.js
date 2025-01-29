@@ -13,7 +13,9 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
     
-if (screen.width < screen.height) bob.innerHTML = screen.width+' ? '+screen.height;
+if (screen.width < screen.height){ 
+    if(innerwidth==screen.height) bob.innerHTML = screen.width+' ? '+screen.height;
+}
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
