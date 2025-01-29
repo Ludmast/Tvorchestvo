@@ -192,29 +192,36 @@ position:absolute;
 }
 .metka{
     background:#c0ff20;
+    padding-top:2px;
     padding-bottom:5px;
-    padding-left:5px;
-    padding-right:5px;
-    cursor:default;
+    padding-left:7px;
+    padding-right:7px;
+    cursor:pointer;
 }
 .reshenie {
     background: #a0e0ff;
+    padding-top: 2px;
     padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
 }
 .paragraf {
     background: #ffb0a0;
+    padding-top: 2px;
     padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
 }
 
 .interes {
     background: #fff040;
+    padding-top: 2px;
     padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
 }
 .ts{
     display:none;
