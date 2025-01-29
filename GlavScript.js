@@ -14,7 +14,7 @@ function Sait_load() {
     okna_width = 270;
     
 if (screen.width < screen.height){ 
-    if(innerWidth==screen.height) bob.innerHTML = screen.width+' ? '+screen.height;
+    if(innerHeight==screen.width) bob.innerHTML = screen.width+' ? '+screen.height;
 }
     //---------------------------------------------------------------------------------------------
     str = "";
