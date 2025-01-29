@@ -13,7 +13,7 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
    if (window.screen.width > window.screen.height)
-    bob.innerHTML=window.screen.orientation; 
+    bob.innerHTML='ohoho'; 
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
