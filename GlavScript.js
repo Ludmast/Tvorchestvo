@@ -12,7 +12,7 @@ function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
     okna_width = 270;
-   if (window.screen.width < window.screen.height)
+   if (window.screen.width > window.screen.height)
     bob.innerHTML=window.screen.orientation; 
     //---------------------------------------------------------------------------------------------
     str = "";
