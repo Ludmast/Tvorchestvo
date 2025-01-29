@@ -13,7 +13,7 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
     
-if (screen.width > screen.height) bob.innerHTML = 'yra';
+if (screen.width < screen.height) bob.innerHTML = 'yra';
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
