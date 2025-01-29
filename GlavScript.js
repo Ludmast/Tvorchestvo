@@ -12,8 +12,9 @@ function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
     okna_width = 270;
-   if (innerWidth < innerHeight)
-bob.innerHTML = 'o-ho-ho';
+   if (screen.width < screen.height)
+bob.innerHTML = 'o-hy-hy';
+    
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
