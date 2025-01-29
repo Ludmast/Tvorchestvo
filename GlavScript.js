@@ -13,10 +13,10 @@ function Sait_load() {
     bob.style.overflowX = 'hidden';
     okna_width = 270;
     
-if (screen.width < screen.height){ 
+//if (screen.width < screen.height){ 
     //if(innerHeight==screen.width)
-    bob.innerHTML = screen.width+' ? '+screen.height;
-}
+//    bob.innerHTML = screen.width+' ? '+screen.height;
+//}
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -799,6 +799,7 @@ function okna_umen() {
 }
 //=================================================================================================
 function izmen_win() {
+  if(window.screen.orientation>0)bob.innerHTML='ups';
     if (staroe_x != innerWidth) {
         
         m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4;
