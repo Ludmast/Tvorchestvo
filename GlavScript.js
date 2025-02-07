@@ -761,7 +761,10 @@ function menu_(deistvie, nomer, idnomer) {
         case 4://down
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
-            if (idnomer < 4) localStorage.setItem('punkt_menu', idnomer);
+            m[0].style.cursor = 'default';
+                m[0].style.color = 'black';
+                m[0].style.backgroundColor = color_menu;
+      if (idnomer < 4) localStorage.setItem('punkt_menu', idnomer);
             //bob.innerHTML = idnomer;
             localStorage.setItem('razdel_punkta', nomer - 1);
             ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + ' <p> ' + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer-2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</p>';
