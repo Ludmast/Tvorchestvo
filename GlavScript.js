@@ -95,8 +95,8 @@ function Sait_load() {
     okn = top_ok(1);
     okz = top_ok(2);
     okgran = 45;
-   localStorage.setItem('punkt_menu', 0);
-    localStorage.setItem('razdel_punkta', 1);
+  // localStorage.setItem('punkt_menu', 0);
+  //  localStorage.setItem('razdel_punkta', 1);
     //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('n_razdela')) {
         ogl_vibrono = localStorage.getItem('n_razdela');
