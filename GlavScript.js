@@ -2,16 +2,58 @@
 array_name_sait = ["Творчество", "во всём!"];
 predupregd = 'Сайт находится в разработке';
 //=================================================================================================
-array_menu = ["Главное", "Обучение", "Обсуждение", "Справка"];
-array_menu_1 = ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "История просмотра", "Регистрация"];
-array_menu_2 = ["Обучение от умельцев", "Творчество", "Программирование", "Алгебра и Геометрия", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика", "Астрономия", "Языки стран мира", "Черчение", "Музыка", "Физкультура", "Для самых маленьких","Энциклопедии","Заметки"];
-array_menu_3 = ["Беседы", "Предложения/критика", "Написать письмо"];
-array_menu_4 = ["Инструкция по сайту", "Донаты", "Об авторе сайта"];
+array_menu = [["Главное", "Обучение", "Обсуждение", "Справка"],
+ ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "История просмотра", "Регистрация"],
+ ["Обучение от умельцев", "Творчество", "Программирование", "Алгебра и Геометрия", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика", "Литература", "Языки стран мира", "Астрономия", "Черчение", "Музыка", "Физкультура", "Для самых маленьких","Энциклопедии","Заметки"],
+ ["Беседы", "Предложения/критика", "Написать письмо"],
+ ["Инструкция по сайту", "Донаты", "Об авторе сайта"]];
+//=================================================================================================
+array_razd_p = [[
+    ['Приветствие', 'Особенности сайта', 'Содержимое сайта', 'Настройки сайта'],
+    ['kz','br','sssr'],
+    ['bp'],
+    ['db'],
+    ['aa'],
+    ['hf'],
+    ['dd']
+], [
+    ['kz'],
+    ['bp'],
+    ['db'],
+    ['aa'],
+    ['hf'],
+    ['dd'],
+    ['kz'],
+    ['bp'],
+    ['db'],
+    ['aa'],
+    ['hf'],
+    ['dd'],
+    ['kz'],
+    ['bp'],
+    ['db'],
+    ['aa'],
+    ['hf'],
+    ['dd'],
+    ['hf'],
+    ['dd']
+    ], [
+    ['kz'],
+    ['bp'],
+    ['db']
+    ], [
+    ['kz'],
+    ['bp'],
+    ['db']
+    ]
+
+];
 //=================================================================================================
 function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
     okna_width = 270;
+    
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -53,19 +95,36 @@ function Sait_load() {
     okn = top_ok(1);
     okz = top_ok(2);
     okgran = 45;
-
+    //localStorage.setItem('punkt_menu', 2);
+    //localStorage.setItem('razdel_punkta', 1);
     //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('n_razdela')) {
-        ogl_vibrono = localStorage.getItem('n_razdela') - 1;
-        document.getElementById('ts_1_1_' + localStorage.getItem('n_razdela')).style.display = "block";
+        ogl_vibrono = localStorage.getItem('n_razdela');
+
+        document.getElementById('ts_' + localStorage.getItem('punkt_menu') + '_' + localStorage.getItem('razdel_punkta') + '_' + localStorage.getItem('n_razdela')).style.display = "block";
+        s_ekrana = 'ts_' + localStorage.getItem('punkt_menu') + '_' + localStorage.getItem('razdel_punkta') + '_' + localStorage.getItem('n_razdela');
+        if (okna.clientWidth < 130) {
+            peremeshenie_okon_svernut = true;
+            okno_vidimost(1);
+        } else {
+            peremeshenie_okon_svernut = false;
+            okno_vidimost(0); }
         if (scrollY > 150) okno_top = 60; else okno_top = 210 - scrollY;
-        //  bob.innerHTML = scrollY;
+
+        
     }
 
     else {
         ogl_vibrono = 0;
-        ts_1_1_1.style.display = "block";
+        s_ekrana = 'ts_0_1_0';
+        localStorage.setItem('punkt_menu', 0);
+        localStorage.setItem('razdel_punkta',1);
+        localStorage.setItem('n_razdela', 0);
+        localStorage.setItem('panel', 290);
+        ts_0_1_0.style.display = "block";
         okno_top = 210;
+        peremeshenie_okon_svernut = false;
+        okno_vidimost(0);
 
     }
 
@@ -101,7 +160,7 @@ function Sait_load() {
     na_meste_3.style.right = '40px';
     svert_3.style.right = '10px';
     //---------------------------------------------------------------------------------------------
-    okno_besedi.style.visibility = okno_novosti.style.visibility = okno_zametki.style.visibility = 'visible';
+    
     //---------------------------------------------------------------------------------------------
     okno_name_besedi.innerHTML = 'Беседы';
     okno_name_novosti.innerHTML = 'Новости';
@@ -119,72 +178,10 @@ function Sait_load() {
     stranica_top = 220;
     
     //---------------------------------------------------------------------------------------------
-    t = 250; 
-    text_size = 35;
+    //кнопка для возвращения назад на верх страницы и содержимое раздела по пунктам
+    soderg_razdela();
     //---------------------------------------------------------------------------------------------
-    str = "";
-    //---------------------------------------------------------------------------------------------
-    //кнопка для возвращения назад на верх страницы
-    str += "<div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_(1)'onmouseout='kn_nazad_(2)'onmousedown='kn_nazad_(4)'></div>";
-    //---------------------------------------------------------------------------------------------
-    //содержимое раздела по пунктам
-    str += "<div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p'></div><div id='ten_vibronogo_p'></div>";
-    for (i = 0; i < ogl; i++) str += "<div id='tp_"+i+"'class='c_ten_p'></div><div id='p_" + i + "'class='c_p' onmouseover='p_videlen(1, " + i + ")' onmouseout='p_videlen(2," + i + ")' onmousedown='p_videlen(4," + i + ")'></div>";
-    str += "<div id='ten2'></div>";
-    //---------------------------------------------------------------------------------------------
-    in_load_2.innerHTML = str;
 
-    //---------------------------------------------------------------------------------------------
-    //кнопка для возвращения назад на верх страницы
-    kn_nazad.innerHTML = '^';
-    ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'hidden';
-    ten_kn_nazad.style.left=kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
-    ten_kn_nazad.style.top=kn_nazad.style.top = osnova.clientHeight - 80 + 'px';
-    
-    //---------------------------------------------------------------------------------------------
-    //подсветка и сами названия содержания страниц
-    for (i = 0; i < ogl; i++) {
-        odin_og = document.getElementById("p_" + i);
-        odin_og.innerHTML = array_razd_p[razdel][i];
-        if (ogl_vibrono == i) {
-            odin_og.style.top = t - 2 + 'px';
-            odin_og.style.backgroundColor = '#3090c0';
-            odin_og.style.color = '#b0f0e0';
-            odin_og.style.left = '40px';
-            odin_og.style.width = '420px';
-            odin_og.style.fontSize = '32px';
-            odin_og.style.textAlign = 'center';
-            odin_og.style.paddingLeft = '5px';
-            odin_og.style.border = '2px solid #104070';
-            odin_og.style.borderTopRightRadius = '10px';
-            odin_og.style.borderBottomRightRadius = '10px';
-            ten_vibronogo_p.style.left = odin_og.style.left;
-            ten_vibronogo_p.style.top = t + 'px';
-            ten_vibronogo_p.style.height = odin_og.clientHeight +5+  'px';
-            perem = t+ 5+ 'px';
-            t -= 5;
-        } else {
-            perem=odin_og.style.top = t + 'px';
-        }
-        odin_ogt = document.getElementById("tp_" + i);
-        odin_ogt.style.top = perem;
-        t += odin_og.clientHeight + 15;
-    }
-    //---------------------------------------------------------------------------------------------
-    gl_p.innerHTML = 'Содержимое раздела:';
-    gl_p.style.height = t - 200 + 'px';
-    text_stranici.style.paddingTop = gl_p.clientHeight/2+100 + 'px';
-    ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
-    ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
-    ten1_gl_p.style.top = ten2_gl_p.style.top = '202px';
-    ten1_gl_p.style.width = ten2_gl_p.style.width = gl_p.clientWidth + 2+'px';
-    ten1_gl_p.style.height = ten2_gl_p.style.height = gl_p.clientHeight+'px';
-    ten1_gl_p.style.backgroundColor = ten2_gl_p.style.backgroundColor = 'black';
-    ten1_gl_p.style.borderRadius = ten2_gl_p.style.borderRadius = '10px';
-    ten1_gl_p.style.filter = 'blur(12px)';
-    ten2_gl_p.style.filter = 'blur(2px)';
-    
-    //---------------------------------------------------------------------------------------------
     str = "";
     //тень под названием раздела
     str += "<div id='razdel_teni'></div>";
@@ -212,7 +209,10 @@ function Sait_load() {
     //str += "<div id='predupr'>" + predupregd + "</div>";
     in_load_3.innerHTML = str;
     //---------------------------------------------------------------------------------------------
-    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu_1[0]; //razdel.innerHTML;
+    //имя с тенью раздела сайта на который перешли
+    aaa = localStorage.getItem('punkt_menu');
+    aaa++;
+    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[aaa][localStorage.getItem('razdel_punkta') - 1];
     //---------------------------------------------------------------------------------------------
     //okno_top = 170;
     //---------------------------------------------------------------------------------------------
@@ -221,6 +221,7 @@ function Sait_load() {
     glaz_l.innerHTML = "<span id='svet_glaz_l' class='c_svet_glaz'></span><span id='sheka_l'></span>";
     glaz_r.innerHTML = "<span id='svet_glaz_r' class='c_svet_glaz'></span><span id='sheka_r'></span>";
     //---------------------------------------------------------------------------------------------
+
     name_sait1.innerText = array_name_sait[0];
     name_sait1_teni.innerText = array_name_sait[0];
     name_sait2.innerText = array_name_sait[1];
@@ -228,39 +229,39 @@ function Sait_load() {
     ns_a = 2; ns_b = 1; ns_i = 0;
     ns_c = ns_d = 0;
     //---------------------------------------------------------------------------------------------
-    m_g.innerHTML = array_menu[0];
-    m_y.innerHTML = array_menu[1];
-    m_os.innerHTML = array_menu[2];
-    m_s.innerHTML = array_menu[3];
+    m_g.innerHTML = array_menu[0][0];
+    m_y.innerHTML = array_menu[0][1];
+    m_os.innerHTML = array_menu[0][2];
+    m_s.innerHTML = array_menu[0][3];
     //---------------------------------------------------------------------------------------------
     menu_width = 300;
     m1_left = 22; m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4; m3_left = m2_left + m_y.clientWidth + m_razdelitel.clientWidth + 4; m4_left = m3_left + m_os.clientWidth + m_razdelitel.clientWidth + 4; m_b = 1;
-    ms = [["m_g", 8, m1_left, 4], ["m_y", 20, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
+    ms = [["m_g", 8, m1_left, 4], ["m_y", 21, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
     //---------------------------------------------------------------------------------------------
     str = "<div id='ten_m'></div>";
     str += "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseleave='menu_(2,1,0)'onmousemove='menu_(3,1,0)'>"
     for (i = 1; i < ms[0][1]; i++)str += "<div id='m_g_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",0)'onmouseout='menu_(2," + (i + 1) + ",0)'onclick='menu_(4," + (i + 1) + ",0)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_2'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_3'color='white'size='1'/></div>";
     m1.innerHTML = str;
-    for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu_1[i];
+    for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu[1][i];
     //---------------------------------------------------------------------------------------------
     str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'onmousemove='menu_(3,1,1)'>"
     for (i = 1; i < ms[1][1]; i++)str += "<div id='m_y_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",1)'onmouseout='menu_(2," + (i + 1) + ",1)'onclick='menu_(4," + (i + 1) + ",1)'></div>";
     str += "<hr id='m_y_l_0' class='c_m_line_0' color='black' size='1'/><hr id='m_y_l_1' class='c_m_line_1' color='white' size='1'/><hr id='m_y_l_2'class='c_m_line_4' color='black' size='1'/><hr id='m_y_l_3'class='c_m_line_5' color='white' size='1'/><hr id='m_y_l_4'class='c_m_line_6' color='black' size='1'/><hr id='m_y_l_5'class='c_m_line_7' color='white' size='1'/></div > ";
     m2.innerHTML = str;
-    for (i = 0; i < ms[1][1] - 1; i++)document.getElementById(ms[1][0] + '_' + (i + 1)).innerText = array_menu_2[i];
+    for (i = 0; i < ms[1][1] - 1; i++)document.getElementById(ms[1][0] + '_' + (i + 1)).innerText = array_menu[2][i];
     //---------------------------------------------------------------------------------------------
     str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'onmousemove='menu_(3,1,2)'>"
     for (i = 1; i < ms[2][1]; i++)str += "<div id='m_os_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",2)'onmouseout='menu_(2," + (i + 1) + ",2)'onclick='menu_(4," + (i + 1) + ",2)'></div>";
     str += "<hr id='m_os_l_0' class='c_m_line_0' color='black' size='1'/><hr id='m_os_l_1' class='c_m_line_1' color='white' size='1'/></div > ";
     m3.innerHTML = str;
-    for (i = 0; i < ms[2][1] - 1; i++)document.getElementById(ms[2][0] + '_' + (i + 1)).innerText = array_menu_3[i];
+    for (i = 0; i < ms[2][1] - 1; i++)document.getElementById(ms[2][0] + '_' + (i + 1)).innerText = array_menu[3][i];
     //---------------------------------------------------------------------------------------------
     str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'onmousemove='menu_(3,1,3)'>"
     for (i = 1; i < ms[3][1]; i++)str += "<div id='m_s_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",3)'onmouseout='menu_(2," + (i + 1) + ",3)'onclick='menu_(4," + (i + 1) + ",3)'></div>";
     str += "<hr id='m_s_l_0'class='c_m_line_0' color='black' size='1'/><hr id='m_s_l_1'class='c_m_line_1' color='white' size='1'/></div > ";
     m4.innerHTML = str;
-    for (i = 0; i < ms[3][1] - 1; i++)document.getElementById(ms[3][0] + '_' + (i + 1)).innerText = array_menu_4[i];
+    for (i = 0; i < ms[3][1] - 1; i++)document.getElementById(ms[3][0] + '_' + (i + 1)).innerText = array_menu[4][i];
     //---------------------------------------------------------------------------------------------
     for (j = 0; j < 4; j++) {
         m = [];
@@ -305,6 +306,7 @@ function Sait_load() {
     pom_etap_vipolnen = false;
     pom_etap = 1;
     pom_et_nomer = 0;
+
     //pom_lico();
 }
 
@@ -645,9 +647,10 @@ function p_videlen(deystvie, idnomer) {
                 odin_og.style.borderBottomRightRadius = '10px';
                 ten_vibronogo_p.style.width = '430px';
                 ten_vibronogo_p.style.height = odin_og.clientHeight + 4 + 'px';
-                localStorage.setItem('n_razdela', (idnomer + 1));
-                document.getElementById('ts_' + '1_1_' + (idnomer + 1)).style.display = 'block';
-                document.getElementById('ts_' + '1_1_' + (ogl_vibrono + 1)).style.display = 'none';
+                localStorage.setItem('n_razdela', (idnomer));
+                document.getElementById(s_ekrana).style.display = 'none';
+                document.getElementById('ts_' + localStorage.getItem('punkt_menu') + '_' + localStorage.getItem('razdel_punkta') + '_' + idnomer).style.display = 'block';
+                s_ekrana = 'ts_' + localStorage.getItem('punkt_menu') + '_' + localStorage.getItem('razdel_punkta') + '_' + idnomer;
                 okna.style.height = limit + stranica.clientHeight + 'px';
                 odin_og = document.getElementById('p_' + ogl_vibrono);
                 
@@ -748,7 +751,7 @@ function menu_(deistvie, nomer, idnomer) {
                 else if (idnomer == 3 && m_s_0.style.visibility == 'hidden') menu_vis(3, 1);
             }
             else {
-                if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 2 || event.clientX > ms[0][2] + document.getElementById(ms[0][0]+'_0').clientWidth - 4) menu_vis(0); }
+               if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 2 || event.clientX > ms[0][2] + document.getElementById(ms[0][0]+'_0').clientWidth - 4) menu_vis(0); }
                 if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 28 || event.clientX < ms[1][2] + 2 || event.clientX > ms[1][2] + document.getElementById(ms[1][0] + '_0').clientWidth - 4) menu_vis(1); }
                 if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 28 || event.clientX < ms[2][2] + 2 || event.clientX > ms[2][2] + document.getElementById(ms[2][0] + '_0').clientWidth - 4) menu_vis(2); }
                 if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 28 || event.clientX < ms[3][2] + 2 || event.clientX > ms[3][2] + document.getElementById(ms[3][0] + '_0').clientWidth - 4) menu_vis(3); }
@@ -758,9 +761,89 @@ function menu_(deistvie, nomer, idnomer) {
         case 4://down
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
+            if (idnomer < 4) localStorage.setItem('punkt_menu', idnomer);
+            //bob.innerHTML = idnomer;
+            localStorage.setItem('razdel_punkta', nomer - 1);
+            ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + ' <p> ' + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer-2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</p>';
+            //        bob.innerHTML = ts_0_6_0.innerHTML;
+
+            menu_vis(idnomer, 0);
+            document.getElementById(s_ekrana).style.display = 'none';
+            s_ekrana = 'ts_' + idnomer + '_' + (nomer - 1) + '_0';
+            document.getElementById(s_ekrana).style.display = 'block';
+            localStorage.setItem('n_razdela', 0);
+            soderg_razdela();
+
+            document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[idnomer + 1][nomer-2];
+            
             break;
         //-----------------------------------------------------------------------------------------
     }
+}
+//=================================================================================================
+function soderg_razdela() {
+t = 250;
+    text_size = 35;
+    o
+    //---------------------------------------------------------------------------------------------
+    str = "";
+    //---------------------------------------------------------------------------------------------
+    //кнопка для возвращения назад на верх страницы
+    str += "<div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_(1)'onmouseout='kn_nazad_(2)'onmousedown='kn_nazad_(4)'></div>";
+    //---------------------------------------------------------------------------------------------
+    //подсветка и сами названия содержания страниц
+    str += "<div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p'></div><div id='ten_vibronogo_p'></div>";
+    for (i = 0; i < array_razd_p[localStorage.getItem('punkt_menu')][localStorage.getItem('razdel_punkta') - 1].length; i++) str += "<div id='tp_" + i + "'class='c_ten_p'></div><div id='p_" + i + "'class='c_p' onmouseover='p_videlen(1, " + i + ")' onmouseout='p_videlen(2," + i + ")' onmousedown='p_videlen(4," + i + ")'></div>";
+    str += "<div id='ten2'></div>";
+    //---------------------------------------------------------------------------------------------
+    in_load_2.innerHTML = str;
+    //---------------------------------------------------------------------------------------------
+    //кнопка для возвращения назад на верх страницы
+    kn_nazad.innerHTML = '^';
+    ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'hidden';
+    ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
+    ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + 'px';
+    //---------------------------------------------------------------------------------------------
+    //содержимое раздела по пунктам
+for (i = 0; i < array_razd_p[localStorage.getItem('punkt_menu')][localStorage.getItem('razdel_punkta') - 1].length; i++) {
+    odin_og = document.getElementById("p_" + i);
+    odin_og.innerHTML = array_razd_p[localStorage.getItem('punkt_menu')][localStorage.getItem('razdel_punkta') - 1][i];
+    if (ogl_vibrono == i) {
+        odin_og.style.top = t - 2 + 'px';
+        odin_og.style.backgroundColor = '#3090c0';
+        odin_og.style.color = '#b0f0e0';
+        odin_og.style.left = '40px';
+        odin_og.style.width = '420px';
+        odin_og.style.fontSize = '32px';
+        odin_og.style.textAlign = 'center';
+        odin_og.style.paddingLeft = '5px';
+        odin_og.style.border = '2px solid #104070';
+        odin_og.style.borderTopRightRadius = '10px';
+        odin_og.style.borderBottomRightRadius = '10px';
+        ten_vibronogo_p.style.left = odin_og.style.left;
+        ten_vibronogo_p.style.top = t + 'px';
+        ten_vibronogo_p.style.height = odin_og.clientHeight + 5 + 'px';
+        perem = t + 5 + 'px';
+        t -= 5;
+    } else {
+        perem = odin_og.style.top = t + 'px';
+    }
+    odin_ogt = document.getElementById("tp_" + i);
+    odin_ogt.style.top = perem;
+    t += odin_og.clientHeight + 15;
+}
+gl_p.innerHTML = 'Содержимое раздела:';
+gl_p.style.height = t - 200 + 'px';
+text_stranici.style.paddingTop = gl_p.clientHeight / 2 + 100 + 'px';
+ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
+ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
+ten1_gl_p.style.top = ten2_gl_p.style.top = '202px';
+ten1_gl_p.style.width = ten2_gl_p.style.width = gl_p.clientWidth + 2 + 'px';
+ten1_gl_p.style.height = ten2_gl_p.style.height = gl_p.clientHeight + 'px';
+ten1_gl_p.style.backgroundColor = ten2_gl_p.style.backgroundColor = 'black';
+ten1_gl_p.style.borderRadius = ten2_gl_p.style.borderRadius = '10px';
+ten1_gl_p.style.filter = 'blur(12px)';
+ten2_gl_p.style.filter = 'blur(2px)';
 }
 //=================================================================================================
 function okna_umen() {
