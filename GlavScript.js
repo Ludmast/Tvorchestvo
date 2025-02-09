@@ -114,20 +114,17 @@ function Sait_load() {
         if (scrollY > 150) okno_top = 60; else okno_top = 210 - scrollY;
 
         
-    
-
+  
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('okno_b')) {
-        okno_besedi.style.height = localStorage.getItem('okno_b');
+    if (localStorage.getItem('okno_b') == undefined) {
+        localStorage.setItem('okno_b', 250);
+        localStorage.setItem('okno_n', 250);
+        localStorage.setItem('okno_z', 250);
     }
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('okno_n')) {
-        okno_novosti.style.height = localStorage.getItem('okno_n');
-    }
-    //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('okno_z')) {
-        okno_zametki.style.height = localStorage.getItem('okno_z');
-    }
+    okno_besedi.style.height = localStorage.getItem('okno_b'); 
+    okno_novosti.style.height = localStorage.getItem('okno_n');
+    okno_zametki.style.height = localStorage.getItem('okno_z');
     //---------------------------------------------------------------------------------------------
     if (osnova.clientHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30) okna_umen();
     //---------------------------------------------------------------------------------------------
