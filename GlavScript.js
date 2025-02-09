@@ -96,9 +96,9 @@ function Sait_load() {
     okz = top_ok(2);
     okgran = 45;
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('n_razdela') == undefined) localStorage.setItem('n_razdela', 0);
-    if (localStorage.getItem('punkt_menu') == undefined) localStorage.setItem('punkt_menu', 0);
-    if (localStorage.getItem('razdel_punkta') == undefined) localStorage.setItem('razdel_punkta', 1);
+    if (localStorage.getItem('n_razdela') != true) localStorage.setItem('n_razdela', 0);
+    if (localStorage.getItem('punkt_menu') != true) localStorage.setItem('punkt_menu', 0);
+    if (localStorage.getItem('razdel_punkta') != true) localStorage.setItem('razdel_punkta', 1);
 
     localStorage.setItem('n_name', 0);
     ogl_vibrono = localStorage.getItem('n_razdela');
@@ -116,11 +116,10 @@ function Sait_load() {
         
   
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('okno_b') == undefined) {
-        localStorage.setItem('okno_b', 250);
-        localStorage.setItem('okno_n', 250);
-        localStorage.setItem('okno_z', 250);
-    }
+    if (localStorage.getItem('okno_b') != true) localStorage.setItem('okno_b', 250);
+        if (localStorage.getItem('okno_n') != true)localStorage.setItem('okno_n', 250);
+        if (localStorage.getItem('okno_z') != true)localStorage.setItem('okno_z', 250);
+    
     //---------------------------------------------------------------------------------------------
     okno_besedi.style.height = localStorage.getItem('okno_b'); 
     okno_novosti.style.height = localStorage.getItem('okno_n');
