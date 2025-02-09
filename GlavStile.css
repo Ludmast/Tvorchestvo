@@ -102,7 +102,7 @@ body
   position:absolute;
   top:200px;
   left:30px;
-  width:400px;
+  
   height:300px;
   border-radius:10px;
   background-color:#c0d0ff;
@@ -114,7 +114,7 @@ body
 
 #ten_vibronogo_p {
     position: absolute;
-    width:430px;
+    width:730px;
     left: 18px;
     background-color: black;
     border-radius:40%;
@@ -123,7 +123,7 @@ body
 .c_ten_p {
     position: absolute;
     width: 6px;
-    left: 444px;
+    
     height:38px;    
     background-color: black;
     filter: blur(3px);
@@ -131,7 +131,7 @@ body
 .c_p{
 position:absolute;
   border:2px solid #104070;
-  width:380px;
+  
   padding:3px;
   font-size:24px;
   left:60px;
