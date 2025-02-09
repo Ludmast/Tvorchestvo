@@ -614,7 +614,8 @@ function p_videlen(deystvie, idnomer) {
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'none';
                 localStorage.setItem('n_r', (idnomer));
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + idnomer).style.display = 'block';
-                ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p')] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p')][idnomer] + '</div>';
+                //bob.innerHTML = array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer];
+                ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m')-0+1][localStorage.getItem('r_p')-1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p')-1][idnomer] + '</div>';
                 localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
 
                 okna.style.height = limit + stranica.clientHeight + 'px';
