@@ -24,8 +24,8 @@ array_razd_p = [[
     ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'],
     ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Вещества, их структура и особенности', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'],
     ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Вещества, их структура и особенности', 'Животные, птицы, пресноводные, насекомые', 'Растения', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'], 
-    ['bp'],
-    ['db'],
+    ['Исторический курс', 'Политические и военные личности', 'Творческие и научные личности', 'Реформы, войны', 'Культура, быт, религия и обучение','Условные обозначения и сокращения', 'Карты', 'Вопросы для самопроверки', 'Используемая литература'],
+    ['Теоретический курс', 'Определения, понятия', 'Графики, таблицы, рисунки', 'Обитатели', 'Растения', 'Что добывают', 'Интересные факты', 'Выдающиеся личности', 'Вопросы для самопроверки', 'Используемая литература'],
     ['aa'],
     ['hf'],
     ['dd'],
@@ -96,14 +96,15 @@ function Sait_load() {
     okz = top_ok(2);
     okgran = 45;
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
+     if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
     //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('p_m')) { } else localStorage.setItem('p_m', 0);//punkt_menu
-    if (localStorage.getItem('r_p')) { }else localStorage.setItem('r_p', 1);//razdel_punkta
+    if (localStorage.getItem('r_p')) { } else localStorage.setItem('r_p', 1);//razdel_punkta
     if (localStorage.getItem('n_r')) { } else localStorage.setItem('n_r', 0);//n_razdela
     localStorage.setItem('n_n', 0);//n_name
     ogl_vibrono = localStorage.getItem('n_r');
-    document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = "block";
+    document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'block';
+    document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'block';
     if (okna.clientWidth < 130) {
         peremeshenie_okon_svernut = true;
         okno_vidimost(1);
@@ -728,6 +729,7 @@ function menu_(deistvie, nomer, idnomer) {
         case 4://down
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
+            document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'none';
             document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'none';
             if (idnomer < 4) localStorage.setItem('p_m', idnomer);
             localStorage.setItem('r_p', nomer - 1);
@@ -735,6 +737,7 @@ function menu_(deistvie, nomer, idnomer) {
             ogl_vibrono = 0;
             menu_vis(idnomer, 0);
             //bob.innerHTML = s_ekrana;
+            document.getElementById('tm_' + idnomer + '_' + (nomer - 1)).style.display = 'block';
             document.getElementById('ts_' + idnomer + '_' + (nomer - 1) + '_0').style.display = 'block';
             ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ';
             localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
@@ -757,7 +760,9 @@ function on_pamyt(elm, elp, elr) {
         soderg_razdela();
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[elm - 0 + 1][elp - 1];
         scroll(0, 0);
+        document.getElementById('tm_' + elm + '_' + elp).style.display = 'block';
         document.getElementById('ts_' + elm + '_' + elp + '_' + elr).style.display = 'block';
+        tm_0_6.style.display = 'none';
         ts_0_6_0.style.display = 'none';
     }
 }
