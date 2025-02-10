@@ -14,16 +14,16 @@ array_razd_p = [[
     ['Список от начала','Список с конца','Список по алфавиту','По скорости выполнения работ','Как стать участником нашей группы','Запись в группу "Люди-умельцы"'],
     ['Все изделия', 'Работы по категории творчества', 'Категории применяемости в быту', 'Выстовочные работы'],
     ['Искать везде', 'Только среди умельцев', 'Среди творческих работ', 'По названию параграфов','По тексту'],
-    ['hf'],
-    ['dd']
+    ['Ваша история просмотра страниц','Уточнения по данному вопросу'],
+    ['Зачем нужна регистрация','Что входит в регистрацию','Регистрация']
 ], [
-    ['kz'],
-    ['bp'],
-    ['db'],
-    ['aa'],
-    ['hf'],
-    ['dd'],
-    ['kz'],
+    ['Обучающие уроки по мере поступления','Обучение от конкретного мастера','Обучение по категориям творчества','Обучающие схемы от умельцев','Особености данного обучения'],
+    ['Все, освоенные мною, виды творчества', 'Необходимое для занятий', 'Термины', 'Рисунки, фото, схемы с расшифровкой','Особенности данного обучения','Используемая литература'],
+    ['Всё, что я знаю из программирования', 'Основные понятия языка', 'Директивы, операторы, команды, теги', 'Примеры программ','Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Вопросы для самопроверки', 'Используемая литература','Мои мысли о программировании'],
+    ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Интересные факты' ,'Выдающиеся личности', 'Задачи для самооценки', 'Вопросы для самопроверки', 'Используемая литература'],
+    ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'],
+    ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Вещества, их структура и особенности', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'],
+    ['Теоретический курс', 'Теоремы, определения, формулы', 'Графики, таблицы, рисунки', 'Вещества, их структура и особенности', 'Животные, птицы, пресноводные, насекомые', 'Растения', 'Интересные факты', 'Выдающиеся личности', 'Задачи для самооценки', 'Лабораторные работы', 'Вопросы для самопроверки', 'Используемая литература'], 
     ['bp'],
     ['db'],
     ['aa'],
@@ -969,126 +969,4 @@ function izmen_win() {
     }
     setTimeout('izmen_win()', 4);
 }
-//=================================================================================================
-function o(id_element, width = 10, height = 10, left = 100, top = 100, backgroundColor) {
-    id_element.style.position = 'absolute';
-    id_element.style.width = width + 'px';
-    id_element.style.height = height + 'px';
-    id_element.style.left = left + 'px';
-    id_element.style.top = top + 'px';
-    if (backgroundColor != undefined) id_element.style.backgroundColor = backgroundColor;
-}
-//=================================================================================================
-function ob(id_element, border = 2, borderColor = '#101010', borderRadius) {
-    id_element.style.border = border + 'px solid ' + borderColor;
-    if (borderRadius != undefined) id_element.style.borderRadius = borderRadius + 'px';
-}
-//=================================================================================================
-function obr(id1, id2, id3, id4, id5) {
-    id1.style.borderRadius = '50%';
-    if (id2 != undefined) id2.style.borderRadius = '50%';
-    if (id3 != undefined) id3.style.borderRadius = '50%';
-    if (id4 != undefined) id4.style.borderRadius = '50%';
-    if (id5 != undefined) id5.style.borderRadius = '50%';
-}
-//=================================================================================================
-function ot(id_element, FontSize = 20, textColor = '#101010', viravnivanieTexta_po_gorizontali = 'left', viravnivanieTexta_po_vertikali = 'top') {
-    id_element.style.fontSize = FontSize + 'px';
-    id_element.style.color = textColor;
-    id_element.style.textAlign = viravnivanieTexta_po_gorizontali;
-    id_element.style.verticalAlign = viravnivanieTexta_po_vertikali;
-}
-//=================================================================================================
-function ot_otstup(id_element, otstup_sverhu = 2, otstup_snizu = 2, otstup_sleva = 2, otstup_sprava = 2) {
-    id_element.style.paddingTop = otstup_sverhu + 'px';
-    id_element.style.paddingBottom = otstup_snizu + 'px';
-    id_element.style.paddingLeft = otstup_sleva + 'px';
-    id_element.style.paddingRight = otstup_sprava + 'px';
-}
-//=================================================================================================
-function ot_rastoynie(id_element, rastoynie_megdu_strochkami = 6, rastoynie_megdu_slovami = 5, rastoynie_megdu_bykvami = 5) {
-    id_element.style.lineHeight = rastoynie_megdu_strochkami + 'px';
-    id_element.style.wordSpacing = rastoynie_megdu_slovami + 'px';
-    id_element.style.letterSpacing = rastoynie_megdu_bykvami + 'px';
-}
-//=================================================================================================
-function ov(visibl = true, id_element1, id_element2, id_element3, id_element4, id_element5) {
-    if (visibl) visibl = 'visible'; else visibl = 'hidden';
-    id_element1.style.visibility = visibl;
-    if (id_element2 != undefined) id_element2.style.visibility = visibl;
-    if (id_element3 != undefined) id_element3.style.visibility = visibl;
-    if (id_element4 != undefined) id_element4.style.visibility = visibl;
-    if (id_element5 != undefined) id_element5.style.visibility = visibl;
-}
-//=================================================================================================
-function owh(id_element, width = 100, height = 100) {
-    id_element.style.width = width + 'px';
-    id_element.style.height = height + 'px';
-}
-//=================================================================================================
-function olt(id_element, left = 100, top = 100) {
-    id_element.style.left = left + 'px';
-    id_element.style.top = top + 'px';
-}
-//=================================================================================================
-function olr(id_element, left = 100, right = 100) {
-    id_element.style.left = left + 'px';
-    id_element.style.right = right + 'px';
-}
-//=================================================================================================
-function olb(id_element, left = 100, bottom = 100) {
-    id_element.style.left = left + 'px';
-    id_element.style.bottom = bottom + 'px';
-}
-//=================================================================================================
-function otb(id_element, top = 100, bottom = 100) {
-    id_element.style.top = top + 'px';
-    id_element.style.bottom = bottom + 'px';
-}
-//=================================================================================================
-function olrt(id_element, left = 100, right = 100, top = 100) {
-    id_element.style.left = left + 'px';
-    id_element.style.right = right + 'px';
-    id_element.style.top = top + 'px';
-}
-//=================================================================================================
-function oltb(id_element, left = 100, top = 100, bottom = 100) {
-    id_element.style.left = left + 'px';
-    id_element.style.top = top + 'px';
-    id_element.style.bottom = bottom + 'px';
-}
-//=================================================================================================
-
-function olt_glaza(id1 = pom_glaz_l, id2 = pom_glaz_r) {
-    id1.style.left = glazl_l + 'px';
-    id1.style.top = glazl_t + 'px';
-    id2.style.left = glazr_l + 'px';
-    id2.style.top = glazr_t + 'px';
-
-}
-
-//=================================================================================================
-function olt_sheki() {
-    pom_sheka_l.style.left = shekal_l + 'px';
-    pom_sheka_l.style.top = shekal_t + 'px';
-    pom_sheka_r.style.left = shekar_l + 'px';
-    pom_sheka_r.style.top = shekar_t + 'px';
-
-}
-//=================================================================================================
-function pom_gubi(chislo, uvelich) {
-    pom_gb = uvelich;
-    if (uvelich && chislo == 65) uvelich = pom_gb = false; else if (!(uvelich) && chislo == 23) uvelich = pom_gb = true;
-    if (uvelich) { switch (chislo) { case 23: return 30; case 30: return 44; case 44: return 58; case 58: return 65; } }
-    else { switch (chislo) { case 65: return 58; case 58: return 44; case 44: return 30; case 30: return 23; } }
-}
-//=================================================================================================
-function pom_glaz(chislo, uvelich) {
-    pom_gb = uvelich;
-    if (uvelich && chislo == 62) uvelich = pom_gb = false; else if (!(uvelich) && chislo == 20) uvelich = pom_gb = true;
-    if (uvelich) { switch (chislo) { case 20: return 25; case 25: return 41; case 41: return 57; case 57: return 62; } }
-    else { switch (chislo) { case 62: return 57; case 57: return 41; case 41: return 25; case 25: return 20; } }
-}
-
-
 //=================================================================================================
