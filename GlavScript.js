@@ -36,7 +36,7 @@ array_razd_p = [[
     ['Основные правила зарядки', 'Зарядка', 'Правила для игр'],
     ['Обучающие игры для детей', 'Чтение вслух с картинками', 'Мамам на заметку'],
     ['Алфавитный указатель', 'По категориям', 'Толковый словарь'],
-    ['Все заметки']
+    ['Все заметки', 'Зачем нужны заметки']
 ], [
     ['Все беседы', 'Беседы по категориям', 'Ответы от автора сайта'],
     ['Предложения', 'Критика'],
@@ -91,9 +91,6 @@ function Sait_load() {
     }
    
     minus = plus = 0;
-    okb = top_ok(0);
-    okn = top_ok(1);
-    okz = top_ok(2);
     okgran = 45;
     //---------------------------------------------------------------------------------------------
      if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
@@ -125,10 +122,13 @@ function Sait_load() {
     if (osnova.clientHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30) okna_umen();
     //---------------------------------------------------------------------------------------------
     perem = okno_top;
+    okb = perem;
     okno_besedi.style.top = perem + 'px';
     perem += okno_besedi.clientHeight + 10;
+    okn = perem;
     okno_novosti.style.top = perem + 'px';
     perem += okno_novosti.clientHeight + 10;
+    okz = perem;
     okno_zametki.style.top = perem + 'px';
     //---------------------------------------------------------------------------------------------
     limit = 350;
@@ -323,7 +323,7 @@ function all_control(deistvie) {
                             okna.style.left = osnova.clientWidth - okna.clientWidth + 'px';
                             dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
                             okno_besedi.style.left = okno_novosti.style.left = okno_zametki.style.left = osnova.clientWidth - okna.clientWidth + 20 + 'px';
-                            //if (event.clientX < osnova.clientWidth - 150)
+                            if (event.clientX < osnova.clientWidth - 150)
                             {
                                 okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = okna.clientWidth - 30 + 'px';
                             }
@@ -483,6 +483,29 @@ function kn_nazad_(deistvie) {
     }
 }
 
+//=================================================================================================
+function kn_za_str_(deistvie) {
+    color_kn = '#b0c0f0';
+    color_videl = '#6080c0';
+    switch (deistvie) {
+        case 1://over
+            kn_za_str.style.backgroundColor = color_videl;
+            kn_za_str.style.cursor = 'default';
+            break;
+        case 2://out
+            kn_za_str.style.backgroundColor = color_kn;
+            break;
+        case 3://move
+
+            break;
+        case 4://douwn
+            scroll(0, 0);
+
+
+            break;
+
+    }
+}
 
 //=================================================================================================
 function kn_dvig_panel(deistvie) {
@@ -822,9 +845,10 @@ function soderg_razdela() {
         odin_ogt.style.left = localStorage.getItem('w_s') - 0 + 44 + 'px';
         t += odin_og.clientHeight + 15;
     }
-    gl_p.innerHTML = 'Содержимое раздела:';
+    gl_p.innerHTML = "Содержимое раздела: <div id='kn_za_str' onmouseover='kn_za_str_(1)' onmouseout='kn_za_str_(2)' onmousedown='kn_za_str_(4)'></div>";
     gl_p.style.height = t - 200 + 'px';
     gl_p.style.width = localStorage.getItem('w_s') + 'px';
+
     text_stranici.style.paddingTop = gl_p.clientHeight / 2 + 100 + 'px';
     ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
     ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
@@ -835,6 +859,11 @@ function soderg_razdela() {
     ten1_gl_p.style.borderRadius = ten2_gl_p.style.borderRadius = '10px';
     ten1_gl_p.style.filter = 'blur(12px)';
     ten2_gl_p.style.filter = 'blur(2px)';
+    //---------------------------------------------------------------------------------------------
+    //кнопка прячущая за страницу
+    kn_za_str.innerHTML = "<div id='ris_kn_za_str'></div><div id='ris_v'></div>";
+    ris_v.innerHTML = 'v';
+    kn_za_str.style.left = gl_p.clientWidth - 70 + 'px';
 }
 //=================================================================================================
 function okna_umen() {
