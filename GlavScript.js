@@ -97,8 +97,7 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('p_m')) { } else localStorage.setItem('p_m', 0);//punkt_menu
     if (localStorage.getItem('r_p')) { } else localStorage.setItem('r_p', 1);//razdel_punkta
-//    if (localStorage.getItem('n_r')) { } else 
-    localStorage.setItem('n_r', 0);//n_razdela
+    if (localStorage.getItem('n_r')) { } else localStorage.setItem('n_r', 0);//n_razdela
     localStorage.setItem('n_n', 0);//n_name
     ogl_vibrono = localStorage.getItem('n_r');
     document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'block';
