@@ -451,7 +451,7 @@ h2 {
     height: 43px;
     background-color: black;
     filter: blur(8px);
-    visibility:visible;
+    visibility:hidden;
 }
 #kn_prydki {
     position: absolute;
@@ -468,7 +468,7 @@ h2 {
     border: 2px solid #506070;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
-    visibility:visible;
+    visibility:hidden;
 }
 #ten_line_pomoshnik {
     position: absolute;
