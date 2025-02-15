@@ -102,7 +102,7 @@ function Sait_load() {
     localStorage.setItem('n_n', 0);//n_name
 
     ogl_vibrono = localStorage.getItem('n_r');
-    //localStorage.setItem('ogl_v', '0px');
+
     document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'block';
     document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'block';
     if (okna.clientWidth < 130) {
@@ -202,6 +202,8 @@ function Sait_load() {
     kn_prydki.innerHTML = '<';
     kn_prydki.style.top = innerHeight - 64 + 'px';
     ten_kn_prydki.style.top = innerHeight - 60 + 'px';
+    //---------------------------------------------------------------------------------------------
+    if (localStorage.getItem('l_p')) { } else localStorage.setItem('l_p', 0);
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
     name_sait1_teni.innerText = array_name_sait[0];
@@ -351,13 +353,18 @@ function all_control(deistvie) {
                 break;
             //---------------------------------------------------------------------------------------------
             case 4://down
-                if (line_pomoshnik.style.visibility == 'visible') {
+                if (localStorage.getItem('l_p')==0) {
                     if (kn_prydki_skrita && event.clientX < 162 && event.clientY > innerHeight - 30) {
+                        //bob.innerHTML = 'yra';
                         ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
                         kn_prydki_skrita = false;
+
                     } else {
-                        ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
-                        kn_prydki_skrita = true;
+                        if (event.clientX > 160 && event.clientX < 160 + kn_prydki.clientWidth && event.clientY > innerHeight - 20 - kn_prydki.clientHeight && event.clientY < innerHeight - 20) kn_prydki_(4);
+                        else {
+                            ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
+                            kn_prydki_skrita = true;
+                        }
                     }
                 }
                 break;
@@ -387,9 +394,15 @@ function kn_prydki_(deistvie) {
         case 3://move
             break;
         case 4://down
-            
-             ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = ten_pomoshnik.style.visibility = pomoshnik.style.visibility = 'visible';
-            
+            if (localStorage.getItem('l_p') == 0) {
+                ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = ten_pomoshnik.style.visibility = pomoshnik.style.visibility = 'hidden';
+                localStorage.setItem('l_p', 1);
+
+            } else {
+                ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = ten_pomoshnik.style.visibility = pomoshnik.style.visibility = 'visible';
+                localStorage.setItem('l_p', 0);
+
+            }
             
             
             
