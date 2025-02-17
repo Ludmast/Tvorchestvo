@@ -57,6 +57,7 @@ body
     border-top:0px;
     border-bottom:0px;
     background-color: #5080b0;
+    overflow:hidden;
     visibility: visible;
 }
 #dvigenie_paneli {
@@ -404,7 +405,7 @@ h2 {
 .c_okno {
     position: absolute;
     background-color: #40a0d0;
-    right: 10px;
+    left: 20px;
     width: 240px;
     height:200px;
     border-radius: 10px;
