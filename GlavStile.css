@@ -207,9 +207,17 @@ body
     height:2px;
     background:#304050;
 }
-#gl_p_za_str {
+#soderg_razdela_1 {
     position: absolute;
     top: 180px;
+    left: 0px;
+    overflow: hidden;
+
+}
+
+#gl_p_za_str {
+    position: absolute;
+    top: 0px;
     left: 30px;
     height: 300px;
     border-radius: 10px;
