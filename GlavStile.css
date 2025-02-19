@@ -212,7 +212,7 @@ body
     top: 180px;
     left: 0px;
     overflow: hidden;
-
+    
 }
 
 #gl_p_za_str {
@@ -228,9 +228,17 @@ body
     color: black;
     visibility:hidden;
 }
+#soderg_razdela_2 {
+    position: absolute;
+    top: 200px;
+    left: 0px;
+    overflow: hidden;
+    
+}
+
 .c_gl_p{
   position:absolute;
-  top:200px;
+  top:0px;
   left:30px;
   
   height:300px;
@@ -245,11 +253,26 @@ body
 #ten_vibronogo_p {
     position: absolute;
     width:730px;
-    left: 18px;
+    left: 40px;
     background-color: black;
     border-radius:40%;
     filter: blur(8px);
 }
+#ogl_vibrono_copiy {
+    position: absolute;
+    border: 2px solid #104070;
+    padding-left: 5px;
+
+    font-size: 32px;
+    left: 40px;
+    color: #b0f0e0;
+    height:42px;
+    border-radius: 10px;
+    
+    text-align: center;
+    background-color: #3090c0;
+}
+
 .c_ten_p {
     position: absolute;
     width: 6px;
@@ -474,7 +497,7 @@ h2 {
    
     color:#506070;
     background: #b0d0f0;
-    border: 2px solid #506070;
+    border: 2px solid #104070;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
     visibility:hidden;
