@@ -318,8 +318,12 @@ function soderg_control() {
             soderg_izmen -= soderg_del;
             ten1_gl_p.style.left= ten2_gl_p.style.left = gl_p.style.left = soderg_izmen + 'px';
             perem = soderg_izmen + 30 + 'px';
+            perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
             for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-                if (ogl_vibrono != i) document.getElementById('p_' + i).style.left = perem;
+                if (ogl_vibrono != i) {
+                    document.getElementById('p_' + i).style.left = perem;
+                    document.getElementById('tp_' + i).style.left = perem2;
+                }
             }
             stranica_left -= 5;
             ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
@@ -353,8 +357,12 @@ function soderg_control() {
             soderg_izmen += soderg_del;
             ten1_gl_p.style.left = gl_p.style.left = gl_p_za_str.style.left = soderg_izmen + 'px';
             perem = soderg_izmen + 30 + 'px';
+            perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
             for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-                if (ogl_vibrono != i) document.getElementById('p_' + i).style.left = perem;
+                if (ogl_vibrono != i) {
+                    document.getElementById('p_' + i).style.left = perem;
+                    document.getElementById('tp_' + i).style.left = perem2;
+                }
             }
             if (soderg_izmen2 > 240) {
                 soderg_izmen2 -= soderg_del2;
@@ -381,8 +389,12 @@ function soderg_control() {
                 soderg_izmen -= soderg_del;
                 ten1_gl_p.style.left = gl_p.style.left = gl_p_za_str.style.left = soderg_izmen + 'px';
                 perem = soderg_izmen + 30 + 'px';
+                perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
                 for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-                    if (ogl_vibrono != i) document.getElementById('p_' + i).style.left = perem;
+                    if (ogl_vibrono != i) {
+                        document.getElementById('p_' + i).style.left = perem;
+                        document.getElementById('tp_' + i).style.left = perem2;
+                    }
                 }
                 if (soderg_izmen2 < pamyt_ogl_vibr) {
                     soderg_izmen2 += soderg_del2;
@@ -427,8 +439,12 @@ function soderg_control() {
                     ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = soderg_izmen + 'px';
                     
                     perem = soderg_izmen + 30 + 'px';
+                    perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
                     for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-                        if (ogl_vibrono != i) document.getElementById('p_' + i).style.left = perem;
+                        if (ogl_vibrono != i) {
+                            document.getElementById('p_' + i).style.left = perem;
+                            document.getElementById('tp_' + i).style.left = perem2;
+                        }
                     }
 
                 }
@@ -444,7 +460,7 @@ function soderg_control() {
             }
             break;
     }
-    if (soderg_rabota) setTimeout('soderg_control()', 500);
+    if (soderg_rabota) setTimeout('soderg_control()', 50);
 
 }
 
@@ -502,8 +518,9 @@ function kn_za_str_(deistvie) {
             ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = pomoshnik.style.visibility = 'hidden';
             ten2_gl_p.style.visibility = gl_p.style.visibility = 'visible';
             //gl_p_za_str.style.visibility = 'hidden';
+            
             soderg_rabota = true;
-            setTimeout('soderg_control()', 500);
+            setTimeout('soderg_control()', 50);
             //---------------------------------------------------------------------------------------------
             //кнопка прячущая за страницу
             //kn_za_str2.innerHTML = "<div id='ris_kn_za_str2'></div><div id='ris_min2'></div><div id='ris_v2'></div><div id='ris_str2'></div>";
@@ -559,7 +576,7 @@ function kn_za_str2_(deistvie) {
             //text_stranici.style.paddingTop = gl_p.clientHeight / 2 + 100 + 'px';
             soderg_rabota = true;
             soderg_variant = 2;
-            setTimeout('soderg_control()', 500);
+            setTimeout('soderg_control()', 50);
             break;
 
     }
