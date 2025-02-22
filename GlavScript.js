@@ -48,6 +48,7 @@ array_razd_p = [[
 ]
 
 ];
+nachalo_istorii = '<h2>История Ваших путешествий начиная с конца:</h2>';
 //=================================================================================================
 function Sait_load() {
     bob.style.backgroundColor = '#306090';
@@ -291,18 +292,25 @@ function sait_load_dopolnit() {
     kn_prydki_skrita = true;
     kn_prydki_start = true;
     okna_svernuti = false;
-
+    nachalo_napisano = false;
     staroe_x = innerWidth;
     staroe_y = innerHeight;
     peremeshenie_vniz = 0;
     posle_scroll = false;
     kn_nazad_vidna = false;
-    soderg_rabota = true;
 
+    soderg_rabota = true;
     soderg_izmen = 30;
     soderg_variant = 0;
     soderg_index = 0;
-    
+
+    dvig_pan_rabota = false;
+    dvig_pan_del = 0;
+    dvig_pan_variant = 0;
+    dvig_pan_konec = osnova.clientWidth-20;
+    dvig_pan_index = 0;
+
+
     setTimeout('izmen_win()', 4);
     pom_etap_vipolnen = false;
     pom_etap = 1;
@@ -311,12 +319,215 @@ function sait_load_dopolnit() {
 
 }
 //=================================================================================================
+function kn_dvig_panel(deistvie) {
+    color_kn = '#5080b0';
+    color_videl = '#80b0e0';
+    switch (deistvie) {
+        case 1://over
+            dvigenie_paneli.style.backgroundColor = color_videl;
+            dvigenie_paneli.style.cursor = 'ew-resize';
+            break;
+        case 2://out
+            dvigenie_paneli.style.backgroundColor = color_kn;
+            break;
+        case 3://move
+
+            break;
+        case 4://douwn
+            peremeshenie_okon_down = true;
+            peremeshenie_okon_fiksaciy = event.clientX;
+            event.returnValue = false;
+            break;
+        case 5://up
+            peremeshenie_okon_down = false;
+            if (peremeshenie_okon_fiksaciy == event.clientX) {
+                dvig_pan_rabota = true;
+                dvig_pan_variant = 0;
+                if (peremeshenie_okon_svernut) setTimeout('dvig_panel_razvernu()', 50);
+                else setTimeout('dvig_panel_svernu()', 50);
+                ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
+            }
+            event.returnValue = true;
+            break;
+    }
+}
+//=================================================================================================
+function dvig_panel_razvernu() {
+    switch (dvig_pan_variant) {
+        case 0:
+            dvig_pan_del = 27;
+            dvig_pan_index = osnova.clientWidth- 20 - dvig_pan_del;
+            dvig_pan_variant++;
+            okna.style.left = dvig_pan_index + 'px';
+            okna.style.width = okna.clientWidth - dvig_pan_del + 'px';
+            ten_stranici.style.width = stranica.style.width = stranica.clientWidth - dvig_pan_del +5+ 'px';
+            dvigenie_paneli.style.left = dvig_pan_index - 10 + 'px';
+            ten_kn_nazad.style.left = kn_nazad.style.left = dvig_pan_index - 30 + 'px';
+            break;
+        case 1:
+            if (okna.clientWidth + dvig_pan_del < 260) {
+                dvig_pan_index -= dvig_pan_del;
+
+                okna.style.left = dvig_pan_index + 'px';
+                okna.style.width = okna.clientWidth + dvig_pan_del + 'px';
+                ten_stranici.style.width = stranica.style.width = stranica.clientWidth - dvig_pan_del + 'px';
+                dvigenie_paneli.style.left = dvig_pan_index - 10 + 'px';
+                ten_kn_nazad.style.left = kn_nazad.style.left = dvig_pan_index - 30 + 'px';
+            } else {
+                okna.style.left = osnova.clientWidth - 270 + 'px';
+                okna.style.width = '270px';
+                dvigenie_paneli.style.left = osnova.clientWidth - 280 + 'px';
+                ten_kn_nazad.style.left = kn_nazad.style.left = osnova.clientWidth - 300 + 'px';
+                ten_stranici.style.width = stranica.style.width = osnova.clientWidth - stranica_left - 275 + 'px';
+                dvig_pan_rabota = false;
+                dvig_pan_variant = 0;
+                peremeshenie_okon_svernut = false;
+            }
+
+
+            break;
+    }
+    if (dvig_pan_rabota) setTimeout('dvig_panel_razvernu()', 50);
+
+}
+//=================================================================================================
+function dvig_panel_svernu() {
+    switch (dvig_pan_variant) {
+        case 0:
+            dvig_pan_del = okna.clientWidth / 10;
+            dvig_pan_index = osnova.clientWidth - okna.clientWidth + dvig_pan_del;
+            dvig_pan_variant++;
+            okna.style.left = dvig_pan_index + 'px';
+            okna.style.width = okna.clientWidth - dvig_pan_del + 'px';
+            ten_stranici.style.width = stranica.style.width = stranica.clientWidth + dvig_pan_del -5+ 'px';
+            dvigenie_paneli.style.left = dvig_pan_index - 10 + 'px';
+            ten_kn_nazad.style.left =kn_nazad.style.left = dvig_pan_index - 30 + 'px';
+            break;
+        case 1:
+            if (okna.clientWidth - dvig_pan_del > 20) {
+                dvig_pan_index += dvig_pan_del;
+               
+                    okna.style.left = dvig_pan_index + 'px';
+                    okna.style.width = okna.clientWidth - dvig_pan_del + 'px';
+                ten_stranici.style.width = stranica.style.width = stranica.clientWidth + dvig_pan_del + 'px';
+                dvigenie_paneli.style.left = dvig_pan_index - 10 + 'px';
+                ten_kn_nazad.style.left= kn_nazad.style.left = dvig_pan_index - 30 + 'px';
+            } else {
+                    okna.style.left = osnova.clientWidth - 20 + 'px';
+                okna.style.width = '20px';
+                dvigenie_paneli.style.left = osnova.clientWidth - 30 + 'px';
+                ten_kn_nazad.style.left = kn_nazad.style.left = osnova.clientWidth - 50 + 'px';
+                ten_stranici.style.width = stranica.style.width = osnova.clientWidth - stranica_left - 25 + 'px';
+                dvig_pan_rabota = false;
+                dvig_pan_variant = 0;
+                peremeshenie_okon_svernut = true;
+            }
+
+            
+            break;
+    }
+    if (dvig_pan_rabota) setTimeout('dvig_panel_svernu()', 50);
+    
+}
+//=================================================================================================
+function kn_za_str_(deistvie) {
+    color_kn = '#b0c0f0';
+    color_ris = '#304050';
+    color_videl = '#6080c0';
+    color_videl_ris = '#c0ffe0';
+    switch (deistvie) {
+        case 1://over
+            kn_za_str.style.backgroundColor = color_videl;
+            ris_min.style.backgroundColor = color_videl;
+            ris_min.style.borderColor = color_videl_ris;
+            ris_v.style.color = color_videl_ris;
+            ris_kn_za_str.style.borderColor = color_videl_ris;
+            ris_str.style.backgroundColor = color_videl_ris;
+            kn_za_str.style.cursor = 'default';
+            break;
+        case 2://out
+            kn_za_str.style.backgroundColor = color_kn;
+            ris_min.style.backgroundColor = color_kn;
+            ris_min.style.borderColor = color_ris;
+            ris_v.style.color = color_ris;
+            ris_kn_za_str.style.borderColor = color_ris;
+            ris_str.style.backgroundColor = color_ris;
+            break;
+        case 3://move
+
+            break;
+        case 4://douwn
+            okno_vidimost(1);
+            scroll(0, 0);
+            kn_prydki_start = true;
+
+            if (kn_prydki_start) {
+
+                kn_prydki_skrita = false;
+                kn_prydki_start = true;
+                kn_prydki.style.visibility = 'visible';
+
+                kn_prydki.style.left = 0 + 'px';
+                kn_prydki.style.borderTopLeftRadius = '0px';
+                kn_prydki.style.borderLeft = '0px';
+                kn_prydki.style.width = 35 + 'px';
+                kn_prydki.innerHTML = '>';
+
+                ten_kn_prydki.style.left = '0px';
+            }
+            ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = pomoshnik.style.visibility = 'hidden';
+            ten2_gl_p.style.visibility = gl_p.style.visibility = 'visible';
+            dvig_pan_rabota = true;
+            dvig_pan_variant = 0;
+            setTimeout('dvig_panel_svernu()', 20);
+            soderg_rabota = true;
+            setTimeout('soderg_control()', 10);
+            break;
+
+    }
+}
+//=================================================================================================
+function kn_za_str2_(deistvie) {
+    color_kn = '#b0c0f0';
+    color_ris = '#304050';
+    color_videl = '#6080c0';
+    color_videl_ris = '#c0ffe0';
+    switch (deistvie) {
+        case 1://over
+            kn_za_str2.style.backgroundColor = color_videl;
+            ris_min2.style.backgroundColor = color_videl;
+            ris_min2.style.borderColor = color_videl_ris;
+            ris_v2.style.color = color_videl_ris;
+            ris_kn_za_str2.style.borderColor = color_videl_ris;
+            ris_str2.style.backgroundColor = color_videl_ris;
+            kn_za_str2.style.cursor = 'default';
+            break;
+        case 2://out
+            kn_za_str2.style.backgroundColor = color_kn;
+            ris_min2.style.backgroundColor = color_kn;
+            ris_min2.style.borderColor = color_ris;
+            ris_v2.style.color = color_ris;
+            ris_kn_za_str2.style.borderColor = color_ris;
+            ris_str2.style.backgroundColor = color_ris;
+            break;
+        case 3://move
+
+            break;
+        case 4://douwn
+            soderg_rabota = true;
+            soderg_variant = 2;
+            setTimeout('soderg_control()', 50);
+            break;
+
+    }
+}
+//=================================================================================================
 function soderg_control() {
     switch (soderg_variant) {
         case 0: if (soderg_index < 10) {
             soderg_index++;
             soderg_izmen -= soderg_del;
-            ten1_gl_p.style.left= ten2_gl_p.style.left = gl_p.style.left = soderg_izmen + 'px';
+            ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = soderg_izmen + 'px';
             perem = soderg_izmen + 30 + 'px';
             perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
             for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
@@ -327,7 +538,7 @@ function soderg_control() {
             }
             stranica_left -= 5;
             ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
-            ten_stranici.style.width= stranica.style.width = stranica.clientWidth + 5 + 'px';
+            ten_stranici.style.width = stranica.style.width = stranica.clientWidth + 5 + 'px';
         } else {
             soderg_variant++;
             soderg_index = 0;
@@ -348,9 +559,9 @@ function soderg_control() {
             ogl_vibrono_copiy.style.top = soderg_izmen2 + 'px';
             ten_vibronogo_p.style.top = soderg_izmen2 + 1 + 'px';
             pamyt_pad = soderg_izmen_pad = text_stranici.style.paddingTop.slice(0, text_stranici.style.paddingTop.length - 2) - 0;
-            
+
             soderg_del_pad = (soderg_izmen_pad - 50) / 5;
-                gl_p_za_str.style.visibility = 'visible';
+            gl_p_za_str.style.visibility = 'visible';
         } break;
         case 1: if (soderg_index < 10) {
             soderg_index++;
@@ -374,11 +585,12 @@ function soderg_control() {
                 text_stranici.style.paddingTop = soderg_izmen_pad + 'px';
             }
             if (stranica_left > 50) {
-                stranica_left  -= 5;
-                ten_stranici.style.left= stranica.style.left = soderg_razdela_2.style.width = stranica_left + 'px';
+                stranica_left -= 5;
+                ten_stranici.style.left = stranica.style.left = soderg_razdela_2.style.width = stranica_left + 'px';
                 ten_stranici.style.width = stranica.style.width = stranica.clientWidth + 5 + 'px';
             }
         } else {
+            
             soderg_index = soderg_variant = 0;
             soderg_izmen = 30;
             soderg_rabota = false;
@@ -416,19 +628,12 @@ function soderg_control() {
                 soderg_variant++;
                 soderg_index = 0;
                 gl_p_za_str.style.visibility = 'hidden';
-                //gl_p.style.top = '20px';
                 ten1_gl_p.style.filter = 'blur(10px)';
                 ten1_gl_p.style.top = '202px';
                 soderg_razdela_2.style.top = '200px';
                 soderg_razdela_2.style.width = localStorage.getItem('w_s') - 0 + 100 + 'px';
                 ten2_gl_p.style.left = gl_p.style.left;
                 ten2_gl_p.style.visibility = 'visible';
-                // soderg_razdela_2.clientHeight + 20 + 'px';
-                // for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-                //   if (ogl_vibrono != i) document.getElementById('p_' + i).style.left = ;
-                //}
-                //gl_p.style.top = '20px';
-
 
             } break;
         case 3:
@@ -437,7 +642,7 @@ function soderg_control() {
                 if (soderg_izmen < 30) {
                     soderg_izmen += soderg_del;
                     ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = soderg_izmen + 'px';
-                    
+
                     perem = soderg_izmen + 30 + 'px';
                     perem2 = localStorage.getItem('w_s') - 0 + soderg_izmen + 14 + 'px';
                     for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
@@ -455,7 +660,7 @@ function soderg_control() {
                 }
             }
             else {
-                soderg_index = soderg_variant= 0;
+                soderg_index = soderg_variant = 0;
                 soderg_rabota = false;
             }
             break;
@@ -464,123 +669,7 @@ function soderg_control() {
 
 }
 
-//=================================================================================================
-function kn_za_str_(deistvie) {
-    color_kn = '#b0c0f0';
-    color_ris = '#304050';
-    color_videl = '#6080c0';
-    color_videl_ris = '#c0ffe0';
-    switch (deistvie) {
-        case 1://over
-            kn_za_str.style.backgroundColor = color_videl;
-            ris_min.style.backgroundColor = color_videl;
-            ris_min.style.borderColor = color_videl_ris;
-            ris_v.style.color = color_videl_ris;
-            ris_kn_za_str.style.borderColor = color_videl_ris;
-            ris_str.style.backgroundColor = color_videl_ris;
-            kn_za_str.style.cursor = 'default';
-            break;
-        case 2://out
-            kn_za_str.style.backgroundColor = color_kn;
-            ris_min.style.backgroundColor = color_kn;
-            ris_min.style.borderColor = color_ris;
-            ris_v.style.color = color_ris;
-            ris_kn_za_str.style.borderColor = color_ris;
-            ris_str.style.backgroundColor = color_ris;
-            break;
-        case 3://move
 
-            break;
-        case 4://douwn
-            okno_vidimost(1);
-            scroll(0, 0);
-            okna.style.width = '20px';
-            okna.style.left = osnova.clientWidth - 20 + 'px';
-            peremeshenie_okon_svernut = true;
-            dvigenie_paneli.style.left = osnova.clientWidth - 30 + 'px';
-            ten_kn_nazad.style.left = kn_nazad.style.left = osnova.clientWidth - 50 + 'px';
-            kn_prydki_start = true;
-
-            if (kn_prydki_start) {
-
-                kn_prydki_skrita = false;
-                kn_prydki_start = true;
-                kn_prydki.style.visibility = 'visible';
-
-                kn_prydki.style.left = 0 + 'px';
-                kn_prydki.style.borderTopLeftRadius = '0px';
-                kn_prydki.style.borderLeft = '0px';
-                kn_prydki.style.width = kn_prydki.clientWidth - 5 + 'px';
-                kn_prydki.innerHTML = '>';
-
-                ten_kn_prydki.style.left = '0px';
-            }
-            ten_line_pomoshnik.style.visibility = line_pomoshnik.style.visibility = pomoshnik.style.visibility = 'hidden';
-            ten2_gl_p.style.visibility = gl_p.style.visibility = 'visible';
-            //gl_p_za_str.style.visibility = 'hidden';
-            
-            soderg_rabota = true;
-            setTimeout('soderg_control()', 50);
-            //---------------------------------------------------------------------------------------------
-            //кнопка прячущая за страницу
-            //kn_za_str2.innerHTML = "<div id='ris_kn_za_str2'></div><div id='ris_min2'></div><div id='ris_v2'></div><div id='ris_str2'></div>";
-            //ris_v2.innerHTML = 'v';
-            //kn_za_str2.style.left = gl_p.clientWidth - 70 + 'px';
-            //---------------------------------------------------------------------------------------------
-            //ten1_gl_p.style.top = '185px';
-            //localStorage.setItem('ogl_v', document.getElementById('p_' + ogl_vibrono).style.top);
-            //ten_vibronogo_p.style.top = document.getElementById('p_' + ogl_vibrono).style.top = '230px';
-            //text_stranici.style.paddingTop = '50px';
-            break;
-
-    }
-}
-//=================================================================================================
-function kn_za_str2_(deistvie) {
-    color_kn = '#b0c0f0';
-    color_ris = '#304050';
-    color_videl = '#6080c0';
-    color_videl_ris = '#c0ffe0';
-    switch (deistvie) {
-        case 1://over
-            kn_za_str2.style.backgroundColor = color_videl;
-            ris_min2.style.backgroundColor = color_videl;
-            ris_min2.style.borderColor = color_videl_ris;
-            ris_v2.style.color = color_videl_ris;
-            ris_kn_za_str2.style.borderColor = color_videl_ris;
-            ris_str2.style.backgroundColor = color_videl_ris;
-            kn_za_str2.style.cursor = 'default';
-            break;
-        case 2://out
-            kn_za_str2.style.backgroundColor = color_kn;
-            ris_min2.style.backgroundColor = color_kn;
-            ris_min2.style.borderColor = color_ris;
-            ris_v2.style.color = color_ris;
-            ris_kn_za_str2.style.borderColor = color_ris;
-            ris_str2.style.backgroundColor = color_ris;
-            break;
-        case 3://move
-
-            break;
-        case 4://douwn
-            //kn_za_str.style.visibility = 'visible';
-            //ten2_gl_p.style.visibility = gl_p.style.visibility = 'visible';
-            //gl_p_za_str.style.visibility = 'hidden';
-            //gl_p_za_str.style.left = -10 * soderg_del + 'px';
-            //ten1_gl_p.style.top = '200px';
-            //for (i = 0; i < array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1].length; i++) {
-            //    if (ogl_vibrono != i) document.getElementById('p_' + i).style.visibility = 'visible';
-            //    document.getElementById('tp_' + i).style.visibility = 'visible';
-            //}
-            //ten_vibronogo_p.style.top = document.getElementById('p_' + ogl_vibrono).style.top = localStorage.getItem('ogl_v');
-            //text_stranici.style.paddingTop = gl_p.clientHeight / 2 + 100 + 'px';
-            soderg_rabota = true;
-            soderg_variant = 2;
-            setTimeout('soderg_control()', 50);
-            break;
-
-    }
-}
 //=================================================================================================
 function all_control(deistvie) {
 
@@ -661,48 +750,6 @@ function all_control(deistvie) {
         }
     }
 
-}
-//=================================================================================================
-function kn_prydki_(deistvie) {
-    color_kn = '#b0d0f0';
-    color_strelka = '#104070';
-    color_kn_vibrana = '#70f0b0';
-    
-    switch (deistvie) {
-        case 1://over
-            kn_prydki.style.cursor = 'default';
-            kn_prydki.style.backgroundColor = color_kn_vibrana;
-            break;
-        case 2://out
-            kn_prydki.style.backgroundColor = color_kn;
-            break;
-        case 3://move
-            break;
-        case 4://down
-            if (localStorage.getItem('l_p')==0) {
-                
-                
-                ten_line_pomoshnik.style.visibility = 'hidden';
-                line_pomoshnik.style.visibility = 'hidden';
-                ten_pomoshnika.style.visibility ='hidden';
-                pomoshnik.style.visibility = 'hidden';
-                localStorage.setItem('l_p', 1);
-                
-
-            } else {
-                
-                ten_line_pomoshnik.style.visibility ='visible';
-                line_pomoshnik.style.visibility = 'visible';
-                ten_pomoshnika.style.visibility ='visible';
-                pomoshnik.style.visibility = 'visible';
-                localStorage.setItem('l_p', 0);
-
-            }
-            
-            
-            
-            break;
-    }
 }
 //=================================================================================================
 function okno_izmen(idnomer, deistvie) {
@@ -796,6 +843,48 @@ function panel_izmen(deistvie) {
     }
 }
 //=================================================================================================
+function kn_prydki_(deistvie) {
+    color_kn = '#b0d0f0';
+    color_strelka = '#104070';
+    color_kn_vibrana = '#70f0b0';
+    
+    switch (deistvie) {
+        case 1://over
+            kn_prydki.style.cursor = 'default';
+            kn_prydki.style.backgroundColor = color_kn_vibrana;
+            break;
+        case 2://out
+            kn_prydki.style.backgroundColor = color_kn;
+            break;
+        case 3://move
+            break;
+        case 4://down
+            if (localStorage.getItem('l_p')==0) {
+                
+                
+                ten_line_pomoshnik.style.visibility = 'hidden';
+                line_pomoshnik.style.visibility = 'hidden';
+                ten_pomoshnika.style.visibility ='hidden';
+                pomoshnik.style.visibility = 'hidden';
+                localStorage.setItem('l_p', 1);
+                
+
+            } else {
+                
+                ten_line_pomoshnik.style.visibility ='visible';
+                line_pomoshnik.style.visibility = 'visible';
+                ten_pomoshnika.style.visibility ='visible';
+                pomoshnik.style.visibility = 'visible';
+                localStorage.setItem('l_p', 0);
+
+            }
+            
+            
+            
+            break;
+    }
+}
+//=================================================================================================
 function top_ok(idnomer) {
     switch (idnomer) {
         //besedi
@@ -838,53 +927,6 @@ function kn_nazad_(deistvie) {
 
             break;
 
-    }
-}
-//=================================================================================================
-function kn_dvig_panel(deistvie) {
-    color_kn = '#5080b0';
-    color_videl = '#80b0e0';
-    switch (deistvie) {
-        case 1://over
-            dvigenie_paneli.style.backgroundColor = color_videl;
-            dvigenie_paneli.style.cursor = 'ew-resize';
-            break;
-        case 2://out
-            dvigenie_paneli.style.backgroundColor = color_kn;
-            break;
-        case 3://move
-
-            break;
-        case 4://douwn
-            peremeshenie_okon_down = true;
-            peremeshenie_okon_fiksaciy = event.clientX;
-            event.returnValue = false;
-            break;
-        case 5://up
-            peremeshenie_okon_down = false;
-            if (peremeshenie_okon_fiksaciy == event.clientX) {
-                if (peremeshenie_okon_svernut) {
-                    okna.style.left = osnova.clientWidth - 270 + 'px';
-                    okna.style.width = '270px';
-                    okno_vidimost(0);
-                    okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = '240px';
-                    dvigenie_paneli.style.left = osnova.clientWidth - 280 + 'px';
-                    ten_stranici.style.width = stranica.style.width = osnova.clientWidth - 405 + 'px';
-
-                    peremeshenie_okon_svernut = false;
-
-                } else {
-                    okna.style.left = osnova.clientWidth - 20 + 'px';
-                    okna.style.width = '20px';
-                    okno_vidimost(1);
-                    dvigenie_paneli.style.left = osnova.clientWidth - 30 + 'px';
-                    ten_stranici.style.width = stranica.style.width = osnova.clientWidth - 155 + 'px';
-                    peremeshenie_okon_svernut = true;
-                }
-                ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
-            }
-            event.returnValue = true;
-            break;
     }
 }
 
@@ -962,7 +1004,7 @@ function p_videlen(deystvie, idnomer) {
                 localStorage.setItem('n_r', (idnomer));
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + idnomer).style.display = 'block';
                 //bob.innerHTML = array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer];
-                ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m')-0+1][localStorage.getItem('r_p')-1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p')-1][idnomer] + '</div>';
+                ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p') - 1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer] + '</div>' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
                 localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
 
                 okna.style.height = limit + stranica.clientHeight + 'px';
@@ -1063,6 +1105,7 @@ function menu_(deistvie, nomer, idnomer) {
         case 4://down
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
+
             document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'none';
             document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'none';
             if (idnomer < 4) localStorage.setItem('p_m', idnomer);
@@ -1073,8 +1116,17 @@ function menu_(deistvie, nomer, idnomer) {
             //bob.innerHTML = s_ekrana;
             document.getElementById('tm_' + idnomer + '_' + (nomer - 1)).style.display = 'block';
             document.getElementById('ts_' + idnomer + '_' + (nomer - 1) + '_0').style.display = 'block';
-            ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ';
+            //if (nachalo_napisano) {
+            //    bob.innerHTML = ts_0_6_0.innerText.splice(0, nachalo_istorii.length);
+            //    nachalo_napisano = false;
+            //}
+            ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
+
             localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
+            if (idnomer == 0 && nomer == 7) {
+                ts_0_6_0.innerHTML = nachalo_istorii + ts_0_6_0.innerHTML;
+                nachalo_napisano = true;
+            }
             soderg_razdela();
             document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[idnomer + 1][nomer - 2];
             break;
@@ -1086,7 +1138,7 @@ function on_pamyt(elm, elp, elr) {
 
 
     if (elm == 0 && elp == 6 && elr == 0) { } else {
-        ts_0_6_0.innerHTML = ts_0_6_0.innerHTML + "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + elm + "," + elp + "," + elr + ")'>" + array_menu[0][elm] + ' / ' + array_menu[elm - 0 + 1][elp - 1] + ' / ' + array_razd_p[elm][elp - 1][elr] + '</div > ';
+        ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + elm + "," + elp + "," + elr + ")'>" + array_menu[0][elm] + ' / ' + array_menu[elm - 0 + 1][elp - 1] + ' / ' + array_razd_p[elm][elp - 1][elr] + '</div > ' + ts_0_6_0.innerHTML;
         localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
         localStorage.setItem('p_m', elm);
         localStorage.setItem('r_p', elp);
