@@ -216,6 +216,7 @@ function Sait_load() {
     kn_prydki.innerHTML = '<';
     kn_prydki.style.top = innerHeight - 64 + 'px';
     ten_kn_prydki.style.top = innerHeight - 60 + 'px';
+    ten_kn_prydki.style.visibility= kn_prydki.style.visibility = 'hidden';
     //---------------------------------------------------------------------------------------------
     //if (localStorage.getItem('l_p')) { } else
     localStorage.setItem('l_p', 0);  //left_pomoshnik
@@ -359,6 +360,7 @@ function prydki_() {
                 kn_prydki.style.borderLeft = '0px';
                 kn_prydki.style.width = 35 + 'px';
                 kn_prydki.innerHTML = '>';
+                ten_kn_prydki.style.visibility =kn_prydki.style.visibility = 'visible';
                 prydki_perem = 50;
                 ten_kn_prydki.style.left = '0px';
                 localStorage.setItem('l_p', 1);
@@ -389,6 +391,7 @@ function prydki_() {
                 kn_prydki.style.left = 160 + 'px';
                 kn_prydki.innerHTML = '<';
                 kn_prydki_start = false;
+                ten_kn_prydki.style.visibility= kn_prydki.style.visibility = 'hidden';
                 ten_kn_prydki.style.left = '160px';
                 pomoshnik.style.left = '40px';
                 localStorage.setItem('l_p', 0);
@@ -1039,17 +1042,17 @@ function p_videlen(deystvie, idnomer) {
 
                 perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2)-0+200;
                 ten_vibronogo_p.style.top = perem - 5 + 'px';
-                perem -= 6;
-                ogl_vibrono_copiy.style.top = perem + 'px';
-                ogl_vibrono_copiy.innerHTML = odin_og.innerHTML;
-                odin_og.style.visibility = 'hidden';
+               perem -= 6;
+               ogl_vibrono_copiy.style.top = perem + 'px';
+               ogl_vibrono_copiy.innerHTML = odin_og.innerHTML;
+               odin_og.style.visibility = 'hidden';
                 
                 
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'none';
                 localStorage.setItem('n_r', (idnomer));
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + idnomer).style.display = 'block';
                 //bob.innerHTML = array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer];
-                ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p') - 1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer] + '</div>' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
+                ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p') - 1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer] + '</div>' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
                 localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
 
                 okna.style.height = limit + stranica.clientHeight + 'px';
@@ -1161,11 +1164,7 @@ function menu_(deistvie, nomer, idnomer) {
             //bob.innerHTML = s_ekrana;
             document.getElementById('tm_' + idnomer + '_' + (nomer - 1)).style.display = 'block';
             document.getElementById('ts_' + idnomer + '_' + (nomer - 1) + '_0').style.display = 'block';
-            //if (nachalo_napisano) {
-            //    bob.innerHTML = ts_0_6_0.innerText.splice(0, nachalo_istorii.length);
-            //    nachalo_napisano = false;
-            //}
-            ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
+            ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
 
             localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
             if (idnomer == 0 && nomer == 7) {
@@ -1183,7 +1182,7 @@ function on_pamyt(elm, elp, elr) {
 
 
     if (elm == 0 && elp == 6 && elr == 0) { } else {
-        ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='paragraf'onmousedown='on_pamyt(" + elm + "," + elp + "," + elr + ")'>" + array_menu[0][elm] + ' / ' + array_menu[elm - 0 + 1][elp - 1] + ' / ' + array_razd_p[elm][elp - 1][elr] + '</div > ' + ts_0_6_0.innerHTML;
+        ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + elm + "," + elp + "," + elr + ")'>" + array_menu[0][elm] + ' / ' + array_menu[elm - 0 + 1][elp - 1] + ' / ' + array_razd_p[elm][elp - 1][elr] + '</div > ' + ts_0_6_0.innerHTML;
         localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
         localStorage.setItem('p_m', elm);
         localStorage.setItem('r_p', elp);
@@ -1197,6 +1196,67 @@ function on_pamyt(elm, elp, elr) {
         ts_0_6_0.style.display = 'none';
     }
 }
+
+//=================================================================================================
+function on_p_0_0_3(nomer) {
+    if (nomer < 4) {
+        for (i = 0; i < 4;i++) if (nomer!=i&&document.getElementById('tt_'+i).style.display == 'block') document.getElementById('tt_'+i).style.display = 'none';
+        //for (i = 37; i < 39; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+        switch (nomer) {
+            case 0: perem_003 = 4; break;
+            case 1: perem_003 = 11; break;
+            case 2: perem_003 = 31; break;
+            default: perem_003 = 34; break;
+        }
+        str = "<dl><dd><hr width='100%'size='2'color='black'/>";
+        for (i = 0; i < array_menu[nomer + 1].length; i++) {
+            str += "<ul><li class='paragraf' onmousedown='on_p_0_0_3(" + perem_003 + ")'>" + array_menu[nomer + 1][i] + "</li></ul><div id='tt_" + perem_003 + "'class='tt'></div>";
+            perem_003++;
+        }
+        str += "<hr width='100%'size='2'color='black'/></dd></dl>"
+        document.getElementById('tt_' + nomer).innerHTML = str;
+    }
+    if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
+    if (nomer > 3 && nomer < 37) {
+        
+        document.getElementById('tt_' + nomer).innerHTML = "<dl><dd><hr width = '100%' size = '2' color = 'black'/><span class='reshenie' onmousedown='on_i_0_0_3("+nomer+")'>" + "Перейти в раздел" + "</span><p>" + document.getElementById('tt_' + nomer + '_text').innerHTML + "</p><hr width='100%' size='2' color='black'/></dd></dl>";
+        for (i = 4; i < 37; i++) {
+
+            if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+           
+        }
+    }
+    if (nomer > 36) {
+        for (i = 0; i < 4; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+        for (i = 37; i < 39; i++) if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+    }
+
+            
+}
+
+//=================================================================================================
+function on_i_0_0_3(nomer) {
+    if (nomer < 11) { elm = 0; elp = nomer - 3; }
+    else if (nomer < 31) { elm = 1; elp = nomer - 10; }
+    else if (nomer < 34) { elm = 2; elp = nomer - 30; }
+    else { elm = 3; elp = nomer - 33; }
+    elr = 0;
+    ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + elm + "," + elp + "," + elr + ")'>" + array_menu[0][elm] + ' / ' + array_menu[elm - 0 + 1][elp - 1] + ' / ' + array_razd_p[elm][elp - 1][elr] + '</div > ' + ts_0_6_0.innerHTML;
+    localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
+    localStorage.setItem('p_m', elm);
+    localStorage.setItem('r_p', elp);
+    localStorage.setItem('n_r', elr);
+    soderg_razdela();
+    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[elm - 0 + 1][elp - 1];
+    scroll(0, 0);
+    tm_0_1.style.display = 'none';
+    ts_0_1_2.style.display = 'none';
+
+    document.getElementById('tm_' + elm + '_' + elp).style.display = 'block';
+    document.getElementById('ts_' + elm + '_' + elp + '_' + elr).style.display = 'block';
+    
+}
+
 //=================================================================================================
 function soderg_razdela() {
     t = 50;
@@ -1354,8 +1414,8 @@ function izmen_win() {
             if (okno_zametki.clientHeight < 45) okno_zametki.style.height = '45px';
             okno_vidimost(0);
         }
-        kn_prydki.style.visibility = 'visible';
-        ten_kn_prydki.style.visibility = 'visible';
+        if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
+        else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
         ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
@@ -1397,9 +1457,9 @@ function izmen_win() {
             dvigenie_paneli.style.top = okno_top - 60 + 'px';
             okna_umen();
         }
-        kn_prydki.style.visibility = 'visible';
-        ten_kn_prydki.style.visibility = 'visible';
-        ten_line_pomoshnik.style.visibility = 'visible';
+        if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
+        else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
+                ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
         pomoshnik.style.visibility = 'visible';
@@ -1429,8 +1489,8 @@ function izmen_win() {
         okno_besedi.style.top = '210px';
         okno_novosti.style.top = okno_top + okno_besedi.clientHeight + 10 + scrollY + 'px';
         okno_zametki.style.top = okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + 20 + scrollY + 'px';
-        kn_prydki.style.visibility = 'visible';
-        ten_kn_prydki.style.visibility = 'visible';
+        if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
+        else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
         ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
