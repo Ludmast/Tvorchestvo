@@ -1,4 +1,4 @@
- //=================================================================================================
+//=================================================================================================
 array_name_sait = ["Творчество", "во всём!"];
 predupregd = 'Сайт находится в разработке';
 //=================================================================================================
@@ -1418,7 +1418,8 @@ function izmen_win() {
             if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
             else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
         } else {
-            ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden'; localStorage.setItem('l_p', 0); ten_line_pomoshnik.style.visibility = 'visible';
+            ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden'; localStorage.setItem('l_p', 0);
+        } ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
         pomoshnik.style.visibility = 'visible';
@@ -1463,7 +1464,9 @@ function izmen_win() {
             if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
             else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
         } else {
-            ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden'; localStorage.setItem('l_p', 0);        ten_line_pomoshnik.style.visibility = 'visible';
+            ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden'; localStorage.setItem('l_p', 0);
+        }
+        ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
         pomoshnik.style.visibility = 'visible';
