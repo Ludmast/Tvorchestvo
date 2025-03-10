@@ -383,7 +383,14 @@ position:absolute;
     display:none;
 
 }
-
+.tt{
+    display:none;
+}
+.tot{
+    color:black;
+    width:100%;
+    
+}
 h2 {
     color: indianred;
     text-align: center;
@@ -519,6 +526,15 @@ h2 {
     bottom:40px;
     height:1px;
 }
+#sleva{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:250px;
+    height:200px;
+    overflow:hidden;
+
+}
 #pomoshnik {
     position: absolute;
     bottom: 14px;
@@ -618,6 +634,24 @@ h2 {
     
     border-radius: 50%;
     border-bottom:3px solid red;
+
+    
+}
+
+#guba_2 {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -56px;
+    left: 32px;
+   
+ 
+    border: 2px solid red;
+ 
+    border-top:0px;
+    border-right:0px;
+    border-bottom-left-radius: 95%;
+    
 }
 
 #ten_menu {
