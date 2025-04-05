@@ -361,15 +361,25 @@ position:absolute;
 }
 .paragraf {
     background: #ffb0a0;
+    color:black;
+    padding-top: 2px;
+    padding-bottom: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+    
+}
+.interes {
+    background: #fff040;
     padding-top: 2px;
     padding-bottom: 5px;
     padding-left: 7px;
     padding-right: 7px;
     cursor: pointer;
 }
-
-.interes {
-    background: #fff040;
+.paragraf_v {
+    background: black;
+    color: #ffb0a0;
     padding-top: 2px;
     padding-bottom: 5px;
     padding-left: 7px;
@@ -379,13 +389,7 @@ position:absolute;
 .tm{
     display:none;
 }
-.ts{
-    display:none;
 
-}
-.tt{
-    display:none;
-}
 .tot{
     color:black;
     width:100%;
