@@ -54,7 +54,7 @@ function Sait_load() {
     bob.style.backgroundColor = '#306090';
     bob.style.overflowX = 'hidden';
     okna_width = 20;
-    
+    pamyt_p_0_0_3 = 0;
     //---------------------------------------------------------------------------------------------
     str = "";
     //список содержимого раздела
@@ -1197,41 +1197,103 @@ function on_pamyt(elm, elp, elr) {
         ts_0_6_0.style.display = 'none';
     }
 }
-
 //=================================================================================================
-function on_p_0_0_3(nomer) {
-    if (nomer < 4) {
-        for (i = 0; i < 4;i++) if (nomer!=i&&document.getElementById('tt_'+i).style.display == 'block') document.getElementById('tt_'+i).style.display = 'none';
-        //for (i = 37; i < 39; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-        switch (nomer) {
-            case 0: perem_003 = 4; break;
-            case 1: perem_003 = 11; break;
-            case 2: perem_003 = 31; break;
-            default: perem_003 = 34; break;
-        }
-        str = "<dl><dd><hr width='100%'size='2'color='black'/>";
-        for (i = 0; i < array_menu[nomer + 1].length; i++) {
-            str += "<ul><li class='paragraf' onmousedown='on_p_0_0_3(" + perem_003 + ")'>" + array_menu[nomer + 1][i] + "</li></ul><div id='tt_" + perem_003 + "'class='tt'></div>";
-            perem_003++;
-        }
-        str += "<hr width='100%'size='2'color='black'/></dd></dl>"
-        document.getElementById('tt_' + nomer).innerHTML = str;
-    }
-    if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
-    if (nomer > 3 && nomer < 37) {
-        
-        document.getElementById('tt_' + nomer).innerHTML = "<dl><dd><hr width = '100%' size = '2' color = 'black'/><span class='reshenie' onmousedown='on_i_0_0_3("+nomer+")'>" + "Перейти в раздел" + "</span><p>" + document.getElementById('tt_' + nomer + '_text').innerHTML + "</p><hr width='100%' size='2' color='black'/></dd></dl>";
-        for (i = 4; i < 37; i++) {
+function on_p_0_0_3_vibran(nomer) {
+    
+    document.getElementById('tt_' + nomer + '_telo').innerHTML = '';
+    document.getElementById('tt_' + nomer).style.display = 'block';
 
-            if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-           
-        }
-    }
-    if (nomer > 36) {
-        for (i = 0; i < 4; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-        for (i = 37; i < 39; i++) if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-    }
+    
+}
+//=================================================================================================
+function on_p_0_0_3(deistvie, nomer) {
+    
+    idnom = document.getElementById('tt_' + nomer);
+    switch (deistvie) {
+        case 1://over
+            //#ffb0a0
+            //if (pamyt_p_0_0_3 != nomer) {
+                document.getElementById('tt_' + nomer).style.background = '#ffd0c0';
+                document.getElementById('tt_' + nomer).style.color = '#a01000';
+            //}
+            break;
+        case 2://out
+            //if (pamyt_p_0_0_3 != nomer) {
+                document.getElementById('tt_' + nomer).style.background = '#ffb0a0';
+                document.getElementById('tt_' + nomer).style.color = 'black';
+            //}
+            break;
 
+        case 4://down
+            if (nomer < 4 || nomer > 36) {
+                for (i = 0; i < 4; i++) {
+                    if (document.getElementById('tt_' + i).style.display == 'none') {
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                        document.getElementById('tt_' + i).style.display = 'block';
+                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
+                    }
+                }
+                for (i = 37; i < 39; i++) {
+                    if (document.getElementById('tt_' + i).style.display == 'none') {
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                        document.getElementById('tt_' + i).style.display = 'block';
+                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
+                    }
+                }
+                switch (nomer) {
+
+                    case 0: perem_003 = 4; break;
+                    case 1: perem_003 = 11; break;
+                    case 2: perem_003 = 31; break;
+                    default: perem_003 = 34; break;
+                }
+                
+                str = "<hr width='100%'size='2'color='black'/>";
+                if (nomer < 4) {
+                    perem_003_nachalo = perem_003;
+                    perem_003_konec = array_menu[nomer + 1].length;
+
+                    for (i = 0; i < perem_003_konec; i++) {
+                        str += "<ul><li><div id='tt_" + perem_003 + "' class='paragraf' onmousedown='on_p_0_0_3(4," + perem_003 + ")'onmouseover='on_p_0_0_3(1," + perem_003 + ")'onmouseout='on_p_0_0_3(2," + perem_003 + ")'>" + array_menu[nomer + 1][i] + "</div><div id='tt_" + perem_003 + "_telo'></div></li></ul><p>";
+                        perem_003++;
+                    }
+                    perem_003_konec += perem_003_nachalo;
+                }
+                
+                str += "<hr width='100%'size='2'color='black'/>"
+
+                document.getElementById('tt_' + nomer + '_telo').innerHTML = "<div id='tt_" + nomer + "_v' class='paragraf_v'onmousedown='on_p_0_0_3_vibran(" + nomer + ")'>" + idnom.innerText + "</div>" + str;
+                idnom.style.display = 'none';
+                pamyt_p_0_0_3 = nomer;
+            }
+            //if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
+            if (nomer > 3 && nomer < 37) {
+                for (i = perem_003_nachalo; i < perem_003_konec; i++) {
+                
+                    if (nomer != i) {
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                        
+                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
+                   //     bob.innerHTML = 'hy';
+                        document.getElementById('tt_' + i).style.display = 'block';
+
+
+                    }
+                }
+                str = "<hr width='100%'size='2'color='black'/>";
+                str += "<span class='reshenie' onmousedown = 'on_i_0_0_3(" + nomer + ")'> " + "Перейти в раздел" + "</span><p>";
+                str += document.getElementById('tt_' + nomer + '_text').innerHTML + "</p>";
+                str +="<hr width='100%' size='2' color='black'/>"
+                document.getElementById('tt_' + nomer + '_telo').innerHTML = "<div id='tt_" + nomer + "_v' class='paragraf_v'onmousedown='on_p_0_0_3_vibran(" + nomer + ")'>" + idnom.innerText + "</div>" + str;
+                idnom.style.display = 'none';
+                
+            }
+            //if (nomer > 36) {
+            //    for (i = 0; i < 4; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+            //    for (i = 37; i < 39; i++) if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
+            //}
+            break;
+    }
             
 }
 
@@ -1421,7 +1483,8 @@ function izmen_win() {
             else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
         } else {
             ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden'; localStorage.setItem('l_p', 0);
-        } ten_line_pomoshnik.style.visibility = 'visible';
+        }
+        ten_line_pomoshnik.style.visibility = 'visible';
         line_pomoshnik.style.visibility = 'visible';
         ten_pomoshnika.style.visibility = 'visible';
         pomoshnik.style.visibility = 'visible';
