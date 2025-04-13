@@ -1,10 +1,11 @@
+
 //=================================================================================================
 array_name_sait = ["Творчество", "во всём!"];
 predupregd = 'Сайт находится в разработке';
 //=================================================================================================
 array_menu = [["Главное", "Обучение", "Обсуждение", "Справка"],
 ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "История просмотра", "Регистрация"],
-["Обучение от умельцев", "Творчество", "Программирование", "Алгебра и Геометрия", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика", "Литература", "Языки стран мира", "Астрономия", "Черчение", "Музыка", "Физкультура", "Для самых маленьких", "Энциклопедии", "Заметки"],
+["Обучение от умельцев", "Творчество", "Программирование", "Алгебра и Геометрия", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика", "Литература", "Языки стран мира", "Астрономия", "Черчение", "Музыка", "Физкультура", "Для дошкольников", "Энциклопедии", "Заметки"],
 ["Беседы", "Предложения/критика", "Написать письмо"],
 ["Инструкция по сайту", "Донаты", "Об авторе сайта"]];
 //=================================================================================================
@@ -34,7 +35,7 @@ array_razd_p = [[
     ['Обучающий курс', 'Теоремы, определения, формулы', 'Образцы чертежей', 'Необходимое для черчения', 'Интересные факты', 'Выдающиеся личности', 'Вопросы для самопроверки', 'Используемая литература'],
     ['Обучающий курс', 'Определения', 'Правила держания рук', 'Правила чтение для нот', 'Мелодии классики и эстрады', 'Интересные факты', 'Выдающиеся личности', 'Вопросы для самопроверки', 'Используемая литература'],
     ['Основные правила зарядки', 'Зарядка', 'Правила для игр'],
-    ['Обучающие игры для детей', 'Чтение вслух с картинками', 'Мамам на заметку'],
+    ['Обучающие игры для детей', 'Чтение вслух с картинками', 'Родителям на заметку'],
     ['Алфавитный указатель', 'По категориям', 'Толковый словарь'],
     ['Все заметки', 'Зачем нужны заметки']
 ], [
@@ -48,7 +49,59 @@ array_razd_p = [[
 ]
 
 ];
+array_text_0_1_0 = [['<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>'+
+    '<p>Он создавался для творческого развития и  бесплатного обучения пользователей. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>'+
+    '<p>Уверена, что ознакомление с работами умельцев (к которым сама отношусь), пробудит в Вас любовь к прекрасному, а так же может привести к рождению орегинальных идей. Для этого в меню "Главное" я создала разделы "Люди-умельцы" и "Творческие работы". Здесь узнаете много нового от мастеров своего дела. Их труды, маленькие хитрости и другая полезная информация ждут своего обывателя. Так же предоставляется возможность перейти по ссылкам на аккаунты умельцев, заказать понравившиеся вещи от самих авторов и лично обговорить их цену. </p>'+
+    '<p>К тому же Вы сможете не только созирцать на творения других людей, но и публиковать свои детища. Для этого нужно сделать хотя бы одну вещь своими руками и вступить в группу в разделе "Люди-умельцы". Но не забывайте, что вся информация от мастеров проходит через меня, и <b>рекламы</b>, не связанной с Вашими работами, <b>я публиковать не буду!</b></p>'+
+    '<p>Проверьте свои знания или научитесь чему-то новому в меню "Обучение". Здесь находится материал, изучаемый не только в школе. Вы должны знать, что я очень люблю учиться, несмотря на мои уже не школьные года. Хочу показать всем, что это не так уж и сложно, и знаниям все возросты покорны. Тем более, когда у Вас под рукой шпоргалка, а текст напечатан лишь по теме, без лишних отступлений. Отдельно будут находиться определения, формулы, таблицы, задания, вопросы и тому подобное. Причём всё разделено на параграфы, что делает обучение, с моей точки зрения, более комфортным. Но не забудьте прочесть в содержании этого раздела "Особенности сайта", чтобы не получился калабс и недопонимание. Все книги и сайты, которые применяла для написания текста, содержатся в пункте "Используемая литература" по каждому предмету отдельно. Я настоятельно рекомендую Вам ознакомится с ней. На некоторые из книг и сайтов можно переходить по указанным ссылкам.</p>'+
+    '<p>Сама работаю с большим количеством информации, поэтому прошу меня простить за ошибки, не завершённость параграфов по предметам, которые напишу как появится на это время, задержку при вступлении в группу новеньких и замедление в выкладывании свежего материала от умельцев. Я не метеор, а простая женщина, поэтому всё не успеваю. Все изменения по сайту и его разделам будут отмечаться в меню "Главное / Чего новенького".</p>'+
+    '<p>Если появятся вопросы, предложения или критика, то милости прошу в меню "Обсуждение". Здесь Вы сможете побеседовать с другими пользователями или написать письмо лично мне. При наборе текста в разделе "Беседы", пожалуйста, фильтруйте свою лексику, так как Ваше высказывание автоматически записывается в файл и не контролируется мной.</p>'+
+    '<p>Отдельно хочу остановиться на моём помошнике Смайлике. Этот солнечный блинчик можно перетаскивать по браузеру, отпускать и смотреть что будет с ним после нескольких падений. Такая же ситуация с этим дружком может произойти, если пользователь задержится на сайте больше часа. Такая, своего рода, разгрузка для мозгов читателей. ;)</p>'+
+    '<p>Более подробную информацию о работе сайта Вы можете найти в меню "Справка / Инструкция по сайту".</p>'+
+    '<h2><b><i>Жилаю Вам приятного путешествия по страницам и, надеюсь, что мой труд окажется полезным для Вас!</i></b></h2>'
+]];
+array_text_0_1_2 = [
+    ['hxbf<p>'+
+    'ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+    ['hxbf<p>ngfnjfg'],
+  
+]
 nachalo_istorii = '<h2>История Ваших путешествий начиная с конца:</h2>';
+
 //=================================================================================================
 function Sait_load() {
     bob.style.backgroundColor = '#306090';
@@ -101,7 +154,7 @@ function Sait_load() {
     if (localStorage.getItem('r_p')) { } else localStorage.setItem('r_p', 1);//razdel_punkta
     if (localStorage.getItem('n_r')) { } else localStorage.setItem('n_r', 0);//n_razdela
     localStorage.setItem('n_n', 0);//n_name
-
+    
     ogl_vibrono = localStorage.getItem('n_r');
 
     document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'block';
@@ -135,10 +188,10 @@ function Sait_load() {
     okz = perem;
     okno_zametki.style.top = perem + 'px';
     //---------------------------------------------------------------------------------------------
-    limit = 350;
+    limit = 270;
     okna.style.height = limit + stranica.clientHeight + 'px';
-    
-    
+
+    document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).innerHTML = array_text_0_1_0[0];
     //---------------------------------------------------------------------------------------------
     soderg_razdela_1.style.width = 750 + 'px';
     soderg_del = (soderg_razdela_1.clientWidth - 100) / 10;
@@ -205,7 +258,7 @@ function Sait_load() {
     document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p') - 1];
     //---------------------------------------------------------------------------------------------
     sleva.innerHTML = "<span id='pomoshnik'></span>";
-    line_pomoshnik.style.top = innerHeight - 33 + 'px';
+    //line_pomoshnik.style.top = innerHeight - 60 + 'px';
     pomoshnik.innerHTML = "<span id='ten_pomoshnika'></span><span id='telo'></span><span id='svet_tela'></span><span id='glaz_l'></span><span id='glaz_r'></span><span id='guba'></span>";
     glaz_l.innerHTML = "<span id='svet_glaz_l' class='c_svet_glaz'></span><span id='sheka_l'></span>";
     glaz_r.innerHTML = "<span id='svet_glaz_r' class='c_svet_glaz'></span><span id='sheka_r'></span>";
@@ -1198,107 +1251,135 @@ function on_pamyt(elm, elp, elr) {
     }
 }
 //=================================================================================================
-function on_p_0_0_3_vibran(nomer) {
+function on_p_0_0_3_vibran(deistvie,nomer) {
+
+    idnom_telo = document.getElementById('tt_' + nomer + '_telo');
     
-    document.getElementById('tt_' + nomer + '_telo').innerHTML = '';
-    document.getElementById('tt_' + nomer).style.display = 'block';
+    on_p003vib_time = 0;
+    //on_p003vib_height = idnom_telo.innerHeight/10;
+    //idnom.style.overflowY = 'hidden';
+
+    
+
+    on_p_0_0_3_vibran_time(deistvie, nomer);
+   
+
+    
+    //
 
     
 }
 //=================================================================================================
-function on_p_0_0_3(deistvie, nomer) {
+function on_paragraf_time(deistvie,nomer) {
+
     
-    idnom = document.getElementById('tt_' + nomer);
+    
+    {
+
+        document.getElementById('tt' + n_menu_punkt_razdel + nomer).style.display = 'block';
+        document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = '';
+      
+    }
+}
+
+//=================================================================================================
+function on_paragraf(deistvie,n_menu,n_punkt,n_razdel, nomer) {
+    n_menu_punkt_razdel = '_' + n_menu + '_' + n_punkt + '_' + n_razdel + '_';
+    idnom = document.getElementById('tt' + n_menu_punkt_razdel + nomer);
     switch (deistvie) {
         case 1://over
-            //#ffb0a0
-            //if (pamyt_p_0_0_3 != nomer) {
-                document.getElementById('tt_' + nomer).style.background = '#ffd0c0';
-                document.getElementById('tt_' + nomer).style.color = '#a01000';
-            //}
+            idnom.style.background = '#ffd0c0';
+            idnom.style.color = '#a01000';
             break;
         case 2://out
-            //if (pamyt_p_0_0_3 != nomer) {
-                document.getElementById('tt_' + nomer).style.background = '#ffb0a0';
-                document.getElementById('tt_' + nomer).style.color = 'black';
-            //}
+            idnom.style.background = '#ffb0a0';
+            idnom.style.color = 'black';
             break;
-
         case 4://down
-            if (nomer < 4 || nomer > 36) {
-                for (i = 0; i < 4; i++) {
-                    if (document.getElementById('tt_' + i).style.display == 'none') {
-                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                        document.getElementById('tt_' + i).style.display = 'block';
-                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
-                    }
-                }
-                for (i = 37; i < 39; i++) {
-                    if (document.getElementById('tt_' + i).style.display == 'none') {
-                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                        document.getElementById('tt_' + i).style.display = 'block';
-                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
-                    }
-                }
-                switch (nomer) {
+            if (n_menu_punkt_razdel=='_0_1_2_') {
+                    n_nachalo_parag = 4;
+                    n_konec_parag = 36;
+                n_konec_all = 39;
+                array_text = array_text_0_1_2;
+                pamyt_dlin_stran= stranica.clientHeight;
+            }
+            if (nomer >= n_nachalo_parag && nomer <= n_konec_parag) text_ = true; else text_ = false;
+            if (text_) {
+                //if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
+                
+                    for (i = paragraf_nachalo; i < paragraf_konec; i++) {
 
-                    case 0: perem_003 = 4; break;
-                    case 1: perem_003 = 11; break;
-                    case 2: perem_003 = 31; break;
-                    default: perem_003 = 34; break;
+                        if (nomer != i) {
+                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                            on_paragraf_time(0, i);
+                            // document.getElementById('tt_' + i + '_telo').innerHTML = '';
+
+                            //      document.getElementById('tt_' + i).style.display = 'block';
+
+
+                        }
+                    }
+                    str = "<hr width='100%'size='2'color='black'/>";
+                str += "<span class='reshenie' onmousedown = 'on_reshenie(" + nomer + ")'> " + "Перейти в раздел" + "</span><p>";
+                str +=array_text[nomer-4] + "</p>";
+                str += "<hr width='100%' size='2' color='black'/>"
+                document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = "<div id='tt" + n_menu_punkt_razdel + nomer + "_v' class='paragraf_v'onmousedown='on_paragraf_time(1," + nomer + ")'>" + idnom.innerText + "</div>" + str;
+                    idnom.style.display = 'none';
+                
+            } else {
+                for (i = 0; i < n_nachalo_parag; i++) {
+                    
+                    if (document.getElementById('tt' + n_menu_punkt_razdel + i).style.display == 'none') {
+                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                            
+                            on_paragraf_time(0, i);
+                        }
                 }
+                for (i = n_konec_parag+1; i < n_konec_all; i++) {
+                    
+                    if (document.getElementById('tt' + n_menu_punkt_razdel + i).style.display == 'none') {
+                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                            on_paragraf_time(0, i);
+                        }
+                }
+                
+                    switch (nomer) {
+
+                        case 0: paragraf_nachalo = 4; break;
+                        case 1: paragraf_nachalo = 11; break;
+                        case 2: paragraf_nachalo = 31; break;
+                        default: paragraf_nachalo = 34; break;
+                    }
                 
                 str = "<hr width='100%'size='2'color='black'/>";
-                if (nomer < 4) {
-                    perem_003_nachalo = perem_003;
-                    perem_003_konec = array_menu[nomer + 1].length;
+                if (nomer < n_nachalo_parag) {
+                    pamyt_paragraf_nachalo = paragraf_nachalo;
+                        paragraf_konec = array_menu[nomer + 1].length;
 
-                    for (i = 0; i < perem_003_konec; i++) {
-                        str += "<ul><li><div id='tt_" + perem_003 + "' class='paragraf' onmousedown='on_p_0_0_3(4," + perem_003 + ")'onmouseover='on_p_0_0_3(1," + perem_003 + ")'onmouseout='on_p_0_0_3(2," + perem_003 + ")'>" + array_menu[nomer + 1][i] + "</div><div id='tt_" + perem_003 + "_telo'></div></li></ul><p>";
-                        perem_003++;
+                    for (i = 0; i < paragraf_konec; i++) {
+                        str += "<ul><li><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "' class='paragraf' onmousedown='on_paragraf(4," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseover='on_paragraf(1," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseout='on_paragraf(2," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'>" + array_menu[nomer + 1][i] + "</div><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "_telo'></div></li></ul><p>";
+                        paragraf_nachalo++;
                     }
-                    perem_003_konec += perem_003_nachalo;
-                }
-                
-                str += "<hr width='100%'size='2'color='black'/>"
-
-                document.getElementById('tt_' + nomer + '_telo').innerHTML = "<div id='tt_" + nomer + "_v' class='paragraf_v'onmousedown='on_p_0_0_3_vibran(" + nomer + ")'>" + idnom.innerText + "</div>" + str;
-                idnom.style.display = 'none';
-                pamyt_p_0_0_3 = nomer;
-            }
-            //if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
-            if (nomer > 3 && nomer < 37) {
-                for (i = perem_003_nachalo; i < perem_003_konec; i++) {
-                
-                    if (nomer != i) {
-                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                        
-                        document.getElementById('tt_' + i + '_telo').innerHTML = '';
-                   //     bob.innerHTML = 'hy';
-                        document.getElementById('tt_' + i).style.display = 'block';
-
-
+                    paragraf_konec += pamyt_paragraf_nachalo;
+                    paragraf_nachalo = pamyt_paragraf_nachalo;
+                } else {
+                    str += array_text_0_1_2[nomer - n_konec_parag-1] + "</p>";
                     }
-                }
-                str = "<hr width='100%'size='2'color='black'/>";
-                str += "<span class='reshenie' onmousedown = 'on_i_0_0_3(" + nomer + ")'> " + "Перейти в раздел" + "</span><p>";
-                str += document.getElementById('tt_' + nomer + '_text').innerHTML + "</p>";
-                str +="<hr width='100%' size='2' color='black'/>"
-                document.getElementById('tt_' + nomer + '_telo').innerHTML = "<div id='tt_" + nomer + "_v' class='paragraf_v'onmousedown='on_p_0_0_3_vibran(" + nomer + ")'>" + idnom.innerText + "</div>" + str;
-                idnom.style.display = 'none';
+
+                    str += "<hr width='100%'size='2'color='black'/>"
+
+                document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = "<div id='tt" + n_menu_punkt_razdel + nomer + "_v' class='paragraf_v'onmousedown='on_paragraf_time(1," + nomer + ")'>" + idnom.innerText + "</div>" + str;
+                    idnom.style.display = 'none';
+                    pamyt_paragraf = nomer;
                 
-            }
-            //if (nomer > 36) {
-            //    for (i = 0; i < 4; i++) if (document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-            //    for (i = 37; i < 39; i++) if (nomer != i && document.getElementById('tt_' + i).style.display == 'block') document.getElementById('tt_' + i).style.display = 'none';
-            //}
+            } 
             break;
     }
             
 }
 
 //=================================================================================================
-function on_i_0_0_3(nomer) {
+function on_reshenie(nomer) {
     if (nomer < 11) { elm = 0; elp = nomer - 3; }
     else if (nomer < 31) { elm = 1; elp = nomer - 10; }
     else if (nomer < 34) { elm = 2; elp = nomer - 30; }
@@ -1314,7 +1395,8 @@ function on_i_0_0_3(nomer) {
     scroll(0, 0);
     tm_0_1.style.display = 'none';
     ts_0_1_2.style.display = 'none';
-
+    document.getElementById('tt' + n_menu_punkt_razdel + nomer).style.display = 'block';
+    document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = '';
     document.getElementById('tm_' + elm + '_' + elp).style.display = 'block';
     document.getElementById('ts_' + elm + '_' + elp + '_' + elr).style.display = 'block';
     
@@ -1490,9 +1572,9 @@ function izmen_win() {
         pomoshnik.style.visibility = 'visible';
 
         ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + scrollY + 'px';
-        line_pomoshnik.style.top = innerHeight - 33 + 'px';
-        ten_line_pomoshnik.style.top = innerHeight - 20 + 'px';
-        sleva.style.top = innerHeight - 200 + 'px';
+        line_pomoshnik.style.top = innerHeight - 60 + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 70 + 'px';
+        sleva.style.top = innerHeight - 220 + 'px';
         ten_kn_prydki.style.top = innerHeight - 60 + 'px';
         kn_prydki.style.top = innerHeight - 64 + 'px';
         staroe_y = innerHeight;
@@ -1503,9 +1585,9 @@ function izmen_win() {
             ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'visible';
         }
         if (kn_nazad_vidna) ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + scrollY + 'px';
-        line_pomoshnik.style.top = innerHeight - 33 + scrollY + 'px';
-        ten_line_pomoshnik.style.top = innerHeight - 20 + scrollY + 'px';
-        sleva.style.top = innerHeight - 200 + scrollY + 'px';
+        line_pomoshnik.style.top = innerHeight- 73 + scrollY + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 60 + scrollY + 'px';
+        sleva.style.top = innerHeight -220+ scrollY + 'px';
         ten_kn_prydki.style.top = innerHeight - 60 + scrollY + 'px';
             kn_prydki.style.top = innerHeight - 64 + scrollY + 'px';
         ten_stranici.style.height = stranica.clientHeight + 'px';
@@ -1544,10 +1626,10 @@ function izmen_win() {
         ten_kn_prydki.style.top = innerHeight - 60 + scrollY + 'px';
         kn_prydki.style.top = innerHeight - 64 + scrollY + 'px';
 
-        line_pomoshnik.style.top = innerHeight - 33 + 'px';
-        ten_line_pomoshnik.style.top = innerHeight - 20 + 'px';
+        line_pomoshnik.style.top = innerHeight - 73 + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 60 + 'px';
 
-        sleva.style.top = innerHeight - 200 + 'px';
+        sleva.style.top = innerHeight -220 + 'px';
         menu_line.style.height = '55px';
 
         okno_top = 210;
