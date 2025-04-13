@@ -489,7 +489,7 @@ h2 {
 #ten_kn_prydki {
     position: absolute;
     
-    left: 165px;
+    left: 2px;
     width: 40px;
     height: 43px;
     background-color: black;
@@ -500,8 +500,8 @@ h2 {
     position: absolute;
     width: 40px;
     height: 40px;
-    left: 160px;
-    
+    left: 0px;
+    bottom:0px;
     font-size: 36px;
     font-weight: 800;
     text-align: center;
@@ -511,37 +511,38 @@ h2 {
     border: 2px solid #104070;
     border-radius: 10px;
     border-bottom-left-radius: 0px;
+    border-top-left-radius:0px;
+    border-left:none;
     visibility:hidden;
 }
 #ten_line_pomoshnik {
     position: absolute;
     left: 0px;
     width: 170px;
-    bottom: 15px;
+    bottom: 55px;
     height: 5px;
     background-color: black;
     filter: blur(5px);
 }
 #line_pomoshnik {
     position: absolute;
-    left: 0;
-
+    left: 0px;
+    bottom: 54px;
     width: 160px;
-    bottom:40px;
-    height:1px;
+    height: 1px;
 }
 #sleva{
     position:absolute;
-    bottom:0px;
+    bottom:20px;
     left:0px;
-    width:250px;
+    width:200px;
     height:200px;
     overflow:hidden;
-
+    
 }
 #pomoshnik {
     position: absolute;
-    bottom: 14px;
+    bottom: 35px;
     left: 40px;
 }
 #ten_pomoshnika{
