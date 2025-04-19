@@ -49,57 +49,255 @@ array_razd_p = [[
 ]
 
 ];
-array_text_0_1_0 = [['<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>'+
-    '<p>Он создавался для творческого развития и  бесплатного обучения пользователей. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>'+
-    '<p>Уверена, что ознакомление с работами умельцев (к которым сама отношусь), пробудит в Вас любовь к прекрасному, а так же может привести к рождению орегинальных идей. Для этого в меню "Главное" я создала разделы "Люди-умельцы" и "Творческие работы". Здесь узнаете много нового от мастеров своего дела. Их труды, маленькие хитрости и другая полезная информация ждут своего обывателя. Так же предоставляется возможность перейти по ссылкам на аккаунты умельцев, заказать понравившиеся вещи от самих авторов и лично обговорить их цену. </p>'+
-    '<p>К тому же Вы сможете не только созирцать на творения других людей, но и публиковать свои детища. Для этого нужно сделать хотя бы одну вещь своими руками и вступить в группу в разделе "Люди-умельцы". Но не забывайте, что вся информация от мастеров проходит через меня, и <b>рекламы</b>, не связанной с Вашими работами, <b>я публиковать не буду!</b></p>'+
-    '<p>Проверьте свои знания или научитесь чему-то новому в меню "Обучение". Здесь находится материал, изучаемый не только в школе. Вы должны знать, что я очень люблю учиться, несмотря на мои уже не школьные года. Хочу показать всем, что это не так уж и сложно, и знаниям все возросты покорны. Тем более, когда у Вас под рукой шпоргалка, а текст напечатан лишь по теме, без лишних отступлений. Отдельно будут находиться определения, формулы, таблицы, задания, вопросы и тому подобное. Причём всё разделено на параграфы, что делает обучение, с моей точки зрения, более комфортным. Но не забудьте прочесть в содержании этого раздела "Особенности сайта", чтобы не получился калабс и недопонимание. Все книги и сайты, которые применяла для написания текста, содержатся в пункте "Используемая литература" по каждому предмету отдельно. Я настоятельно рекомендую Вам ознакомится с ней. На некоторые из книг и сайтов можно переходить по указанным ссылкам.</p>'+
-    '<p>Сама работаю с большим количеством информации, поэтому прошу меня простить за ошибки, не завершённость параграфов по предметам, которые напишу как появится на это время, задержку при вступлении в группу новеньких и замедление в выкладывании свежего материала от умельцев. Я не метеор, а простая женщина, поэтому всё не успеваю. Все изменения по сайту и его разделам будут отмечаться в меню "Главное / Чего новенького".</p>'+
-    '<p>Если появятся вопросы, предложения или критика, то милости прошу в меню "Обсуждение". Здесь Вы сможете побеседовать с другими пользователями или написать письмо лично мне. При наборе текста в разделе "Беседы", пожалуйста, фильтруйте свою лексику, так как Ваше высказывание автоматически записывается в файл и не контролируется мной.</p>'+
-    '<p>Отдельно хочу остановиться на моём помошнике Смайлике. Этот солнечный блинчик можно перетаскивать по браузеру, отпускать и смотреть что будет с ним после нескольких падений. Такая же ситуация с этим дружком может произойти, если пользователь задержится на сайте больше часа. Такая, своего рода, разгрузка для мозгов читателей. ;)</p>'+
-    '<p>Более подробную информацию о работе сайта Вы можете найти в меню "Справка / Инструкция по сайту".</p>'+
+array_text =
+    [
+        [//Главное
+            [//Нуливой компонент
+                [
+                    'неодето'
+                ]
+            ],   
+            [//От создателя сайта
+                [//Приветствие
+                    '<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>' +
+                    '<p>Он создавался для творческого развития и  бесплатного обучения пользователей. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>'+
+                    '<p>Уверена, что ознакомление с работами умельцев (к которым сама отношусь), пробудит в Вас любовь к прекрасному, а так же может привести к рождению орегинальных идей. Для этого в меню "Главное" я создала разделы "Люди-умельцы" и "Творческие работы". Здесь узнаете много нового от мастеров своего дела. Их труды, маленькие хитрости и другая полезная информация ждут своего обывателя. Так же предоставляется возможность перейти по ссылкам на аккаунты умельцев, заказать понравившиеся вещи от самих авторов и лично обговорить их цену. </p>'+
+                    '<p>К тому же Вы сможете не только созирцать на творения других людей, но и публиковать свои детища. Для этого нужно сделать хотя бы одну вещь своими руками и вступить в группу в разделе "Люди-умельцы". Но не забывайте, что вся информация от мастеров проходит через меня, и <b>рекламы</b>, не связанной с Вашими работами, <b>я публиковать не буду!</b></p>'+
+                    '<p>Проверьте свои знания или научитесь чему-то новому в меню "Обучение". Здесь находится материал, изучаемый не только в школе. Вы должны знать, что я очень люблю учиться, несмотря на мои уже не школьные года. Хочу показать всем, что это не так уж и сложно, и знаниям все возросты покорны. Тем более, когда у Вас под рукой шпоргалка, а текст напечатан лишь по теме, без лишних отступлений. Отдельно будут находиться определения, формулы, таблицы, задания, вопросы и тому подобное. Причём всё разделено на параграфы, что делает обучение, с моей точки зрения, более комфортным. Но не забудьте прочесть в содержании этого раздела "Особенности сайта", чтобы не получился калабс и недопонимание. Все книги и сайты, которые применяла для написания текста, содержатся в пункте "Используемая литература" по каждому предмету отдельно. Я настоятельно рекомендую Вам ознакомится с ней. На некоторые из книг и сайтов можно переходить по указанным ссылкам.</p>'+
+                    '<p>Сама работаю с большим количеством информации, поэтому прошу меня простить за ошибки, не завершённость параграфов по предметам, которые напишу как появится на это время, задержку при вступлении в группу новеньких и замедление в выкладывании свежего материала от умельцев. Я не метеор, а простая женщина, поэтому всё не успеваю. Все изменения по сайту и его разделам будут отмечаться в меню "Главное / Чего новенького".</p>'+
+                    '<p>Если появятся вопросы, предложения или критика, то милости прошу в меню "Обсуждение". Здесь Вы сможете побеседовать с другими пользователями или написать письмо лично мне. При наборе текста в разделе "Беседы", пожалуйста, фильтруйте свою лексику, так как Ваше высказывание автоматически записывается в файл и не контролируется мной.</p>'+
+                    '<p>Отдельно хочу остановиться на моём помошнике Смайлике. Этот солнечный блинчик можно перетаскивать по браузеру, отпускать и смотреть что будет с ним после нескольких падений. Такая же ситуация с этим дружком может произойти, если пользователь задержится на сайте больше часа. Такая, своего рода, разгрузка для мозгов читателей. ;)</p>'+
+                    '<p>Более подробную информацию о работе сайта Вы можете найти в меню "Справка / Инструкция по сайту".</p>'+
+                    '<h2><b><i>Жилаю Вам приятного путешествия по страницам и, надеюсь, что мой труд окажется полезным для Вас!</i></b></h2>'
+                ],
+                [//Особенности сайта
+                    '<h2><b><i>Для более полезного использования сайта, ознакомтесь с данным текстом!</i></b></h2>'+
+                    '<p>Здесь будут встречаться надписи, выделенные различным цветом. Что же означает этот окрас?</p>'+
+                    '<p><span id="metka_0_1_0" class="metka">Салатовый цвет</span> указывает на то, что есть шпаргалка или коментарий для данной надписи. В книгах присутствует свои термины и сокращения, которые часто забываются читателем. Здесь же их значения можно подсмотреть, щёлкнув по данному тексту.</p>'+
+                    '<p><span id="interes_0_1_0" class="interes">Жёлтым цветом</span> выделена надпись, содержащяя интересные факты, достижения или биографии не связаные напрямую с данной темой. Это полезно знать тем, кто хочет расширить свой кругозор и увеличить уровень знаний.</p>'+
+                    '<p><span id="paragraf_0_1_0" class="paragraf">Розовым цветом</span> выделяются разделы и параграфы по данному предмету. Содержимое открывается при нажатии по этой надписи и отделяется от остального текста чёрными линиями в начале и в конце.</p>'+
+                    '<p><span id="reshenie_0_1_0" class="reshenie">Голубым цветом</span> выделена надпись, приглашающая, открыть текст с ответами, подробным решением или поэтапным прохождением различных задач. Данное писание отделяется от другой информации синей рамкой. Это очень удобно, когда, после самостоятельного решения, хочется проверить свой ответ или ознакомиться с иными способами.</p>'+
+                    '<p>Всплывающий текст исчезает после щелчка за его пределами. Это правило распространяется для всех вышеперечисленых выделенных надписей.</p>'+
+                    '<p>Так же Вы сможете записать любую информацию с данного сайта в отдельный файл, если нажмёте на кнопку ... Эти данные будуд фиксироваться в окне слева под названием "Заметки". Содержимое данного окна в более развёрнутом виде можно увидеть, щёлкнув по его экрану или зайдя в меню "Обучение / Заметки". Когда захотите перенести эти записи к себе на компьютер воспользуйтесь кнопкой ...</p>'+
+                    '<p>Если вам мешает сосредoточиться на изучении предмета "Содержание раздела", "Боковая панель" или мой помошник Смайлик, то можно их отодвинуть. Для смещения панели с окнами имеется кнопка ... при нажатии на которую окна прячутся в правой стороне браузера. При её повторном нажатии, панель снова появляется.</p>'+
+                    '<p>Для смещения Смайлика нужно для начала щёлкнуть по палочке, на которой он находится. После появится кнопка смещения, нажав на которую отодвинете Смайлика за пределы левой стороны браузера. При её повторном нажатии мой помошник снова вернётся.</p>'+
+                    '<p>Для смещения "Содержания раздела" нужно нажать на кнопку ..., но при этом автоматически уберутся и Смайлик, и "Боковая панель". Если понадобится их вернуть, нажмите на упомянутые выше кнопки. Востановить "Содержимое раздела" можно, нажав на кнопку.</p>'+
+                    '<p>В меню "Главное / История просмотра" можно проследить свой путь или вернуться на один из разделов.</p>'+
+                    '<p>Для более подробной информации зайдите в меню "Справка / Инструкция по сайту".</p>'
+                ],
+                [//Содержимое сайта
+                    '<h2>Краткое описание</h2>' +
+                    '<p>Здесь содержится описание каждого пункта в меню, с возможностью перехода в сами разделы.</p>'+
+                    '<ul><li><div id="tt_0_1_2_0" class="paragraf" onmousedown="on_paragraf(4,0,1,2,0)"onmouseover="on_paragraf(1,0,1,2,0)"onmouseout="on_paragraf(2,0,1,2,0)">"Главное" содержит разделы:</div>'+
+                    '<div id = "tt_0_1_2_0_telo"></div></li></ul>'+
+                    '<ul><li><div id="tt_0_1_2_1" class="paragraf" onmousedown="on_paragraf(4,0,1,2,1)" onmouseover="on_paragraf(1,0,1,2,1)" onmouseout="on_paragraf(2,0,1,2,1)">"Обучение" содержит разделы:</div>'+
+                    '<div id="tt_0_1_2_1_telo"></div></li></ul>'+
+                    '<ul><li><div id="tt_0_1_2_2" class="paragraf" onmousedown="on_paragraf(4,0,1,2,2)" onmouseover="on_paragraf(1,0,1,2,2)" onmouseout="on_paragraf(2,0,1,2,2)">"Обсуждение" содержит разделы:</div>'+
+                    '<div id="tt_0_1_2_2_telo"></div></li></ul>'+
+                    '<ul><li><div id="tt_0_1_2_3" class="paragraf" onmousedown="on_paragraf(4,0,1,2,3)" onmouseover="on_paragraf(1,0,1,2,3)" onmouseout="on_paragraf(2,0,1,2,3)">"Справка" содержит разделы:</div>'+
+                    '<div id="tt_0_1_2_3_telo"></div></li></ul>'+
+                    '<p>Ещё хотела бы затронуть несколько вопросов:</p>' +
+                    '<ul><li><div id="tt_0_1_2_37" class="paragraf" onmousedown="on_paragraf(4,0,1,2,37)" onmouseover="on_paragraf(1,0,1,2,37)" onmouseout="on_paragraf(2,0,1,2,37)">Почему сделала участие в группе Люди-умельцы бесплатным?</div>' +
+                    '<div id="tt_0_1_2_37_telo"></div></li></ul>' +
+                    '<ul><li><div id="tt_0_1_2_38" class="paragraf" onmousedown="on_paragraf(4,0,1,2,38)" onmouseover="on_paragraf(1,0,1,2,38)" onmouseout="on_paragraf(2,0,1,2,38)"> Почему заостила внимание в обучении на школьной программе?</div>' +
+                    '<div id="tt_0_1_2_38_telo"></div></li></ul>'
+                ],
+                [//Настройки сайта
+                    ' '
+                ]
+            ],
+            [//Чего новенького
+                [//Все новости
+                    'a'
+                ],
+                [//
+                    'b'
+                ],
+                [//
+                    'c'
+                ],
+                [//
+                    'd'
+                ]
+            ],
+            [//
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+            ],
+
+            [
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+
+            ],
+            [
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+                [
+                    ''
+                ],
+
+            ],
+            [
+                [
+                    ''
+                ],
+                [
+                    ''
+                ]
+            
+            ],
+            [
+                [
+                    ''
+                ],
+                [
+                    ,,
+                ],
+                [
+                    ''
+                ]
+
+            ]
+        ],
+        [//Обучение
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ],
+            [
+                ['']
+            ]
+    ],
+    [//Обсуждение 
+        [
+                ['']
+        ],
+        [
+            ['']
+        ],
+
+        [
+            ['']
+        ]
+
+        ],
+    [//Справка
+        [
+            ['']
+        ],
+        [
+            ['']
+        ],
+
+        [
+            ['']
+        ]
+
+    ],
+
+    ];
+array_text_0_1_0 = [['<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>' +
+    '<p>Он создавался для творческого развития и  бесплатного обучения пользователей. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>' +
+    '<p>Уверена, что ознакомление с работами умельцев (к которым сама отношусь), пробудит в Вас любовь к прекрасному, а так же может привести к рождению орегинальных идей. Для этого в меню "Главное" я создала разделы "Люди-умельцы" и "Творческие работы". Здесь узнаете много нового от мастеров своего дела. Их труды, маленькие хитрости и другая полезная информация ждут своего обывателя. Так же предоставляется возможность перейти по ссылкам на аккаунты умельцев, заказать понравившиеся вещи от самих авторов и лично обговорить их цену. </p>' +
+    '<p>К тому же Вы сможете не только созирцать на творения других людей, но и публиковать свои детища. Для этого нужно сделать хотя бы одну вещь своими руками и вступить в группу в разделе "Люди-умельцы". Но не забывайте, что вся информация от мастеров проходит через меня, и <b>рекламы</b>, не связанной с Вашими работами, <b>я публиковать не буду!</b></p>' +
+    '<p>Проверьте свои знания или научитесь чему-то новому в меню "Обучение". Здесь находится материал, изучаемый не только в школе. Вы должны знать, что я очень люблю учиться, несмотря на мои уже не школьные года. Хочу показать всем, что это не так уж и сложно, и знаниям все возросты покорны. Тем более, когда у Вас под рукой шпоргалка, а текст напечатан лишь по теме, без лишних отступлений. Отдельно будут находиться определения, формулы, таблицы, задания, вопросы и тому подобное. Причём всё разделено на параграфы, что делает обучение, с моей точки зрения, более комфортным. Но не забудьте прочесть в содержании этого раздела "Особенности сайта", чтобы не получился калабс и недопонимание. Все книги и сайты, которые применяла для написания текста, содержатся в пункте "Используемая литература" по каждому предмету отдельно. Я настоятельно рекомендую Вам ознакомится с ней. На некоторые из книг и сайтов можно переходить по указанным ссылкам.</p>' +
+    '<p>Сама работаю с большим количеством информации, поэтому прошу меня простить за ошибки, не завершённость параграфов по предметам, которые напишу как появится на это время, задержку при вступлении в группу новеньких и замедление в выкладывании свежего материала от умельцев. Я не метеор, а простая женщина, поэтому всё не успеваю. Все изменения по сайту и его разделам будут отмечаться в меню "Главное / Чего новенького".</p>' +
+    '<p>Если появятся вопросы, предложения или критика, то милости прошу в меню "Обсуждение". Здесь Вы сможете побеседовать с другими пользователями или написать письмо лично мне. При наборе текста в разделе "Беседы", пожалуйста, фильтруйте свою лексику, так как Ваше высказывание автоматически записывается в файл и не контролируется мной.</p>' +
+    '<p>Отдельно хочу остановиться на моём помошнике Смайлике. Этот солнечный блинчик можно перетаскивать по браузеру, отпускать и смотреть что будет с ним после нескольких падений. Такая же ситуация с этим дружком может произойти, если пользователь задержится на сайте больше часа. Такая, своего рода, разгрузка для мозгов читателей. ;)</p>' +
+    '<p>Более подробную информацию о работе сайта Вы можете найти в меню "Справка / Инструкция по сайту".</p>' +
     '<h2><b><i>Жилаю Вам приятного путешествия по страницам и, надеюсь, что мой труд окажется полезным для Вас!</i></b></h2>'
 ]];
-array_text_0_1_2 = [
-    ['hxbf<p>'+
-    'ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-    ['hxbf<p>ngfnjfg'],
-  
-]
+array_text_0_1_2 = ["<span class='reshenie' onmousedown = 'on_reshenie(4)'>Перейти в раздел</span><p>Ещё не написан", 'Ещё не написан', 'Ещё не написан'];
 nachalo_istorii = '<h2>История Ваших путешествий начиная с конца:</h2>';
 
 //=================================================================================================
@@ -150,13 +348,20 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
    //  if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('p_m')) { } else localStorage.setItem('p_m', 0);//punkt_menu
-    if (localStorage.getItem('r_p')) { } else localStorage.setItem('r_p', 1);//razdel_punkta
-    if (localStorage.getItem('n_r')) { } else localStorage.setItem('n_r', 0);//n_razdela
+    if (localStorage.getItem('p_m')) { } else 
+    localStorage.setItem('p_m', 0);//punkt_menu
+    if (localStorage.getItem('r_p')) { } else
+    localStorage.setItem('r_p', 1);//razdel_punkta
+    if (localStorage.getItem('n_r')) { } else
+    localStorage.setItem('n_r', 0);//n_razdela
     localStorage.setItem('n_n', 0);//n_name
-    
+   
     ogl_vibrono = localStorage.getItem('n_r');
+    //---------------------------------------------------------------------------------------------
+    //// -------------УРА!!!! Зделала ;) -------------------
+    document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).innerHTML = array_text[localStorage.getItem('p_m')][localStorage.getItem('r_p')][localStorage.getItem('n_r')];
 
+    //---------------------------------------------------------------------------------------------
     document.getElementById('tm_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p')).style.display = 'block';
     document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'block';
     if (okna.clientWidth < 130) {
@@ -168,9 +373,12 @@ function Sait_load() {
     }
     if (scrollY > 150) okno_top = 60; else okno_top = 210 - scrollY;
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('o_b')) { }else localStorage.setItem('o_b', 250);//okno_besedi
-    if (localStorage.getItem('o_n')) { }else localStorage.setItem('o_n', 250);//okno_novosti
-    if (localStorage.getItem('o_z')) { }else localStorage.setItem('o_z', 250);//okno_zametki
+    if (localStorage.getItem('o_b')) { } else
+        localStorage.setItem('o_b', 250);//okno_besedi
+      if (localStorage.getItem('o_n')) { }else
+    localStorage.setItem('o_n', 250);//okno_novosti
+        if (localStorage.getItem('o_z')) { }else
+    localStorage.setItem('o_z', 250);//okno_zametki
     //---------------------------------------------------------------------------------------------
     okno_besedi.style.height = localStorage.getItem('o_b');
     okno_novosti.style.height = localStorage.getItem('o_n');
@@ -190,8 +398,8 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     limit = 270;
     okna.style.height = limit + stranica.clientHeight + 'px';
-
-    document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).innerHTML = array_text_0_1_0[0];
+    //---------------------------------------------------------------------------------------------
+    
     //---------------------------------------------------------------------------------------------
     soderg_razdela_1.style.width = 750 + 'px';
     soderg_del = (soderg_razdela_1.clientWidth - 100) / 10;
@@ -1105,6 +1313,7 @@ function p_videlen(deystvie, idnomer) {
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + localStorage.getItem('n_r')).style.display = 'none';
                 localStorage.setItem('n_r', (idnomer));
                 document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + idnomer).style.display = 'block';
+                document.getElementById('ts_' + localStorage.getItem('p_m') + '_' + localStorage.getItem('r_p') + '_' + idnomer).innerHTML = array_text[localStorage.getItem('p_m')][localStorage.getItem('r_p')][localStorage.getItem('n_r')];
                 //bob.innerHTML = array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer];
                 ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + idnomer + ")'> " + array_menu[0][localStorage.getItem('p_m')] + ' / ' + array_menu[localStorage.getItem('p_m') - 0 + 1][localStorage.getItem('r_p') - 1] + ' / ' + array_razd_p[localStorage.getItem('p_m')][localStorage.getItem('r_p') - 1][idnomer] + '</div>' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
                 localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
@@ -1218,6 +1427,7 @@ function menu_(deistvie, nomer, idnomer) {
             //bob.innerHTML = s_ekrana;
             document.getElementById('tm_' + idnomer + '_' + (nomer - 1)).style.display = 'block';
             document.getElementById('ts_' + idnomer + '_' + (nomer - 1) + '_0').style.display = 'block';
+            document.getElementById('ts_' + idnomer + '_' + (nomer - 1) + '_0').innerHTML = array_text[idnomer][nomer - 1][0];
             ts_0_6_0.innerHTML = "<p>" + localStorage.getItem('n_n') + "</p> <div id='pamyt_" + localStorage.getItem('n_n') + "' class='reshenie'onmousedown='on_pamyt(" + localStorage.getItem('p_m') + "," + localStorage.getItem('r_p') + "," + localStorage.getItem('n_r') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ' + ts_0_6_0.innerHTML;//.splice(0, nacalo_istorii.length);
 
             localStorage.setItem('n_n', localStorage.getItem('n_n') - 0 + 1);
@@ -1246,6 +1456,7 @@ function on_pamyt(elm, elp, elr) {
         scroll(0, 0);
         document.getElementById('tm_' + elm + '_' + elp).style.display = 'block';
         document.getElementById('ts_' + elm + '_' + elp + '_' + elr).style.display = 'block';
+        document.getElementById('ts_' + elm + '_' + elp + '_' + elr).innerHTML = array_text[elm][elp][elr];
         tm_0_6.style.display = 'none';
         ts_0_6_0.style.display = 'none';
     }
@@ -1272,11 +1483,15 @@ function on_p_0_0_3_vibran(deistvie,nomer) {
 //=================================================================================================
 function on_paragraf_time(deistvie,nomer) {
 
-    
-    
+
+    if (deistvie==0)
     {
 
         document.getElementById('tt' + n_menu_punkt_razdel + nomer).style.display = 'block';
+         
+        //document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').style.overflow = 'hidden';
+        //document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').style.display = document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').clientHeight / 2;
+
         document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = '';
       
     }
@@ -1296,83 +1511,72 @@ function on_paragraf(deistvie,n_menu,n_punkt,n_razdel, nomer) {
             idnom.style.color = 'black';
             break;
         case 4://down
-            if (n_menu_punkt_razdel=='_0_1_2_') {
-                    n_nachalo_parag = 4;
-                    n_konec_parag = 36;
+            if (n_menu_punkt_razdel == '_0_1_2_') {
+                n_nachalo_parag = 4;
+                n_konec_parag = 36;
                 n_konec_all = 39;
-                array_text = array_text_0_1_2;
-                pamyt_dlin_stran= stranica.clientHeight;
+                
+                pamyt_dlin_stran = stranica.clientHeight;
             }
-            if (nomer >= n_nachalo_parag && nomer <= n_konec_parag) text_ = true; else text_ = false;
-            if (text_) {
-                //if (document.getElementById('tt_' + nomer).style.display != 'block') document.getElementById('tt_' + nomer).style.display = 'block'; else document.getElementById('tt_' + nomer).style.display = 'none';
-                
-                    for (i = paragraf_nachalo; i < paragraf_konec; i++) {
+            if (nomer >= n_nachalo_parag && nomer <= n_konec_parag) {
+                for (i = paragraf_nachalo; i < paragraf_konec; i++) {
 
-                        if (nomer != i) {
-                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                            on_paragraf_time(0, i);
-                            // document.getElementById('tt_' + i + '_telo').innerHTML = '';
-
-                            //      document.getElementById('tt_' + i).style.display = 'block';
+                    if (nomer != i) {
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                        on_paragraf_time(0, i);
 
 
-                        }
                     }
-                    str = "<hr width='100%'size='2'color='black'/>";
-                str += "<span class='reshenie' onmousedown = 'on_reshenie(" + nomer + ")'> " + "Перейти в раздел" + "</span><p>";
-                str +=array_text[nomer-4] + "</p>";
-                str += "<hr width='100%' size='2' color='black'/>"
-                document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = "<div id='tt" + n_menu_punkt_razdel + nomer + "_v' class='paragraf_v'onmousedown='on_paragraf_time(1," + nomer + ")'>" + idnom.innerText + "</div>" + str;
-                    idnom.style.display = 'none';
-                
+                }
             } else {
                 for (i = 0; i < n_nachalo_parag; i++) {
-                    
+
                     if (document.getElementById('tt' + n_menu_punkt_razdel + i).style.display == 'none') {
-                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                            
-                            on_paragraf_time(0, i);
-                        }
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+
+                        on_paragraf_time(0, i);
+                    }
                 }
-                for (i = n_konec_parag+1; i < n_konec_all; i++) {
-                    
+                for (i = n_konec_parag + 1; i < n_konec_all; i++) {
+
                     if (document.getElementById('tt' + n_menu_punkt_razdel + i).style.display == 'none') {
-                            //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
-                            on_paragraf_time(0, i);
-                        }
+                        //здесь надо вставить медленное убирание открытого блока 'tt_'+i+'_telo'
+                        on_paragraf_time(0, i);
+                    }
                 }
-                
-                    switch (nomer) {
 
-                        case 0: paragraf_nachalo = 4; break;
-                        case 1: paragraf_nachalo = 11; break;
-                        case 2: paragraf_nachalo = 31; break;
-                        default: paragraf_nachalo = 34; break;
-                    }
-                
-                str = "<hr width='100%'size='2'color='black'/>";
-                if (nomer < n_nachalo_parag) {
-                    pamyt_paragraf_nachalo = paragraf_nachalo;
-                        paragraf_konec = array_menu[nomer + 1].length;
+                switch (nomer) {
 
-                    for (i = 0; i < paragraf_konec; i++) {
-                        str += "<ul><li><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "' class='paragraf' onmousedown='on_paragraf(4," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseover='on_paragraf(1," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseout='on_paragraf(2," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'>" + array_menu[nomer + 1][i] + "</div><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "_telo'></div></li></ul><p>";
-                        paragraf_nachalo++;
-                    }
-                    paragraf_konec += pamyt_paragraf_nachalo;
-                    paragraf_nachalo = pamyt_paragraf_nachalo;
-                } else {
-                    str += array_text_0_1_2[nomer - n_konec_parag-1] + "</p>";
-                    }
+                    case 0: paragraf_nachalo = 4; break;
+                    case 1: paragraf_nachalo = 11; break;
+                    case 2: paragraf_nachalo = 31; break;
+                    default: paragraf_nachalo = 34; break;
+                }
+            }
 
-                    str += "<hr width='100%'size='2'color='black'/>"
 
-                document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = "<div id='tt" + n_menu_punkt_razdel + nomer + "_v' class='paragraf_v'onmousedown='on_paragraf_time(1," + nomer + ")'>" + idnom.innerText + "</div>" + str;
-                    idnom.style.display = 'none';
-                    pamyt_paragraf = nomer;
-                
-            } 
+            str = "<hr width='100%'size='2'color='black'/>";
+            if (nomer < n_nachalo_parag) {
+                pamyt_paragraf_nachalo = paragraf_nachalo;
+                paragraf_konec = array_menu[nomer + 1].length;
+
+                for (i = 0; i < paragraf_konec; i++) {
+                    str += "<ul><li><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "' class='paragraf' onmousedown='on_paragraf(4," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseover='on_paragraf(1," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'onmouseout='on_paragraf(2," + n_menu + "," + n_punkt + "," + n_razdel + "," + paragraf_nachalo + ")'>" + array_menu[nomer + 1][i] + "</div><div id='tt" + n_menu_punkt_razdel + paragraf_nachalo + "_telo'></div></li></ul><p>";
+                    paragraf_nachalo++;
+                }
+                paragraf_konec += pamyt_paragraf_nachalo;
+                paragraf_nachalo = pamyt_paragraf_nachalo;
+            } else {
+                str += array_text[0][0][0] + "</p>";
+            }
+
+            str += "<hr width='100%'size='2'color='black'/>"
+
+            document.getElementById('tt' + n_menu_punkt_razdel + nomer + '_telo').innerHTML = "<div id='tt" + n_menu_punkt_razdel + nomer + "_v' class='paragraf_v'onmousedown='on_paragraf_time(1," + nomer + ")'>" + idnom.innerText + "</div>" + str;
+            idnom.style.display = 'none';
+            if (nomer < n_nachalo_parag && nomer > n_konec_parag) { pamyt_paragraf = nomer; }
+
+    
             break;
     }
             
