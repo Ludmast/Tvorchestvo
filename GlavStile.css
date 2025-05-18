@@ -362,6 +362,7 @@ position:absolute;
 .paragraf {
     background: #ffb0a0;
     color:black;
+    
     padding-top: 2px;
     padding-bottom: 5px;
     padding-left: 7px;
@@ -844,4 +845,22 @@ filter:blur(14px);
     bottom: 2px;
     
     background-color: #306090;
+}
+.peredel{
+    position:absolute;
+    border: 2px inset green;
+
+    
+}
+.new_sait{
+    width:99%;
+    border:2px ridge #c0ff20;
+    
+}
+.izobr {
+    height:100px;
+    width:75px;
+    background:#b0c0f0;
+    border:2px outset #306090;
+    border-radius:10px;
 }
