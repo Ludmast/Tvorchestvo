@@ -334,58 +334,14 @@ position:absolute;
 #text_stranici {
     width: 100%;
     background-color: white;
-    line-height: 26px;
-    word-spacing: 5px;
+    line-height: 30px;
+    word-spacing:5px;
     text-indent: 20px;
     font-size: 20px;
     border-radius: 3px;
     padding-left: 10px;
     padding-right: 10px;
     visibility: visible;
-}
-.metka{
-    background:#c0ff20;
-    padding-top:2px;
-    padding-bottom:5px;
-    padding-left:7px;
-    padding-right:7px;
-    cursor:pointer;
-}
-.reshenie {
-    background: #a0e0ff;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
-}
-.paragraf {
-    background: #ffb0a0;
-    color:black;
-    
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
-    
-}
-.interes {
-    background: #fff040;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
-}
-.paragraf_v {
-    background: black;
-    color: #ffb0a0;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
 }
 .tm{
     display:none;
@@ -852,15 +808,91 @@ filter:blur(14px);
 
     
 }
-.new_sait{
-    width:99%;
+
+.metka {
+    background: #c0ff20;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.reshenie {
+    background: #a0e0ff;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.paragraf {
+    background: #ffb0a0;
+    color: black;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.interes {
+    background: #fff040;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+.paragraf_v {
+    background: black;
+    color: #ffb0a0;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.nowosti{
+    
     border:2px ridge #c0ff20;
     
 }
+
 .izobr {
-    height:100px;
-    width:75px;
-    background:#b0c0f0;
-    border:2px outset #306090;
+    
+    
+    
+    background:#e0fff0;
+    border:2px solid #309060;
     border-radius:10px;
+    overflow:clip;
+    padding:5px;
+    cursor:pointer;
+      
+}
+.foto_ymelca {
+    overflow:clip;
+
+    width: 150px;
+   margin:5px;
+    
+    border: 2px solid #306090;
+    border-radius: 10px;
+
+}
+.foto_ymelca_min {
+    overflow: clip;
+    width: 75px;
+    border: 2px solid #306090;
+    border-radius: 10px;
+}
+
+.spisok {
+    
+    margin:10px;
+    border: 2px solid #306090;
+    border-radius: 10px;
 }
