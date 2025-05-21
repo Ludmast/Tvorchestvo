@@ -56,7 +56,7 @@ array_text =
                 [//Приветствие
                     //Начальная страница
                     '<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>' +
-                    '<div  class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name">Меня зовут <big><b>Ильина Людмила.</b></big></div><p> Я являюсь самостоятельно обученным <i>программистом, художником и рукодельницей.</i> </td></tr></table></div >' +
+                    '<div  class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name">Меня зовут <big><b>Ильина Людмила.</b></big></div><p> Я являюсь самостоятельно обученным <i>программистом, художником и рукодельницей.</i> </td></tr></table></div >' +
                     '<p>Создавала этот сайт с нуля для <b>творческого развития</b> и  бесплатного <b>обучения пользователей</b>. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>' +
                     '<p>Этот сайт, скорее всего, не похож на другие. Он полностью соответствует <b>моему</b> представлению о комфортном обучении и наблюдении за творчеством мастеров. Наверное, это отголоски моего поколения. </p>'+
                     '<p>В тексте сайта будут встречаться надписи на цветном фоне. Это сделано для большего удобства при чтении. Чтобы ознакомиться с этим новшеством более подробно обязательно загляните в <span id="tt_0_0_1"class="reshenie"><b> "Особенности сайта"</b></span>.</p> ' +
@@ -198,9 +198,9 @@ array_text =
             ],
             [//Люди-умельцы
                 [//Список с начала
-                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
-                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
-                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>'
+                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
+                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
+                    '<p><div class="izobr"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>'
                 ],
                 [//Список с конца
                     
@@ -319,21 +319,21 @@ array_text =
             [//Обучение от умельцев
                 [//Обучающие уроки по мере поступления
                     '<p>Здесь видны толь загаловок с кратким описанием и автор. Если захотите увидеть полностью занятие, то нажмите на его оглавление.<p> ' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' 
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td> <big><b>Заголовок занятия</b></big> <p>Краткое описание урока с указанием его направления в творчестве</td><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td></tr></table></div><p>' 
                 ],
                 [//Обучение от конкретного мастера
 '<p>Выберите нужного Вам мастера:<p>'+
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' 
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' +
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' 
 
                 ],
                 [//Обучение по категориям творчества
@@ -352,7 +352,7 @@ array_text =
                 ],
                 [//Обучающие схемы от умельцев
                     '<p>Схемы могут совпадать или принадлежать другим, неисзестным, авторам. Вы должны понимать, что всё попавшее в Internet становится достоянием общества. Здесь указывается человек, который выложил материал, для общего обозрения<p>' +
-                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_foto_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' 
+                    '<div class="izobr"><table><tr><td align="center"width="30%"><img class="foto_ymelca_min" src="ym_1_fotos_1.jpg"><div id="name_ymelca"><big><b>Ильина (Ковалёва) Людмила.</b></big></div></td><td> Перечисления направления занятий.</td></tr></table></div><p>' 
                 ],
                 [//Особенности данного обучения
                     '<p> '
