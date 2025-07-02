@@ -2321,13 +2321,13 @@ function on_tp_0_0_1(nomer){
     case 0:nom=3; break;
     case 1:nom=1; break;
     case 2:nom=2; break;
-    case 3:nom=8; break;
-    case 4:nom=9; break;
-    case 5:nom=10; break;
-    case 6:nom=11; break;
-    case 7:nom=12; break;
-    case 8:nom=13; break;
-    case 9:nom=14; break;
+    case 3:nom=10; break;
+    case 4:nom=11; break;
+    case 5:nom=12; break;
+    case 6:nom=13; break;
+    case 7:nom=14; break;
+    case 8:nom=15; break;
+    case 9:nom=16; break;
     }
     document.getElementById(name+'_telo').innerHTML='<div id="'+name+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer + ')"onmouseout="on_tp(4,' + nomer + ')"onmousedown="on_tp(5,'+nomer+')">'+document.getElementById(name).innerHTML+'</div><hr width="100%"size="2"color="black"/>'+array_text[0][0][1][nom]+'<hr width="100%"size="2"color="black"/>';
 }
