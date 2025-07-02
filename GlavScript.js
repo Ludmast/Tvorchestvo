@@ -880,12 +880,12 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     //  if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
     //---------------------------------------------------------------------------------------------
-    if (localStorage.getItem('nm')) { }else
+    //if (localStorage.getItem('nm')) { }else
     localStorage.setItem('nm', 0);//nomer_menu (p_m)
 
-    if (localStorage.getItem('nr')) { } else
+    //if (localStorage.getItem('nr')) { } else
         localStorage.setItem('nr', 1);//nomer_razdela_v_menu (r_p)
-    if (localStorage.getItem('np')) { } else
+    //if (localStorage.getItem('np')) { } else
         localStorage.setItem('np', 0);//nomer_punkta_v_razdele (n_r)
     localStorage.setItem('nn', 0);//nomer_name
 
