@@ -494,6 +494,7 @@ h2 {
     left:0px;
     width:200px;
     height:200px;
+    
     overflow:hidden;
     
 }
@@ -792,21 +793,101 @@ filter:blur(14px);
     border-top-right-radius:0px;
     border-bottom-right-radius:0px;
 }
-
 .c_svert_b {
     position: absolute;
     width: 2px;
     height: 18px;
     right: 4px;
     bottom: 2px;
-    
     background-color: #306090;
 }
 .peredel{
     position:absolute;
     border: 2px inset green;
-
+}
+#kn_stran_nazad{
+position:absolute;
+left:10px;
+top:100px;
+background-color:#40a0d0;
+    color:#d0ffe0;
+    border:2px solid #104070;
+    border-radius:10px;
+    padding-top: 4px;
+    padding-bottom: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
     
+    line-height: 30px;
+    word-spacing:5px;
+
+    font-size: 24px;    
+    cursor:pointer;
+}
+.paragraf {
+    background: #ffb0a0;
+    color: black;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.paragraf_v {
+    background: black;
+    color: #ffd0c0;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+
+
+
+.reshenie {
+    background: #b090ff;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.reshenie_v {
+    background: #5000a0;
+    color:#e0a0ff;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.reshenie_div{
+    
+    
+border:2px solid #5000a0;    
+padding-top: 4px;
+    padding-bottom: 0px;
+    padding-left: 15px;
+    padding-right: 3px;
+    
+}
+.ssilka {
+    background: #a0e0ff;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
+}
+.ssilka_v {
+    background: #0010a0;
+    color:#a0e0ff;
+    padding-top: 1px;
+    padding-bottom: 4px;
+    padding-left: 7px;
+    padding-right: 7px;
+    cursor: pointer;
 }
 
 .metka {
@@ -818,8 +899,9 @@ filter:blur(14px);
     cursor: pointer;
 }
 
-.reshenie {
-    background: #a0e0ff;
+.metka_v{
+    background: #00a010;
+    color:#a0ffe0;
     padding-top: 1px;
     padding-bottom: 4px;
     padding-left: 7px;
@@ -827,16 +909,33 @@ filter:blur(14px);
     cursor: pointer;
 }
 
-.paragraf {
-    background: #ffb0a0;
-    color: black;
-    padding-top: 1px;
-    padding-bottom: 4px;
-    padding-left: 7px;
-    padding-right: 7px;
-    cursor: pointer;
-}
 
+#ten_metka{
+position:absolute;
+    background-color: black;
+    filter: blur(10px);
+    visibility:hidden;
+}
+#metka_div{
+position:absolute;   
+
+background:#efffe0;    
+border:2px solid #00a010;    
+padding-top: 4px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    visibility:hidden;
+    line-height: 30px;
+    word-spacing:5px;
+    text-indent: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}    
+#metka_treug{
+    position:absolute;
+    visibility:hidden;
+}
 .interes {
     background: #fff040;
     padding-top: 1px;
@@ -846,26 +945,100 @@ filter:blur(14px);
     cursor: pointer;
 }
 
-.paragraf_v {
-    background: black;
-    color: #ffb0a0;
+.interes_v{
+    background: #ffd040;
+    color:#604020;
     padding-top: 1px;
     padding-bottom: 4px;
     padding-left: 7px;
     padding-right: 7px;
     cursor: pointer;
 }
-.nowosti{
+
+#ten_interes{
+    position:absolute;
+    background-color: black;
+    filter: blur(10px);
+    visibility:hidden;
+}
+#interes_div{
+position:absolute;   
+background:#ffefe0;    
+border:2px solid #804020;    
+padding-top: 4px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+   line-height: 30px;
+    word-spacing:5px;
+    text-indent: 20px;
+    font-size: 20px;
+    border-radius: 10px;
+    visibility:hidden;
+}
+#interes_treug{
+    position:absolute;
+    visibility:hidden;
+   
+}
+#kn_zakrit{
+text-align:center;
+
+width:30px;
     
-    border:2px ridge #c0ff20;
+color:red;
+
+border:2px solid red;
+cursor:pointer;
+}
+.nowosti {
+    margin-top: 10px;
+    background: #906010;
     
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    cursor: pointer;
+}
+.nowosti_zagolovok {
+    width: 70%;
+    height: 100%;
+    background:#d0ffe0;
+   font-style:italic;
+   font-weight:bold;
 }
 
-.izobr {
+.nowosti_data {
+    background: #c0e0ff;
+    width: 29%;
+    height: 70%;
+    padding: 5px;
+}
+.nowosti_text {
+    background: #fff8e0;
+    padding:0px 10px 10px 10px;
+}
+.istoriy{
+    background:#103090;
+    padding:3px;
+}
+.istoriy_nomer{
+    background:#f0f9ff;
+    padding:10px;
+}
+.istoriy_vizit{
+    background:#c0e0ff;
+    padding:10px;
+}
+.istoriy_time{
+    background:#d0eaff;
+    padding:10px;
+}
+.ymelec {
     
+    width:100%;
     
-    
-    background:#e0fff0;
+    background:#e0fdc0;
     border:2px solid #309060;
     border-radius:10px;
     overflow:clip;
@@ -873,21 +1046,134 @@ filter:blur(14px);
     cursor:pointer;
       
 }
+
+.rabota_ymelca
+{
+text-align:center;
+  width:100%;
+background:#906030;
+
+    border-radius:10px;
+    
+}
+.rabota_izdelie{
+    background:#e0c0a0;
+    border-radius:8px 0px 0px 8px;
+}
+.rabota_ym{
+    
+width:30%;
+    background:#e0fdc0;
+    border-radius:0px 8px 8px 0px;
+    padding:10px;
+
+}
+.rabota{
+    margin:20px 20px 0px 20px;
+    height:200px;
+    background:#fff8e0;
+    border:2px solid black;
+}
+
+.yrok_ymelca{
+    
+background:#901010;
+    border-radius:10px;
+
+}
+.yrok_ym{
+    background:#ffc0c0;
+    border-radius:0px 8px 8px 0px;
+    text-align:center;
+    padding:10px;
+}
+.yrok{
+     width:70%;
+     background:#fff0e0;
+     text-align:right;
+    border-radius:8px 0px 0px 8px;
+padding:20px;
+}
+.yroks_ymelca{
+    background:#101090;
+
+    border-radius:10px;
+
+}
+.yroks_ym{
+    background:#c0e0f0;
+    border-radius:8px 0px 0px 8px;
+    text-align:center;
+    padding:10px;
+}
+.yroks{
+     width:70%;
+     background:#e0f0e0;
+
+    border-radius:0px 8px 8px 0px;
+padding:10px;
+}
+
+.shema_ymelca{
+     width:100%;
+     text-align:center;
+     background:#f0e0ff;
+     border:2px solid #303060;
+    border-radius:8px;
+}
+.shema{
+    width:70%;
+     background:#e0f0ff;
+     border:2px solid #303060;
+    border-radius:8px;
+    padding:10px;
+    overflow:hidden;
+}
+.shema_img1{
+    position:relative;
+    top:10px;
+    left:-95px;
+    width:100px;
+    border:3px solid black;
+}
+.shema_img2{
+    position:relative;
+    left:50px;
+    width:75px;
+    border:2px solid #505050;
+}
+.shema_img3{
+    position:relative;
+    top:-7px;
+    width:50px;
+    border:1px solid #a0a0a0;
+    left:150px;
+}
+.shema_img4{
+    position:relative;
+    width:30px;
+    top:-13px;
+    left:215px;
+}
+
 .foto_ymelca {
     overflow:clip;
-
-    width: 150px;
-   margin:5px;
+    background:#fff8e0;
+    width: 200px;
     
-    border: 2px solid #306090;
+    margin:10px 10px 0px 10px;
+    
+    border: 2px solid #006030;
     border-radius: 10px;
 
 }
 .foto_ymelca_min {
     overflow: clip;
     width: 75px;
-    border: 2px solid #306090;
+    background:#fff8e0;
+    border: 2px solid #405040;
     border-radius: 10px;
+    margin:20px 20px 0px 20px;
 }
 
 .spisok {
