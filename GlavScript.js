@@ -1074,7 +1074,7 @@ master_ym=true;
     in_load_3.innerHTML = str;
     //---------------------------------------------------------------------------------------------
     //имя с тенью раздела сайта на который перешли
-    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[localStorage.getItem('nm') - 0 + 1][localStorage.getItem('nr') - 1];
+    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = master_ym?'Один из умельцев':array_menu[localStorage.getItem('nm') - 0 + 1][localStorage.getItem('nr') - 1];
     //---------------------------------------------------------------------------------------------
     //sleva.innerHTML = "";
     //line_pomoshnik.style.top = innerHeight - 60 + 'px';
