@@ -14,7 +14,7 @@ array_razd_p = [[
     ['Все новости', 'Об умельцах', 'Об обучении', 'По выбранной категории'],
     ['Список с начала', 'Список с конца', 'Список по алфавиту', 'По скорости выполнения работ', 'Как стать участником нашей группы', 'Запись в группу "Люди-умельцы"'],
     ['Все изделия', 'Работы по категории творчества', 'Категории применяемости в быту', 'Выстовочные работы'],
-    ['Искать везде', 'Только среди умельцев', 'Среди творческих работ', 'По названию статей и параграфов', 'По тексту'],
+    ['Искать везде', 'Только среди умельцев', 'Среди творческих работ', 'По названию статей и параграфов', 'По тексту','Результаты поиска за посещение'],
     ['Ваша история просмотра страниц', 'Уточнения по данному вопросу'],
     ['Зачем нужна регистрация', 'Что входит в регистрацию', 'Регистрация']
 ], [
@@ -38,7 +38,7 @@ array_razd_p = [[
     ['Обучающие игры для детей', 'Чтение вслух с картинками', 'Родителям на заметку'],
     ['Алфавитный указатель', 'По категориям', 'Толковый словарь'],
     ['Исторический глобус','Географический глобус','Атлас звездного неба','Атлас анатомии человека'],
-    ['Конституция Российской Федерации'],
+    ['Конституция Российской Федерации','nkz'],
     ['Все заметки', 'Зачем нужны заметки']
 ], [
     ['Все беседы', 'Беседы по категориям', 'Ответы от автора сайта'],
@@ -51,15 +51,20 @@ array_razd_p = [[
 ]
 
 ];
+array_kn=[
+'Поиск будет проводится только в пункте <b>"'+array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr')-1][localStorage.getItem('np')]+'"</b>: <span id="tm_0"class="metka">(...)</span><p><table width="100%"><tr><td><div id="poisk_str"></div></td><td width="20%"><span id="isk"class="kn_stran"><span id="svet_kn_isk"class="c_svet_okna"></span><span id="svet_nadpisi_isk"class="svet_nadpisi">Искать</span>Искать<span id="ten_kn_isk"class="c_ten_okna"style="top:40px;"></span></span></td></tr></table>'
+,' Если необходим более широкий круг поиска, то зайдите в раздел <span id="ts_0_0_0_1"class="ssilka"><b>"Главное > Поиск по сайту".'    
+]
+
 array_text =
     [
         [//Главное
-            [//От создателя сайта
+            [//0 От создателя сайта
                 [//Приветствие
                     //Начальная страница
                     
                     '<h2><b><i>Приветик всем, кто зашёл на мой сайт!</i></b></h2>' +
-                    '<table id="ym_0_0_0_0" class="ymelec"onmouseover="on_ym(1,0,0,0,0)"onmouseout="on_ym(2,0,0,0,0)"onmousedown="on_ym_0_0_0(0)"><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td id="lud_1_name">Меня зовут <big><b>Ильина Людмила.</b></big><p> Я являюсь самостоятельно обученным (без репетиторов) <i>программистом, художником и рукодельницей</i> (вязание, валяние, резьба по дереву и так далее). </td></tr></table>' +
+                    '<table id="ym_0_0_0_0" class="ymelec"onmouseover="on_ym(1,0,0,0,0)"onmouseout="on_ym(2,0,0,0,0)"onmousedown="on_ym_0_0_0(0)"><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td id="lud_1_name">Меня зовут <big><b>Ильина Людмила.</b></big><p> Я являюсь самостоятельно обученным (без репетиторов) <b><i>программистом, художником и рукодельницей</i></b> (вязание, валяние, резьба по дереву и так далее). </td></tr></table>' +
                     '<p>Создавала этот сайт с нуля для <b>творческого развития</b> и  бесплатного <b>обучения пользователей</b>. Здесь Вы несомненно найдёте много интересной и полезной для себя информации.</p>' +
                     '<p>Этот сайт, скорее всего, не похож на другие. Он полностью соответствует <b>моему</b> представлению о комфортном обучении и наблюдении за творчеством мастеров. </p>' +
                     '<p>В тексте сайта будут встречаться надписи на цветном фоне. Это сделано для большего удобства при чтении. Чтобы ознакомиться с этой нестандартностью более подробно обязательно загляните в пункт <span id="ts_0_0_0_1"class="ssilka" onmouseover="on_ts(1,1)"onmouseout="on_ts(2,1)"onmousedown="on_ts_0_0_0(1)"><b> "Особенности сайта"</b></span> данного раздела.</p> ' +
@@ -104,7 +109,7 @@ array_text =
                 [//Особенности сайта
                     //Начальная страница
                     '<h2><b><i>Для более полезного использования сайта, ознакомтесь с данным пунктом!</i></b></h2>' +
-                    '<p>Возможно, Вы уже заметили, что текст напичкан надписями на разноцветном фоне. Это сделанно для удобного сокращения статей, пояснения надписей и быстрого перемещения пользователя по сайту.' +
+                    '<p>Возможно, Вы уже заметили, что текст напичкан надписями на фоне разного цвета. Это сделанно для удобного сокращения статей, пояснения надписей и быстрого перемещения пользователя по сайту.' +
                     '<p>Объясню, что обозначают разные цвета заднего фона, а Вы можете лично проверить работу этих надписей.' +
                     '<ul><li><div id="tp_0_0_1_1_telo"><div id="tp_0_0_1_1_v"class="paragraf_v"onmouseover="on_tp(3,1)"onmouseout="on_tp(4,1)"onmousedown="on_tp(5,1)">Здесь перечисленны цвета, действие которых возможно на всём сайте:</div><hr width="100%"size="2"color="black"/>'+
                     
@@ -114,14 +119,15 @@ array_text =
                     '<p><li><span id="tm_0_0_1_0_telo"><span id="tm_0_0_1_0" class="metka"onmouseover="on_tm(1,0)"onmouseout="on_tm(2,0)"onmousedown="on_tm_0_0_1(0)"><b>Салатовый цвет</b></span></span> указывает на то, что есть пояснение, шпаргалка, коментарий для данной надписи или расшифровка сокращений. </li>' +
                     '<p><li><span id="ti_0_0_1_0_telo"><span id="ti_0_0_1_0" class="interes"onmouseover="on_ti(1,0)"onmouseout="on_ti(2,0)"onmousedown="on_ti_0_0_1(0)"><b>Жёлтым цветом</b></span></span> выделена надпись, содержащяя интересные факты, достижения или биографии людей связаные с данной темой.</li></ul>'+
                     '<hr width="100%"size="2"color="black"/></div>' +
-                    '</li><p><li><div id="tp_0_0_1_2_telo"><div id="tp_0_0_1_2" class="paragraf"onmouseover="on_tp(1,2)"onmouseout="on_tp(2,2)"onmousedown="on_tp_0_0_1(2)">Здесь перечисленны конкретные разделы со списками из цветных полос и с приблезительным содержанием текста (и фотографий) в них: </div></div></li></ul>' +
-                    '<p>Всплывающая информация исчезает после нажатия за её пределами на выделенные надписи. Правило распространяется для всех вышеперечисленых выделенных надписей.' +
-                    '<p>Во всех разделах имеется своё содержание с определёнными пунктами. Выбрав один из них Вы переходите на новую страничку. Но если Вам мешает перечень этих пунктов, то можно спрятать его за страницу с текстом, нажав на кнопку ... Востановить "Содержимое раздела:" в прежнем виде можно нажав снова на неё же.' +
+                    '</li><p><li><div id="tp_0_0_1_2_telo"><div id="tp_0_0_1_2" class="paragraf"onmouseover="on_tp(1,2)"onmouseout="on_tp(2,2)"onmousedown="on_tp_0_0_1(2)">Здесь перечисленны конкретные разделы содержащие списки из цветных контейнеров с текстом и, если нужно, фотографиями: </div></div></li></ul>' +
+                    '<p>В пунктах меню, расположенном изначально с верху, находятся соответствующие темам разделы. Например, в меню <b>"Обучение"</b> можно найти обучающую литературу по различным предметам. '+
+                    '<p>Во всех разделах имеется своё содержание состоящее из пунков. Выбрав один из них Вы переходите на новую страничку по данной теме. Но если Вам мешает перечень этих пунктов, то можно спрятать его за страницу с текстом, нажав на кнопку ... Востановить "Содержимое раздела:" в прежнем виде можно нажав снова на неё же.' +
                     '<p>Так же Вы сможете записать любую, понравившуюся вам, информацию с этого сайта, если выделете текст и нажмёте на кнопку ... в окне <b>"Заметки"</b>. Копируемое отразится там же в виде нескольких начальных слов. Содержимое окна <b>"Заметки"</b> можно увидеть в более развёрнутом виде, нажав на его экран или зайдя в меню <span id="ts_0_0_1_1" class="ssilka"onmouseover="on_ts(1,0,0,1,1)"onmouseout="on_ts(2,0,0,1,1)"onmousedown="on_ts_0_0_1(1)"><b>"Обучение / Заметки"</b></span>. Когда захотите перенести эти записи к себе на компьютер, воспользуйтесь кнопкой ...' +
-                    '<p>На боковой панели, кроме окна "Заметки", имеются ещё два - "Беседы" и "Новости". В них отражается переписка других пользователей на общие темы, не касающихся отдельных предметов, и чего последнего произошло на сайте. Чтобы узнать более подробную информацию отражённую в окнах, нажмите на одно из них. Вы перейдёте в <span id="ts_0_0_1_2" class="ssilka"onmouseover="on_ts(1,0,0,1,2)"onmouseout="on_ts(2,0,0,1,2)"onmousedown="on_ts_0_0_1(2)"><b>"Обсуждение / Беседы / Все беседы"</b></span>, либо <span id="ts_0_0_1_3" class="ssilka"onmouseover="on_ts(1,0,0,1,3)"onmouseout="on_ts(2,0,0,1,3)"onmousedown="on_ts_0_0_1(3)"><b>"Главное / Чего новенького / Все новости"</b></span>.' +
+                    '<p>На боковой панели, кроме окна <b>"Заметки"</b>, имеются ещё два - <b>"Беседы"</b> и <b>"Новости"</b>. В них отражается переписка других пользователей на общие темы, не касающихся отдельных предметов, и что произошло за последнее время на сайте и среди умельцев. Чтобы узнать более подробную информацию отражённую в окнах, нажмите на одно из них. Вы перейдёте в <span id="ts_0_0_1_2" class="ssilka"onmouseover="on_ts(1,0,0,1,2)"onmouseout="on_ts(2,0,0,1,2)"onmousedown="on_ts_0_0_1(2)"><b>"Обсуждение / Беседы / Все беседы"</b></span>, либо <span id="ts_0_0_1_3" class="ssilka"onmouseover="on_ts(1,0,0,1,3)"onmouseout="on_ts(2,0,0,1,3)"onmousedown="on_ts_0_0_1(3)"><b>"Главное / Чего новенького / Все новости"</b></span>.' +
                     '<p>Если Вам надоест постоянно меняющийся текст в окнах, то панель, на которой они находятся, можно закрыть, нажав на кнопку ... А если Вы работаете за компьютером, то ещё Вам доступно изменение высоты и ширины окон. Для более подробной информации заходите в <span id="ts_0_0_1_4" class="ssilka"onmouseover="on_ts(1,0,0,1,4)"onmouseout="on_ts(2,0,0,1,4)"onmousedown="on_ts_0_0_1(4)"><b>"Справка / Инструкция по сайту / Боковая панель с окнами"</b></span>.' +
                     '<p>Если вам мешает сосредoточиться на изучении предмета мой помошник Смайлик, то можно его отодвинуть. Для смещения его жёрдочки воспользуйтесь всплывающей кнопкой ... Если сам Смайлик не на ней, то он всё равно откатиться за левую границу браузера. Для востановления положения жёрдочки и моего помошника наведитесь снова на левый нижний край браузера и нажмите на всплывающую кнопку.'+
-                    '<p>Для более подробной информации зайдите в меню <span id="ts_0_0_1_5" class="ssilka"onmouseover="on_ts(1,0,0,1,5)"onmouseout="on_ts(2,0,0,1,5)"onmousedown="on_ts_0_0_1(5)"><b>"Справка / Инструкция по сайту"</b></span>.'
+                    '<p>Для более подробной информации зайдите в меню <span id="ts_0_0_1_5" class="ssilka"onmouseover="on_ts(1,0,0,1,5)"onmouseout="on_ts(2,0,0,1,5)"onmousedown="on_ts_0_0_1(5)"><b>"Справка / Инструкция по сайту"</b></span>.'+
+                    '<h2>Успехов Вам в освоении новых знаний!</h2>'
                     
                     ,'<ul><li><div id="tp_0_0_1_0_telo"><div id="tp_0_0_1_0" class="paragraf"onmouseover="on_tp(1,0)"onmouseout="on_tp(2,0)"onmousedown="on_tp_0_0_1(0)"><b>Розовым цветом</b></div></div> выделяются надписи, открывающие списки или сам текст, отделённые от остального материала отступом и чёрными линиями вначале и вконце. </li>' +
                     '<p><li><span id="tr_0_0_1_0_telo"><span id="tr_0_0_1_0" class="reshenie"onmouseover="on_tr(1,0)"onmouseout="on_tr(2,0)"onmousedown="on_tr_0_0_1(0)"><b>Фиолетовым цветом</b></span></span> указана надпись, открывающая текст с ответами, подробным решением или поэтапным прохождением различных задач. Данная информация отделяется от других надписей фиолетовой рамкой.</li>' +
@@ -142,19 +148,22 @@ array_text =
                     ,'<p>Кыждая задача сопровождается такой же фиолетовой надписью со скрытым ответом, подробным решением. При её нажатии открывается новая вложеная рамка.'
                     ,'<p> Это очень удобно, когда после самостоятельного решения, хочется проверить свой ответ или ознакомиться с иными способами.'
                     
-                    
                     ,'Она открывается поверх другой информации.'
                     ,'<p>Очень удобно присутствие подобного рода "напоминалки" в тексте.'
+
                     ,'Данные открываются поверх другой информации.'
                     ,'<p>Это полезно для тех, кто хочет расширить свой кругозор и увеличить уровень знаний.'
                     
-                    ,'<dd><p>При нажатии на выбранный заголовок откроется текст статьи. Ниже представлен лишь образец одной из полос:<p><table id="tt" class="nowosti"><tr><td class="nowosti_zagolovok"><big><i><b>Загаловок новости.</b></i></big></td><td class="nowosti_data">Дата и время события.</td></tr><tr><td class="nowosti_text"colspan="2"align="left"> </td></tr></table></dd>'
-                    ,'<dd><p>При нажатии на выбранного мастера Вы переходите на его страничку. Ниже представлен лишь образец одной из полос: <p><table class="ymelec"><tr ><td width="250px"align="center"><img src="ym_0_foto_1.jpg" class="foto_ymelca"><br><small>(фотография умельца)</small></td><td><p><big><b>Фамелия, имя или псевдоним мастера</b></big> <p>Перечисляются все виды творчества, которыми он увлекается.</td></tr></table></dd>'
+                    ,'<dd><p>При нажатии на выбранный заголовок новости откроется текст статьи. Ниже представлен образец одной из полос:<p><div id="tn_0_telo"><table id="tn_0" class="nowosti" onmousedown="on_tn(3,0)"onmouseout="on_tn(2,0)"onmouseover="on_tn(1,0)"><tr><td id="tn_0_z" class="nowosti_zagolovok"><big><i><b>Загаловок новости.</b></i></big></td><td id="tn_0_d"class="nowosti_data">Дата и время события.</td></tr><tr><td colspan=2 style="background: #fff8e0;"> </td></tr></table></div></dd>'
+                    ,'<dd><p>При нажатии на выбранного мастера Вы переходите на его страничку. Ниже представлен образец одной из полос, при нажатии на которую откроется окно умельца: <p><table id="tym_0" class="ymelec" onmousedown="on_tym(3,0)"><tr ><td width="250px"align="center"><img id="ym_0_foto" src="ym_0_foto_1.jpg" class="foto_ymelca"><br><small>(фотография умельца)</small></td><td><div id="tym_0_name"><big><b>Фамелия, имя или псевдоним мастера</b></big></div> <p>Перечисляются все виды творчества, которыми он увлекается.</td></tr></table></dd>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера к этой работе. Ниже представлен лишь образец одной из полос:<p><table id="tt"class="rabota_ymelca"><tr><td class="rabota_izdelie"><img src="ym_0_rab_0.jpg" class="rabota"><br><small>(фотография изделия)</small><p> Вид творчества <i>"Название работы".</i></td><td class="rabota_ym"><img src="ym_0_foto_1.jpg" class="foto_ymelca_min"><br><small>(мини-фото умельца)</small><p><b>Фамелия, имя или псевдоним мастера</b></td></tr></table></dd>'
                     ,'<dd><p>При нажатии на выбранную полосу Вы переноситесь на записанный в ней раздел. Ниже представлен лишь образец одной из полос:<p><table id="tt"class="istoriy"><tr><td width="10%"rowspan="2" align="center" class="istoriy_nomer">Номер шага.</td><td class="istoriy_vizit"colspan="2">Записывает <big><b>меню / раздел / пункт</b></big> визита</td></tr><tr><td class="istoriy_time">Дата и время открытия данного пункта и его закрытия</td><td  class="istoriy_time">Общее время нахожнения здесь</td></tr></table></dd>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера к началу данной темы. Ниже представлен лишь образец одной из полос:<p><table id="tt"class="yrok_ymelca"><tr><td class="yrok"><big><i><u>Вид творчества.</u></i></big><br>Видио или текстовый формат. <p><br>Номер урока <i><b>"Название урока".</b><p>Краткое описание занятия.</i></td><td class="yrok_ym"><img src="ym_0_foto_1.jpg" class="foto_ymelca_min"><br><small>(мини-фото умельца)</small><p><b>Фамелия, имя или псевдоним мастера-учителя</b></td></tr></table></dd>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера в раздел "Обучение". Ниже представлен лишь образец одной из полос:<p><table id="tt"class="yroks_ymelca"><tr><td class="yroks_ym"><img  src="ym_0_foto_1.jpg"class="foto_ymelca_min"><br><small>(мини-фото умельца)</small><p><b>Фамелия, имя или псевдоним мастера-учителя</b></td><td class="yroks"><p>Перечисление творческих направлений, по которым умелец может обучить.</td></tr></table></dd>'
                     ,'<dd><p>Изображения у разных мастеров может совпадать или принадлежать другим авторам, так как здесь выставляется материал взятый с общего доступа в Интернете. При нажатии на выбранную коллекцию Вы переноситесь на страничку мастера к соответствуещему разделу. Ниже представлен лишь образец одной из полос:<p><table id="tt"class="shema_ymelca"><tr><td align="center"><img  src="ym_0_foto_1.jpg" class="foto_ymelca_min"><br><small>(мини-фото умельца)</small><p><b>Фамелия, имя или псевдоним мастера</b></td><td style="background:#303060"></td><td class="shema"><p>Количество представленных схем и рисунков.<p><img src="ym_0_rab_0.jpg"class="shema_img4"><img src="ym_0_rab_0.jpg"class="shema_img3"><img src="ym_0_rab_0.jpg"class="shema_img2"><img src="ym_0_rab_0.jpg"class="shema_img1"></td></tr></table></dd>'
+                    
+                    ,'Отразится текст новости. Иногда он будет сопровождаться картинкой.<p>Чтобы свернуть текст необходимо нажать на заголовок данной новости.'
+
                 ],
                 [//Содержимое сайта
                     //Начальная страница
@@ -224,15 +233,18 @@ array_text =
 
                 ]
             ],
-            [//Чего новенького
+            [//1 Чего новенького
+                
                 [//Все новости
                     '<p>Новости идут в свёрнутом виде. Показан только загаловок и дата. Если захотите прочитать всю статью, то нажмите на интересующую Вас новость. Так же Вы сможите перейти в то место на сайте, о котором расказывается.</p>' +
                     '<table id="tt" class="nowosti"><tr><td class="nowosti_zagolovok"><big><i><b>Загаловок новости.</b></i></big></td><td class="nowosti_data">Дата и время события.</td></tr><tr><td class="nowosti_text" colspan="2" align="left"> </td></tr></table>' +
                     '<table id="tt" class="nowosti"><tr><td class="nowosti_zagolovok"><big><i><b>Загаловок новости.</b></i></big></td><td class="nowosti_data">Дата и время события.</td></tr><tr><td class="nowosti_text" colspan="2" align="left"> </td></tr></table>' +
                     '<table id="tt" class="nowosti"><tr><td class="nowosti_zagolovok"><big><i><b>Загаловок новости.</b></i></big></td><td class="nowosti_data">Дата и время события.</td></tr><tr><td class="nowosti_text" colspan="2" align="left"> </td></tr></table>' 
                 ],
+                
                 [//Об умельцах
-                    '<p>Здесь представлены новости, касающиеся только умельцев. А именно: вхождение их в нашу группу, новые работы, планы на будущее и обучающие уроки.</p>'
+                
+                '<p>Здесь представлены новости, касающиеся только умельцев. А именно: вхождение их в нашу группу, новые работы, планы на будущее и обучающие уроки.</p>'
                 ],
                 [//Об обучении
                     '<p>Новости касающиеся обучения, в том числе от умельцев, с возможностью посмотреть на данные разделы и параграфы.</p>'
@@ -245,11 +257,13 @@ array_text =
                     '<li><div id="tp_0_1_3_2"class="paragraf" onmousedown="on_tp_0_1_3(2)"onmouseover="on_tp(1,0,1,3,2)"onmouseout="on_tp(2,0,1,3,2)">Ответы на предложения</div></li></ul>'
                 ]
             ],
-            [//Люди-умельцы
+            [//2 Люди-умельцы
                 [//Список с начала
-                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
-                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
-                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_fotos_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>'
+                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
+                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>' +
+                    '<p><div class="ymelec"><table><tr><td><img class="foto_ymelca" src="ym_1_foto_1.jpg"></td><td><div id="lud_1_name"><big><b>Ильина (Ковалёва) Людмила.</b></big></div><p> <i>Программист, художник и рукодельница.</i> </td></tr></table></div>'
+                  
+
                 ],
                 [//Список с конца
 
@@ -271,8 +285,23 @@ array_text =
                     '<div id="imy"class="spisok">Ник или Фамелию, Имя, Отчество (по желанию)</div>'
 
                 ],
-                [
-
+                [//Каждый человек-умелец
+                    
+                    [//0
+                        '<p><table width="100%"><tr ><td align="center" colspan=2><h1>Фамелия, имя или псевдоним мастера</h1></td></tr>'+
+                    '<tr><td>Указываются весь список контактов, по которым можно подписаться на его работы, отправить запрос на дружбу или связаться с ним по поводу заказа изделия(й)</td><td width="250px"align="center"><img src="ym_0_foto_1.jpg" class="foto_ymelca"><br><small>(фотография умельца)</small></td></tr>'+
+                    '<tr><td colspan=2><p>Если мастер пожелает, то указываются его:<ul><li>день рождения,</li><li>возрост</li><li>место проживания</li></ul>'+
+                    '<p>Перечисляются все виды творчества, которыми он увлекается.<ul><li>Например,<b> вязание крючком кукол</b>;</li><li>или <b>игра на гитаре</b>.</li></ul>'+
+                    '<b><p><div id="tp_0_2_0_0_telo"><div id="tp_0_2_0_0"class="paragraf"onmouseover="on_tp(1,0)"onmouseout="on_tp(2,0)"onmousedown="on_tp_0_2_0(0)">Все работы</div></div>'+
+                    '<p><div id="tp_0_2_0_1_telo"><div id="tp_0_2_0_1"class="paragraf"onmouseover="on_tp(1,1)"onmouseout="on_tp(2,1)"onmousedown="on_tp_0_2_0(1)">Все уроки</div></div>'+
+                    '<p><div id="tp_0_2_0_2_telo"><div id="tp_0_2_0_2"class="paragraf"onmouseover="on_tp(1,2)"onmouseout="on_tp(2,2)"onmousedown="on_tp_0_2_0(2)">Схемы и рисунки</div></div>'+
+                    '<p><div id="tp_0_2_0_2_telo"><div id="tp_0_2_0_3"class="paragraf"onmouseover="on_tp(1,3)"onmouseout="on_tp(2,3)"onmousedown="on_tp_0_2_0(3)">Полезные советы</div></div>'+
+                    '<p><div id="tp_0_2_0_3_telo"><div id="tp_0_2_0_4"class="paragraf"onmouseover="on_tp(1,4)"onmouseout="on_tp(2,4)"onmousedown="on_tp_0_2_0(4)">Личные фотографии и видео</div></div></b><p>'+
+                    '<p>Если мастер сам пожелает, то может написать:<p><ul><li>о себе, </li><li>о своей семье,</li><li>о своих хобби и работах, </li><li>об историях их начала,</li><li>о домашних питомцах,</li><li>о разных предпочтениях</li><li> или о своих взглядах на жизнь.</li> <p></td></tr></table><p>'
+                    ,'nnn'
+                    ],
+                    [//1
+                    ]
                 ]
             ],
             [//Творческие работы
@@ -337,6 +366,9 @@ array_text =
                 [//По тексту
                     '<p>Поисковик ищет только лишь по тексту статей!<p>'
                 ],
+                [//Результаты поиска за посещение
+                    'Здесь находяться результаты поиска за последнее посещение сайта "Творчество во всём": '
+                ]
             ],
             [//История просмотра
                 [//Ваша история просмотра страниц
@@ -833,8 +865,10 @@ nachalo_istorii = '<h2>История Ваших путешествий начи
 
 //=================================================================================================
 function Sait_load() {
-    bob.style.backgroundColor = '#306090';
+    bob.style.background = '#306090';
     bob.style.overflowX = 'hidden';
+
+
     okna_width = 20;
     pamyt_p_0_0_3 = 0;
     //---------------------------------------------------------------------------------------------
@@ -866,35 +900,53 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     //тень содержимого раздела 2
     str += "<div id='ten1_gl_p'></div>";
-    str += "<div id='soderg_razdela_1'><div id='gl_p_za_str'></div></div>";
-    str+="<div id='kn_stran_nazad'><div id='svet_kn'class='c_svet_okna'></div>< Назад<div id='ten_kn'class='c_ten_okna'style='top:40px;'></div></div>"
+    str += "<div id='gl_p_za_str'></div>";
+    //---------------------------------------------------------------------------------------------
+    //кнопка "< Назад"
+    str+="<div id='kn_stran_nazad'class='kn_stran'onmouseup='on_kn_stran_nazad(1)'onmousemove='on_kn_stran_nazad(1)' onmouseover='on_kn_stran_nazad(1)'onmouseout='on_kn_stran_nazad(2)'onmousedown='on_kn_stran_nazad(4)'><div id='svet_kn1'class='c_svet_okna'></div><div id='svet_nadpisi_1'class='svet_nadpisi'>< Назад</div>< Назад<div id='ten_kn1'class='c_ten_okna'style='top:40px;'></div></div>";
+    //---------------------------------------------------------------------------------------------
+    //кнопка "Поиск"
+    str+="<div id='kn_poisk'class='kn_stran'onmouseup='on_kn_poisk(1)' onmousemove='on_kn_poisk(1)' onmouseover='on_kn_poisk(1)'onmouseout='on_kn_poisk(2)'onmousedown='on_kn_poisk(4)'><div id='svet_kn2'class='c_svet_okna'></div><div id='svet_nadpisi_2'class='svet_nadpisi'>Поиск</div>Поиск<div id='ten_kn2'class='c_ten_okna'style='top:40px;'></div></div>";
+    //---------------------------------------------------------------------------------------------
+    //кнопка "Мнения"
+    str+="<div id='kn_mneniy'class='kn_stran'onmouseup='on_kn_mneniy(1)' onmousemove='on_kn_mneniy(1)' onmouseover='on_kn_mneniy(1)'onmouseout='on_kn_mneniy(2)'onmousedown='on_kn_mneniy(4)'><div id='svet_kn3'class='c_svet_okna'></div><div id='svet_nadpisi_3'class='svet_nadpisi'>Мнения</div>Мнения<div id='ten_kn3'class='c_ten_okna'style='top:40px;'></div></div>";
     //---------------------------------------------------------------------------------------------
     in_load_1.innerHTML = str;
     //---------------------------------------------------------------------------------------------
     if (screen.width < screen.height) {
 
     }
-
+    svet_nadpisi_1.style.visibility=svet_nadpisi_2.style.visibility=svet_nadpisi_3.style.visibility='hidden';
+    
+    
     minus = plus = 0;
     okgran = 45;
     //---------------------------------------------------------------------------------------------
     //  if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
     //---------------------------------------------------------------------------------------------
-    //if (localStorage.getItem('nm')) { }else
+    if (localStorage.getItem('nm')) { }else
     localStorage.setItem('nm', 0);//nomer_menu (p_m)
-
-    //if (localStorage.getItem('nr')) { } else
+    
+   if (localStorage.getItem('nr')){}else 
         localStorage.setItem('nr', 1);//nomer_razdela_v_menu (r_p)
-    //if (localStorage.getItem('np')) { } else
+    if (localStorage.getItem('np')) { } else
         localStorage.setItem('np', 0);//nomer_punkta_v_razdele (n_r)
-    localStorage.setItem('nn', 0);//nomer_name
+    if(localStorage.getItem('np_1')){}else
+    localStorage.setItem('np_1',0);//nomer_paragraf_1_v_punkte
+    if(localStorage.getItem('np_2')){}else
+    localStorage.setItem('np_2',0);//nomer_paragraf_2_v_punkte
+    if(localStorage.getItem('np_3')){}else
+    localStorage.setItem('np_3',0);//nomer_paragraf_3_v_punkte
+        localStorage.setItem('nn', 0);//nomer_name
 
     ogl_vibrono = localStorage.getItem('np');
-
-    //---------------------------------------------------------------------------------------------
-    //// -------------УРА!!!! Зделала ;) -------------------
-    document.getElementById('t_s').innerHTML = array_text[localStorage.getItem('nm')][localStorage.getItem('nr') - 1][localStorage.getItem('np')][0];
-
+    nm=localStorage.getItem('nm');
+    nr=localStorage.getItem('nr');
+    np=localStorage.getItem('np');
+    np_1=localStorage.getItem('np_1');
+    np_2=localStorage.getItem('np_2');
+    np_3=localStorage.getItem('np_3');
+   
     //---------------------------------------------------------------------------------------------
     document.getElementById('t_s').style.display = 'block';
     if (okna.clientWidth < 130) {
@@ -903,6 +955,7 @@ function Sait_load() {
         peremeshenie_okon_svernut = false;
     }
     if (scrollY > 150) okno_top = 60; else okno_top = 210 - scrollY;
+    
     //---------------------------------------------------------------------------------------------
     if (localStorage.getItem('o_b')) { } else
         localStorage.setItem('o_b', 250);//okno_besedi
@@ -915,7 +968,7 @@ function Sait_load() {
     okno_novosti.style.height = localStorage.getItem('o_n');
     okno_zametki.style.height = localStorage.getItem('o_z');
     //---------------------------------------------------------------------------------------------
-    if (osnova.clientHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30) okna_umen();
+    if (innerHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30) okna_umen();
     //---------------------------------------------------------------------------------------------
     perem = okno_top;
     okb = perem;
@@ -930,15 +983,45 @@ function Sait_load() {
     limit = 270;
     okna.style.height = limit + stranica.clientHeight + 'px';
     //---------------------------------------------------------------------------------------------
+    soderg_width = 650;
+    soderg_left=70;
+    soderg_del = (650) / 10;
+    //---------------------------------------------------------------------------------------------
+    gl_p_za_str.style.width = soderg_width + 'px';
+    gl_p_za_str.style.left = soderg_left + 'px';
+    gl_p_za_str.innerHTML = "Содержимое раздела: <div id='kn_za_str2' onmouseover='kn_za_str2_(1)' onmouseout='kn_za_str2_(2)' onmousedown='kn_za_str2_(4)'></div>";
+    //---------------------------------------------------------------------------------------------
+    
+    //// -------------УРА!!!! Зделала ;) -------------------
+    if(nm==0&&nr==3&&(np>-1&&np<3)&&np_1>0){
+        document.getElementById('t_s').innerHTML = array_text[nm][nr- 1][6][np_1-1][0];
+master_ym=true;
+    }else{
+        document.getElementById('t_s').innerHTML = array_text[nm][nr- 1][np][np_1];
+    
+    
+    master_ym=false;
+    }
 
     //---------------------------------------------------------------------------------------------
-    soderg_razdela_1.style.width = 750 + 'px';
-    soderg_del = (soderg_razdela_1.clientWidth - 100) / 10;
-    gl_p_za_str.style.width = soderg_razdela_1.clientWidth - 100 + 'px';
-    gl_p_za_str.style.left = -soderg_razdela_1.clientWidth - 70 + 'px';
+    //кнопка для возвращения назад на верх страницы и содержимое раздела по пунктам
+    
+    soderg_razdela();
 
-    gl_p_za_str.innerHTML = "Содержимое раздела: <div id='kn_za_str2' onmouseover='kn_za_str2_(1)' onmouseout='kn_za_str2_(2)' onmousedown='kn_za_str2_(4)'></div>";
-
+    //---------------------------------------------------------------------------------------------
+    stranica.style.width = innerWidth - 152 - okna.clientWidth + 'px';
+    ten_stranici.style.width = stranica.clientWidth + 'px';
+    //---------------------------------------------------------------------------------------------
+    //stranica_left = 130;
+    stranica_top = 220;
+    
+    
+    up();
+    
+    //---------------------------------------------------------------------------------------------
+    if(nm==0&&nr==3&&(np>-1&&np<3)&&np_1>0){}else{
+    
+    }
     //---------------------------------------------------------------------------------------------
     na_meste_3.style.right = '40px';
     svert_3.style.right = '10px';
@@ -948,26 +1031,21 @@ function Sait_load() {
     okno_name_zametki.innerHTML = 'Заметки';
 
     //---------------------------------------------------------------------------------------------
-    if (osnova.clientHeight < 840) okno_besedi.style.height = okno_novosti.style.height = okno_zametki.style.height = (osnova.clientHeight - 240) / 3 + 'px';
+    if (innerHeight < 840) okno_besedi.style.height = okno_novosti.style.height = okno_zametki.style.height = (innerHeight - 240) / 3 + 'px';
     //---------------------------------------------------------------------------------------------
     perem = 0;
     //---------------------------------------------------------------------------------------------
-    stranica.style.width = osnova.clientWidth - 135 - okna.clientWidth + 'px';
-    ten_stranici.style.width = stranica.clientWidth + 'px';
+    
     //---------------------------------------------------------------------------------------------
-    //stranica_left = 130;
-    stranica_top = 220;
-
-    //---------------------------------------------------------------------------------------------
-    //кнопка для возвращения назад на верх страницы и содержимое раздела по пунктам
-    soderg_razdela();
-    //---------------------------------------------------------------------------------------------
-    str = "";
+    str="";
     //тень под названием раздела
     str += "<div id='razdel_teni'></div>";
     //---------------------------------------------------------------------------------------------
     //название раздела
     str += "<div id='razdel'></div>";
+    //---------------------------------------------------------------------------------------------
+    //создание кнопок, окон для метки и интеса
+    str +="<div id='poisk'></div><div id='ym_foto'></div><div id='ten_interes'></div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
     //---------------------------------------------------------------------------------------------
     //тень верхней полоски меню
     str += "<div id='ten_menu'></div>";
@@ -982,29 +1060,39 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     //развёрнутые списки менюшек
     str += "<div id='m1'></div><div id='m2'></div><div id='m3'></div><div id='m4'></div>";
+    
     //помошник
 
     str += "<div id='ten_line_pomoshnik'></div>";
 
-    str += "<div id='sleva'></div><hr id='line_pomoshnik' color='#80b0ff' />";
+    str += "<span id='pomoshnik'></span><hr id='line_pomoshnik' color='#80b0ff' />";
 
     //предупреждение
     //str += "<div id='predupr'>" + predupregd + "</div>";
     str += "<span id='ten_kn_prydki'></span><span id='kn_prydki'onmouseover='kn_prydki_(1)'onmouseout='kn_prydki_(2)'onmousedown='kn_prydki_(4)'></span>";
-    str +="<div id='ten_interes'></div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
+    
     in_load_3.innerHTML = str;
     //---------------------------------------------------------------------------------------------
     //имя с тенью раздела сайта на который перешли
     document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[localStorage.getItem('nm') - 0 + 1][localStorage.getItem('nr') - 1];
     //---------------------------------------------------------------------------------------------
-    sleva.innerHTML = "<span id='pomoshnik'></span>";
+    //sleva.innerHTML = "";
     //line_pomoshnik.style.top = innerHeight - 60 + 'px';
     pomoshnik.innerHTML = "<span id='ten_pomoshnika'></span><span id='telo'></span><span id='svet_tela'></span><span id='glaz_l'></span><span id='glaz_r'></span><span id='guba'></span>";
     glaz_l.innerHTML = "<span id='svet_glaz_l' class='c_svet_glaz'></span><span id='sheka_l'></span>";
     glaz_r.innerHTML = "<span id='svet_glaz_r' class='c_svet_glaz'></span><span id='sheka_r'></span>";
     guba.innerHTML = "<span id='guba_1'></span><span id='guba_2'></span>";
     //---------------------------------------------------------------------------------------------
-
+    //поиск на странице
+    poisk.style.width=stranica.clientWidth-20+'px';
+   // poisk.style.height='10px';
+    poisk.style.left='122px';
+    if(master_ym)poisk.style.top=kn_stran_nazad.clientHeight+  270+'px';
+else poisk.style.top=gl_p.clientHeight+kn_poisk.clientHeight+  250+'px';
+    
+    poisk.innerHTML=array_kn[0];
+    isk.style.left=poisk_str.clientWidth+25+'px';
+    isk.style.top=poisk.clientHeight-60+'px';
     guba_2.style.visibility = 'hidden';
     //---------------------------------------------------------------------------------------------
     kn_prydki.innerHTML = '<';
@@ -1014,7 +1102,12 @@ function Sait_load() {
     //---------------------------------------------------------------------------------------------
     //if (localStorage.getItem('l_p')) { } else
     localStorage.setItem('l_p', 0);  //left_pomoshnik
-
+    
+    ym_foto.style.visibility="hidden";
+    
+    pomoshnik_go(0);
+    ten_line_pomoshnik.style.top=innerHeight-60+'px';
+    line_pomoshnik.style.top=innerHeight-73+'px';
     //---------------------------------------------------------------------------------------------
     name_sait1.innerText = array_name_sait[0];
     name_sait1_teni.innerText = array_name_sait[0];
@@ -1028,6 +1121,7 @@ function Sait_load() {
     m_os.innerHTML = array_menu[0][2];
     m_s.innerHTML = array_menu[0][3];
     //---------------------------------------------------------------------------------------------
+
     setTimeout('sait_load_dopolnit()', 10);
 }
 
@@ -1137,8 +1231,15 @@ met_tr.stroke();
     //---------------------------------------------------------------------------------------------
     stranici_right = stranica_left + stranica.clientHeight;
     stranica_left_p = stranica_left;
+    
+    //master_ym=false;
+    kn_stran_nazad_down=false;
+    kn_poisk_down=false;
+    kn_mneniy_down=false;
+    
     paragraf_nomer=0;
     reshenie_nomer=0;
+//ym_div_on=false;
     interes_on=false;
 interes_nomer=0;
     metka_on=false;
@@ -1187,6 +1288,26 @@ interes_nomer=0;
     pom_et_nomer = 0;
 
 
+}
+//=================================================================================================
+function pomoshnik_go(deistvie){
+//ten_pomoshnika left=20 bottom=0
+//telo                0         10
+//svet_tela           10        20
+//glaz_l              25        60
+//glaz_r              60        60
+//guba
+switch(deistvie){
+    case 0:
+    pomoshnik.style.top=innerHeight-179+scrollY+'px';
+    ten_pomoshnika.style.top=20+'px';
+    telo.style.top=10+'px';
+    svet_tela.style.top=20+'px';
+    glaz_l.style.top=glaz_r.style.top='45px';
+    guba_1.style.top='75px';
+    
+    break;
+}
 }
 //=================================================================================================
 function prydki_() {
@@ -1390,7 +1511,9 @@ function dvig_panel() {
     if (dvig_pan_rabota) setTimeout('dvig_panel()', 50);
 
 }
+
 //=================================================================================================
+
 function kn_za_str_(deistvie) {
     color_kn = '#b0c0f0';
     color_ris = '#304050';
@@ -1419,15 +1542,16 @@ function kn_za_str_(deistvie) {
             break;
         case 4://douwn
             scroll(0, 0);
-            if (localStorage.getItem('l_p') == 0) {
-                prydki_variant = 0;
-                prydki_();
-            }
+            //if (localStorage.getItem('l_p') == 0) {
+            //    prydki_variant = 0;
+            //    prydki_();
+            //}
             ten2_gl_p.style.visibility = gl_p.style.visibility = 'visible';
-            dvig_pan_rabota = true;
-            dvig_pan_variant = 0;
-            setTimeout('dvig_panel()', 20);
+            //dvig_pan_rabota = true;
+            //dvig_pan_variant = 0;
+            //setTimeout('dvig_panel()', 20);
             soderg_rabota = true;
+            soderg_variant=0;
             setTimeout('soderg_control()', 10);
             break;
 
@@ -1541,6 +1665,9 @@ function soderg_control() {
             soderg_index = soderg_variant = 0;
             soderg_izmen = 30;
             soderg_rabota = false;
+            up();
+            osnova.style.height=osnova.clientHeight-gl_p.clientHeight+70+'px';
+            
         } break;
         case 2:
             if (soderg_index < 10) {
@@ -1609,6 +1736,8 @@ function soderg_control() {
             else {
                 soderg_index = soderg_variant = 0;
                 soderg_rabota = false;
+                up();
+                osnova.style.height=osnova.clientHeight+'px';
             }
             break;
     }
@@ -1740,7 +1869,7 @@ function panel_izmen(deistvie) {
 
                 if (event.clientY - okb + scrollY < okgran) okno_besedi.style.height = okgran + 'px';
                 else {
-                    if (event.clientY - okb + scrollY > osnova.clientHeight + scrollY - okno_top - okno_novosti.clientHeight - okno_zametki.clientHeight - 30) okno_besedi.style.height = osnova.clientHeight + scrollY - okno_top - okno_novosti.clientHeight - okno_zametki.clientHeight - 30 + 'px';
+                    if (event.clientY - okb + scrollY > innerHeight + scrollY - okno_top - okno_novosti.clientHeight - okno_zametki.clientHeight - 30) okno_besedi.style.height = innerHeight + scrollY - okno_top - okno_novosti.clientHeight - okno_zametki.clientHeight - 30 + 'px';
                     else okno_besedi.style.height = event.clientY - okb + scrollY + 'px';
                 }
                 okn = okb + okno_besedi.clientHeight + 10;
@@ -1750,7 +1879,7 @@ function panel_izmen(deistvie) {
             } else if (deform_okno_novosti_down) {
                 if (event.clientY - okn + scrollY < okgran) okno_novosti.style.height = okgran + 'px';
                 else {
-                    if (event.clientY - okn + scrollY > osnova.clientHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_zametki.clientHeight - 30) okno_novosti.style.height = osnova.clientHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_zametki.clientHeight - 30 + 'px';
+                    if (event.clientY - okn + scrollY > innerHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_zametki.clientHeight - 30) okno_novosti.style.height = innerHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_zametki.clientHeight - 30 + 'px';
                     else okno_novosti.style.height = event.clientY - okn + scrollY + 'px';
                 }
                 okz = okn + okno_novosti.clientHeight + 10;
@@ -1758,7 +1887,7 @@ function panel_izmen(deistvie) {
             } else if (deform_okno_zametki_down) {
                 if (event.clientY - okz + scrollY < okgran) okno_zametki.style.height = okgran + 'px';
                 else {
-                    if (event.clientY - okz + scrollY > osnova.clientHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_novosti.clientHeight - 30) okno_zametki.style.height = osnova.clientHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_novosti.clientHeight - 30 + 'px';
+                    if (event.clientY - okz + scrollY > innerHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_novosti.clientHeight - 30) okno_zametki.style.height = innerHeight + scrollY - okno_top - okno_besedi.clientHeight - okno_novosti.clientHeight - 30 + 'px';
                     else okno_zametki.style.height = event.clientY - okz + scrollY + 'px';
                 }
 
@@ -1870,6 +1999,24 @@ function kn_okna_videlen(deistvie, idnomer) {
         //-----------------------------------------------------------------------------------------
     }
 }
+//=================================================================================================
+function kn_na_str(pologenie) {
+
+kn_stran_nazad.style.top=pologenie+'px';
+    pologenie+=kn_stran_nazad.clientHeight+20;
+    kn_poisk.style.top=pologenie+'px';
+    pologenie+=kn_poisk.clientHeight+20;
+    kn_mneniy.style.top=pologenie+'px';
+    
+}
+//=================================================================================================
+function up() {
+    osnova.style.height=t_s.clientHeight+gl_p.clientHeight+300+'px';
+    if(osnova.clientHeight<innerHeight)osnova.style.height=innerHeight+'px';
+    okna.style.height=osnova.clientHeight+scrollY+'px';
+    ten_stranici.style.width=stranica.style.width=osnova.clientWidth-okna.clientWidth-135+'px';
+    ten_stranici.style.height=stranica.clientHeight+'px';
+}
 
 //=================================================================================================
 function p_videlen(deystvie, idnomer) {
@@ -1893,10 +2040,14 @@ videl_chast = '#6080c0';
             break;
         //-----------------------------------------------------------------------------------------
         case 4://down
-if(metka_on)metka_of();
-            event.returnValue = false;
+            metka_of();
+            interes_of();
+            poisk_of();
+ 
 
-            perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2) - 0 + 200;
+
+            perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2) - 0;
+            odin_og.style.visibility = 'hidden';
             ten_vibronogo_p.style.top = perem - 5 + 'px';
             perem -= 6;
             ogl_vibrono_copiy.style.top = perem + 'px';
@@ -1907,11 +2058,14 @@ if(metka_on)metka_of();
             localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
 
             okna.style.height = limit + stranica.clientHeight + 'px';
+            
             odin_og = document.getElementById('p_' + ogl_vibrono);
+
             odin_og.style.visibility = 'visible';
             odin_og.style.backgroundColor = ne_videl_chast;
             odin_og.style.color = ne_videl_text;
             ogl_vibrono = idnomer;
+            up();
             break;
         //-----------------------------------------------------------------------------------------   
     }
@@ -2004,35 +2158,282 @@ function menu_(deistvie, nomer, idnomer) {
             break;
         //-----------------------------------------------------------------------------------------
         case 4://down
-        if(metka_on)metka_of();
             m[nomer].style.backgroundColor = 'black';
             m[nomer].style.color = color_videl;
-            if (idnomer < 4) localStorage.setItem('nm', idnomer);
-
-
-            localStorage.setItem('nr', nomer - 1);
-            localStorage.setItem('np', 0);
-
-
+            if (idnomer < 4) nm=idnomer;
+            nr=nomer-1;
+            np=0;
+            np_1=0;
+            np_2=0;
+            np_3=0;
             ogl_vibrono = 0;
             menu_vis(idnomer, 0);
-
-
-            document.getElementById('t_s').innerHTML = array_text[idnomer][nomer - 2][0][0];
-            //bob.innerHTML = 'aaa';
-            array_text[0][5][0][0] = "<p>" + localStorage.getItem('nn') + "</p> <div id='pamyt_" + localStorage.getItem('nn') + "' class='reshenie'onmousedown='on_pamyt(" + localStorage.getItem('nm') + "," + localStorage.getItem('nr') + "," + localStorage.getItem('np') + ")'>" + array_menu[0][idnomer] + ' / ' + array_menu[idnomer + 1][nomer - 2] + ' / ' + array_razd_p[idnomer][nomer - 2][0] + '</div > ' + array_text[0][5][0][0];
-            localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
-
+            str_var=0;
+            str_rab=true;
+            master_ym=false;
+            smena_stranic();
             if (idnomer == 0 && nomer == 7) {
                 array_text[0][5][0][0] = nachalo_istorii + array_text[0][5][0][0];
                 nachalo_napisano = true;
             }
-            soderg_razdela();
-            document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[idnomer + 1][nomer - 2];
             break;
         //-----------------------------------------------------------------------------------------
     }
 }
+
+//=================================================================================================
+function smena_stranic() {
+    switch(str_var){
+        case 0:    
+            metka_of();
+            interes_of();
+            poisk_of();    
+            str_iz= 30;
+            str_del=(stranica.clientWidth+100)/10;
+            str_index=0;
+            razd_iz=10;
+            str_iz -= str_del;
+            ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = str_iz + 'px';
+            perem = str_iz + 30 + 'px';
+            perem2 = soderg_width - 100 + str_iz + 14 + 'px';
+            for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
+                document.getElementById('p_' + i).style.left = perem;
+                document.getElementById('tp_' + i).style.left = perem2;
+            }
+            razd_iz-=str_del;
+            razdel.style.left=razdel_teni.style.left=razd_iz+'px';
+            stranica_left -= str_del;
+            ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
+            ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+            scroll(0,0);
+            str_var++;
+            break;
+        //---------------------------------------------------------------------------------------
+        case 1:
+            if(str_index<10){       
+                str_index++;
+                str_iz -= str_del;
+                ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = str_iz + 'px';
+                perem = str_iz + 30 + 'px';
+                perem2 = soderg_width - 100 + str_iz + 14 + 'px';
+                for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
+                    document.getElementById('p_' + i).style.left = perem;
+                    document.getElementById('tp_' + i).style.left = perem2;
+                }
+                razd_iz-=str_del;
+                razdel.style.left=razdel_teni.style.left=razd_iz+'px';
+                stranica_left -= str_del;
+                ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
+                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+            }else{
+                array_text[0][5][0][0] = "<p>" + localStorage.getItem('nn') + "</p> <div id='pamyt_" + localStorage.getItem('nn') + "' class='reshenie'onmousedown='on_pamyt(" + nm + "," + nr + "," + np + ")'>" + array_menu[0][nr] + ' / ' + array_menu[nm - 0 + 1][nr - 1] + ' / ' + array_razd_p[nm][nr - 1][np] + '</div > ' + array_text[0][5][0][0];
+                localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
+                localStorage.setItem('nm', nm);
+                localStorage.setItem('nr', nr);
+                localStorage.setItem('np', np); 
+                localStorage.setItem('np_1',np_1);
+                localStorage.setItem('np_2',np_2);
+                localStorage.setItem('np_3',np_3);
+                scroll(0, 0);
+                if(master_ym){
+                    razdel.innerHTML=razdel_teni.innerHTML='Один из умельцев';
+                    document.getElementById('t_s').innerHTML = array_text[0][2][6][0][0];
+                    text_stranici.style.paddingTop= 10+'px';
+                up();
+                
+                osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
+kn_na_str(250);
+                }else{
+                    document.getElementById('t_s').innerHTML = array_text[nm][nr-1][np][0];
+                    soderg_razdela();
+                    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
+                    ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=razd_iz-95+'px';
+                up();
+                kn_na_str(gl_p.clientHeight+ 230);
+                }
+                stranica_left= razd_iz=osnova.clientWidth;
+                razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =razd_iz + 'px';
+                str_index=0;
+                str_iz=stranica_left;
+                str_del=(str_iz-125)/10;
+                str_var++;
+            }
+            break;
+        //---------------------------------------------------------------------------------------
+        case 2:
+            if(str_index<10){
+                str_index++;
+                razd_iz-=str_del;
+                razdel.style.left=razdel_teni.style.left=razd_iz+'px';
+                if(stranica_left<125)stranica_left=125;else stranica_left-=str_del;
+                if(master_ym==false)ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=stranica_left-95+'px';
+                ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
+            }else {
+                str_rab=false;
+                razdel.style.left=razdel_teni.style.left='10px';
+                stranica_left=125;
+                stranica.style.left=stranica_left+'px';
+            }
+            break;
+        //---------------------------------------------------------------------------------------
+    }
+    if(str_rab)setTimeout('smena_stranic()',30);
+}
+
+//=================================================================================================
+
+function on_kn_stran_nazad(deistvie) {
+    color_kn='#40a0d0';
+    color_nadpisi='#d0ffe0';
+    color_kn_v='#0080a0';
+    color_nadpisi_v='white';
+switch(deistvie){
+    case 1://over
+        kn_stran_nazad.style.background=color_kn_v;
+        kn_stran_nazad.style.color=color_nadpisi_v;
+        svet_kn1.style.visibility=ten_kn1.style.visibility=svet_nadpisi_1.style.visibility='visible';
+        break;
+    //---------------------------------------------------------------------------------------
+    case 2://out
+        kn_stran_nazad.style.background=color_kn;
+        kn_stran_nazad.style.color=color_nadpisi;
+        svet_nadpisi_1.style.visibility='hidden';
+        svet_kn1.style.visibility=ten_kn1.style.visibility='visible';
+        break;
+    //---------------------------------------------------------------------------------------
+    case 4://down
+    svet_kn1.style.visibility=ten_kn1.style.visibility=svet_nadpisi_1.style.visibility= 'hidden';
+    kn_stran_nazad.style.color=color_nadpisi;
+    break;
+    //---------------------------------------------------------------------------------------
+
+}
+}
+//=================================================================================================
+
+function on_kn_poisk(deistvie) {
+    color_kn='#40a0d0';
+    color_nadpisi='#d0ffe0';
+    color_kn_v='#0080a0';
+    color_nadpisi_v='white';
+
+switch(deistvie){
+
+case 1://over
+    kn_poisk.style.background=color_kn_v;
+    kn_poisk.style.color=color_nadpisi_v;
+    svet_kn2.style.visibility=ten_kn2.style.visibility=svet_nadpisi_2.style.visibility='visible';
+    break;
+    //---------------------------------------------------------------------------------------
+    case 2://out
+    kn_poisk.style.background=color_kn;
+    kn_poisk.style.color=color_nadpisi;
+    svet_nadpisi_2.style.visibility='hidden';
+    svet_kn2.style.visibility=ten_kn2.style.visibility='visible';
+    break;
+    //---------------------------------------------------------------------------------------
+    case 4://down
+    svet_kn2.style.visibility=ten_kn2.style.visibility=svet_nadpisi_2.style.visibility= 'hidden';
+    kn_poisk.style.color=color_nadpisi;
+    
+    if(kn_poisk_down){
+        poisk.style.visibility='hidden';
+        kn_poisk.style.width='85px';
+
+        kn_poisk_down=false;
+    }else {
+        poisk.style.visibility='visible';
+        kn_poisk.style.width='105px';
+        kn_poisk_down=true;
+    }
+    break;
+    //---------------------------------------------------------------------------------------
+}
+}
+//=================================================================================================
+function poisk_of(){
+    if(kn_poisk_down){ poisk.style.visibility=svet_nadpisi_2.style.visibility= 'hidden';
+    kn_poisk.style.width='85px';
+    kn_poisk_down=false;}}
+//=================================================================================================
+
+function on_kn_mneniy(deistvie) {
+    color_kn='#40a0d0';
+    color_nadpisi='#d0ffe0';
+    color_kn_v='#0080a0';
+    color_nadpisi_v='white';
+switch(deistvie){
+
+case 1://over
+    kn_mneniy.style.background=color_kn_v;
+    kn_mneniy.style.color=color_nadpisi_v;
+    svet_kn3.style.visibility=ten_kn3.style.visibility=svet_nadpisi_3.style.visibility='visible';
+    break;
+    //---------------------------------------------------------------------------------------
+    case 2://out
+    kn_mneniy.style.background=color_kn;
+    kn_mneniy.style.color=color_nadpisi;
+    svet_nadpisi_3.style.visibility='hidden';
+    svet_kn3.style.visibility=ten_kn3.style.visibility='visible';
+    break;
+    //---------------------------------------------------------------------------------------
+    case 4://down
+    svet_kn3.style.visibility=ten_kn3.style.visibility=svet_nadpisi_3.style.visibility= 'hidden';
+    kn_mneniy.style.color=color_nadpisi;
+    break;
+    //---------------------------------------------------------------------------------------
+}
+}
+//=================================================================================================
+function on_tn(deistvie,nomer) {
+    switch(nomer){
+        case 0:nom=array_text[0][0][1][17]; break;
+    }
+    switch(deistvie){
+       
+    case 3: document.getElementById('tn_'+nomer+'_telo').innerHTML='<table id="tn_'+nomer+'" class="nowosti" onmousedown="on_tn(6,'+nomer+')"><tr><td id="tn_'+nomer+'_z" class="nowosti_zagolovok">'+document.getElementById('tn_'+nomer+'_z').innerHTML+'</td><td id="tn_'+nomer+'_d"class="nowosti_data">'+document.getElementById('tn_'+nomer+'_d').innerHTML+'</td></tr></table><div id="tn_'+nomer+'_t" class="nowosti_text"colspan="2"align="left">'+nom+' </div>';break;
+    case 6: document.getElementById('tn_'+nomer+'_telo').innerHTML='<table id="tn_'+nomer+'" class="nowosti" onmousedown="on_tn(3,'+nomer+')"><tr><td id="tn_'+nomer+'_z" class="nowosti_zagolovok">'+document.getElementById('tn_'+nomer+'_z').innerHTML+'</td><td id="tn_'+nomer+'_d"class="nowosti_data">'+document.getElementById('tn_'+nomer+'_d').innerHTML+'</td></tr><tr><td colspan=2 style="background: #fff8e0;"> </td></tr></table>';break;
+    }
+    up();
+}
+//=================================================================================================
+function on_tym(deistvie,nomer) {
+    switch(deistvie){
+    case 3:
+    str_rab = true;
+            str_var=0;
+            master_ym=true;
+            nm=0;
+            nr=3;
+            np=0;
+            np_1=1;
+            np_2=0;
+            np_3=0;
+    smena_stranic();
+    
+    up();
+    //on_pamyt(nm,nr,np);
+    //ym_div.style.visibility="visible";
+    //ym_div.style.height=ym_div.clientHeight+'px';
+    //ym_div.style.top=scrollY+15+'px';
+    //ym_div_on=true;
+ //   stranica.innerHTML=array_ym[0];
+    break;
+    //---------------------------------------------------------------------------------------
+    case 6:
+    document.getElementById('tn_'+nomer+'_telo').innerHTML='<table id="tn_'+nomer+'" class="nowosti" onmousedown="on_tn(3,'+nomer+')"><tr><td id="tn_'+nomer+'_z" class="nowosti_zagolovok">'+document.getElementById('tn_'+nomer+'_z').innerHTML+'</td><td id="tn_'+nomer+'_d"class="nowosti_data">'+document.getElementById('tn_'+nomer+'_d').innerHTML+'</td></tr><tr><td colspan=2 style="background: #fff8e0;"> </td></tr></table>';
+    
+    up();
+    osnova.style.height=osnova.clientHeight-gl_p.clientHeight+'px';
+    break;
+    //---------------------------------------------------------------------------------------
+    }
+    
+    
+    
+
+}
+
 //=================================================================================================
 function on_pamyt(nm, nr, np) {
 
@@ -2047,7 +2448,9 @@ function on_pamyt(nm, nr, np) {
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm - 0 + 1][nr - 1];
         scroll(0, 0);
         document.getElementById('t_s').innerHTML = array_text[nm][nr - 1][np][0];
+        up();
     }
+               
 }
 
 //=================================================================================================
@@ -2064,16 +2467,21 @@ function on_tp_time(deistvie, n_menu, n_punkt, n_razdel, nomer) {
     }
 }
 //=================================================================================================
+
 function metka_of(){
-    nomer=metka_nomer;
+if(metka_on){    
+nomer=metka_nomer;
     ten_metka.style.visibility=metka_div.style.visibility=metka_treug.style.visibility='hidden';
     metka_on=false;
     name2= 'tm_' + nm + '_' + nr + '_' + np;
     name = name2+'_'+nomer;
     document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="metka" onmouseover="on_tm(1,' + nomer + ')"onmouseout="on_tm(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
 }
+           event.returnValue = false;
+}
 //=================================================================================================
 function interes_of(){
+    if(interes_on){
 nomer=interes_nomer;    
 ten_interes.style.visibility=interes_div.style.visibility=interes_treug.style.visibility='hidden';
     interes_on=false;
@@ -2081,9 +2489,12 @@ ten_interes.style.visibility=interes_div.style.visibility=interes_treug.style.vi
     name = name2+'_'+nomer;
     document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="interes" onmouseover="on_ti(1,' + nomer + ')"onmouseout="on_ti(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
 }
+           event.returnValue = false;
+}
 //=================================================================================================
 
 function prsmi(id='p',nomer=0){
+               event.returnValue = false;
     nm=localStorage.getItem('nm');
     nr=localStorage.getItem('nr')-1;
     np=localStorage.getItem('np');
@@ -2094,6 +2505,7 @@ function prsmi(id='p',nomer=0){
 //=================================================================================================
 
 function tof(p_r=0){
+               event.returnValue = false;
 nm=localStorage.getItem('nm');
     nr=localStorage.getItem('nr')-1;
     np=localStorage.getItem('np');
@@ -2141,6 +2553,7 @@ function on_tp(deistvie, nomer) {
             if(metka_on)metka_of();
             if(interes_on)interes_of();
             document.getElementById(name+'_telo').innerHTML='<div id="'+name+'" class="paragraf" onmouseover="on_tp(1,' + nomer + ')"onmouseout="on_tp(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</div>';
+up();
             break;
     }
 }
@@ -2168,6 +2581,7 @@ idnom = document.getElementById(name);
             if(interes_on)interes_of();
             document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="reshenie" onmouseover="on_tr(1,' + nomer + ')"onmouseout="on_tr(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
             break;
+            up();
     }
 }
 //=================================================================================================
@@ -2193,6 +2607,7 @@ idnom = document.getElementById(name);
             if(metka_on)metka_of();
             if(interes_on)interes_of();
             document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="ssilka" onmouseover="on_ts(1,' + nomer + ')"onmouseout="on_ts(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
+
             break;
     }
 }
@@ -2219,6 +2634,7 @@ idnom = document.getElementById(name);
             if(metka_on)metka_of();
             if(interes_on)interes_of();
             document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="metka" onmouseover="on_tm(1,' + nomer + ')"onmouseout="on_tm(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
+            up();
             break;
     }
 }
@@ -2245,6 +2661,7 @@ idnom = document.getElementById(name);
             if(metka_on)metka_of();
             if(interes_on)interes_of();
             document.getElementById(name+'_telo').innerHTML='<span id="'+name+'" class="interes" onmouseover="on_ti(1,' + nomer + ')"onmouseout="on_ti(2,' + nomer + ')"onmousedown="on_'+name2+'('+nomer+')">'+document.getElementById(name+'_v').innerHTML+'</span>';
+            up();
             break;
             
     }
@@ -2276,6 +2693,7 @@ ten_metka.style.height=metka_div.clientHeight+5+'px';
 metka_left=metka_div.style.top.slice(0, metka_div.style.top.length - 2) - 0;
 //metka_nomer=0;
 metka_on=true;
+up();
 }
 //=================================================================================================
 function on_ti_down_start(nomer){
@@ -2300,7 +2718,7 @@ ten_interes.style.left=interes_div.style.left;
 ten_interes.style.width=interes_div.clientWidth+5+'px';
 ten_interes.style.height=interes_div.clientHeight+5+'px';
 interes_left=interes_div.style.top.slice(0, metka_div.style.top.length - 2) - 0;
-
+up();
 interes_on=true;
 }
 
@@ -2327,7 +2745,7 @@ str = "<hr width='100%'size='2'color='black'/>";
     str+="<dd>"+array_text[0][0][0][1]+"</dd>";    
     str += "<hr width='100%'size='2'color='black'/>";
     document.getElementById(name+'_telo').innerHTML='<div id="'+name+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer + ')"onmouseout="on_tp(4,' + nomer + ')"onmousedown="on_tp(5,'+nomer+')">'+document.getElementById(name).innerHTML+'</div>'+str;
- 
+up(); 
 }
 //=================================================================================================
 function on_tp_0_0_1(nomer){
@@ -2346,6 +2764,7 @@ function on_tp_0_0_1(nomer){
     case 9:nom=16; break;
     }
     document.getElementById(name+'_telo').innerHTML='<div id="'+name+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer + ')"onmouseout="on_tp(4,' + nomer + ')"onmousedown="on_tp(5,'+nomer+')">'+document.getElementById(name).innerHTML+'</div><hr width="100%"size="2"color="black"/>'+array_text[0][0][1][nom]+'<hr width="100%"size="2"color="black"/>';
+    up();
 }
 
 //=================================================================================================
@@ -2385,6 +2804,7 @@ function on_tp_0_0_2(nomer) {
     }
     str += "<hr width='100%'size='2'color='black'/>"
     document.getElementById(name2+'_' + nomer + '_telo').innerHTML = "<div id='"+name2+"_" + nomer + "_v' class='paragraf_v'onmouseover='on_tp(3," + nomer + ")'onmouseout='on_tp(4," + nomer + ")' onmousedown='on_tp_0_0_2("+ nomer + ")'>" + document.getElementById(name2+'_' + nomer).innerText + "</div>" + str;
+    up();
 }
 //=================================================================================================
 function on_tp_0_0_3(nomer) {
@@ -2412,6 +2832,7 @@ switch(nomer){
     case 15:break;
     case 16:break;
     case 17:break;
+    up();
 }
 
 
@@ -2420,11 +2841,13 @@ switch(nomer){
 function on_tr_0_0_0(nomer) {
     tof(1);
     document.getElementById(name+'_telo').innerHTML='<span id="'+name+'_v"class="reshenie_v" onmouseover="on_tr(3,'+nomer+')"onmouseout="on_tr(4,'+nomer+')"onmousedown="on_tr(5,'+nomer+')">'+document.getElementById(name).innerHTML+'</span><div class="reshenie_div">'+array_text[0][0][0][2]+'</div>';
+    up();
 }
 //=================================================================================================
 function on_tr_0_0_1(nomer) {
     tof(1);
     document.getElementById(name+'_telo').innerHTML='<span id="'+name+'_v"class="reshenie_v" onmouseover="on_tr(3,'+nomer+')"onmouseout="on_tr(4,'+nomer+')"onmousedown="on_tr(5,'+nomer+')">'+document.getElementById(name).innerHTML+'</span><div class="reshenie_div">'+array_text[0][0][1][4]+'<p>'+array_text[0][0][0][2]+array_text[0][0][1][5]+'</div>';
+    up();
 }
 
 //=================================================================================================
@@ -2449,7 +2872,7 @@ switch(nomer){
     case 15:nm = 2; nr = 1;np = 0;break;
     case 16:nm = 0; nr = 1;np = 1;break;
     case 17:nm = 0; nr = 1;np = 2;break;
-    case 18:nm = 3; nr = 1;np = 0;break;
+    case 18:nm = 1; nr = 18;np = 0;break;
 }
 
 if(nomer!=0)on_pamyt(nm,nr,np);
@@ -2505,7 +2928,6 @@ switch(nomer){
 }
 on_ti_down_end();
 }
-
 //=================================================================================================
 
 function on_reshenie(nomer) {
@@ -2514,22 +2936,17 @@ function on_reshenie(nomer) {
     else if (nomer < 34) { nm = 2; nr = nomer - 30; }
     else { nm = 3; nr = nomer - 33; }
     np = 0;
-    array_text[0][5][0][0] = "<p>" + localStorage.getItem('nn') + "</p> <div id='pamyt_" + localStorage.getItem('nn') + "' class='reshenie'onmousedown='on_pamyt(" + nm + "," + nr + "," + np + ")'>" + array_menu[0][nm] + ' / ' + array_menu[nm - 0 + 1][nr - 1] + ' / ' + array_razd_p[nm][nr - 1][np] + '</div > ' + array_text[0][5][0][0];
-    localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
-    localStorage.setItem('nm', nm);
-    localStorage.setItem('nr', nr);
-    localStorage.setItem('np', np);
-    soderg_razdela();
-    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm - 0 + 1][nr - 1];
-    scroll(0, 0);
-    document.getElementById('t_s').innerHTML = array_text[nm][nr - 1][np][0];
+    on_pamyt(nm,nr,np);
+
 }
+
 //=================================================================================================
 function soderg_razdela() {
-    t = 50;
+    t = 0;
     text_size = 35;
     if (localStorage.getItem('np')) { } else localStorage.setItem('np', 0);
     ogl_vibrono = localStorage.getItem('np');
+    
     //---------------------------------------------------------------------------------------------
     str = "";
     //---------------------------------------------------------------------------------------------
@@ -2537,76 +2954,108 @@ function soderg_razdela() {
     str += "<div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_(1)'onmouseout='kn_nazad_(2)'onmousedown='kn_nazad_(4)'></div>";
     //---------------------------------------------------------------------------------------------
     //подсветка и сами названия содержания страниц
-    str += "<div id='soderg_razdela_2'><div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p'></div>";
+    str += "<div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p'>Содержимое раздела:<div id='kn_za_str' onmouseover='kn_za_str_(1)' onmouseout='kn_za_str_(2)' onmousedown='kn_za_str_(4)'></div>";
     for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) str += "<div id='tp_" + i + "'class='c_ten_p'></div><div id='p_" + i + "'class='c_p' onmouseover='p_videlen(1, " + i + ")' onmouseout='p_videlen(2," + i + ")' onmousedown='p_videlen(4," + i + ")'></div>";
-    str += "<div id='ten2'></div></div><div id='ten_vibronogo_p'></div><div id='ogl_vibrono_copiy'></div>";
+    str += "<div id='ten2'></div><div id='ten_vibronogo_p'></div><div id='ogl_vibrono_copiy'></div></div>";
     //---------------------------------------------------------------------------------------------
     in_load_2.innerHTML = str;
     if (localStorage.getItem('s_l')) {
 
-    } else localStorage.setItem('s_l', 0);
+    } else
+    localStorage.setItem('s_l', 0);
+
     stranica_left = localStorage.getItem('s_l') - 0 > 0 ? 50 : 125;
     //---------------------------------------------------------------------------------------------
     //кнопка для возвращения назад на верх страницы
     kn_nazad.innerHTML = '^';
     ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'hidden';
     ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
-    ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + 'px';
+    ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight - 80 + 'px';
     //---------------------------------------------------------------------------------------------
+    
     //содержимое раздела по пунктам
     for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
-        odin_og = document.getElementById("p_" + i);
+    
+    odin_og = document.getElementById("p_" + i);
         odin_og.innerHTML = array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1][i];
         if (ogl_vibrono == i) {
             ogl_vibrono_copiy.innerHTML = odin_og.innerHTML;
-            ogl_vibrono_copiy.style.top = 200 + t - 4 + 'px';
-            ogl_vibrono_copiy.style.width = soderg_razdela_1.clientWidth - 80 + 'px';
-            ten_vibronogo_p.style.left = ogl_vibrono_copiy.style.left;
-            ten_vibronogo_p.style.width = soderg_razdela_1.clientWidth - 70 + 'px';
-            ten_vibronogo_p.style.top = 200 + t - 3 + 'px';
+            ogl_vibrono_copiy.style.top = 50+t - 4 + 'px';
+            ogl_vibrono_copiy.style.width = soderg_width + 10 + 'px';
+            ten_vibronogo_p.style.left = '10px';
+            ten_vibronogo_p.style.width = ogl_vibrono_copiy.clientWidth+5+'px';
+            ten_vibronogo_p.style.top = 50+t - 3 + 'px';
             ten_vibronogo_p.style.height = ogl_vibrono_copiy.clientHeight + 5 + 'px';
             perem = t + 5 + 'px';
-
+            odin_og.style.visibility='hidden';
         }
-        perem = odin_og.style.top = t + 'px';
-        odin_og.style.width = soderg_razdela_1.clientWidth - 120 + 'px';
+       // if(ogl_vibrono==i) 
+        perem = odin_og.style.top = 50+t + 'px';
+       odin_og.style.width = soderg_width-35 + 'px';
 
-
+        
         odin_ogt = document.getElementById("tp_" + i);
         odin_ogt.style.top = perem;
-        odin_ogt.style.left = soderg_razdela_1.clientWidth - 56 + 'px';
+        odin_ogt.style.left = odin_og.clientWidth +40+ 'px';
+        
         t += odin_og.clientHeight + 15;
     }
+    //bob.innerHTML=''
+    if(master_ym){
+        gl_p.style.visibility='hidden';
+        kn_na_str(250);
+    //poisk.style.top=250+kn_stran_nazad.clientHeight+'px';
+    
+    }else{
 
-    gl_p.innerHTML = "Содержимое раздела: <div id='kn_za_str' onmouseover='kn_za_str_(1)' onmouseout='kn_za_str_(2)' onmousedown='kn_za_str_(4)'></div>";
     gl_p.style.visibility = 'visible';
     gl_p_za_str.style.visibility = 'hidden';
-    gl_p_za_str.style.height = gl_p.style.height = t + 'px';
-    soderg_razdela_2.style.height = soderg_razdela_1.style.height = gl_p_za_str.clientHeight + 10 + 'px';
-    gl_p.style.width = soderg_razdela_1.clientWidth - 100 + 'px';
-    kn_stran_nazad.style.top=gl_p.clientHeight+210+'px';
-    soderg_razdela_2.style.width = soderg_razdela_1.clientWidth + 100 + 'px';
-    text_stranici.style.paddingTop = gl_p.clientHeight / 2 + 100 + 'px';
+    
+    gl_p_za_str.style.height = gl_p.style.height = t +50+ 'px';
+    //soderg_razdela_2.style.height = soderg_razdela_1.style.height = gl_p_za_str.clientHeight + 10 + 'px';
+    gl_p.style.width = soderg_width + 'px';
+    //gl_p.style.left=30+'px';
+    //---------------------------------------------------------------------------------------------
+    // bob.innerHTML=kn_stran_nazad.clientWidth;
+    kn_na_str(gl_p.clientHeight+230);
+    //poisk.style.top=250+gl_p.clientHeight+kn_stran_nazad.clientHeight+'px';
+ svet_nadpisi_1.style.visibility=svet_nadpisi_2.style.visibility=svet_nadpisi_3.style.visibility='hidden';
+    
+   // soderg_razdela_2.style.width = soderg_width + 'px';
+   //---------------------------------------------------------------------------------------------
+    text_stranici.style.paddingTop = gl_p.clientHeight - 20 + 'px';
+    //---------------------------------------------------------------------------------------------
+
     ten1_gl_p.style.position = ten2_gl_p.style.position = 'absolute';
     ten1_gl_p.style.left = ten2_gl_p.style.left = '30px';
     ten1_gl_p.style.top = '202px';
-    ten2_gl_p.style.top = '2px';
+    ten2_gl_p.style.top = '202px';
     ten1_gl_p.style.width = ten2_gl_p.style.width = gl_p.clientWidth + 2 + 'px';
     ten1_gl_p.style.height = ten2_gl_p.style.height = gl_p.clientHeight + 'px';
     ten1_gl_p.style.backgroundColor = ten2_gl_p.style.backgroundColor = 'black';
     ten1_gl_p.style.borderRadius = ten2_gl_p.style.borderRadius = '10px';
     ten1_gl_p.style.filter = 'blur(12px)';
     ten2_gl_p.style.filter = 'blur(2px)';
+    
+    
     //---------------------------------------------------------------------------------------------
     //кнопка прячущая за страницу
+    
     kn_za_str.innerHTML = "<div id='ris_kn_za_str'></div><div id='ris_min'></div><div id='ris_v'></div><div id='ris_str'></div>";
     ris_v.innerHTML = 'v';
     kn_za_str.style.left = gl_p.clientWidth - 70 + 'px';
+
+    localStorage.setItem('np_1',0);
+    localStorage.setItem('np_2',0);
+    localStorage.setItem('np_3',0);
+    }
+    kn_stran_nazad.style.width= kn_poisk.style.width=kn_mneniy.style.width='85px';
+    
 }
 //=================================================================================================
 function okna_umen() {
-    if (osnova.clientHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - scrollY) {
-        minus = (okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - osnova.clientHeight - scrollY) / ((okno_besedi.clientHeight <= okgran ? 0 : 1) + (okno_novosti.clientHeight <= okgran ? 0 : 1) + (okno_zametki.clientHeight <= okgran ? 0 : 1));
+    if (innerHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - scrollY) {
+        minus = (okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - innerHeight - scrollY) / ((okno_besedi.clientHeight <= okgran ? 0 : 1) + (okno_novosti.clientHeight <= okgran ? 0 : 1) + (okno_zametki.clientHeight <= okgran ? 0 : 1));
         plus = 0;
         if (okno_besedi.clientHeight > okgran) {
             if (okno_besedi.clientHeight - minus < okgran) {
@@ -2639,8 +3088,25 @@ function okna_umen() {
     okno_zametki.style.top = okz + 'px';
 }
 //=================================================================================================
-function izmen_win() {
+function okna_uvel() {
+    if (innerHeight > okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - scrollY) {
+        plus = (innerHeight-okno_top-okno_besedi.clientHeight - okno_novosti.clientHeight - okno_zametki.clientHeight-30+scrollY)/3;
+        okno_besedi.style.height = okno_besedi.clientHeight + plus + 'px';
+        okno_novosti.style.height = okno_novosti.clientHeight + plus + 'px';
+        okno_zametki.style.height = okno_zametki.clientHeight + plus + 'px';
+    
+    }
+    okb = okno_top;
+    okno_besedi.style.top = okb + 'px';
+    okn = okb + okno_besedi.clientHeight + 10;
+    okno_novosti.style.top = okn + 'px';
+    okz = okn + okno_novosti.clientHeight + 10;
+    okno_zametki.style.top = okz + 'px';
+}
 
+//=================================================================================================
+function izmen_win() {
+    
     if (staroe_x != innerWidth) {
 
         m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4;
@@ -2671,15 +3137,17 @@ function izmen_win() {
         okna.style.left = stranica.clientWidth + 135 + 'px';
         //-----------------------------------------------------------------------------------
         staroe_x = innerWidth;
+        up();
     }
     if (staroe_y != innerHeight) {
+        
         if (staroe_y > innerHeight) {
             okna_umen();
-        } else if (osnova.clientHeight > 165 + okno_top - scrollY && okno_besedi.style.visibility == 'hidden') {
+        } else if (innerHeight > 165 + okno_top - scrollY && okno_besedi.style.visibility == 'hidden') {
             if (okno_besedi.clientHeight < 45) okno_besedi.style.height = '45px';
             if (okno_novosti.clientHeight < 45) okno_novosti.style.height = '45px';
             if (okno_zametki.clientHeight < 45) okno_zametki.style.height = '45px';
-        }
+        }else okna_uvel();
         if (localStorage.getItem('l_p')) {
             if (localStorage.getItem('l_p') == 0) ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
             else ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'visible';
@@ -2691,23 +3159,54 @@ function izmen_win() {
         ten_pomoshnika.style.visibility = 'visible';
         pomoshnik.style.visibility = 'visible';
 
-        ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + scrollY + 'px';
-        line_pomoshnik.style.top = innerHeight - 60 + 'px';
-        ten_line_pomoshnik.style.top = innerHeight - 70 + 'px';
-        sleva.style.top = innerHeight - 220 + 'px';
+        ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight - 80 + scrollY + 'px';
+        line_pomoshnik.style.top = innerHeight - 73 + 'px';
+        ten_line_pomoshnik.style.top = innerHeight - 61 + 'px';
+        pomoshnik_go(0);
+        //sleva
+        
         ten_kn_prydki.style.top = innerHeight - 60 + 'px';
         kn_prydki.style.top = innerHeight - 64 + 'px';
         staroe_y = innerHeight;
+        up();
     }
-    if (scrollY) {
+    
+    if (scrollY) 
+    {
+
         if (scrollY > 100 && kn_nazad_vidna == false) {
             kn_nazad_vidna = true;
             ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'visible';
         }
-        if (kn_nazad_vidna) ten_kn_nazad.style.top = kn_nazad.style.top = osnova.clientHeight - 80 + scrollY + 'px';
+        
+        if (kn_nazad_vidna) ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight-100 + scrollY + 'px';
+        
+       if(master_ym){
+           if(200<scrollY){
+           kn_na_str(50+scrollY);
+           poisk.style.top=70+kn_stran_nazad.clientHeight+scrollY+'px';
+           }else{
+               kn_na_str(250);
+           poisk.style.top=270+kn_stran_nazad.clientHeight+'px';
+           }
+       }else{
+       if(170+gl_p.clientHeight<scrollY){ 
+       kn_na_str(50+scrollY);
+       poisk.style.top=70+kn_stran_nazad.clientHeight+scrollY+'px';
+       }
+       else{
+       kn_na_str(gl_p.clientHeight+230);
+       poisk.style.top=250+gl_p.clientHeight+kn_stran_nazad.clientHeight+'px';
+       }}
+
         line_pomoshnik.style.top = innerHeight - 73 + scrollY + 'px';
         ten_line_pomoshnik.style.top = innerHeight - 60 + scrollY + 'px';
-        sleva.style.top = innerHeight - 220 + scrollY + 'px';
+        
+        pomoshnik.style.left='40px';
+        //pomoshnik.style.top = 200 + 'px';
+        pomoshnik_go(0);
+        //telo.style.top = innerHeight - 220 + scrollY + 'px';
+
         ten_kn_prydki.style.top = innerHeight - 60 + scrollY + 'px';
         kn_prydki.style.top = innerHeight - 64 + scrollY + 'px';
         ten_stranici.style.height = stranica.clientHeight + 'px';
@@ -2740,7 +3239,8 @@ function izmen_win() {
 
         posle_scroll = true;
     } else if (posle_scroll && scrollY < 2) {
-        posle_scroll = false;
+if(master_ym) kn_na_str(250);else kn_na_str(gl_p.clientHeight+230);
+posle_scroll = false;
         kn_nazad_vidna = false;
         ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'hidden';
         ten_kn_prydki.style.top = innerHeight - 60 + scrollY + 'px';
@@ -2749,7 +3249,9 @@ function izmen_win() {
         line_pomoshnik.style.top = innerHeight - 73 + 'px';
         ten_line_pomoshnik.style.top = innerHeight - 60 + 'px';
 
-        sleva.style.top = innerHeight - 220 + 'px';
+        //sleva
+        pomoshnik_go(0);
+    
         menu_line.style.height = '55px';
 
         okno_top = 210;
