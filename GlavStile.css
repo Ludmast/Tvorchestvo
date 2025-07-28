@@ -10,7 +10,7 @@ body
     overflow:hidden;
  
 }
-#poisk,#poisk_str,#text_stranici,#metka_div,#interes_div{
+.text,#text_stranici,#metka_div,#interes_div{
     padding-top: 4px;
     padding-bottom: 10px;
     padding-left: 10px;
@@ -19,19 +19,6 @@ body
     word-spacing:5px;
     text-indent: 20px;
     font-size: 20px;
-}
-#poisk{
-    position:absolute;
-    background:#d0f0ff;
-    border:6px ridge #40a0d0;
-    
-    visibility:hidden;
-}
-#poisk_str{
-    background:white;
-    height:30px;
-    border:2px solid #147;
-
 }
 #name_sait1,#name_sait2,#name_sait2_teni{
     position: absolute;
@@ -225,19 +212,7 @@ body
     background:#304050;
 }
 
-#gl_p_za_str {
-    position: absolute;
-    top: 0px;
-    left: 30px;
-    height: 300px;
-    border-radius: 10px;
-    background-color: #c0d0ff;
-    font-size: 22px;
-    padding-left: 10px;
-    padding-top: 10px;
-    color: black;
-    visibility:hidden;
-}
+
 
 .c_gl_p{
   position:absolute;
@@ -268,7 +243,7 @@ body
     padding-left: 5px;
 
     font-size: 32px;
-    left: 10px;
+    left: 40px;
     color: #b0f0e0;
     height:42px;
     border-radius: 10px;
@@ -809,10 +784,14 @@ top:100px;
 }
 .paragraf {
     background: #ffb0a0;
+    font-weight: 800;
+
     color: black;
 }
 .paragraf_v {
     background: black;
+    font-weight: 800;
+
     color: #ffd0c0;
 }
 .reshenie {
@@ -1055,9 +1034,6 @@ position:absolute;
     top:-13px;
     left:215px;
 }
-#ym_foto{
-    position:absolute;
-}
 .foto_ymelca {
     overflow:clip;
     background:#fff8e0;
@@ -1080,4 +1056,11 @@ position:absolute;
     margin:10px;
     border: 2px solid #306090;
     border-radius: 10px;
+}
+.ris_inter{
+    border:2px solid green;
+    border-radius:10px 10px 0px 0px;
+    padding:5px 10px 5px 10px;
+    
+
 }
