@@ -906,6 +906,7 @@ position:absolute;
     font-size: 20px;
 }
 .istoriy{
+    width:100%;
     background:#103090;
     padding:3px;
     cursor:pointer;
@@ -1008,31 +1009,14 @@ position:absolute;
      padding:10px;
      overflow:hidden;
 }
-.shema_img1{
+
+.shema_img{
     position:relative;
-    top:10px;
-    left:-95px;
     width:100px;
-    border:3px solid black;
-}
-.shema_img2{
-    position:relative;
-    left:50px;
-    width:75px;
-    border:2px solid #505050;
-}
-.shema_img3{
-    position:relative;
-    top:-7px;
-    width:50px;
-    border:1px solid #a0a0a0;
-    left:150px;
-}
-.shema_img4{
-    position:relative;
-    width:30px;
-    top:-13px;
-    left:215px;
+    border:2px solid black;
+    margin:1px;
+
+    
 }
 .foto_ymelca {
     overflow:clip;
@@ -1063,4 +1047,14 @@ position:absolute;
     padding:5px 10px 5px 10px;
     
 
+}
+.dizain {
+    
+    width: 75px;
+    height:100px;
+    background:#fff8e0;
+    border: 2px solid #405040;
+    
+    margin:5px;
+     cursor:pointer;
 }
