@@ -1,5 +1,4 @@
 
-
 //=================================================================================================
 array_name_sait = ["Творчество", "во всём!"];
 predupregd = 'Сайт находится в разработке';
@@ -199,6 +198,23 @@ ar_ym_rab=[
     ]
 ];
 //=================================================================================================
+ar_ym_yr=
+[
+     [
+        [7]
+        ,
+        [
+            '<b>Шаг 1:</b> берёшь нужного цвета клубок и вытягиваешь с него нитку<p><b>Шаг 2:</b> хватаешь крючок<p><b>Шаг 3:</b> начинаешь вязать... <p align="center"><h2>ха-ха-ха</h2> '
+                    
+        ]
+        
+        ,
+        [
+            '<p><b>Шаг 1:</b> берёшь гитару<p><b>Шаг 2:</b> настраиваешь струны<p><b>Шаг 3:</b> начинаешь брынькать...<p align="center"><h2>ха-ха-ха</h2>'
+        ]
+     ]    
+];
+//=================================================================================================
 ar_ym_yrok=[
     [
         [
@@ -356,6 +372,26 @@ ar_tizd=
     ]
 ];
 //=================================================================================================
+ar_int=
+[
+    [
+        [
+            
+            'Дата публикации'
+            ,'ym_0_ris_0_0.jpg'
+            ,'g2.jpg'
+            ,'ym_0_ris_0_0.jpg'
+        ]
+        ,
+        [
+            'Дата публикации'
+           ,'ym_0_ris_0_0.jpg'
+           ,'ym_0_ris_0_0.jpg'
+            
+        ]
+    ]
+];
+//=================================================================================================
 ar_tp_up=
 [
     [
@@ -363,7 +399,7 @@ ar_tp_up=
             [
                 0
             ],[
-                1,0
+                0,1
             ]
             ,[0,1,0,0,1,0,0]
             ,[]
@@ -692,7 +728,7 @@ array_text =
                     
 
 
-                    ,'Здесь находятся группы рисунков и схем скаченных умельцем с интернета, разделённые друг от друга датой и временем их публикации<p><span class="ris_inter">Дата и время поступления на сайт</span><p><img src="ym_0_ris_0_0.jpg"  class="shema_img"></img><img src="ym_0_ris_0_1.jpg" class="shema_img"></img><img src="ym_0_ris_0_2.jpg" class="shema_img"></img>'
+                    ,'Здесь находятся группы рисунков и схем скаченных умельцем с интернета, разделённые друг от друга датой и временем их публикации<p>'
                     ,'Здесь представлены различные хитрости (не только данного умельца), используемые им в своём творчестве. Например:'
                     ,'Фотографии и видео могут быть разбиты на отдельные категории, по желанию умельца. Например:'
                     ,'Упс... А здесь пока-что ничего нет :( '
@@ -1529,7 +1565,6 @@ function text_str() {
     document.getElementById('t_s').innerHTML = str_text;
     
 }
-
 //=================================================================================================
 function on_tp_t(nomer_pt){ 
     pp='';   
@@ -1592,7 +1627,7 @@ function on_tp_t(nomer_pt){
 
                                         case 0:pp='<dd>'+array_text[0][2][0][0][0]+'</dd>'+tp_t(5,7);  break;
                                         case 1:pp='<dd>'+array_text[0][2][0][0][1]+'</dd>'+tp_t(7,9);  break;
-                                        case 2:pp='<dd>'+array_text[0][2][0][0][3]+'</dd>';  break;
+                                        case 2:pp='<dd>'+array_text[0][2][0][0][3]+'</dd>'+ts_intt(2);  break;
                                         case 3:pp='<dd>'+array_text[0][2][0][0][4]+'</dd>'+tp_t(9,10);  break;
                                         case 4:pp='<dd>'+array_text[0][2][0][0][5]+'</dd>'+tp_t(10,13);  break;
                                         case 5:pp='<dd>'+array_text[0][2][0][0][2]+'</dd>'+tizd(0);  break;
@@ -1691,6 +1726,7 @@ function on_ts_t(nomer){
     }
     on_pamyt(nm,nr,np);
 }
+
 //=================================================================================================
 function on_tm_t(nomer){ 
     mm='';   
@@ -1742,6 +1778,8 @@ function tnow_t(){ s_pp='';for(i=ar_now.length/3;i>-1;i--) s_pp+=tn_telo(0,i)+'<
 function tym_tn(){ s_pp='';for(i=0;i<3;i++) s_pp+=tym_telo(i);return s_pp;}
 //=================================================================================================
 function tp_up(nomer_tp_up){ return ar_tp_up[nm-0][nr-1][np-0][nomer_tp_up];}
+//=================================================================================================
+function ts_intt(nomer_ts_up){ s_pp='';for(rit=0;rit<nomer_ts_up;rit++) s_pp+=ts_int(rit);return s_pp;}
 
 //=================================================================================================
 function Sait_load() {
@@ -1817,11 +1855,11 @@ dat=new Date();
         localStorage.setItem('nr', 1);//nomer_razdela_v_menu (r_p)
     if (localStorage.getItem('np')) { } else
         localStorage.setItem('np', 0);//nomer_punkta_v_razdele (n_r)
-    if(localStorage.getItem('np_1')){}else
+//    if(localStorage.getItem('np_1')){}else
     localStorage.setItem('np_1',0);//nomer_paragraf_1_v_punkte
-    if(localStorage.getItem('np_2')){}else
+//    if(localStorage.getItem('np_2')){}else
     localStorage.setItem('np_2',0);//nomer_paragraf_2_v_punkte
-    if(localStorage.getItem('np_3')){}else
+//    if(localStorage.getItem('np_3')){}else
     localStorage.setItem('np_3',0);//nomer_paragraf_3_v_punkte
         localStorage.setItem('nn', 1);//nomer_name
 
@@ -3068,15 +3106,19 @@ function menu_(deistvie, nomer, idnomer) {
             if (idnomer < 4) nm=idnomer;
             nr=nomer-1;
             np=0;
-            np_1=0;
-            np_2=0;
-            np_3=0;
+            //np_1=0;
+            //np_2=0;
+            //np_3=0;
             ogl_vibrono = 0;
             menu_vis(idnomer, 0);
             str_var=0;  
             str_rab=true;
-            master_ym=false;
+            
             smena_stranic();
+            master_ym=false;
+            np_1=0;
+            np_2=0;
+            np_3=0;
             if (idnomer == 0 && nomer == 7) {
             
                 nachalo_napisano = true;
@@ -3096,45 +3138,44 @@ pamyt_istorii='<p>'+tistor_telo(localStorage.getItem('nn')-0)+pamyt_istorii;
 }
 //=================================================================================================
 function on_str() {
-                if(np_1>0){
-
-               
-                    if(master_ym){
-                        if(np_3>0)    {
-
-                            razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                            if(np_2>0){
-                                document.getElementById('t_s').innerHTML =chel_yr(np_1-1,np_2-1,np_3-1);
-                                localStorage.setItem('np_2',np_2);
-                                localStorage.setItem('np_3',np_3);
-                            }else{
-                                document.getElementById('t_s').innerHTML =chel_rab(np_1-1,np_3-1);
-                                localStorage.setItem('np_3',np_3);
-                            }
-                        }else{
-                        if(np_2>0){
-                            razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                            document.getElementById('t_s').innerHTML =chel_all_yr(np_1-1);
-                            localStorage.setItem('np_2',np_2);
-                        }
-                        else{
-                            razdel.innerHTML=razdel_teni.innerHTML='Один из умельцев';//else razdel.innerHTML=razdel_teni.innerHTML='Один'; 
-                            
-                            document.getElementById('t_s').innerHTML =chel(localStorage.getItem('np_1')-1);// array_text[0][2][6][0][0];
-                        }    }                
-                    }
-                    text_stranici.style.paddingTop= 10+'px';
-                    osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
-                    kn_na_str(300);
-                } else{
-                    text_str();
-                    soderg_razdela();
-                    document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
-                    ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=razd_iz-95+'px';
-                    ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=osnova.clientWidth+10+'px';
-                
-                    kn_na_str(gl_p.clientHeight+ 230);
-                }
+    if(np_1>0){
+        if(np_3>0){
+            switch(np_2){
+                case 1:
+                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
+                    document.getElementById('t_s').innerHTML =chel_rab(np_1-1,np_3-1);
+                    //bob.innerHTML=np_1;
+                break;
+                case 2:
+                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
+                    document.getElementById('t_s').innerHTML =chel_yr(np_1-1,np_3-1);
+                break;
+                case 3:
+                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
+                    document.getElementById('t_s').innerHTML =chel_inter(np_1-1,np_3-1);
+                    for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                   
+                break;
+            }
+        }else{
+            if(np_2>0){
+                razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
+                document.getElementById('t_s').innerHTML =chel_all_yr(np_1-1);
+            }else{
+                razdel.innerHTML=razdel_teni.innerHTML='Один из умельцев';//else razdel.innerHTML=razdel_teni.innerHTML='Один'; 
+                document.getElementById('t_s').innerHTML =chel(localStorage.getItem('np_1')-1);// array_text[0][2][6][0][0];
+            }
+        }                
+        text_stranici.style.paddingTop= 10+'px';
+        osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
+        kn_na_str(300);
+    } else{
+        text_str();
+        soderg_razdela();
+        document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
+        ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=razd_iz-95+'px';
+        ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=osnova.clientWidth+10+'px';
+        kn_na_str(gl_p.clientHeight+ 230);
+    }
 }
 //=================================================================================================
 function smena_stranic() {
@@ -3144,13 +3185,22 @@ function smena_stranic() {
             str_del=(stranica.clientWidth+100)/10;
             str_index=0;
             razd_iz=10;
+            if(master_ym){
+            p_0.style.visibility= ten1_gl_p.style.visibility=ten2_gl_p.style.visibility= gl_p.style.visibility=ogl_vibrono_copiy.style.visibility=ten_vibronogo_p.style.visibility=gl_p_za_str.style.visibility = 'hidden';
+        kn_na_str(300);
+            }else
+
+            {
             str_iz -= str_del;
+            
             ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = str_iz + 'px';
+            ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+            }
             razd_iz-=str_del;
             razdel.style.left=razdel_teni.style.left=razd_iz+'px';
             stranica_left -= str_del;
             ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
-            ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+            
             scroll(0,0);
             str_var++;
             break;
@@ -3158,13 +3208,19 @@ function smena_stranic() {
         case 1:
             if(str_index<10){       
                 str_index++;
-                str_iz -= str_del;
+            if(master_ym){
+                    gl_p.style.visibility=ogl_vibrono_copiy.style.visibility=ten_vibronogo_p.style.visibility=gl_p_za_str.style.visibility = 'hidden';
+        kn_na_str(300);
+            }else
+                {str_iz -= str_del;
                 ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = str_iz + 'px';
+                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+                }
                 razd_iz-=str_del;
                 razdel.style.left=razdel_teni.style.left=razd_iz+'px';
                 stranica_left -= str_del;
                 ten_stranici.style.left = stranica.style.left = stranica_left + 'px';
-                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=str_iz+10+'px';
+                
             }else{
  istoriy();               
             localStorage.setItem('nm', nm);
@@ -3174,8 +3230,11 @@ function smena_stranic() {
                 localStorage.setItem('np_2',np_2);
                 localStorage.setItem('np_3',np_3);
                 scroll(0, 0);
-                //if(master_ym){
+                //if(master_ym)
+                {
                 on_str();
+               
+                }
                // bob.innerHTML=nomer_str_nazad;
                 stranica_left= razd_iz=osnova.clientWidth;
                 razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =razd_iz + 'px';
@@ -3392,7 +3451,7 @@ function on_tp_time(deistvie, n_menu, n_punkt, n_razdel, nomer) {
 //=================================================================================================
 
 function chel(nomer_chel){
-    
+    master_ym=true;
 str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center" colspan=2><big>'+ar_ym[nomer_chel][0]+'</big><h1>'+ar_ym[nomer_chel][1]+'</h1></td></tr>';
 
@@ -3430,7 +3489,7 @@ return str_chel;
 //=================================================================================================
 
 function chel_rab(nomer_chel,nomer_izd){
-    
+    master_ym=true;
 str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np][np_2]+' / Изделие '+np_3+'</h3></big></td></tr>';
 
@@ -3460,13 +3519,13 @@ chel_kolvo_p=0;
 
 str_chel+='</td></tr></table><p>';
 return str_chel;
-}
+} 
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
 
 function chel_all_yr(nomer_chel){
-    
+    master_ym=true;
 str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np][1]+'</h3></big></td></tr>';
 np_1=nomer_chel+1;
@@ -3485,17 +3544,19 @@ return str_chel;
 //=================================================================================================
 //=================================================================================================
 
-function chel_yr(nomer_chel,nomer_predmeta,nomer_yroka){
-
+function chel_yr(nomer_chel,nomer_yroka){
+    master_ym=true;
 //np_2=nomer_predmeta+1;
 
 str_chel='';
-str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np-1][np_2]+' / Урок '+nomer_yroka+'.</h3></big></td></tr>';
+str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np_1-1][ar_ym_yr[np_1-1][0][0]]+' / Урок '+np_3+'.</h3></big></td></tr>';
 //np_1=nomer_chel+1;
 //np_3=nomer_yroka+1;
 np=1;
-str_chel+='<tr><td>'+'</td></tr></table>';
+//bob.innerHTML=nomer_predmeta+1;//ar_ym_yr[nomer_chel][nomer_predmeta+1][nomer_yroka];
+str_chel+='<tr><td>'+ar_ym_yr[nomer_chel][1][nomer_yroka]+'</td></tr></table>';
 
+//localStorage.setItem('np',np);
 //localStorage.setItem('np_1',np_1);
 
 //localStorage.setItem('np_2', np_2);
@@ -3505,9 +3566,55 @@ str_chel+='<tr><td>'+'</td></tr></table>';
 
 return str_chel;
 }
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+
+function chel_inter(nomer_chel,nomer_pic){
+    master_ym=true;
+//np_2=nomer_predmeta+1;
+np_1_m=np_1-1;
+str_chel='';
+str_chel+='<p><table width="100%"><tr><td align="center"><big><h3 style="line-height: 45px;">'+'Скаченные из общедоступного интернета / '+ar_int[nomer_chel][nomer_pic][0]+'.</h3></big></td></tr><tr><td align="center">';
+//np_1=nomer_chel+1;
+//np_3=nomer_yroka+1;
+np=1;
+//bob.innerHTML=nomer_predmeta+1;//ar_ym_yr[nomer_chel][nomer_predmeta+1][nomer_yroka];
+    for(ia=1;ia<ar_int[nomer_chel][nomer_pic].length;ia++)str_chel+='<img id="img_iz_int_'+nomer_chel+'_'+nomer_pic+'_'+ia+'" src="'+ar_int[nomer_chel][nomer_pic][ia]+'"class="foto_rab"></img><br>';
+str_chel+='</td></tr></table>';
+
+//localStorage.setItem('np',np);
+//localStorage.setItem('np_1',np_1);
+
+//localStorage.setItem('np_2', np_2);
+
+//localStorage.setItem('np_3',np_3);
+
+return str_chel;
+}
+     
+   
      
 //=================================================================================================
 //=================================================================================================
+//=================================================================================================
+function on_ts_tm(nomer_izdel){
+name=nm+'_'+(nr-1)+'_'+np+'_'+(np_1-1)+'_'+nomer_izdel;  
+idnom = document.getElementById('ts_'+name);
+    
+str_rab = true;
+            str_var=0;
+            master_ym=true;
+            nm=0;
+            nr=3;
+            np=0;
+
+            np_2=1;
+            np_3=nomer_izdel+1;
+    smena_stranic();
+    
+    up();
+}
 //=================================================================================================
 function on_ts_m(deistvie,nomer_izdel){
 name=nm+'_'+(nr-1)+'_'+np+'_'+(np_1-1)+'_'+nomer_izdel;  
@@ -3532,7 +3639,39 @@ function tizd(nomer_izd) {
     name_izd = nm + '_' + (nr-1) + '_' + np+'_'+np_1_m+'_'+nomer_izd;
     return '<p><div id="ts'+name_izd+'"class="ssilka" onmouseover="on_ts_m(1,'+nomer_izd+')"onmouseout="on_ts_m(2,'+nomer_izd+')"onmousedown="on_ts_tm('+nomer_izd+')"><table><tr><td>'+(nomer_izd+1)+')</td><td width="35%"align="center">'+ar_tizd[np_1_m][nomer_izd][0]+'</td><td style="padding-left:10px">'+ar_tizd[np_1_m][nomer_izd][1]+'<br/>'+ar_tizd[np_1_m][nomer_izd][2]+'<br/>'+ar_tizd[np_1_m][nomer_izd][3]+'<br/>'+ar_tizd[np_1_m][nomer_izd][4]+'<br/>'+ar_tizd[np_1_m][nomer_izd][5]+'<br/>'+ar_tizd[np_1_m][nomer_izd][6]+'<br/>'+ar_tizd[np_1_m][nomer_izd][7]+'</td></tr></table></div>';
                     
-}     
+}
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+
+function on_ts_int(nomer_int) {
+    
+str_rab = true;
+            str_var=0;
+            master_ym=true;
+            nm=0;
+            nr=3;
+            np=0;
+
+            np_2=3;
+            np_3=nomer_int+1;
+    smena_stranic();
+    
+    up();
+
+}
+//=================================================================================================
+function ts_int(nomer_int) {
+    np_1_m=np_1-1;
+    
+    name_int = nm + '_' + (nr-1) + '_' + np+'_'+np_1_m+'_'+nomer_int;
+    int_str= '<p><div class="ris_inter">'+(nomer_int+1)+') '+ar_int[np_1_m][nomer_int][0]+'</div><div id="ts_'+name_int+'"class="ssilka" onmouseover="on_ts_m(1,'+nomer_int+')"onmouseout="on_ts_m(2,'+nomer_int+')"onmousedown="on_ts_int('+nomer_int+')"><table><tr><td width="35%"align="center">';
+    for(ri=1;ri<ar_int[np_1_m][nomer_int].length;ri++)int_str+='<img src="'+ar_int[np_1_m][nomer_int][ri]+'"class="shema_img"></img>';
+    int_str+='</td></tr></table></div>';
+    //bob.innerHTML=np_1;
+    return int_str;                
+}
+//<span class="ris_inter">Дата и время поступления на сайт</span><p><img src="ym_0_ris_0_0.jpg"  class="shema_img"></img><img src="ym_0_ris_0_1.jpg" class="shema_img"></img><img src="ym_0_ris_0_2.jpg" class="shema_img"></img>'
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
@@ -3601,7 +3740,7 @@ function on_tym(deistvie,nomer) {
     case 3:
     str_rab = true;
             str_var=0;
-            master_ym=true;
+            //master_ym=true;
             nm=0;
             nr=3;
             np=0;
@@ -3636,12 +3775,12 @@ function on_tym_rab(deistvie,nomer_ym,nomer_rab) {
     case 3:
     str_rab = true;
             str_var=0;
-            master_ym=true;
+            //master_ym=true;
             nm=0;
             nr=3;
             np=0;
             np_1=nomer_ym+1;
-            np_2=5;
+            np_2=1;
             np_3=nomer_rab+1;
     smena_stranic();
     
@@ -3663,12 +3802,13 @@ function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
     case 3:
     str_rab = true;
             str_var=0;
-            master_ym=true;
+            //master_ym=true;
             nm=0;
             nr=3;
-            np=nomer_ym+1;
+            np=1;
             np_1=nomer_ym+1;
-            np_2=nomer_predmeta+1;
+   // bob.innerHTML=ar_ym_yr[nomer_ym][0][0];
+            np_2=2;
             
             np_3=nomer_yroka+1;
             
@@ -3679,7 +3819,7 @@ function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
 }
 //=================================================================================================
 function tym_yrok_telo(nomer_ym,nomer_predmeta,nomer_yroka) {
-    if(nomer_ym==0)return'<table id="ym_0_yrok_0_0"class="yrok_ymelca"onmouseover="on_tym_yrok(1,0,0,0)"onmouseout="on_tym_yrok(2,0,0,0)"onmousedown="on_tym_yrok(3,0,6,0)"><tr><td class="yrok"><big><i><u>'+ar_ym_yrok[0][0][0][0]+'</u></i></big><br>'+ar_ym_yrok[0][0][0][1]+'<p><br>Урок '+nomer_yroka+'. <i><b>"'+ar_ym_yrok[0][0][0][2]+'"</b></i><p>'+ar_ym_yrok[0][0][0][3]+'</td><td class="yrok_ym"><img class="foto_ymelca_min" src="ym_0_foto_1.jpg"><br><small>(мини-фото умельца)</small><p>Фамелия, имя или псевдоним мастера-учителя.<p> Например: <b>Масяня Питерская</b></td></tr></table>';
+    if(nomer_ym==0)return'<table id="ym_0_yrok_0_0"class="yrok_ymelca"onmouseover="on_tym_yrok(1,0,0,0)"onmouseout="on_tym_yrok(2,0,0,0)"onmousedown="on_tym_yrok(3,0,0,0)"><tr><td class="yrok"><big><i><u>'+ar_ym_yrok[0][0][0][0]+'</u></i></big><br>'+ar_ym_yrok[0][0][0][1]+'<p><br>Урок '+nomer_yroka+'. <i><b>"'+ar_ym_yrok[0][0][0][2]+'"</b></i><p>'+ar_ym_yrok[0][0][0][3]+'</td><td class="yrok_ym"><img class="foto_ymelca_min" src="ym_0_foto_1.jpg"><br><small>(мини-фото умельца)</small><p>Фамелия, имя или псевдоним мастера-учителя.<p> Например: <b>Масяня Питерская</b></td></tr></table>';
     else return'<table id="ym_'+nomer_ym+'_yrok_'+nomer_predmeta+'_'+nomer_yroka+'" class="yrok_ymelca"onmouseover="on_tym_yrok(1,'+nomer_ym+','+nomer_predmeta+','+nomer_yroka+')"onmouseout="on_tym_yrok(2,'+nomer_ym+','+nomer_predmeta+','+nomer_yroka+')"onmousedown="on_tym_yrok(3,'+nomer_ym+','+nomer_predmeta+','+nomer_yroka+')"><tr><td class="yrok"><big><i><u>'+ar_ym_yrok[nomer_ym][nomer_predmeta][nomer_yroka][0]+'</u></i></big><br>'+ar_ym_yrok[nomer_ym][nomer_predmeta][nomer_yroka][1]+'<p><br>Урок '+nomer_yroka+'. <i><b>"'+ar_ym_yrok[nomer_ym][nomer_predmeta][nomer_yroka][2]+'"</b></i><p>'+ar_ym_yrok[nomer_ym][nomer_predmeta][nomer_yroka][3]+'</td><td class="yrok_ym"><img class="foto_ymelca_min" src="ym_'+nomer_ym+'_foto_1.jpg"><p><b>'+ar_ym[nomer_ym][0]+' </b></td></tr></table>';
 }
 //=================================================================================================
@@ -3688,7 +3828,7 @@ function tym_yrok_telo(nomer_ym,nomer_predmeta,nomer_yroka) {
 function on_tym_yr_mast(deistvie,nomer_ym){
 if(deistvie==3){    str_rab = true;
             str_var=0;
-            master_ym=true;
+           // master_ym=true;
             nm=0;
             nr=3;
             np=0;
@@ -3714,14 +3854,32 @@ function tym_yroki_mast_telo(nomer_ym) {
 //=================================================================================================
 //=================================================================================================
 function on_tym_pik(deistvie,nomer_ym,nomer_pik){
+if(deistvie==3){    str_rab = true;
+            str_var=0;
+           // master_ym=true;
+            nm=0;
+            nr=3;
+            np=0;
+            np_1=nomer_ym+1;
+            np_2=3;
+            
+            np_3=nomer_pik+1;
+            
+    smena_stranic();
+    
+    
+    up();
+}
 
 }
 //=================================================================================================
 function tym_pik_telo(nomer_ym,nomer_pik) {
     tym_str='';
-    if(nomer_ym==0)tym_str+='<table id="ym_0_pik_0" class="shema_ymelca"onmouseover="on_tym_pik(1,0,0)"onmouseout="on_tym_pik(2,0,0)"onmousedown="on_tym+pik(3,0,0)"><tr><td align="center"><img class="foto_ymelca_min" src="ym_'+nomer_ym+'_foto_1.jpg"><br><small>(мини-фото умельца)</small><p>Фамелия, имя или псевдоним мастера-учителя.<p> Например: <b>Масяня Питерская</b></td><td style="background:#303060"></td><td class="shema" align="center"> Здесь показаны все схемы и рисунки из данной коллекции: <p>';
-    else tym_str+='<table id="ym_'+nomer_ym+'_pik_'+nomer_pik+'" class="shema_ymelca"onmouseover="on_tym_pik(1,'+nomer_ym+','+nomer_pik+')"onmouseout="on_tym_pik(2,'+nomer_ym+','+nomer_pik+')"onmousedown="on_tym+pik(3,'+nomer_ym+','+nomer_pik+')"><tr><td align="center"><img class="foto_ymelca_min" src="ym_'+nomer_ym+'_foto_1.jpg"><p><b>'+ar_ym[nomer_ym][0]+'</b></td><td style="background:#303060"></td><td class="shema" align="center">';
-    for(i=0;i<ar_ym_pik[nomer_ym][nomer_pik];i++)tym_str+='<img class="shema_img"src="ym_'+nomer_ym+'_ris_'+nomer_pik+'_'+i+'.jpg">';
+    if(nomer_ym==0)tym_str+='<table id="ym_0_pik_0" class="shema_ymelca"onmouseover="on_tym_pik(1,0,0)"onmouseout="on_tym_pik(2,0,0)"onmousedown="on_tym_pik(3,0,0)"><tr><td align="center"><img class="foto_ymelca_min" src="ym_'+nomer_ym+'_foto_1.jpg"><br><small>(мини-фото умельца)</small><p>Фамелия, имя или псевдоним мастера-учителя.<p> Например: <b>Масяня Питерская</b></td><td style="background:#303060"></td><td class="shema" align="center"> Здесь показаны все схемы и рисунки из данной коллекции: <p>';
+    else tym_str+='<table id="ym_'+nomer_ym+'_pik_'+nomer_pik+'" class="shema_ymelca"onmouseover="on_tym_pik(1,'+nomer_ym+','+nomer_pik+')"onmouseout="on_tym_pik(2,'+nomer_ym+','+nomer_pik+')"onmousedown="on_tym_pik(3,'+nomer_ym+','+nomer_pik+')"><tr><td align="center"><img class="foto_ymelca_min" src="ym_'+nomer_ym+'_foto_1.jpg"><p><b>'+ar_ym[nomer_ym][0]+'</b></td><td style="background:#303060"></td><td class="shema" align="center">';
+    for(i=1;i<ar_int[nomer_ym][nomer_pik].length;i++)tym_str+='<img src="'+ar_int[nomer_ym][nomer_pik][i]+'"class="shema_img"></img>';
+    
+    
     tym_str+='</td></tr></table>';
     return tym_str;
 }
