@@ -1049,7 +1049,7 @@ position:absolute;
 
 }
 .foto_rab{
-    
+    position:clip;
     border:2px solid black;
     
     margin:1px;
