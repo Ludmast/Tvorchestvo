@@ -921,7 +921,7 @@ position:absolute;
 .istoriy_time{
     background:#d0eaff;
 }
-
+.ym_reg{height:30px;font-size:16px;}
 .ymelec {
     width:100%;
     background:#e0fdc0;
@@ -1064,3 +1064,47 @@ position:absolute;
     margin:5px;
      cursor:pointer;
 }
+.form_zag{
+    background:#d0ffa0;
+    border:2px solid #50a070;
+    width:80%;
+    
+    border-radius:10px 10px 0px 0px;
+    
+
+}
+#form_chel_div{
+    background:#fdffd0;
+    border:2px solid #50a070;
+    border-top-color:#505050;
+    border-radius:0px 10px 10px 10px;
+}
+.form_vstavka{
+    border:1px solid #709050;
+    border-radius:5px;
+    margin:10px;
+    padding:0px 0px 6px 0px;
+}
+.form_text{
+    border:1px solid #105090;
+    border-radius:3px;
+    background:white;
+    height:40px;
+    margin:0px 6px 0px 6px;
+}
+.form_text_ogran{
+width:100px;    
+border:1px solid #105090;
+    border-radius:3px;
+    background:white;
+    height:40px;
+    margin:0px 6px 0px 6px;
+}
+.form_text_mnogo{
+    border:1px solid #105090;
+    border-radius:3px;
+    background:white;
+    height:80px;
+    margin:0px 20px 0px 20px;
+}
+
