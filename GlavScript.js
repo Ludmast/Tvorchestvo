@@ -2833,7 +2833,7 @@ function ts_intt(nomer_ts_up){ s_pp='';for(rit=0;rit<nomer_ts_up;rit++) s_pp+=ts
 
 //=================================================================================================
 function Sait_load() {
-    bob.style.background = '#906090';
+    bob.style.background = '#306090';
     bob.style.overflowX = 'hidden';
     metka_chet=0;
     interes_chet=0;
