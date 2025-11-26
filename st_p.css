@@ -1,0 +1,163 @@
+body
+#ten_kn_prydki {
+    position: absolute;
+    
+    left: 2px;
+    width: 40px;
+    height: 43px;
+    background-color: black;
+    filter: blur(8px);
+    visibility:hidden;
+}
+#kn_prydki {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 0px;
+    bottom:0px;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+   
+    color:#506070;
+    background: #b0d0f0;
+    border: 2px solid #104070;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius:0px;
+    border-left:none;
+    visibility:hidden;
+}
+#ten_line_pomoshnik {
+    position: absolute;
+    left: 0px;
+    width: 170px;
+    bottom: 55px;
+    height: 5px;
+    background-color: black;
+    filter: blur(5px);
+}
+#line_pomoshnik {
+    position: absolute;
+    left: 0px;
+    bottom: 54px;
+    width: 160px;
+    height: 1px;
+}
+#sleva{
+    position:absolute;
+    bottom:20px;
+    left:0px;
+    width:200px;
+    height:200px;
+    
+    overflow:hidden;
+    
+}
+#pomoshnik {
+    position: absolute;
+    bottom: 55px;
+    left: 40px;
+}
+#ten_pomoshnika{
+    position:absolute;
+    width:100px;
+    height:100px;
+    bottom:0px;
+    left:20px;
+    filter:blur(20px);
+    background-color:black;
+    border-radius:50%;
+
+}
+#telo {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    bottom: 10px;
+    left: 0px;
+    background-color: #d0c040;
+    border-radius: 50%;
+    border: 2px solid #f37a29;
+}
+#svet_tela {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    bottom: 20px;
+    left: 10px;
+    filter: blur(15px);
+    background-color: #ffff60;
+    border-radius: 50%;
+}
+#glaz_l,#glaz_r{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    bottom: 60px;
+    background-color: black;
+    border-radius: 50%;
+
+}
+#glaz_l {
+    left: 25px;
+}
+#glaz_r {
+    left: 60px;
+}
+.c_svet_glaz {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 5px;
+    left: 5px;
+    background-color: white;
+    border-radius: 50%;
+    filter:blur(2px);
+}
+#sheka_l,#sheka_r {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    top: 20px;
+    
+    filter: blur(5px);
+    background-color: orangered;
+    border-radius: 50%;
+    visibility:hidden;
+}
+#sheka_l {left:-10px;}
+#sheka_r {
+    right: -10px;
+}
+
+
+#guba_1 {
+    position: absolute;
+    width: 20px;
+    height: 8px;
+    top: -50px;
+    left: 42px;
+    
+    border-radius: 50%;
+    border-bottom:3px solid red;
+
+    
+}
+
+#guba_2 {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    top: -56px;
+    left: 32px;
+   
+ 
+    border: 2px solid red;
+ 
+    border-top:0px;
+    border-right:0px;
+    border-bottom-left-radius: 95%;
+    
+}
+
