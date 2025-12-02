@@ -224,7 +224,9 @@ function p_videlen_0(deystvie, idnomer) {
         odin_na_stranice=false;    
         perem = odin_og.style.top.slice(0, odin_og.style.top.length - 2) - 0;
             odin_og.style.visibility = 'hidden';
-            ten_vibronogo_p.style.top = 202+perem - 5 + 'px';
+            
+            
+            ten_vibronogo_p.style.top = 202+perem -7+ 'px';
             
             perem -= 6;
             ogl_vibrono_copiy.style.top  =202+ perem + 'px';
@@ -380,7 +382,7 @@ if(odin_na_stranice==false)
             break;
         //---------------------------------------------------------------------------------------
     }
-    if(smena_rab)setTimeout('smena_stranic_0()',30);
+    if(smena_rab)setTimeout('smena_stranic_0()',20);
 }
 
 //=================================================================================================
