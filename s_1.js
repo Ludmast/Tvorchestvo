@@ -7,7 +7,7 @@ function soderg_razdela_1() {
     if (localStorage.getItem('np')) { } else localStorage.setItem('np', 0);
         //---------------------------------------------------------------------------------------------
         //кнопка для возвращения назад на верх страницы
-        str = "<div id='ten_vibronogo_p'></div><div id='ogl_vibrono_copiy'></div><div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_(1)'onmouseout='kn_nazad_(2)'onmousedown='kn_nazad_(4)'></div>";
+        str = "<div id='ten_vibronogo_p'></div><div id='ogl_vibrono_copiy'></div>";
         in_load_3.innerHTML=str;
         str ="";
 
@@ -519,3 +519,25 @@ ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
     if(smena_rab)setTimeout('smena_stranic_1()',20);
 }
 
+//=================================================================================================
+function kn_nazad_1(deistvie) {
+    color_kn = '#5080b0';
+    color_videl = '#80b0e0';
+    switch (deistvie) {
+        case 1://over
+            kn_nazad.style.backgroundColor = color_videl;
+            kn_nazad.style.cursor = 'default';
+            break;
+        case 2://out
+            kn_nazad.style.backgroundColor = color_kn;
+            break;
+        case 3://move
+
+            break;
+        case 4://douwn
+            kn_nazad.style.visibility = 'hidden';
+            scroll(0, 0);
+            break;
+    }
+}
+//=================================================================================================

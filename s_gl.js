@@ -1373,7 +1373,7 @@ array_text =
                     ,'.<p>Отдельно хочу остановиться на моём помошнике <b>Смайлике</b>. Этот солнечный блинчик можно перетаскивать по браузеру, отпускать и смотреть что будет... А если пользователь задержится на сайте дольше часа, то... Впринципе... Оставлю без внимания, потому что Вы и сами можете это увидеть! Такая, своего рода, разгрузка для мозгов читателя. <b>;)</b></p>' +
                     '<h2><b><i>Желаю Вам приятного путешествия по страницам этого сайта и, надеюсь, что мой труд окажется полезным для Вас!</i></b></h2>'
                     //----------------------------------------------------------------------------
-                    ,'<dd>Для убирания данного текста необходимо нажать на розовую надпись на чёрном фоне.</dd>'
+                    ,'<dd>Для убирания данного текста необходимо нажать на розовую надпись на чёрном фоне. Если нажмёте на появившуюся кнопку в правом верхнем углу, то этот текст перенесётся на отдельную страницу.</dd>'
                     ,'Для исчезновения данной информации надо нажать на заголовок фиолетовой рамки, в которой находится этот текст.<p>'
                     ,'Для убирания появившейся салатовой подсказки нужно нажать на любую надпись на цветном фоне за пределами этой рамки.'  
                     ,'Для закрытия бежевого окна нужно нажать вне его текста на любую надпись на цветном фоне.'
@@ -1403,7 +1403,7 @@ array_text =
                     ,' указывает на то, что есть пояснение, шпаргалка, коментарий для данной надписи или расшифровка сокращений.' 
                     ,' выделена надпись, содержащяя интересные факты, достижения или биографии людей связаные с данной темой.' 
                     //----------------------------------------------------------------------------                    
-                    ,'<dd>Цвет фона выделенного заголовка меняется на чёрный, а надпись становится розовой. Это сделанно для того, чтобы пользователь не терялся и легко ориентировался на странице. При повторном нажатии по данной  надписи открывшаяся информация исчезает, а цвет её фона становится опять розовым.<p>Обычно, я скрываю таким образом списки, разделы содержания, тексты или мои ответы на вопросы. Также может присутствовать рядом с текстом на розовом фоне подходящая картинка.</dd>'
+                    ,'<dd>Цвет фона выделенного заголовка меняется на чёрный, а надпись становится розовой. Это сделанно для того, чтобы пользователь не терялся и легко ориентировался на странице. При повторном нажатии по данной  надписи открывшаяся информация исчезает, а цвет её фона становится опять розовым.<p>Обычно, я скрываю таким образом списки, разделы содержания, тексты или мои ответы на вопросы. Также может присутствовать рядом с текстом на розовом фоне подходящая картинка.<p>Если нажмёте на появившуюся кнопку в правом верхнем углу, то этот текст перенесётся на отдельную страницу. Это сделано для большего погрущения в процесс изучения материала.</dd>'
                     ,'<p>Кыждая задача сопровождается такой же фиолетовой надписью со скрытым ответом, подробным решением. При её нажатии открывается новая вложеная рамка.'+
                     '<p> Это очень удобно, когда после самостоятельного решения, хочется проверить свой ответ или ознакомиться с иными способами.'
                     ,'Шпоргалка открывается поверх другой информации. Для убирания появившейся салатовой подсказки нужно нажать на любую надпись за пределами этой рамки.'+
@@ -2048,7 +2048,7 @@ function text_str() {
                         case 0:
                             str_text+=array_text[0][0][0][0]+tym_telo(1);
                             str_text+=array_text[0][0][0][1]+ts_telo(1);
-                            str_text+=array_text[0][0][0][2]+tp_telo(tp_up(0),0);
+                            str_text+=array_text[0][0][0][2]+tp_telo(tp_up(0),0,1);
                             str_text+=array_text[0][0][0][3]+tr_telo(0,0);
                             str_text+=array_text[0][0][0][4]+ts_telo(0);
                             str_text+=array_text[0][0][0][5]+tm_telo(0);
@@ -2057,8 +2057,8 @@ function text_str() {
                             str_text+=array_text[0][0][0][21];
                         break;
                         case 1:
-                            str_text+=array_text[0][0][1][0]+tp_telo(tp_up(0),1);
-                            str_text+=array_text[0][0][1][1]+tp_telo(tp_up(1),2)+  ts_tn(1,6,2);
+                            str_text+=array_text[0][0][1][0]+tp_telo(tp_up(0),1,0);
+                            str_text+=array_text[0][0][1][1]+tp_telo(tp_up(1),2,0)+  ts_tn(1,6,2);
                             str_text+=array_text[0][0][1][7];//7
                         break;
                         case 2:
@@ -2400,7 +2400,7 @@ function on_tp_t(nomer_pt){
                             switch(nomer_pt){
                                 case 0: pp='<dd>'+ array_text[0][0][1][13]+'</dd>';break;
                                 case 1:
-                                    pp+='<ul><li>'+tp_telo(0,0)+array_text[0][0][1][8]+'</li><li>';
+                                    pp+='<ul><li>'+tp_telo(0,0,1)+array_text[0][0][1][8]+'</li><li>';
                                     pp+=tr_telo(0,0)+array_text[0][0][1][9]+'</li><li>';
                                     pp+=ts_telo(0)+array_text[0][0][1][10]+'</li><li>';
                                     pp+=tm_telo(0)+array_text[0][0][1][11]+'</li><li>';
@@ -2603,9 +2603,9 @@ function on_ti_t(nomer){
 }
 
 //=================================================================================================
-function tp_t(tp_n,tp_k){ s_pp='<ul>';for(ii=tp_n;ii<tp_k;ii++) s_pp+='<li>'+tp_telo(tp_up(ii),ii)+'</li><p>';s_pp+='</ul>';return s_pp;}
+function tp_t(tp_n,tp_k){ s_pp='<ul>';for(ii=tp_n;ii<tp_k;ii++) s_pp+='<li>'+tp_telo(tp_up(ii),ii,0)+'</li><p>';s_pp+='</ul>';return s_pp;}
 //=================================================================================================
-function tp_ts(tp_n,tp_k){ s_pp='';for(iii=tp_n;iii<tp_k;iii++) s_pp+=tp_telo(0,iii)+'<p>';return s_pp;}
+function tp_ts(tp_n,tp_k){ s_pp='';for(iii=tp_n;iii<tp_k;iii++) s_pp+=tp_telo(0,iii,0)+'<p>';return s_pp;}
 //=================================================================================================
 function ar_text(ar_t_n,ar_t_k){ s_pp='';for(i=ar_t_n;i<ar_t_k;i++) s_pp+=array_text[nm][nr-1][np][i];return s_pp;}
 //=================================================================================================
@@ -2631,6 +2631,9 @@ function Sait_load() {
         localStorage.setItem('dz',0);//номер дизайна сайта
     dz=localStorage.getItem('dz')-0;
     dz=0;
+    if(localStorage.getItem('kn_n')){}else
+        localStorage.setItem('kn_n',270);
+    kn_n=localStorage.getItem('kn_n');
     //aa.src='s_1.js';
 //    if(dz==0)Sait_load_0();
 //    else{
@@ -2753,7 +2756,11 @@ case 1:soderg_razdela_1();break;
 
     //предупреждение
     str += "<span id='ten_kn_prydki'></span><span id='kn_prydki'onmouseover='kn_prydki_(1)'onmouseout='kn_prydki_(2)'onmousedown='kn_prydki_(4)'></span>";
-    
+    //кнопка для возвращения назад на верх страницы
+    switch(dz){
+        case 1: str += "<div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_1(1)'onmouseout='kn_nazad_1(2)'onmousedown='kn_nazad_1(4)'></div>";break;
+        default: str += "<div id='ten_kn_nazad'></div><div id='kn_nazad'onmouseover='kn_nazad_0(1)'onmouseout='kn_nazad_0(2)'onmousedown='kn_nazad_0(4)'></div>";break;
+    }
     in_load_4.innerHTML = str;
     //bob.innerHTML='yy';
     //---------------------------------------------------------------------------------------------
@@ -2802,6 +2809,9 @@ case 1:soderg_razdela_1();break;
 //////
     //n_str_nazad();
     //---------------------------------------------------------------------------------------------
+    okna.style.width=kn_n+'px';
+    okno_besedi.style.width=okno_novosti.style.width=okno_zametki.style.width=kn_n-30+'px';
+    dvigenie_paneli.style.left=osnova.clientWidth-okna.clientWidth-27+'px';
     document.getElementById('t_s').style.display = 'block';
     if (okna.clientWidth < 130) {
         peremeshenie_okon_svernut = true;
@@ -2818,6 +2828,7 @@ case 1:soderg_razdela_1();break;
     if (localStorage.getItem('o_z')) { } else
         localStorage.setItem('o_z', 250);//okno_zametki
     //---------------------------------------------------------------------------------------------
+     
     okno_besedi.style.height = localStorage.getItem('o_b');
     okno_novosti.style.height = localStorage.getItem('o_n');
     okno_zametki.style.height = localStorage.getItem('o_z');
@@ -2913,6 +2924,13 @@ text_str();
     ten_kn_prydki.style.top = innerHeight - 60 + 'px';
     ten_kn_prydki.style.visibility = kn_prydki.style.visibility = 'hidden';
     //---------------------------------------------------------------------------------------------
+    //кнопка для возвращения назад на верх страницы
+    kn_nazad.innerHTML = '^';
+    ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'hidden';
+    ten_kn_nazad.style.left = kn_nazad.style.left =osnova.clientWidth- kn_n-30 + 'px';
+    ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight - 80 + 'px';
+    //---------------------------------------------------------------------------------------------
+   
     localStorage.setItem('l_p', 0);  //left_pomoshnik
     pomoshnik_go(0);
     ten_line_pomoshnik.style.top=innerHeight-60+'px';
@@ -3107,7 +3125,7 @@ function up() {
     osnova.style.height=t_s.clientHeight+gl_p.clientHeight+500+'px';
     if(osnova.clientHeight<innerHeight){osnova.style.height=innerHeight+'px';}
     okna.style.height=osnova.clientHeight+scrollY+'px';
-    ten_stranici.style.width=   stranica.style.width=osnova.clientWidth-okna.clientWidth-135+'px';
+    ten_stranici.style.width=   stranica.style.width=(osnova.clientWidth/100)*60+'px';
     ten_stranici.style.height=stranica.clientHeight+'px';
 }
 //=================================================================================================
@@ -3243,27 +3261,11 @@ function on_pamyt(nm, nr, np) {
     if (nm == 0 && nr == 6 && np == 0) { } else {
         
         pamyt_istorii="<p>" + tistor_telo(localStorage.getItem('nn')-0)+pamyt_istorii;
-//        bob.innerHTML='yra';
         array_text[0][5][0][0] =  nachalo_istorii+ pamyt_istorii;
         localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
         localStorage.setItem('nm', nm);
         localStorage.setItem('nr', nr);
         localStorage.setItem('np', np); 
-/*switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
-        document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm - 0 + 1][nr - 1];
-        scroll(0, 0);
-switch(dz){
-case 1:soderg_razdela_1();break;
-    default:soderg_razdela_0();break;
-}
-        text_str();
-        up();
-*/
        
     }
 }
@@ -3279,6 +3281,7 @@ function on_gl_p(deistvie_gl){
             if(svo==2){
                 if(event.clientY<250+scrollY||event.clientX<70){
                     smena_deistvie=5;
+                    smena_var=0;
 switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -3338,8 +3341,8 @@ function on_str() {
         
         
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
-        ten1_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
-        ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_gl+'px';
+        ten1_gl_p.style.left= gl_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2+'px';
+        ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2-60+'px';
     }
 }
 //=================================================================================================
@@ -3660,7 +3663,7 @@ np_1=nomer_chel+1;
 localStorage.setItem('np_1',np_1);
 chel_kolvo_p=0;
 //bob.innerHTML=tp_up_m(0);
-for(i=0;i<5;i++)if(ar_tp[nm-0][nr-1][np-0][i]!=''){str_chel+='<p>'+tp_telo(tp_up(i),i);chel_kolvo_p++;}
+for(i=0;i<5;i++)if(ar_tp[nm-0][nr-1][np-0][i]!=''){str_chel+='<p>'+tp_telo(tp_up(i),i,0);chel_kolvo_p++;}
 
 str_chel+='<p>'+ar_chel[nomer_chel][3]+' <p></td></tr></table><p>';
 return str_chel;
@@ -3936,7 +3939,7 @@ function on_tym(deistvie,nomer) {
     //str_var=0;
            
     smena_deistvie=6;
-     
+     smena_var=0;
     nm=0;
             nr=3;
             np=0;
@@ -3985,6 +3988,7 @@ function on_tym_rab(deistvie,nomer_ym,nomer_rab) {
             np_1=nomer_ym+1;
             np_2=1;
             np_3=nomer_rab+1;
+            smena_var=0;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -4020,7 +4024,7 @@ function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
             np_2=2;
             
             np_3=nomer_yroka+1;
-            
+            smena_var=0;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -4051,7 +4055,7 @@ if(deistvie==3){    //str_rab = true;
             np_2=2;
             
             np_3=0;
-            
+            smena_var=0;
    switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -4085,7 +4089,7 @@ if(deistvie==3){    //str_rab = true;
             np_2=3;
             
             np_3=nomer_pik+1;
-            
+            smena_var=0;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -4111,6 +4115,31 @@ function tym_pik_telo(nomer_ym,nomer_pik) {
 }
 //=================================================================================================
 //=================================================================================================
+function on_kn_tp(deistvie_kn,nomer_kn) {
+    color_kn_tp_videl='#47a';
+    color_kn_tp_nevidel='#9cf';
+    name_kn=nm+'_'+(nr-1)+'_'+np+'_'+nomer_kn;  
+    //idnom_kn = document.getElementById('kn_tp_'+name_kn);
+    switch (deistvie_kn) {
+        case 1://over
+            document.getElementById('kn_tp_'+name_kn).style.backgroundColor=color_kn_tp_videl;
+            
+            document.getElementById('svet_tp_'+name_kn).style.visibility='visible';
+            document.getElementById('ten_tp_'+name_kn).style.visibility='visible';
+            document.getElementById('ten_kn_tp_'+name_kn).style.visibility='visible';
+
+        break;
+        case 2://out
+            document.getElementById('kn_tp_'+name_kn).style.backgroundColor=color_kn_tp_nevidel;
+            
+
+            document.getElementById('svet_tp_'+name_kn).style.visibility='hidden';
+
+            document.getElementById('ten_tp_'+name_kn).style.visibility='hidden';
+            document.getElementById('ten_kn_tp_'+name_kn).style.visibility='hidden';
+        break;
+    }
+}
 //=================================================================================================
 function on_tp(deistvie, nomer) {
     name=nm+'_'+(nr-1)+'_'+np+'_'+nomer;  
@@ -4133,16 +4162,16 @@ function on_tp(deistvie, nomer) {
     }
 }
 //=================================================================================================
-function tp_telo(deistvie_p,nomer_p) {
+function tp_telo(deistvie_p,nomer_p,stop_p) {
     name_p = nm + '_' + (nr-1) + '_' + np+'_'+nomer_p;
-    if(deistvie_p==0) return'<div id="tp_'+name_p+'_telo"><div id="tp_'+name_p+'" class="paragraf" onmouseover="on_tp(1,'+nomer_p+')"onmouseout="on_tp(2,'+nomer_p+')"onmousedown="tp_telos(1,'+nomer_p+')">' +ar_tp[nm][nr-1][np][nomer_p]+'</div></div>';
-    else return'<div id="tp_'+name_p+'_telo"><div id="tp_'+name_p+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_p + ')"onmouseout="on_tp(4,' + nomer_p + ')"onmousedown="tp_telos(0,'+nomer_p+')">'+ar_tp[nm][nr-1][np][nomer_p]+'</div><hr width="100%"size="2"color="black"/>'+on_tp_t(nomer_p)+'<hr width="100%"size="2"color="black"/></div>';
+    if(deistvie_p==0) return'<div id="tp_'+name_p+'_telo"><div id="tp_'+name_p+'" class="paragraf" onmouseover="on_tp(1,'+nomer_p+')"onmouseout="on_tp(2,'+nomer_p+')"onmousedown="tp_telos(1,'+nomer_p+','+stop_p+')">' +ar_tp[nm][nr-1][np][nomer_p]+'</div></div>';
+    else return'<div id="tp_'+name_p+'_telo"><div id="tp_'+name_p+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_p + ')"onmouseout="on_tp(4,' + nomer_p + ')"onmousedown="tp_telos(0,'+nomer_p+','+stop_p+')">'+ar_tp[nm][nr-1][np][nomer_p]+'</div>'+(stop_p==1?'<div id="ten_kn_tp_'+name_p+'"class="c_ten_kn_tp"></div><div id="kn_tp_'+name_p+'"class="c_kn_tp"onmouseover="on_kn_tp(1,' + nomer_p + ')"onmouseout="on_kn_tp(2,' + nomer_p + ')"onmousedown="on_kn_tp(4,'+nomer_p+')"><div id="svet_tp_'+name_ps+'"class="c_svet_tp"></div><div id="ris_tp_'+name_p+'"class="c_ris_tp"></div><div id="ten_tp_'+name_ps+'"class="c_ten_tp"></div></div>':'')+'<hr width="100%"size="2"color="black"/><p>'+on_tp_t(nomer_p)+'<hr width="100%"size="2"color="black"/></div>';
 }
 //=================================================================================================
-function tp_telos(deistvie_ps,nomer_ps){
+function tp_telos(deistvie_ps,nomer_ps,stop_ps){
     name_ps = nm + '_' + (nr-1) + '_' + np+'_'+nomer_ps;
-    if(deistvie_ps==0) document.getElementById('tp_'+name_ps+'_telo').innerHTML='<div id="tp_'+name_ps+'" class="paragraf" onmouseover="on_tp(1,'+nomer_ps+')"onmouseout="on_tp(2,'+nomer_ps+')"onmousedown="tp_telos(1,'+nomer_ps+')">' +ar_tp[nm][nr-1][np][nomer_ps]+'</div>';
-    else document.getElementById('tp_'+name_ps+'_telo').innerHTML= '<div id="tp_'+name_ps+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_ps + ')"onmouseout="on_tp(4,' + nomer_ps + ')"onmousedown="tp_telos(0,'+nomer_ps+')">'+ar_tp[nm][nr-1][np][nomer_ps]+'</div><hr width="100%"size="2"color="black"/>'+on_tp_t(nomer_ps)+'<hr width="100%"size="2"color="black"/>';
+    if(deistvie_ps==0) document.getElementById('tp_'+name_ps+'_telo').innerHTML='<div id="tp_'+name_ps+'" class="paragraf" onmouseover="on_tp(1,'+nomer_ps+')"onmouseout="on_tp(2,'+nomer_ps+')"onmousedown="tp_telos(1,'+nomer_ps+','+stop_ps+')">' +ar_tp[nm][nr-1][np][nomer_ps]+'</div>';
+    else document.getElementById('tp_'+name_ps+'_telo').innerHTML= '<div id="tp_'+name_ps+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_ps + ')"onmouseout="on_tp(4,' + nomer_ps + ')"onmousedown="tp_telos(0,'+nomer_ps+','+stop_ps+')">'+ar_tp[nm][nr-1][np][nomer_ps]+'</div>'+(stop_ps==1?'<div id="ten_kn_tp_'+name_p+'"class="c_ten_kn_tp"></div><div id="kn_tp_'+name_ps+'"class="c_kn_tp" onmouseover="on_kn_tp(1,' + nomer_ps + ')"onmouseout="on_kn_tp(2,' + nomer_ps + ')"onmousedown="on_kn_tp(4,'+nomer_ps+')"><div id="svet_tp_'+name_ps+'"class="c_svet_tp"></div><div id="ris_tp_'+name_p+'"class="c_ris_tp"></div><div id="ten_tp_'+name_ps+'"class="c_ten_tp"></div></div>':'')+'<hr width="100%"size="2"color="black"/><p>'+on_tp_t(nomer_ps)+'<hr width="100%"size="2"color="black"/>';
     up();
 }    
 //=================================================================================================
@@ -4335,234 +4364,6 @@ function ti_telos(deistvie_is,nomer_is) {
 }
 //=================================================================================================
 //=================================================================================================
-function n_str_nazad(){
-  /*  if(on_str_nazad){
-        
-    if(nomer_str_nazad>1){
-    nm=ar_str_nazad[nomer_str_nazad][0];
-    nr=ar_str_nazad[nomer_str_nazad][1];
-    np=ar_str_nazad[nomer_str_nazad][2];
-    np_1=ar_str_nazad[nomer_str_nazad][3];
-    np_2=ar_str_nazad[nomer_str_nazad][4];
-    np_3=ar_str_nazad[nomer_str_nazad][5];
-    nomer_str_nazad--;}else {nm=0;nr=1;np=0;np_1=0;np_2=0;np_3=0;nomer_str_nazad=0;}
-    }
-    else{if(nomer_str_nazad>0){
-        asn=ar_str_nazad.length/6;
-    if(asn<nomer_str_nazad+3)
-    {
-        ar_str_nazad= ar_str_nazad_copiy;
-        ar_str_nazad=new [asn*2];
-        for(i=0;i<asn;i++)ar_str_nazad[i]=ar_str_nazad_copiy[i];
-        
-        for(i=asn;i<asn*2;i++)ar_str_nazad[i]=[0,1,0,0,0,0];
-    }
-    nomer_str_nazad++;
-        //ar_str_nazad_copiy=ar_str_nazad; 
-        //ar_str_nazad=new [ar_str_nazad_copiy.length/6+1][];
-       
-    ar_str_nazad[nomer_str_nazad][0]=nm;
-    ar_str_nazad[nomer_str_nazad][1]=nr;
-    ar_str_nazad[nomer_str_nazad][2]=np;
-    ar_str_nazad[nomer_str_nazad][3]=np_1;
-    ar_str_nazad[nomer_str_nazad][4]=np_2;
-    ar_str_nazad[nomer_str_nazad][5]=np_3;
-    }
-    else{
-    nomer_str_nazad++;
-        //ar_str_nazad_copiy=ar_str_nazad; 
-        //ar_str_nazad=new [ar_str_nazad_copiy.length/6+1][];
-       
-    ar_str_nazad[nomer_str_nazad][0]=nm;
-    ar_str_nazad[nomer_str_nazad][1]=nr;
-    ar_str_nazad[nomer_str_nazad][2]=np;
-
-    if(np_1!=0){
-        if(np_2!=0){
-
-            ar_str_nazad[nomer_str_nazad][3]=np_1;
-            ar_str_nazad[nomer_str_nazad][4]=0;
-            ar_str_nazad[nomer_str_nazad][5]=0;
-            nomer_str_nazad++;
-            ar_str_nazad[nomer_str_nazad][0]=nm;
-            ar_str_nazad[nomer_str_nazad][1]=nr;
-            ar_str_nazad[nomer_str_nazad][2]=np;
-            ar_str_nazad[nomer_str_nazad][3]=np_1;
-        
-            if(np_3!=0){
-                ar_str_nazad[nomer_str_nazad][3]=np_1;
-                ar_str_nazad[nomer_str_nazad][4]=np_2;
-              
-        
-        
-            }else{
-                ar_str_nazad[nomer_str_nazad][4]=0;
-              
-            }
-        }else{
-            ar_str_nazad[nomer_str_nazad][3]=0;
-            ar_str_nazad[nomer_str_nazad][4]=0;
-            
-        }
-
-        
-    }else {
-        ar_str_nazad[nomer_str_nazad][3]=0;
-        ar_str_nazad[nomer_str_nazad][4]=0;
-        
-    }
-    ar_str_nazad[nomer_str_nazad][5]=0;}
-    }*/
-}
-
-
-
-//=================================================================================================
-
-
-//=================================================================================================
-function soderg_control() {
-    switch (soderg_variant) {
-        case 0: if (soderg_index < 9) {
-        
-            
-        soderg_index++;
-            soderg_izmen -= soderg_del;
-            ten1_gl_p.style.left = //ten2_gl_p.style.left =
-             gl_p.style.left = soderg_izmen + 'px';
-            
-        } else {
-        
-        soderg_variant++;
-            soderg_index = 0;
-            //ten2_gl_p.style.visibility = 'hidden';
-            ten1_gl_p.style.visibility = 'visible';
-            ten1_gl_p.style.filter = 'blur(4px)';
-            ten1_gl_p.style.top = '180px';
-            if(dz==0){kn_za_str2.innerHTML = "<div id='ris_kn_za_str2'></div><div id='ris_min2'></div><div id='ris_v2'></div><div id='ris_str2'></div>";
-            ris_v2.innerHTML = 'v';
-            
-            kn_za_str2.style.left = gl_p.clientWidth - 70 + 'px';
-            }
-            localStorage.setItem('ogl_v', document.getElementById('p_' + ogl_vibrono).style.top);
-            
-            pamyt_ogl_vibr = soderg_izmen2 = 
-            ogl_vibrono_copiy.style.top.slice(0, ogl_vibrono_copiy.style.top.length - 2) - 0;
-            pamyt_stran = 125;
-            soderg_del2 = (soderg_izmen2 - 230) / 5;
-            ;
-            
-            ogl_vibrono_copiy.style.top = soderg_izmen2 + 'px';
-            ten_vibronogo_p.style.top = soderg_izmen2 + 1 + 'px';
-            pamyt_pad = soderg_izmen_pad = text_stranici.style.paddingTop.slice(0, text_stranici.style.paddingTop.length - 2) - 0;
-
-            soderg_del_pad = (soderg_izmen_pad - 50) / 5;
-            gl_p.style.visibility='hidden';
-            gl_p_za_str.style.visibility = 'visible';
-     
-            for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
-                    if(ogl_vibrono!=i){
-                        document.getElementById('p_' + i+'_2').style.visibility ='visible';
-                        document.getElementById('tp_' + i+'_2').style.visibility ='visible';
-                        
-                    }
-                    document.getElementById('p_' +i).style.visibility ='hidden';
-                        document.getElementById('tp_' + i).style.visibility ='hidden';
-            
-            }
-                        document.getElementById('p_' +ogl_vibrono +'_2').style.visibility ='hidden';
-                        document.getElementById('tp_' + ogl_vibrono+'_2').style.visibility ='hidden';
-            gl_p_za_str.style.left=gl_p.style.left;
-            up();
-        } break;
-        case 1: if (soderg_index < 9) {
-            soderg_index++;
-            soderg_izmen += soderg_del;
-            ten1_gl_p.style.left = gl_p_za_str.style.left = soderg_izmen + 'px';
-            if (soderg_izmen2 > 240) {
-                
-                soderg_izmen2 -= soderg_del2;
-                ogl_vibrono_copiy.style.top = soderg_izmen2 + 'px';
-                ten_vibronogo_p.style.top = soderg_izmen2 + 1 + 'px';
-            }
-            if (soderg_izmen_pad > 70) {
-                soderg_izmen_pad -= soderg_del_pad;
-                text_stranici.style.paddingTop = soderg_izmen_pad + 'px';
-                ten_stranici.style.height=stranica.clientHeight+'px';
-            }
-            
-        } else {
-
-            soderg_index = 0;
-            soderg_izmen = 30;
-           up();
-            soderg_rabota = false;
-        } break;
-        case 2:
-            if (soderg_index < 9) {
-                soderg_index++;
-                soderg_izmen -= soderg_del;
-                ten1_gl_p.style.left = gl_p.style.left = gl_p_za_str.style.left = soderg_izmen + 'px';
-  if (soderg_izmen2 < pamyt_ogl_vibr) {
-                    soderg_izmen2 += soderg_del2;
-                    ogl_vibrono_copiy.style.top = soderg_izmen2 + 'px';
-                    ten_vibronogo_p.style.top = soderg_izmen2 + 1 + 'px';
-                }
-                if (soderg_izmen_pad < pamyt_pad) {
-                    soderg_izmen_pad += soderg_del_pad;
-                    text_stranici.style.paddingTop = soderg_izmen_pad + 'px';
-                    ten_stranici.style.height=stranica.clientHeight+'px';
-                }
-            }
-            else {
-                soderg_variant++;
-                soderg_index = 0;
-                
-                gl_p_za_str.style.visibility = 'hidden';
-                ten1_gl_p.style.filter = 'blur(10px)';
-                ten1_gl_p.style.top = '202px';
-                //ten2_gl_p.style.left = gl_p.style.left;
-                gl_p.style.visibility=//ten2_gl_p.style.visibility =
-                 'visible';
-            gl_p_za_str.style.visibility = 'hidden';
-     
-            for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
-                    if(ogl_vibrono!=i){
-                        
-                    document.getElementById('p_' +i).style.visibility ='visible';
-                        document.getElementById('tp_' + i).style.visibility ='visible';    
-                    }
-                    document.getElementById('p_' + i+'_2').style.visibility ='hidden';
-                        document.getElementById('tp_' + i+'_2').style.visibility ='hidden';
-            
-            }
-                        document.getElementById('p_' +ogl_vibrono).style.visibility ='hidden';
-                        document.getElementById('tp_' + ogl_vibrono).style.visibility ='hidden';
-           
-
-            } break;
-        case 3:
-            if (soderg_index < 9) {
-                soderg_index++;
-                if (soderg_izmen < 30) {
-                    soderg_izmen += soderg_del;
-                    ten1_gl_p.style.left = //ten2_gl_p.style.left = 
-                    gl_p.style.left = soderg_izmen + 'px';
-                }
-            }
-            else {
-                soderg_index = 0;
-                soderg_rabota = false;
-                up();
-                
-            }
-            break;
-    }
-    if (soderg_rabota) setTimeout('soderg_control()', 30);
-
-}
-
-
 //=================================================================================================
 function all_control(deistvie) {
 
@@ -4588,7 +4389,9 @@ function all_control(deistvie) {
                         //stranica.style.width = ten_stranici.style.width = perem + 'px';
                         dvigenie_paneli.style.left = perem + 50 + 'px';
                         okna.style.left = perem + 60 + 'px';
+
                         okna.style.width = osnova.clientWidth - perem - 60 + 'px';
+                       
                         okno_besedi.style.width = okno_novosti.style.width = okno_zametki.style.width = okna.clientWidth - 30 + 'px';
                     } else {
 
@@ -4614,7 +4417,9 @@ function all_control(deistvie) {
                         }
                     }
                    // stranica.style.width = ten_stranici.style.width = osnova.clientWidth - okna.clientWidth - stranica_left - 10 + 'px';
-                    ten_kn_nazad.style.left = kn_nazad.style.left = stranica_left - 20 + stranica.clientWidth + 'px';
+                   ten_kn_nazad.style.left=kn_nazad.style.left=osnova.clientWidth- okna.clientWidth -30+'px'; 
+                   kn_n=okna.clientWidth; 
+                   localStorage.setItem('kn_n',kn_n);
                 }
                 //---------------------------------------------------------------------------------------------
                 break;
@@ -4638,6 +4443,8 @@ function all_control(deistvie) {
             case 5://up
                 //if (peremeshenie_okon_down)
                  kn_dvig_panel(5);
+                   
+
                 break;
             //-----------------------------------------------------------------------------------------
         }
@@ -4656,6 +4463,7 @@ function okno_izmen(idnomer, deistvie) {
             if (deform_okno_besedi_down) panel_izmen(3);
             if (deform_okno_novosti_down) panel_izmen(3);
             if (deform_okno_zametki_down) panel_izmen(3);
+    
             break;
         case 4://down
             panel_izmen(4);
@@ -4701,6 +4509,7 @@ function panel_izmen(deistvie) {
                     else okno_zametki.style.height = event.clientY - okz + scrollY + 'px';
                 }
             }
+    
             break;
         case 4://down
             if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10) {
@@ -4708,6 +4517,7 @@ function panel_izmen(deistvie) {
                 else if (event.clientY > okn - scrollY + okno_novosti.clientHeight - 5 && event.clientY < okn - scrollY + okno_novosti.clientHeight + 5) deform_okno_novosti_down = true;
                 else if (event.clientY > okz - scrollY + okno_zametki.clientHeight - 5 && event.clientY < okz - scrollY + okno_zametki.clientHeight + 5) deform_okno_zametki_down = true;
                 event.returnValue = false;
+    
             }
             break;
         case 5://up
@@ -4746,6 +4556,7 @@ function kn_dvig_panel(deistvie) {
         case 4://douwn
             peremeshenie_okon_down = true;
             peremeshenie_okon_fiksaciy = event.clientX;
+            kn_nazad.style.left=osnova.clientWidth- okna.clientWidth -30+'px';
             event.returnValue = false;
             break;
         case 5://up
@@ -4753,8 +4564,9 @@ function kn_dvig_panel(deistvie) {
             if (peremeshenie_okon_fiksaciy == event.clientX) {
                 dvig_pan_rabota = true;
                 setTimeout('dvig_panel()', 50);
-                ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + stranica_left + 'px';
+                
             }
+            
             event.returnValue = true;
             break;
     }
@@ -4770,27 +4582,6 @@ function top_ok(idnomer) {
     }
     idnomer -= 0;
     return idnomer;
-}
-//=================================================================================================
-function kn_nazad_(deistvie) {
-    color_kn = '#5080b0';
-    color_videl = '#80b0e0';
-    switch (deistvie) {
-        case 1://over
-            kn_nazad.style.backgroundColor = color_videl;
-            kn_nazad.style.cursor = 'default';
-            break;
-        case 2://out
-            kn_nazad.style.backgroundColor = color_kn;
-            break;
-        case 3://move
-
-            break;
-        case 4://douwn
-            kn_nazad.style.visibility = 'hidden';
-            scroll(0, 0);
-            break;
-    }
 }
 //=================================================================================================
 function kn_okna_videlen(deistvie, idnomer) {
@@ -4909,14 +4700,58 @@ function izmen_win() {
         else if (m_s_0.clientWidth > menu_width) m_s_0.style.width = menu_width + 'px';
         //-----------------------------------------------------------------------------------
 
-        stranica.style.width = osnova.clientWidth - okna.clientWidth - 135 + 'px';
+        stranica.style.width = (osnova.clientWidth/100)*60 + 'px';
+        gl_p.style.width=(osnova.clientWidth/100)*55+'px';
+        switch(dz){
+            case 1:ten1_gl_p.style.width=gl_p.clientWidth+2+'px';break;
+            default:
+                ten1_gl_p.style.width=ten2_gl_p.style.width=gl_p.clientWidth+2+'px';
+                kn_za_str.style.left=gl_p.clientWidth-70+'px';
+            break;
+        }
+        ten_vibronogo_p.style.width=gl_p.clientWidth+20+'px';
+        ogl_vibrono_copiy.style.width=gl_p.clientWidth-15+'px';
         
+        for(ii=0;ii<array_razd_p[nm][nr-1].length;ii++){
+            pp=document.getElementById('p_'+ii);
+            
+             pph=pp.clientHeight;
+
+            pp.style.width=gl_p.clientWidth-44+'px';
+            //if(pp.clientHeight!=pph){
+                pph=pp.clientHeight-pph;
+                iij=array_razd_p[nm][nr-1].length;
+                for(ij=ii+1;ij<iij;ij++){
+                    if(ogl_vibrono==ij){
+                        ijpt=ogl_vibrono_copiy.style.top.slice(0,ogl_vibrono_copiy.style.top.length-2)-0;
+                        ogl_vibrono_copiy.style.top=ijpt+pph+'px';
+                        ten_vibronogo_p.style.top=ijpt+pph+'px';
+                    }
+                    
+                    ijp=document.getElementById('p_'+ij);
+                    ijpt=ijp.style.top.slice(0,ijp.style.top.length-2)-0;
+                    ijp.style.top=ijpt+pph+'px';
+                    //if(ij==iij-1){
+                        ijpt=ijp.style.top.slice(0,ijp.style.top.length-2)-0;
+                        gl_p.style.height=ijp.clientHeight+ijpt+15+'px';
+                        ten1_gl_p.style.height=ten2_gl_p.style.height=ijp.clientHeight+ijpt+25+'px';
+                    //}               
+                }
+            //}
+            ten_vibronogo_p.style.height=ogl_vibrono_copiy.clientHeight+5+'px';
+            ppp=document.getElementById('tp_'+ii);
+            ppp.style.left=gl_p.clientWidth+1+'px';
+            ppp.style.top=pp.style.top;
+            ppp.style.height=pp.clientHeight+'px';
+        }
+        text_stranici.style.paddingTop=gl_p.clientHeight-20+'px';
+        //-----------------------------------------------------------------------------------
         ten_stranici.style.width = stranica.clientWidth + 'px';
         
         dvigenie_paneli.style.left = osnova.clientWidth - okna.clientWidth - 10 + 'px';
 
         ten_kn_nazad.style.left = kn_nazad.style.left = stranica.clientWidth + 105 + 'px';
-        okna.style.left = stranica.clientWidth + 135 + 'px';
+        okna.style.left = osnova.clientWidth -okna.clientWidth+ 'px';
         //-----------------------------------------------------------------------------------
         staroe_x = innerWidth;
         up();

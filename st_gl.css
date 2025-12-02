@@ -522,6 +522,61 @@ filter:blur(14px);
 .c_m_line_7 {
     top: 618px;
 }
+.c_ten_kn_tp{
+    position: absolute;
+
+    width: 52px;
+    height: 32px;
+    background-color: black;
+    right: 20px;
+    margin-top: 10px;
+    filter:blur(5px);
+    visibility: hidden;
+}
+.c_kn_tp{
+    position:absolute;
+    right: 20px;
+    width: 50px;
+    height: 30px;
+    border:2px solid #136;
+    background-color: #9cf;
+    border-radius: 5px;
+    margin-top: 4px;
+    
+    cursor:pointer;
+
+}
+.c_ris_tp{
+    position: absolute;
+    width: 23px;
+    height: 25px;
+bottom: 0px;
+left:12px;
+border:2px solid #136;
+background-color: white;
+border-bottom: 0px;
+}
+.c_svet_tp{
+    position:absolute;
+    top:0px;
+    left:2px;
+    right:2px;
+    height:3px;
+    background-color:white;
+    filter:blur(2px);
+    visibility: hidden;
+}
+.c_ten_tp {
+    position: absolute;
+    bottom:0px;
+    left: 1px;
+    right: 1px;
+    height: 3px;
+    background-color: black;
+    
+    filter: blur(3px);
+    visibility: hidden;
+}
 
 #predupr{
     position:absolute;
