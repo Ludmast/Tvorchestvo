@@ -9,6 +9,8 @@ body
     padding:0px;
     overflow:hidden;
  font-size: 36px;
+ word-spacing: 10px;
+ text-indent: 20px;
 }
 
 .text,#text_stranici,#metka_div,#interes_div{
