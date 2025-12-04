@@ -466,9 +466,12 @@ kn.style.color=color_str_kn_nevidel;
 
         break;
         case 4://down
-        switch(n_kn){
-
-        }
+            switch(n_kn){
+                case 4:
+                    
+                osnova.innerHTML=arra;
+                    break;
+            }
         break;
     }
 }

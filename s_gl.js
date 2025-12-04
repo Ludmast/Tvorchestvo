@@ -2640,6 +2640,7 @@ function Sait_load() {
 
     bob.style.overflowX = 'hidden';
     bob.style.background = '#306090';
+    arra='';
     metka_chet=0;
     interes_chet=0;
     
