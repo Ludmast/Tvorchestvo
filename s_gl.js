@@ -2885,7 +2885,7 @@ okno_name_besedi.innerHTML = 'Беседы';
     //// -------------УРА!!!! Зделала ;) -------------------
     if(np_1>0){
         if(np_3>0){
-            if(np_2>0) document.getElementById('t_s').innerHTML = chel_yr(np_1,np_2,np_3);
+            if(np_2>0) document.getElementById('t_s').innerHTML = on_tp_t(np_2);//chel_yr(np_1,np_2,np_3);
             else document.getElementById('t_s').innerHTML = chel_rab(localStorage.getItem('np_1')-1,localStorage.getItem('np_3')-1);
         }
         else{ 
@@ -2896,7 +2896,7 @@ okno_name_besedi.innerHTML = 'Беседы';
 
         odin_na_stranice=true;
     }else{
-text_str();
+       text_str();
     odin_na_stranice=false;
 
     }
@@ -3300,7 +3300,7 @@ function istoriy(){
     localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
 }
 //=================================================================================================
-function on_str() {
+/*function on_str() {
     if(np_1>0){
         if(np_3>0){
             switch(np_2){
@@ -3344,7 +3344,7 @@ function on_str() {
         ten1_gl_p.style.left= gl_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2+'px';
         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2-60+'px';
     }
-}
+}*/
 //=================================================================================================
 function on_kn_stran_nazad(deistvie) {
     color_kn='#40a0d0';
@@ -3634,7 +3634,12 @@ str_f_ch='';
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
-
+function fragment_str(nomer_texta){
+    odin_na_stranice=true;
+str_fragment_texta='yra';
+return str_fragment_texta;
+}
+//=================================================================================================
 function chel(nomer_chel){
     odin_na_stranice=true;
 str_chel='';
@@ -4137,6 +4142,35 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
 
             document.getElementById('ten_tp_'+name_kn).style.visibility='hidden';
             document.getElementById('ten_kn_tp_'+name_kn).style.visibility='hidden';
+        break;
+        case 4:
+            document.getElementById('kn_tp_'+name_kn).style.backgroundColor=color_kn_tp_nevidel;
+            
+
+            document.getElementById('svet_tp_'+name_kn).style.visibility='hidden';
+
+            document.getElementById('ten_tp_'+name_kn).style.visibility='hidden';
+            document.getElementById('ten_kn_tp_'+name_kn).style.visibility='hidden';
+    smena_deistvie=6;
+    odin_na_stranice=true;
+     smena_var=0;
+    
+            
+    np_1=1;
+            np_2=4+nomer_kn;
+            np_3=1;
+    switch(dz){
+        case 1:smena_stranic_1();break;
+        default:
+
+            smena_stranic_0();break;
+    
+    }
+     odin_na_stranice=true;
+
+    
+    up();
+
         break;
     }
 }

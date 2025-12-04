@@ -118,6 +118,7 @@ body
     border-radius:10px;
     border-top-left-radius:0px;
     border-top-right-radius:0px;
+    
 }
 #ris_kn_za_str_0{
     position:absolute;
@@ -291,6 +292,75 @@ position:absolute;
     color:black;
     width:100%;
     
+}
+#kn_tp_na_str_1{
+    position:absolute;
+    top:-2px;
+    left:-2px;
+    
+    border:2px solid #136;
+    background-color: #9cf;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+    
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+#kn_tp_na_str_2{
+    position:absolute;
+    top:-2px;
+    left: 120px;
+    
+    border:2px solid #136;
+    background-color: #9cf;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+   
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+#kn_tp_na_str_3{
+    position:absolute;
+    top:-2px;
+    right: 150px;
+    
+    border:2px solid #136;
+    background-color: #9cf;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+    
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+
+#kn_tp_na_str_4{
+    position:absolute;
+    top:-2px;
+    right:-2px;
+    
+    border:2px solid #136;
+    background-color: #9cf;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+    
+   
+    overflow:hidden ;
+    cursor:pointer;
+
 }
 #ten_kn_nazad_0 {
     position: absolute;

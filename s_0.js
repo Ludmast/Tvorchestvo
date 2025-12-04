@@ -79,8 +79,15 @@ gl_p.style.width=gl_p_za_str.style.width=(osnova.clientWidth/100)*55+'px';
         
     }else{
     gl_p.style.visibility = 'visible';
-
-    gl_p_za_str.style.visibility = 'hidden';
+p_0.style.visibility= 
+            ten1_gl_p.style.visibility=
+            ten2_gl_p.style.visibility= 
+            
+            //ogl_vibrono_copiy.style.visibility=
+            //ten_vibronogo_p.style.visibility=
+            'visible';
+    
+            gl_p_za_str.style.visibility = 'hidden';
     gl_p_za_str.style.height =gl_p.style.height = t +50+ 'px';
      text_stranici.style.paddingTop=gl_p.clientHeight-20+'px';
 
@@ -266,7 +273,8 @@ function smena_stranic_0() {
  //           gl_p_za_str.style.visibility =
             'hidden';
         //kn_na_str(300);
-            }else{}{
+            }
+        {
 
            
             
@@ -300,7 +308,7 @@ function smena_stranic_0() {
                 {
                     
                 ten1_gl_p.style.left = ten2_gl_p.style.left = gl_p.style.left = smena_izmen_gl + 'px';
-                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_gl+10+'px';
+              ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_gl+10+'px';
                 }
                 
                 razdel.style.left=razdel_teni.style.left=smena_izmen_gl+'px';
@@ -318,19 +326,19 @@ function smena_stranic_0() {
                 localStorage.setItem('np_2',np_2);
                 localStorage.setItem('np_3',np_3);
                 scroll(0, 0);
-               if(odin_na_stranice==false){
- ten1_gl_p.style.visibility=
-            ten2_gl_p.style.visibility=
-             gl_p.style.visibility=
-             ogl_vibrono_copiy.style.visibility=
-             ten_vibronogo_p.style.visibility=
-              'visible';
+                if(odin_na_stranice==false){
+                    ten1_gl_p.style.visibility=
+                    ten2_gl_p.style.visibility=
+                    gl_p.style.visibility=
+                 //   ogl_vibrono_copiy.style.visibility=
+                 //   ten_vibronogo_p.style.visibility=
+                    'visible';
              //soderg_razdela_0();
 
-        }
+                }
                 //if(master_ym)
                 {
-                on_str();
+                on_str_0();
                //bob.innerHTML='ff';
                 }
                // bob.innerHTML=nomer_str_nazad;
@@ -355,20 +363,21 @@ function smena_stranic_0() {
                 razdel.style.left=razdel_teni.style.left=smena_izmen_gl+'px';
                 if(odin_na_stranice==false){
                     ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
-                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_gl+10+'px';}
+                    ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_gl+10+'px';
+                }
                 ten_stranici.style.left = stranica.style.left = smena_izmen_gl+70 + 'px';
             }else {
                 smena_rab=false;
                 smena_var=0;
-if(odin_na_stranice==false)
-    {
-        ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left='30px';
-                ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left='40px';
-            }
+                if(odin_na_stranice==false)
+                {
+                    ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left='30px';
+                    ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left='40px';
+                }
 
                 razdel.style.left=razdel_teni.style.left='10px';
                 
-               ten_stranici.style.left = stranica.style.left='125px';
+                ten_stranici.style.left = stranica.style.left='125px';
             }
             break;
         //---------------------------------------------------------------------------------------
@@ -398,6 +407,12 @@ function on_str_0() {
                     document.getElementById('t_s').innerHTML =chel_inter(np_1-1,np_3-1);
                     for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                   
                 break;
+                case 4:
+                    razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/>'+ ar_tp[nm][nr-1][np][np_2-4];
+                    document.getElementById('t_s').innerHTML='<table><tr ><td><p><span id="kn_tp_na_str_1"><b>< Назад</b></span><span id="kn_tp_na_str_2"><b>Вперёд ></b></span><span id="kn_tp_na_str_3"><b>^ В раздел</b></span><span id="kn_tp_na_str_4"><b>Развернуть</b></span></td></tr><tr><td>'+on_tp_t(np_2-4)+'</td></tr></table>';
+                    
+                    if(razdel.clientHeight+150>200)ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
+                break;
             }
         }else{
             if(np_2>0){
@@ -410,14 +425,18 @@ function on_str_0() {
         }                
         text_stranici.style.paddingTop= 10+'px';
         osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
-        kn_na_str(300);
     } else{
-        text_str();
-        soderg_razdela();
+         text_str();
+    switch(dz){
+        case 1:soderg_razdela_1();break;
+        default:soderg_razdela_0();break;
+    }
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
-        ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left=razd_iz-95+'px';
-        ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=osnova.clientWidth+10+'px';
-        kn_na_str(gl_p.clientHeight+ 230);
+        ten1_gl_p.style.left= gl_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2+'px';
+        ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2-60+'px';
+        localStorage.setItem('np_1',1);
+        localStorage.setItem('np_2',np_2-4);
+        localStorage.setItem('np_3',np_3);
     }
 }
 //=================================================================================================
