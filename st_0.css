@@ -299,7 +299,7 @@ position:absolute;
     left:-2px;
     
     border:2px solid #136;
-    background-color: #9cf;
+    background-color: #d0e0ff;
     border-radius: 5px;
    padding-right: 15px;
     padding-left: 15px;
@@ -316,7 +316,7 @@ position:absolute;
     left: 120px;
     
     border:2px solid #136;
-    background-color: #9cf;
+    background-color: #d0e0ff;
     border-radius: 5px;
    padding-right: 15px;
     padding-left: 15px;
@@ -333,7 +333,7 @@ position:absolute;
     right: 150px;
     
     border:2px solid #136;
-    background-color: #9cf;
+    background-color: #d0e0ff;
     border-radius: 5px;
    padding-right: 15px;
     padding-left: 15px;
@@ -351,7 +351,7 @@ position:absolute;
     right:-2px;
     
     border:2px solid #136;
-    background-color: #9cf;
+    background-color: #d0e0ff;
     border-radius: 5px;
    padding-right: 15px;
     padding-left: 15px;
@@ -362,6 +362,59 @@ position:absolute;
     cursor:pointer;
 
 }
+#kn_tp_na_str_5{
+    position:absolute;
+    bottom:-2px;
+    left:-2px;
+    
+    border:2px solid #136;
+    background-color: #d0e0ff;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+    
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+#kn_tp_na_str_6{
+    position:absolute;
+    bottom:-2px;
+    left: 120px;
+    
+    border:2px solid #136;
+    background-color: #d0e0ff;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+   
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+#kn_tp_na_str_7{
+    position:absolute;
+    bottom:-2px;
+    right: -2px;
+    
+    border:2px solid #136;
+    background-color: #d0e0ff;
+    border-radius: 5px;
+   padding-right: 15px;
+    padding-left: 15px;
+   padding-bottom: 3px;
+    
+   text-align: center;
+    overflow:hidden ;
+    cursor:pointer;
+
+}
+
+
 #ten_kn_nazad_0 {
     position: absolute;
     background-color: black;

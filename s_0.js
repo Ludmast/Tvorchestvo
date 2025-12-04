@@ -391,25 +391,29 @@ function on_kn_stran_nazad_0() {
 //=================================================================================================
 function on_str_0() {
     if(np_1>0){
+        ar='';ark='';
+        arra='';
         if(np_3>0){
             switch(np_2){
                 case 1:
                     razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    document.getElementById('t_s').innerHTML =chel_rab(np_1-1,np_3-1);
+                    arra=chel_rab(np_1-1,np_3-1);
                     //bob.innerHTML=np_1;
                 break;
                 case 2:
                     razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    document.getElementById('t_s').innerHTML =chel_yr(np_1-1,np_3-1);
+                    arra =chel_yr(np_1-1,np_3-1);
                 break;
                 case 3:
                     razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    document.getElementById('t_s').innerHTML =chel_inter(np_1-1,np_3-1);
-                    for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                   
+                    arra =chel_inter(np_1-1,np_3-1);
+                    
                 break;
                 case 4:
                     razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/>'+ ar_tp[nm][nr-1][np][np_2-4];
-                    document.getElementById('t_s').innerHTML='<table><tr ><td><p><span id="kn_tp_na_str_1"><b>< Назад</b></span><span id="kn_tp_na_str_2"><b>Вперёд ></b></span><span id="kn_tp_na_str_3"><b>^ В раздел</b></span><span id="kn_tp_na_str_4"><b>Развернуть</b></span></td></tr><tr><td>'+on_tp_t(np_2-4)+'</td></tr></table>';
+                    ar='';ark='';
+                    if(nm-0==0&&nr-0==1&&np-0<2){ar=array_text[0][0][0][26];ark='"';}
+        arra=on_tp_t(np_2-4);            
                     
                     if(razdel.clientHeight+150>200)ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
                 break;
@@ -417,12 +421,16 @@ function on_str_0() {
         }else{
             if(np_2>0){
                 razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                document.getElementById('t_s').innerHTML =chel_all_yr(np_1-1);
+                arra =chel_all_yr(np_1-1);
             }else{
                 razdel.innerHTML=razdel_teni.innerHTML='Один из умельцев';//else razdel.innerHTML=razdel_teni.innerHTML='Один'; 
-                document.getElementById('t_s').innerHTML =chel(localStorage.getItem('np_1')-1);// array_text[0][2][6][0][0];
+                arra =chel(localStorage.getItem('np_1')-1);// array_text[0][2][6][0][0];
             }
-        }                
+
+        }           
+        document.getElementById('t_s').innerHTML='<table><tr ><td><p><span id="kn_tp_na_str_1"onmouseover="on_kn_tp_na_str(1,1)"onmouseout="on_kn_tp_na_str(2,1)"onmousedown="on_kn_tp_na_str(4,1)"><b>< Назад</b></span><span id="kn_tp_na_str_2"onmouseover="on_kn_tp_na_str(1,2)"onmouseout="on_kn_tp_na_str(2,2)"onmousedown="on_kn_tp_na_str(4,2)"><b>Вперёд ></b></span><span id="kn_tp_na_str_3"onmouseover="on_kn_tp_na_str(1,3)"onmouseout="on_kn_tp_na_str(2,3)"onmousedown="on_kn_tp_na_str(4,3)"><b>^ В раздел</b></span><span id="kn_tp_na_str_4"onmouseover="on_kn_tp_na_str(1,4)"onmouseout="on_kn_tp_na_str(2,4)"onmousedown="on_kn_tp_na_str(4,4)"><b>Развернуть</b></span></td></tr><tr><td>'+ark+arra+ar+'</td></tr><tr ><td><p><span id="kn_tp_na_str_5"onmouseover="on_kn_tp_na_str(1,5)"onmouseout="on_kn_tp_na_str(2,5)"onmousedown="on_kn_tp_na_str(4,5)"><b>< Назад</b></span><span id="kn_tp_na_str_6"onmouseover="on_kn_tp_na_str(1,6)"onmouseout="on_kn_tp_na_str(2,6)"onmousedown="on_kn_tp_na_str(4,6)"><b>Вперёд ></b></span><span id="kn_tp_na_str_7"onmouseover="on_kn_tp_na_str(1,7)"onmouseout="on_kn_tp_na_str(2,7)"onmousedown="on_kn_tp_na_str(4,7)"><b>^ В раздел</b></span></td></tr></table>';
+        if(np_2==3)for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                        
+        
         text_stranici.style.paddingTop= 10+'px';
         osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
     } else{
@@ -440,7 +448,30 @@ function on_str_0() {
     }
 }
 //=================================================================================================
+function on_kn_tp_na_str(deistvie_kn_tp,n_kn){
+    color_kn_videl='#68a';
+    
+    color_kn_nevidel='#d0e0ff';
+    color_str_kn_nevidel='black';
+    kn=document.getElementById('kn_tp_na_str_'+n_kn);
+    switch(deistvie_kn_tp){
+        case 1://over
+kn.style.backgroundColor=color_kn_videl;
+kn.style.color=color_kn_nevidel;
 
+        break;
+        case 2://out
+kn.style.backgroundColor=color_kn_nevidel;
+kn.style.color=color_str_kn_nevidel;
+
+        break;
+        case 4://down
+        switch(n_kn){
+
+        }
+        break;
+    }
+}
 //=================================================================================================
 function kn_za_str2_0(deistvie) {
     color_kn = '#b0c0f0';
