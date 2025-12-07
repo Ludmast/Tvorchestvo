@@ -307,7 +307,7 @@ function smena_stranic_0() {
                 
                 localStorage.setItem('np_2',np_2);
                 localStorage.setItem('np_3',np_3);
-                scroll(0, 0);
+                scroll(0, tp_scroll);
                 if(odin_na_stranice==false){
                     ten1_gl_p.style.visibility=
                     ten2_gl_p.style.visibility=
@@ -386,7 +386,7 @@ function on_str_0() {
                     
                 break;
                 case 4:
-                    razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/>'+ ar_tp[nm][nr-1][np][nom_t];
+                    razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
                     ar='';ark='';
                     if(nm-0==0&&nr-0==1&&(np==0||np==1)){ar=array_text[0][0][0][26];ark='"';}
                   
@@ -405,9 +405,10 @@ function on_str_0() {
             }
 
         }           
-        airan_n='<table><tr ><td><p><span id="kn_tp_na_str_1"onmouseover="on_kn_tp_na_str(1,1)"onmouseout="on_kn_tp_na_str(2,1)"onmousedown="on_kn_tp_na_str(4,1)"><b>< Назад</b></span><span id="kn_tp_na_str_2"onmouseover="on_kn_tp_na_str(1,2)"onmouseout="on_kn_tp_na_str(2,2)"onmousedown="on_kn_tp_na_str(4,2)"><b>Вперёд ></b></span><span id="kn_tp_na_str_3"onmouseover="on_kn_tp_na_str(1,3)"onmouseout="on_kn_tp_na_str(2,3)"onmousedown="on_kn_tp_na_str(4,3)"><b>^ В раздел</b></span><span id="kn_tp_na_str_4"onmouseover="on_kn_tp_na_str(1,4)"onmouseout="on_kn_tp_na_str(2,4)"onmousedown="on_kn_tp_na_str(4,4)"><b>Развернуть</b></span></td></tr><tr><td>';
+        airan_n='<table><tr ><td><p><span id="kn_tp_na_str_1"onmouseover="on_kn_tp_na_str(1,1)"onmouseout="on_kn_tp_na_str(2,1)"onmousedown="on_kn_tp_na_str(4,1)"><b>< Назад</b></span><span id="kn_tp_na_str_2"onmouseover="on_kn_tp_na_str(1,2)"onmouseout="on_kn_tp_na_str(2,2)"onmousedown="on_kn_tp_na_str(4,2)"><b>Вперёд ></b></span><span id="kn_tp_na_str_3"onmouseover="on_kn_tp_na_str(1,3)"onmouseout="on_kn_tp_na_str(2,3)"onmousedown="on_kn_tp_na_str(4,3)"><b>^ В раздел</b></span><span id="kn_tp_na_str_4"onmouseover="on_kn_tp_na_str(1,4)"onmouseout="on_kn_tp_na_str(2,4)"onmousedown="on_kn_tp_na_str(4,4)"><b>Развернуть</b></span></td></tr><tr><td id="sam_text">';
         airan_e='</td></tr><tr ><td><p><span id="kn_tp_na_str_5"onmouseover="on_kn_tp_na_str(1,5)"onmouseout="on_kn_tp_na_str(2,5)"onmousedown="on_kn_tp_na_str(4,5)"><b>< Назад</b></span><span id="kn_tp_na_str_6"onmouseover="on_kn_tp_na_str(1,6)"onmouseout="on_kn_tp_na_str(2,6)"onmousedown="on_kn_tp_na_str(4,6)"><b>Вперёд ></b></span><span id="kn_tp_na_str_7"onmouseover="on_kn_tp_na_str(1,7)"onmouseout="on_kn_tp_na_str(2,7)"onmousedown="on_kn_tp_na_str(4,7)"><b>^ В раздел</b></span></td></tr></table>';
         document.getElementById('t_s').innerHTML=airan_n+ark+arra+ar+airan_e;
+        sam_text.style.textIndent='30px';
         if(np_2==3)for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                        
         
         text_stranici.style.paddingTop= 10+'px';
@@ -446,115 +447,105 @@ kn.style.color=color_str_kn_nevidel;
             switch(n_kn){
                 case 1:case 5:
                     smena_var=0;
-
+                    odin_na_stranice=true;
                     if(nom_t>0)nom_t--;
+                     
                     smena_stranic_0();
                     break;
                 case 2:case 6:
                     smena_var=0;
-                    
+                    odin_na_stranice=true;
                     nom_t++;
                     smena_stranic_0();
                     break;
-                    case 3:case 7:
-
+                case 3:case 7:
+                    odin_na_stranice=false;
+                    np_1=np_2=np_3=0;
+                    smena_var=0;
+                    ten_stranici.style.top=stranica.style.top='240px';
+                    tp_scroll=pamyt_tp_scroll;
+                    pamyt_tp_scroll=0;
+                    smena_stranic_0();
                     break;
                 
                 case 4:
                     if(osnova_razvernuta){
-                       // bob.innerHTML='yra';
-                       art_t='<div id="in_load_1"></div><div id="in_load_2"></div><table id="stranica"valign="top" onmousemove="stranica_izmen(3)" onmousedown="stranica_izmen(4)" onmouseup="stranica_izmen(5)"><tr><td id="text_stranici"><div id="t_s" class="tm"></div></td></tr></table><div id="in_load_3"></div><div id="in_load_4"></div>';
-                        //osnova.style.background =pamyt_resurs[1];
+                        art_t='<div id="in_load_1"></div><div id="in_load_2"></div><table id="stranica"valign="top" onmousemove="stranica_izmen(3)" onmousedown="stranica_izmen(4)" onmouseup="stranica_izmen(5)"><tr><td id="text_stranici"><div id="t_s" class="tm"></div></td></tr></table><div id="in_load_3"></div><div id="in_load_4"></div>';
                         osnova.innerHTML=art_t;
-        
                         Sait_load();
-                        
-                       razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/>'+ ar_tp[nm][nr-1][np][nom_t];
                         razdel_teni.style.maxWidth=razdel.style.maxWidth=osnova.clientWidth-okna.clientWidth-10+'px';
+                        razdel.innerHTML=razdel_teni.innerHTML=pamyt_resurs[0];
                         ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
-                        t_s.innerHTML=pamyt_resurs[0];
+                        t_s.innerHTML=pamyt_resurs[1];
+                        sam_text.style.textIndent='30px';
+                        up();
                         snova.style.visibility='hidden';
-                    osnova.style.fontSize=pamyt_resurs[2];
-                    osnova.style.wordSpacing=pamyt_resurs[3];
-                    osnova.style.textIndent=pamyt_resurs[4];
-                    
-                    kn_tp_na_str_1.style.top=pamyt_resurs[5];
-                    kn_tp_na_str_1.style.left=pamyt_resurs[7];
-                    kn_tp_na_str_2.style.top=pamyt_resurs[5];
-                    kn_tp_na_str_2.style.left=pamyt_resurs[8];
-                    kn_tp_na_str_3.style.top=pamyt_resurs[5];
-                    kn_tp_na_str_3.style.right=pamyt_resurs[9];
-                    
-                    kn_tp_na_str_4.style.top=pamyt_resurs[5];
-                    kn_tp_na_str_4.style.right=pamyt_resurs[10];
-                    
-                    kn_tp_na_str_5.style.position=kn_tp_na_str_6.style.position=kn_tp_na_str_7.style.position='absolute';
-                    //kn_tp_na_str_5.style.bottom=kn_tp_na_str_6.style.bottom=pamyt_resurs[6];
-                    kn_tp_na_str_5.style.left=pamyt_resurs[8];
-                    
-                    //kn_tp_na_str_7.style.bottom=pamyt_resurs[6];
-                    
-                    kn_tp_na_str_4.innerHTML='<b>Развернуть</b>';
-                    kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
-                    kn_tp_na_str_4.style.color=color_str_kn_nevidel;
-                        //osnova.style.backgroundColor='';
+                        osnova.style.fontSize=pamyt_resurs[3];
+                        osnova.style.wordSpacing=pamyt_resurs[4];
+                        osnova.style.textIndent=pamyt_resurs[5];
+                        kn_tp_na_str_1.style.top=pamyt_resurs[6];
+                        kn_tp_na_str_1.style.left=pamyt_resurs[8];
+                        kn_tp_na_str_2.style.top=pamyt_resurs[6];
+                        kn_tp_na_str_2.style.left=pamyt_resurs[9];
+                        kn_tp_na_str_3.style.top=pamyt_resurs[6];
+                        kn_tp_na_str_3.style.right=pamyt_resurs[10];
+                        kn_tp_na_str_4.style.top=pamyt_resurs[6];
+                        kn_tp_na_str_4.style.right=pamyt_resurs[11];
+                        kn_tp_na_str_5.style.position=kn_tp_na_str_6.style.position=kn_tp_na_str_7.style.position='absolute';
+                        kn_tp_na_str_5.style.left=pamyt_resurs[9];
+                        kn_tp_na_str_4.innerHTML='<b>Развернуть</b>';
+                        kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
+                        kn_tp_na_str_4.style.color=color_str_kn_nevidel;
                         text_stranici.style.paddingTop =  10 + 'px';
-                       osnova_razvernuta=false; 
-                        //t_s.innerHTML=pamyt_resurs;
+                        osnova_razvernuta=false; 
                     }else{
                         osnova_razvernuta=true;
-                    osnova.style.backgroundColor=bob.style.backgroundColor='white';
-                    osnova.style.fontSize='36px';
-                    osnova.style.wordSpacing='10px';
-                    osnova.style.textIndent='30px';
+                        localStorage.setItem('nom_t',nom_t);
                         snova.style.width=osnova.clientWidth;
                         snova.style.visibility='visible';
-                    
+                        pamyt_resurs[0]=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
                         snova.innerHTML='<big><center ><b><big>'+array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/></big>'+ ar_tp[nm][nr-1][np][nom_t]+'</b></center></big><p>';
-                    //bob.innerHTML=snova.clientHeight;
-                    pamyt_resurs[0]=t_s.innerHTML;
-                    pamyt_resurs[1]=osnova.style.backgroundColor;
-                    pamyt_resurs[2]=osnova.style.fontSize;
-                    pamyt_resurs[3]=osnova.style.wordSpacing;
-                    pamyt_resurs[4]=osnova.style.textIndent;
-                    pamyt_resurs[5]=kn_tp_na_str_1.style.top;
-                    pamyt_resurs[6]=kn_tp_na_str_5.style.bottom;
-                    pamyt_resurs[7]=kn_tp_na_str_1.style.left;
-                    pamyt_resurs[8]=kn_tp_na_str_2.style.left;
-                    pamyt_resurs[9]=kn_tp_na_str_3.style.right;
-                    pamyt_resurs[10]=kn_tp_na_str_4.style.right;
-
-                    
-                    kn_tp_na_str_1.style.top=snova.clientHeight+30+'px';
-                    kn_tp_na_str_1.style.left='4px';
-                    kn_tp_na_str_2.style.top=snova.clientHeight+30+'px';
-                    kn_tp_na_str_2.style.left='180px';
-                    kn_tp_na_str_3.style.top=snova.clientHeight+30+'px';
-                    kn_tp_na_str_3.style.right='200px';
-                    kn_tp_na_str_4.innerHTML='<b>Свернуть</b>';
-                    kn_tp_na_str_4.style.top=snova.clientHeight+30+'px';
-                    
-                    kn_tp_na_str_5.style.position='sticky';
-kn_tp_na_str_6.style.position='sticky';
-kn_tp_na_str_7.style.position='sticky';
-                    kn_tp_na_str_6.style.bottom=kn_tp_na_str_5.style.bottom
-                    kn_tp_na_str_4.style.right='2px';
-                    //kn_tp_na_str_5.style.bottom=-snova.clientHeight+'px';
-                    kn_tp_na_str_5.style.left='4px';
-                    kn_tp_na_str_6.style.left=kn_tp_na_str_2.style.left;
-                    kn_tp_na_str_7.style.left=osnova.clientWidth-kn_tp_na_str_3.clientWidth-2+'px';
-                    //kn_tp_na_str_7.style.right='2px';
-                   // kn_tp_na_str_6.style.bottom=osnova.clientHeight+20+'px';
-                   // kn_tp_na_str_7.style.bottom=osnova.clientHeight+20+'px';
-                    kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
-                    kn_tp_na_str_4.style.color=color_str_kn_nevidel;
-                    //osnova.innerHTML=snova.innerHTML+t_s.innerHTML;
-                    osnova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML;
-
-
+                        osnova.style.backgroundColor=bob.style.backgroundColor='white';
+                        pamyt_resurs[1]=t_s.innerHTML;
+                        pamyt_resurs[2]=osnova.style.backgroundColor;
+                        pamyt_resurs[3]=osnova.style.fontSize;
+                        pamyt_resurs[4]=osnova.style.wordSpacing;
+                        pamyt_resurs[5]=osnova.style.textIndent;
+                        pamyt_resurs[6]=kn_tp_na_str_1.style.top;
+                        pamyt_resurs[7]=kn_tp_na_str_5.style.bottom;
+                        pamyt_resurs[8]=kn_tp_na_str_1.style.left;
+                        pamyt_resurs[9]=kn_tp_na_str_2.style.left;
+                        pamyt_resurs[10]=kn_tp_na_str_3.style.right;
+                        pamyt_resurs[11]=kn_tp_na_str_4.style.right;
+                        osnova.style.fontSize='36px';
+                        osnova.style.wordSpacing='10px';
+                        osnova.style.textIndent='30px';
+                        kn_tp_na_str_1.style.top=snova.clientHeight+30+'px';
+                        kn_tp_na_str_1.style.left='4px';
+                        kn_tp_na_str_2.style.top=snova.clientHeight+30+'px';
+                        kn_tp_na_str_2.style.left='180px';
+                        kn_tp_na_str_3.style.top=snova.clientHeight+30+'px';
+                        kn_tp_na_str_3.style.right='200px';
+                        kn_tp_na_str_4.innerHTML='<b>Свернуть</b>';
+                        kn_tp_na_str_4.style.top=snova.clientHeight+30+'px';
+                        kn_tp_na_str_5.style.position='sticky';
+                        kn_tp_na_str_6.style.position='sticky';
+                        kn_tp_na_str_7.style.position='sticky';
+                        kn_tp_na_str_6.style.bottom=kn_tp_na_str_5.style.bottom
+                        kn_tp_na_str_4.style.right='2px';
+                        kn_tp_na_str_5.style.left='4px';
+                        kn_tp_na_str_6.style.left=kn_tp_na_str_2.style.left;
+                        kn_tp_na_str_7.style.left=osnova.clientWidth-kn_tp_na_str_3.clientWidth-2+'px';
+                        kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
+                        kn_tp_na_str_4.style.color=color_str_kn_nevidel;
+                        t_s.style.fontSize='36px';
+                        t_s.style.width=osnova.clientWidth;
+                        sam_text.style.textIndent='50px';
+                        osnova.style.height=t_s.clientHeight+'px';
+                        t_s.style.fontSize=pamyt_resurs[3];
+                        osnova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML;
                 }
-                    
-                    break;
+                break;
             }
         break;
     }
