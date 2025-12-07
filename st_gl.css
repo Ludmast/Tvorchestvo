@@ -1,4 +1,9 @@
 body
+#bob{
+    font-size: 30px;
+ word-spacing: 0px;
+ text-indent: 20px;
+}
 #osnova{
     position:absolute;
     left:0px;
@@ -7,11 +12,15 @@ body
     height:100%;
     border:0px;
     padding:0px;
-    overflow:hidden;
- font-size: 36px;
- word-spacing: 10px;
- text-indent: 20px;
+    
+ 
+ 
 }
+#snova{
+    visibility: hidden;
+    background-color: #00a010;
+}
+
 
 .text,#text_stranici,#metka_div,#interes_div{
     padding-top: 4px;

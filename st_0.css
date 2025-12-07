@@ -293,6 +293,16 @@ position:absolute;
     width:100%;
     
 }
+#pom{
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid #136;
+    left:20px;
+    bottom: 0px;
+
+}
 #kn_tp_na_str_1{
     position:absolute;
     top:-2px;
@@ -313,7 +323,7 @@ position:absolute;
 #kn_tp_na_str_2{
     position:absolute;
     top:-2px;
-    left: 120px;
+    left: 110px;
     
     border:2px solid #136;
     background-color: #d0e0ff;
@@ -330,7 +340,7 @@ position:absolute;
 #kn_tp_na_str_3{
     position:absolute;
     top:-2px;
-    right: 150px;
+    right: 140px;
     
     border:2px solid #136;
     background-color: #d0e0ff;
@@ -382,7 +392,7 @@ position:absolute;
 #kn_tp_na_str_6{
     position:absolute;
     bottom:-2px;
-    left: 120px;
+    left: 110px;
     
     border:2px solid #136;
     background-color: #d0e0ff;
