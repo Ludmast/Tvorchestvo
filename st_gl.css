@@ -954,10 +954,11 @@ position:absolute;
 }
 .foto_rab{
     position:clip;
+    top:0px;
     border:2px solid black;
     width: 80%;
     max-width: 150px;
-    margin:1px;
+    margin:2px;
 }
 .dizain {
     

@@ -388,7 +388,7 @@ function on_str_0() {
                 case 4:
                     razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
                     ar='';ark='';
-                    if(nm-0==0&&nr-0==1&&(np==0||np==1)){ar=array_text[0][0][0][26];ark='"';}
+                    if(nm-0==0&&nr-0==1&&(np==0||(np==1&&nom_t==0))){ar=array_text[0][0][0][26];ark='"';}
                   
                     arra=on_tp_t(nom_t);            
                     razdel_teni.style.maxWidth=razdel.style.maxWidth=osnova.clientWidth-okna.clientWidth-10+'px';
@@ -448,24 +448,36 @@ kn.style.color=color_str_kn_nevidel;
                 case 1:case 5:
                     smena_var=0;
                     odin_na_stranice=true;
-                    if(nom_t>0)nom_t--;
-                     
-                    smena_stranic_0();
+                    if(ar_tp_text[nm][nr-1][np][nom_t][0]<nom_t){
+                       nom_t--;
+                    smena_stranic_0();    
+                    }
+                     else {
+                    
+                   on_kn_tp_na_str(4,3);
+                     }
+
+                    
                     break;
                 case 2:case 6:
                     smena_var=0;
                     odin_na_stranice=true;
-                    nom_t++;
-                    smena_stranic_0();
+                    //bob.innerHTML=nom_t;
+                    if(ar_tp_text[nm][nr-1][np][nom_t][1]>nom_t){
+                        nom_t++;
+                    smena_stranic_0();}else{
+                    on_kn_tp_na_str(4,3);
+                    }
                     break;
                 case 3:case 7:
                     odin_na_stranice=false;
                     np_1=np_2=np_3=0;
                     smena_var=0;
-                    ten_stranici.style.top=stranica.style.top='240px';
+                    
                     tp_scroll=pamyt_tp_scroll;
                     pamyt_tp_scroll=0;
                     smena_stranic_0();
+                    ten_stranici.style.top=stranica.style.top='240px';
                     break;
                 
                 case 4:
