@@ -3318,10 +3318,11 @@ function sait_load_dopolnit() {
         }
     }
     m_i = 0;
+    
     //---------------------------------------------------------------------------------------------
     //interes_treug.style.visibility='hidden';
-    in_tr=interes_treug.getContext('2d');
-    
+/*     in_tr=interes_treug.getContext('2d');
+
       interes_treug.width=20;
     interes_treug.height=20;
     in_tr.beginPath();  
@@ -3374,8 +3375,8 @@ in_tr.stroke();
     met_tr.moveTo(10,0);
     met_tr.lineTo(15,20);
 met_tr.stroke();
-
-
+*/
+ 
     //---------------------------------------------------------------------------------------------
     stranici_right = stranica_left + stranica.clientHeight;
     stranica_left_p = stranica_left;
@@ -3432,7 +3433,7 @@ interes_nomer=0;
     prydki_del = 0;
     prydki_perem = 0;
 
-
+    
     setTimeout('izmen_win()', 4);
     pom_etap_vipolnen = false;
     pom_etap = 1;
@@ -4835,7 +4836,7 @@ function okna_uvel() {
 
 //=================================================================================================
 function izmen_win() {
-     
+
     if (staroe_x != innerWidth) {
 
         m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4;
