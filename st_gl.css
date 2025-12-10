@@ -4,6 +4,13 @@ body
  word-spacing: 0px;
  text-indent: 20px;
 }
+.bbb{
+    
+    font-size: 36px;
+ word-spacing: 10px;
+ text-indent: 30px;
+
+}
 #osnova{
     position:absolute;
     left:0px;
@@ -19,6 +26,7 @@ body
 #snova{
     position: absolute;
     visibility: hidden;
+    
     background-color: #00a010;
 }
 

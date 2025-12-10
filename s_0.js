@@ -278,18 +278,21 @@ function smena_stranic_0() {
             smena_izmen_gl=snova.clientWidth;
             snova2=snova;
             
+ //snova2.style.fontSize='36px';
+   //                     snova2.style.wordSpacing='10px';
+     //                   snova2.style.textIndent='30px';           
+          //  snova2.style.height='0px';
+
             
-snova2.style.height='min-content';
-            snova2.innerHTML='<center><b><b>'+array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/></b>' +ar_tp[nm][nr-1][np][nom_t]+'</b></center>';
-           
-            snova.innerHTML=snova2.innerHTML+'<p>'+airan_n+on_tp_t(nom_t)+airan_e;
-                kn_tp_na_str_1.style.top=snova.clientHeight+30+'px';
+            snova.innerHTML='<div id="snova2"class="bbb"><b><center><big><big>'+array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/></big>' +ar_tp[nm][nr-1][np][nom_t]+'</big></center></b></div><p><div id="zad"class="bbb">'+airan_n+on_tp_t(nom_t)+airan_e+'</div>';
+               snova.style.height=snova2.clientHeight+zad.clientHeight+'px';
+            kn_tp_na_str_1.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_1.style.left='4px';
                         kn_tp_na_str_2.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_2.style.left='180px';
                         kn_tp_na_str_3.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_3.style.right='200px';
-                        //kn_tp_na_str_4.innerHTML='<b>Свернуть</b>';
+                        kn_tp_na_str_4.innerHTML='<b>Свернуть</b>';
                         kn_tp_na_str_4.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_5.style.position='sticky';
                         kn_tp_na_str_6.style.position='sticky';
