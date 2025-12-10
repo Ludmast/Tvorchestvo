@@ -1695,6 +1695,9 @@ ar_tp=
                     ,'Голуби'
                     ,'Попугаи'
                     ,'Павлины'
+                    //-----------------------------------
+                    //Рисуем людей
+                    ,''
                 ]
                 ,[
                     
@@ -3067,7 +3070,7 @@ dat=new Date();
     }
     //---------------------------------------------------------------------------------------------
     //создание кнопок, окон для метки и интеса
-    str +="<div id='ten_interes'></div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
+    str +="<div id='ten_interes'>Я же просила не мешай</div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
     //---------------------------------------------------------------------------------------------
     
     in_load_4.innerHTML = '<table><tr><td>'+str+'</td></tr></table>';

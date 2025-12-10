@@ -256,11 +256,74 @@ function p_videlen_0(deystvie, idnomer) {
 //=================================================================================================
 function smena_stranic_0() {
      
-    switch(smena_var){
+    if(osnova_razvernuta)switch(smena_var){
+        case 0:
+            smena_delimoe_gl=Math.floor(osnova.clientWidth/20);
+            smena_izmen_gl=-smena_delimoe_gl;
+            smena_index=0;
+            scroll(0,0);
+            snova=osnova;
+            smena_rab=true;
+            smena_var++;
+
+        break;
+        case 1:
+            if(smena_index<20){
+                smena_index++;
+                snova.style.left=smena_izmen_gl+'px';
+                smena_izmen_gl-=smena_delimoe_gl;
+            }else{
+                smena_index=0;
+            snova.style.left=snova.clientWidth+'px';
+            smena_izmen_gl=snova.clientWidth;
+            snova2=snova;
+            
+            
+snova2.style.height='min-content';
+            snova2.innerHTML='<center><b><b>'+array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/></b>' +ar_tp[nm][nr-1][np][nom_t]+'</b></center>';
+           
+            snova.innerHTML=snova2.innerHTML+'<p>'+airan_n+on_tp_t(nom_t)+airan_e;
+                kn_tp_na_str_1.style.top=snova.clientHeight+30+'px';
+                        kn_tp_na_str_1.style.left='4px';
+                        kn_tp_na_str_2.style.top=snova2.clientHeight+30+'px';
+                        kn_tp_na_str_2.style.left='180px';
+                        kn_tp_na_str_3.style.top=snova2.clientHeight+30+'px';
+                        kn_tp_na_str_3.style.right='200px';
+                        //kn_tp_na_str_4.innerHTML='<b>Свернуть</b>';
+                        kn_tp_na_str_4.style.top=snova2.clientHeight+30+'px';
+                        kn_tp_na_str_5.style.position='sticky';
+                        kn_tp_na_str_6.style.position='sticky';
+                        kn_tp_na_str_7.style.position='sticky';
+                        kn_tp_na_str_6.style.bottom=kn_tp_na_str_5.style.bottom
+                        kn_tp_na_str_4.style.right='2px';
+                        kn_tp_na_str_5.style.left='4px';
+                        kn_tp_na_str_6.style.left=kn_tp_na_str_2.style.left;
+                        kn_tp_na_str_7.style.left=osnova.clientWidth-kn_tp_na_str_3.clientWidth-2+'px';
+                        //kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
+                        //kn_tp_na_str_4.style.color=color_str_kn_nevidel;
+ 
+                        
+                        osnova.innerHTML=snova.innerHTML;
+                        smena_var++;
+            }
+
+        break;
+        case 2:
+            if(smena_index<20){
+                smena_index++;
+                snova.style.left=smena_izmen_gl+'px';
+                smena_izmen_gl-=smena_delimoe_gl;
+            }else{
+                snova.style.left='0px';
+                smena_rab=false;
+                smena_var=0;
+            }
+        break;
+    }else switch(smena_var){
         case 0:
         //bob.innerHTML=odin_na_stranice;
             
-            smena_delimoe_gl=(stranica.clientWidth+125)/10;
+            smena_delimoe_gl=Math.floor((stranica.clientWidth+125)/10);
             smena_izmen_gl= 30;
             smena_index=0;
              if(odin_na_stranice){
@@ -328,7 +391,7 @@ function smena_stranic_0() {
                 gl_p.style.left= razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =smena_izmen_gl+'px';
                 ten1_gl_p.style.left=ten2_gl_p.style.left=smena_izmen_gl+5+'px';
                 smena_index=0;
-                smena_delimoe_gl=(smena_izmen_gl-125)/10;
+                smena_delimoe_gl=Math.floor((smena_izmen_gl-125)/10);
                 smena_var++;
                 smena_index=0;
                 up();
@@ -450,7 +513,8 @@ kn.style.color=color_str_kn_nevidel;
                     odin_na_stranice=true;
                     if(ar_tp_text[nm][nr-1][np][nom_t][0]<nom_t){
                        nom_t--;
-                    smena_stranic_0();    
+                    
+                       smena_stranic_0();    
                     }
                      else {
                     
@@ -555,7 +619,8 @@ kn.style.color=color_str_kn_nevidel;
                         sam_text.style.textIndent='50px';
                         osnova.style.height=t_s.clientHeight+'px';
                         t_s.style.fontSize=pamyt_resurs[3];
-                        osnova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML;
+                        snova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML;
+                        osnova.innerHTML=snova.innerHTML;
                 }
                 break;
             }

@@ -17,6 +17,7 @@ body
  
 }
 #snova{
+    position: absolute;
     visibility: hidden;
     background-color: #00a010;
 }
@@ -751,9 +752,11 @@ position:absolute;
 
 #ten_interes{
     position:absolute;
-    background-color: black;
-    filter: blur(10px);
-    visibility:hidden;
+    left: 30px;
+    top:90px;
+    color:red;
+    font-size: 38px;
+    visibility:visible;
 }
 #interes_div{
     position:absolute;   
