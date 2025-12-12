@@ -274,19 +274,11 @@ function smena_stranic_0() {
                 smena_izmen_gl-=smena_delimoe_gl;
             }else{
                 smena_index=0;
-            snova.style.left=snova.clientWidth+'px';
+            {snova.style.left=snova.clientWidth+'px';
             smena_izmen_gl=snova.clientWidth;
-            snova2=snova;
-            
- //snova2.style.fontSize='36px';
-   //                     snova2.style.wordSpacing='10px';
-     //                   snova2.style.textIndent='30px';           
-          //  snova2.style.height='0px';
-
-            
             snova.innerHTML='<div id="snova2"class="bbb"><b><center><big><big>'+array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/></big>' +ar_tp[nm][nr-1][np][nom_t]+'</big></center></b></div><p><div id="zad"class="bbb">'+airan_n+on_tp_t(nom_t)+airan_e+'</div>';
-               snova.style.height=snova2.clientHeight+zad.clientHeight+'px';
-            kn_tp_na_str_1.style.top=snova2.clientHeight+30+'px';
+               snova.style.height=snova2.clientHeight+zad.clientHeight+100+'px';
+               kn_tp_na_str_1.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_1.style.left='4px';
                         kn_tp_na_str_2.style.top=snova2.clientHeight+30+'px';
                         kn_tp_na_str_2.style.left='180px';
@@ -301,10 +293,7 @@ function smena_stranic_0() {
                         kn_tp_na_str_4.style.right='2px';
                         kn_tp_na_str_5.style.left='4px';
                         kn_tp_na_str_6.style.left=kn_tp_na_str_2.style.left;
-                        kn_tp_na_str_7.style.left=osnova.clientWidth-kn_tp_na_str_3.clientWidth-2+'px';
-                        //kn_tp_na_str_4.style.backgroundColor=color_kn_nevidel;
-                        //kn_tp_na_str_4.style.color=color_str_kn_nevidel;
- 
+                        kn_tp_na_str_7.style.left=osnova.clientWidth-kn_tp_na_str_3.clientWidth-2+'px';}
                         
                         osnova.innerHTML=snova.innerHTML;
                         smena_var++;
@@ -538,6 +527,7 @@ kn.style.color=color_str_kn_nevidel;
                     break;
                 case 3:case 7:
                     odin_na_stranice=false;
+                    osnova_razvernuta=false;
                     np_1=np_2=np_3=0;
                     smena_var=0;
                     
@@ -549,11 +539,13 @@ kn.style.color=color_str_kn_nevidel;
                 
                 case 4:
                     if(osnova_razvernuta){
+                       
                         art_t='<div id="in_load_1"></div><div id="in_load_2"></div><table id="stranica"valign="top" onmousemove="stranica_izmen(3)" onmousedown="stranica_izmen(4)" onmouseup="stranica_izmen(5)"><tr><td id="text_stranici"><div id="t_s" class="tm"></div></td></tr></table><div id="in_load_3"></div><div id="in_load_4"></div>';
                         osnova.innerHTML=art_t;
                         Sait_load();
                         razdel_teni.style.maxWidth=razdel.style.maxWidth=osnova.clientWidth-okna.clientWidth-10+'px';
-                        razdel.innerHTML=razdel_teni.innerHTML=pamyt_resurs[0];
+                        razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
+                        razdel.style.left='10px';
                         ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
                         t_s.innerHTML=pamyt_resurs[1];
                         sam_text.style.textIndent='30px';
@@ -579,6 +571,7 @@ kn.style.color=color_str_kn_nevidel;
                         osnova_razvernuta=false; 
                     }else{
                         osnova_razvernuta=true;
+                        snova=snova1;
                         localStorage.setItem('nom_t',nom_t);
                         snova.style.width=osnova.clientWidth;
                         snova.style.visibility='visible';

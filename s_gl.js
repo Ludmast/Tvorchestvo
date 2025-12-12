@@ -1176,9 +1176,13 @@ ar_tp_up=
                 //---------------------
                 0,0,0,0,0,0,0,
                 0,0,0,0,0,0,
-                0,0,0,0,0,
-                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
                 0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+                0,0,0,0,0,0,
+                0,0,0,0,0,0,0,
+                0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
             ]
             ,[0,0,0,0,0]
             ,[0,0,0,0,0]
@@ -1653,9 +1657,10 @@ ar_tp=
                     ,'Игра со светом и тенью'
                     ,'Использование штрихов'
                     ,'Подключаем фантазию'
-                    ,'Используем снимки'
+                    ,'Используем фотографии'
                     //-----------------------------------
                     //Рисуем предметы
+                    ,'Рисование отдельных предметов'
                     ,'Груда книг'
                     ,'Стулья'
                     ,'Столы для письма'
@@ -1663,6 +1668,7 @@ ar_tp=
                     ,'Машины'
                     //-----------------------------------
                     //Рисуем растения
+                    ,'Рисование отдельных растений'
                     ,'Кувшинки'
                     ,'Кактусы'
                     ,'Сосновая шишка'
@@ -1681,6 +1687,7 @@ ar_tp=
                     ,'Ананас'
                     //-----------------------------------
                     //Рисуем животных
+                    ,'Рисование отдельных животных'
                     ,'Змей'
                     ,'Черепахи'
                     ,'Лошади'
@@ -1697,7 +1704,72 @@ ar_tp=
                     ,'Павлины'
                     //-----------------------------------
                     //Рисуем людей
-                    ,''
+                    ,'Особенности тела человека'
+                    ,'Анатомия человека'
+                    ,'Пропорции частей тела'
+                    ,'Перспектива'
+                    ,'Движение и равновесие'
+                    ,'Волосы и причёска'
+                    ,'Складки одежды'
+                    ,'Дети в игре'
+                    ,'Веселящиеся девушки'
+                    ,'Балерины'  
+                    ,'Акробаты'
+                    ,'Мужчины'
+                    ,'Спортсмены'
+                    ,'Старики'
+                    //-----------------------------------
+                    //Рисуем портреты
+                    ,'Композиция портрета'
+                    ,'Освещение'
+                    ,'Последовательность действий'
+                    ,'Детские портреты'
+                    ,'Портреты знаменитостей'
+                    ,'Портреты учёных'
+                    //-----------------------------------
+                    //Рисуем натюрморты
+                    ,'Расположение компонентов'
+                    ,'Освещение композиции'
+                    ,'Контраст текстур'
+                    ,'Новогодний стол'
+                    ,'Утренний чай'
+                    ,'Предкушающий вечер'
+                    ,'Милый букетик'
+                    //-----------------------------------
+                    //Рисуем пейзажи
+                    ,'Выбор темы'
+                    ,'Композиция пейзажа'
+                    ,'Первые наброски'
+                    ,'Отдельные пометки'
+                    ,'Скалы и камни'
+                    ,'Деревья и кусты'
+                    ,'Строения с перспективой'
+                    ,'Реки, поля, пустыни'
+                    ,'Незабываем про игру света и тени'
+                    ,'Контраст текстур'
+                    ,'Включаем воображение'
+                    ,'Возле реки'
+                    ,'Прогулка по парку'
+                    ,'Поляна голубей'
+                    ,'Перед "Молодёжным центром"'
+                    //-----------------------------------
+                    //-----------------------------------
+                    
+                    //-----------------------------------
+                    //Анатомия человека
+                    ,'Скелет'
+                    ,'Мышцы'
+                    //-----------------------------------
+                    //Пропорции частей тела
+                    ,'Общии прошорции у мужчин, женщин и Детей'
+                    ,'Корпус'
+                    ,'Нога'
+                    ,'Рука' 
+                    ,'Голова'
+                    ,'Глаза'
+                    ,'Нос'
+                    ,'Губы'
+                    ,'Уши' 
                 ]
                 ,[
                     
@@ -2355,12 +2427,99 @@ function on_tp_t(nomer_pt){
                                 case 5: pp=tp_to(66,77); break;
                                 case 6: pp=tp_to(77,84); break;
                                 //----------------------
+                                //Рисование в карандаше
                                 case 7: pp=array_text[nm][nr-1][np][2]; break;
                                 case 8: pp=tp_to(84,91); break;
                                 case 9: pp=tp_to(91,97); break;
-                                case 10: pp=tp_to(97,102); break;
-                                case 11: pp=tp_to(102,118); break;
-                                case 12: pp=tp_to(118,132); break;
+                                case 10: pp=tp_to(97,103); break;
+                                case 11: pp=tp_to(103,120); break;
+                                case 12: pp=tp_to(120,135); break;
+                                case 13: pp=tp_to(135,149); break;
+                                case 14: pp=tp_to(149,155); break;
+                                case 15: pp=tp_to(155,162); break;
+                                case 16: pp=tp_to(162,177); break;
+                                case 17:pp=array_text[nm][nr-1][np][2]; break;
+                                case 18:pp=array_text[nm][nr-1][np][2]; break;
+                                case 19: pp=array_text[nm][nr-1][np][nomer_pt-3]; break;
+                                //----------------------
+                                //Рисование красками
+                                case 20:pp=array_text[nm][nr-1][np][2]; break;
+                                case 21: pp=tp_to(162,177); break;
+                                case 22: pp=tp_to(162,177); break;
+                                case 23: pp=tp_to(162,177); break;
+                                case 24: pp=tp_to(162,177); break;
+                                case 25: pp=tp_to(162,177); break;
+                                case 26: pp=tp_to(162,177); break;
+                                case 27: pp=tp_to(162,177); break;
+                                case 28:pp=array_text[nm][nr-1][np][2]; break;
+                                case 29:pp=array_text[nm][nr-1][np][2]; break;
+                                case 30:pp=array_text[nm][nr-1][np][2]; break;
+                                //----------------------
+                                //Рисование сухой пастелью
+                                
+                                case 31:pp=array_text[nm][nr-1][np][2]; break;
+                                case 32:pp=array_text[nm][nr-1][np][2]; break;
+                                case 33: pp=tp_to(162,177); break;
+                                case 34:pp=array_text[nm][nr-1][np][2]; break;
+                                case 35:pp=tp_to(162,177); break;
+                                case 36:pp=tp_to(162,177); break;
+                                case 37:pp=tp_to(162,177); break;
+                                case 38:pp=array_text[nm][nr-1][np][2]; break;
+                                case 39:pp=array_text[nm][nr-1][np][2]; break;
+                                case 40:pp=array_text[nm][nr-1][np][2]; break;
+                                case 41:pp=array_text[nm][nr-1][np][2]; break;
+                                //----------------------
+                                //Рисование шерстью
+                                case 42:pp=array_text[nm][nr-1][np][2]; break;
+                                case 43:pp=array_text[nm][nr-1][np][2]; break;
+                                case 44:pp=array_text[nm][nr-1][np][2]; break;
+                                case 45:pp=tp_to(162,177); break;
+                                case 46: pp=array_text[nm][nr-1][np][2]; break;
+                                case 47:pp=tp_to(162,177); break;
+                                case 48:pp=tp_to(162,177); break;
+                                case 49:pp=tp_to(162,177); break;
+                                case 50:pp=array_text[nm][nr-1][np][2]; break;
+                                case 51:pp=array_text[nm][nr-1][np][2]; break;
+                                case 52:pp=array_text[nm][nr-1][np][2]; break;
+                                
+                                //----------------------
+                                //Рисование нитками
+                                case 53:pp=array_text[nm][nr-1][np][2]; break;
+                                case 54:pp=array_text[nm][nr-1][np][2]; break;
+                                case 55:pp=array_text[nm][nr-1][np][2]; break;
+                                case 56:pp=tp_to(162,177); break;
+                                case 57:pp=tp_to(162,177); break;
+                                case 58:pp=tp_to(162,177); break;
+                                case 59:pp=tp_to(162,177); break;
+                                case 60:pp=tp_to(162,177); break;
+                                case 61:pp=tp_to(162,177); break;
+                                case 62:pp=tp_to(162,177); break;
+                                case 63:pp=array_text[nm][nr-1][np][2]; break;
+                                case 64:pp=array_text[nm][nr-1][np][2]; break;
+                                case 65:pp=array_text[nm][nr-1][np][2]; break;
+                                //----------------------
+                                //Создание картин из ленточек
+                                
+                                case 66:pp=array_text[nm][nr-1][np][2]; break;
+                                case 67:pp=array_text[nm][nr-1][np][2]; break;
+                                case 68:pp=tp_to(162,177); break;
+                                case 69:pp=tp_to(162,177); break;
+                                case 70:pp=tp_to(162,177); break;
+                                case 71:pp=tp_to(162,177); break;
+                                case 72:pp=tp_to(162,177); break;
+                                case 73:pp=tp_to(162,177); break;
+                                case 74:pp=array_text[nm][nr-1][np][2]; break;
+                                case 75:pp=array_text[nm][nr-1][np][2]; break;
+                                case 76:pp=array_text[nm][nr-1][np][2]; break;
+                                //----------------------
+                                //Создание картин с помощью квиллинга 
+                                case 77:pp=array_text[nm][nr-1][np][2]; break;
+                                case 78:pp=array_text[nm][nr-1][np][2]; break;
+                                case 79:pp=tp_to(162,177); break;
+                                case 80:pp=tp_to(162,177); break;
+                                case 81:pp=array_text[nm][nr-1][np][2]; break;
+                                case 82:pp=array_text[nm][nr-1][np][2]; break;
+                                case 83:pp=array_text[nm][nr-1][np][2]; break;
                             }
                         break;
                         case 1://
@@ -2944,10 +3103,8 @@ function Sait_load() {
     if(localStorage.getItem('kn_n')){}else
         localStorage.setItem('kn_n',270);//размер панели с окнами
     kn_n=localStorage.getItem('kn_n');
-    //aa.src='s_1.js';
-//    if(dz==0)Sait_load_0();
-//    else{
-   if(osnova_razvernuta!=true) pamyt_resurs=['','','#306090',30,0,20,-2,-2,110,140,-2,-2];//запоминает t_s.innerHTML, osnova.заднийфон, fontSize, wordSpacing, textIndent, кнопки на t_s значение top у 4-х, bottom у оставшихся, и поочередно left и right
+
+    if(osnova_razvernuta!=true) pamyt_resurs=['','','#306090',30,0,20,-2,-2,110,140,-2,-2];//запоминает t_s.innerHTML, osnova.заднийфон, fontSize, wordSpacing, textIndent, кнопки на t_s значение top у 4-х, bottom у оставшихся, и поочередно left и right
     bob.style.overflowX = 'hidden';
     
     bob.style.backgroundColor=osnova.style.backgroundColor = '#306090';
@@ -2983,7 +3140,7 @@ chel_kolvo_p=0;
 dat=new Date();
 //---------------------------------------------------------------------------------------------
     //тень страницы
-    in_load_2.innerHTML = "<div id='snova'></div><div id='ten_stranici'></div><div id='ten'></div>";
+    in_load_2.innerHTML = "<div id='snova1'></div><div id='ten_stranici'></div><div id='ten'></div>";
  
     //---------------------------------------------------------------------------------------------
     //кнопка для возвращения назад на верх страницы и содержимое раздела по пунктам
@@ -3070,7 +3227,7 @@ dat=new Date();
     }
     //---------------------------------------------------------------------------------------------
     //создание кнопок, окон для метки и интеса
-    //str +="<div id='ten_interes'>Я же просила не мешай</div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
+    str +="<div id='ten_interes'></div><div id='interes_div'></div><canvas id='interes_treug'></canvas><div id='ten_metka'></div><div id='metka_div'></div><canvas id='metka_treug'></canvas>";
     //---------------------------------------------------------------------------------------------
     
     in_load_4.innerHTML = '<table><tr><td>'+str+'</td></tr></table>';
@@ -3087,7 +3244,7 @@ dat=new Date();
     //---------------------------------------------------------------------------------------------
     //  if (localStorage.getItem('w_s')) { } else localStorage.setItem('w_s', 650);//width_soderganiy_razdela
     //---------------------------------------------------------------------------------------------
-   if(osnova_razvernuta==false){
+   
         if(localStorage.getItem('svo')){}else
         localStorage.setItem('svo',1);//содержание раздела + выбранная страница + один = true-0 + false-1
         svo=localStorage.getItem('svo');
@@ -3111,12 +3268,12 @@ dat=new Date();
     nm=localStorage.getItem('nm');
     nr=localStorage.getItem('nr');
     np=localStorage.getItem('np');
-
+//if(osnova_razvernuta==false){
     np_1=localStorage.getItem('np_1');
     np_2=localStorage.getItem('np_2');
     np_3=localStorage.getItem('np_3');
     
-   }   
+  // }   
     pamyt_istorii='<p>'+tistor_telo(localStorage.getItem('nn'));
     localStorage.setItem('nn', localStorage.getItem('nn') - 0 + 1);
 
@@ -3202,8 +3359,9 @@ okno_name_besedi.innerHTML = 'Беседы';
  
         if(np_3>0){
             if(np_2>0){
-                if(np_1==1&&np_3==1)document.getElementById('t_s').innerHTML = on_tp_t(np_2-4);
-                else  document.getElementById('t_s').innerHTML = on_tp_t(np_2);//chel_yr(np_1,np_2,np_3);
+                //if(np_1==1&&np_3==1)
+                document.getElementById('t_s').innerHTML = on_tp_t(np_2-4);
+                //else  document.getElementById('t_s').innerHTML = on_tp_t(np_2);//chel_yr(np_1,np_2,np_3);
             }
             else document.getElementById('t_s').innerHTML = chel_rab(localStorage.getItem('np_1')-1,localStorage.getItem('np_3')-1);
         }
@@ -3225,6 +3383,8 @@ okno_name_besedi.innerHTML = 'Беседы';
     //---------------------------------------------------------------------------------------------
     //имя с тенью раздела сайта на который перешли
     if(odin_na_stranice){
+    
+        
         if(np_3>0||np_2>0)document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML =ar_ym[np_1-1][1];
         else
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML ='Один из умельцев';
@@ -3252,6 +3412,7 @@ okno_name_besedi.innerHTML = 'Беседы';
    
     localStorage.setItem('l_p', 0);  //left_pomoshnik
     pomoshnik_go(0);
+   
     ten_line_pomoshnik.style.top=innerHeight-60+'px';
     line_pomoshnik.style.top=innerHeight-73+'px';
     //---------------------------------------------------------------------------------------------
@@ -3267,6 +3428,7 @@ okno_name_besedi.innerHTML = 'Беседы';
     m_os.innerHTML = array_menu[0][2];
     m_s.innerHTML = array_menu[0][3];
     //---------------------------------------------------------------------------------------------
+   
     osnova_razvernuta=false;
     
     setTimeout('sait_load_dopolnit()', 10);
@@ -3321,7 +3483,7 @@ function sait_load_dopolnit() {
     
     //---------------------------------------------------------------------------------------------
     //interes_treug.style.visibility='hidden';
-/*     in_tr=interes_treug.getContext('2d');
+     in_tr=interes_treug.getContext('2d');
 
       interes_treug.width=20;
     interes_treug.height=20;
@@ -3375,7 +3537,7 @@ in_tr.stroke();
     met_tr.moveTo(10,0);
     met_tr.lineTo(15,20);
 met_tr.stroke();
-*/
+
  
     //---------------------------------------------------------------------------------------------
     stranici_right = stranica_left + stranica.clientHeight;
