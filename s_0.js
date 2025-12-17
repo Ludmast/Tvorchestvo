@@ -615,7 +615,8 @@ kn.style.color=color_str_kn_nevidel;
                         sam_text.style.textIndent='50px';
                         osnova.style.height=t_s.clientHeight+'px';
                         t_s.style.fontSize=pamyt_resurs[3];
-                        snova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML;
+                        snova.innerHTML=snova.innerHTML+'<p>'+t_s.innerHTML+'<div id="shporgalki_v"class="c_shpor"></div>';
+                        shporgalki_v.innerHTML=shporgalki.innerHTML;
                         osnova.innerHTML=snova.innerHTML;
                 }
                 break;
