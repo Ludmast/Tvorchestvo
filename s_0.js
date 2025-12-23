@@ -263,7 +263,7 @@ function smena_stranic_0() {
     if(odin>1)switch(smena_var){
         case 0:
             smena_izmen_gl=0;
-            smena_delimoe_gl=Math.floor(osnova.clientWidth/20);
+            smena_delimoe_gl=Math.floor(osnova.clientWidth/10);
             smena_izmen_gl=-smena_delimoe_gl;
             smena_index=0;
             scroll(0,0);
@@ -273,7 +273,7 @@ function smena_stranic_0() {
 
         break;
         case 1:
-            if(smena_index<20){
+            if(smena_index<10){
                 smena_index++;
                 
                 document.getElementById('zagol').style.left=smena_izmen_gl+'px';
@@ -298,7 +298,7 @@ zagol.style.left=smena_izmen_gl+'px';
 
         break;
         case 2:
-            if(smena_index<20){
+            if(smena_index<10){
                 smena_index++;
                 zagol.style.left=smena_izmen_gl+'px';
                 text_osnov.style.left=smena_izmen_gl+'px';
@@ -306,7 +306,7 @@ zagol.style.left=smena_izmen_gl+'px';
             }else{
                 text_osnov.style.left='0px';
                 //zagol.style.left='0px';
-                zagol.style.left=Math.floor((osnova.clientWidth-zagol.clientWidth)/2)+'px';
+                zagol.style.left=(osnova.clientWidth-zagol.clientWidth>0?Math.floor((osnova.clientWidth-zagol.clientWidth)/2):1)+'px';
                 smena_rab=false;
                 smena_var=0;
             }
@@ -387,6 +387,7 @@ zagol.style.left=smena_izmen_gl+'px';
                 smena_izmen_gl=osnova.clientWidth;
                 gl_p.style.left= razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =smena_izmen_gl+'px';
                 ten1_gl_p.style.left=ten2_gl_p.style.left=smena_izmen_gl+5+'px';
+                //stranica.style.top=razdel.clientHeight+'px';
                 smena_index=0;
                 smena_delimoe_gl=Math.floor((smena_izmen_gl-125)/10);
                 smena_var++;
@@ -414,8 +415,9 @@ zagol.style.left=smena_izmen_gl+'px';
                 {
                     ten1_gl_p.style.left=ten2_gl_p.style.left= gl_p.style.left='30px';
                     ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left='40px';
+                    
                 }
-
+                if(odin==1)ten_stranici.style.top=stranica.style.top= razdel.offsetTop+razdel.clientHeight+10+'px';
                 razdel.style.left=razdel_teni.style.left='10px';
                 
                 ten_stranici.style.left = stranica.style.left='125px';
@@ -459,12 +461,12 @@ function on_str_0() {
         
 }else{    
          
-            if(np_2>0){
+           /* if(np_2>0){
                 razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
                 arra =chel_all_yr(np_1-1);
             }else{
             }
-
+*/
                    
          razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
                     ar='';ark='';
@@ -543,9 +545,10 @@ kn.style.color=color_str_kn_nevidel;
                     if(odin<2){
                         ten_stranici.style.top=stranica.style.top='240px';
                         smena_var=0;
-                        odin=0;
+                        
                         pamyt_tp_scroll=0;
                         smena_stranic_0();
+                        odin=0;
                     }
                     else {
                         odin=0;
