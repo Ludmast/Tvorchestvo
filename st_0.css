@@ -303,127 +303,51 @@ position:absolute;
     bottom: 0px;
 
 }
-#kn_tp_na_str_1{
-    position:absolute;
-    top:-2px;
-    left:-2px;
+#porydok{
+    padding: 0px;
     
+
+}
+#kn_tp_na_str_1,#kn_tp_na_str_2,#kn_tp_na_str_3,#kn_tp_na_str_4,#kn_tp_na_str_5,#kn_tp_na_str_6,#kn_tp_na_str_7,#kn_tp_na_str_8{
+    position:absolute;
     border:2px solid #136;
     background-color: #d0e0ff;
     border-radius: 5px;
    padding-right: 15px;
     padding-left: 15px;
    padding-bottom: 3px;
-    
+ text-indent: 0px;   
    text-align: center;
     overflow:hidden ;
     cursor:pointer;
+}
 
+#kn_tp_na_str_1{
+    left:-2px;
 }
 #kn_tp_na_str_2{
-    position:absolute;
-    top:-2px;
     left: 110px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-   
-   text-align: center;
-    overflow:hidden ;
-    cursor:pointer;
-
 }
 #kn_tp_na_str_3{
-    position:absolute;
-    top:-2px;
     right: 140px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-    
-   text-align: center;
-    overflow:hidden ;
-    cursor:pointer;
-
 }
 
 #kn_tp_na_str_4{
-    position:absolute;
-    top:-2px;
     right:-2px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-    
-   
-    overflow:hidden ;
-    cursor:pointer;
-
 }
 #kn_tp_na_str_5{
-    position:absolute;
-    bottom:-2px;
     left:-2px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-    
-   text-align: center;
-    overflow:hidden ;
-    cursor:pointer;
-
 }
 #kn_tp_na_str_6{
-    position:absolute;
-    bottom:-2px;
     left: 110px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-   
-   text-align: center;
-    overflow:hidden ;
-    cursor:pointer;
-
 }
 #kn_tp_na_str_7{
-    position:absolute;
-    bottom:-2px;
-    right: -2px;
-    
-    border:2px solid #136;
-    background-color: #d0e0ff;
-    border-radius: 5px;
-   padding-right: 15px;
-    padding-left: 15px;
-   padding-bottom: 3px;
-    
-   text-align: center;
-    overflow:hidden ;
-    cursor:pointer;
-
+    right: 200px;
 }
-
+#kn_tp_na_str_8{
+    
+    right: -2px;
+}
 
 #ten_kn_nazad_0 {
     position: absolute;
