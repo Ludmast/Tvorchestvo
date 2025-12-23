@@ -5349,7 +5349,7 @@ function menu_(deistvie, nomer, idnomer) {
             else {
                 m[nomer].style.backgroundColor = color_okna;
                 m[nomer].style.color = 'black';
-                if (event.clientY < 40)menu_vis(idnomer,0);
+                if (event.clientY < 42)menu_vis(idnomer,0);
             }
             break;
         //-----------------------------------------------------------------------------------------
@@ -5361,10 +5361,10 @@ function menu_(deistvie, nomer, idnomer) {
                 else if (idnomer == 3 && m_s_0.style.visibility == 'hidden') menu_vis(3, 1);
             }
             else {
-                if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 28 || event.clientX < ms[0][2] + 4 || event.clientX > ms[0][2] + document.getElementById(ms[0][0] + '_0').clientWidth - 4) menu_vis(0, 0); }
-                if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 28 || event.clientX < ms[1][2] + 4 || event.clientX > ms[1][2] + document.getElementById(ms[1][0] + '_0').clientWidth - 4) menu_vis(1, 0); }
-                if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 28 || event.clientX < ms[2][2] + 4 || event.clientX > ms[2][2] + document.getElementById(ms[2][0] + '_0').clientWidth - 4) menu_vis(2, 0); }
-                if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 28 || event.clientX < ms[3][2] + 4 || event.clientX > ms[3][2] + document.getElementById(ms[3][0] + '_0').clientWidth - 4) menu_vis(3, 0); }
+                if (m_g_0.style.visibility == 'visible') { if (event.clientY > (ms[0][1] + 1) * text_size - 34 || event.clientX < ms[0][2] + 4 || event.clientX > ms[0][2] + document.getElementById(ms[0][0] + '_0').clientWidth - 4) menu_vis(0, 0); }
+                if (m_y_0.style.visibility == 'visible') { if (event.clientY > (ms[1][1] + 1) * text_size - 34 || event.clientX < ms[1][2] + 4 || event.clientX > ms[1][2] + document.getElementById(ms[1][0] + '_0').clientWidth - 4) menu_vis(1, 0); }
+                if (m_os_0.style.visibility == 'visible') { if (event.clientY > (ms[2][1] + 1) * text_size - 34 || event.clientX < ms[2][2] + 4 || event.clientX > ms[2][2] + document.getElementById(ms[2][0] + '_0').clientWidth - 4) menu_vis(2, 0); }
+                if (m_s_0.style.visibility == 'visible') { if (event.clientY > (ms[3][1] + 1) * text_size - 34 || event.clientX < ms[3][2] + 4 || event.clientX > ms[3][2] + document.getElementById(ms[3][0] + '_0').clientWidth - 4) menu_vis(3, 0); }
             }
             break;
         //-----------------------------------------------------------------------------------------
@@ -5383,12 +5383,15 @@ function menu_(deistvie, nomer, idnomer) {
             else if(svo==2)smena_deistvie=2;
             else if(svo==3)smena_deistvie=3;
             ten_stranici.style.top=stranica.style.top='240px';
+        odin=0;
+        localStorage.setItem('odin',0);
             switch(dz){
-        case 1:smena_stranic_1();break;
+        
+                case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
     
     }
-odin_na_stranice=false;
+//odin_na_stranice=false;
             
             np_1=0;
             np_2=0;
@@ -6104,6 +6107,7 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
             document.getElementById('ten_kn_tp_'+name_kn).style.visibility='hidden';
     smena_deistvie=6;
     odin=1;
+    localStorage.setItem('odin',odin);
      smena_var=0;
     //bob.innerHTML=;//document.getElementById('kn_tp_'+name_kn);
             
@@ -6116,7 +6120,8 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
     ;
    ar_tp_up[nm][nr-1][np][nomer_kn]=1;
    //document.getElementById('tp_'+name_kn+'_telo').scrollIntoView({block:'center'});
-   pamyt_tp_scroll=scrollY;  
+   
+   pamyt_tp_scroll=document.getElementById('kn_tp_'+name_kn).offsetTop;  
    tp_scroll=0;
    //bob.innerHTML=ar_tp_up[nm][nr-1][np][nomer_kn];
    //bob.innerHTML=pamyt_tp_scroll;
@@ -6137,6 +6142,7 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
 }
 tp_scroll=0;
 pamyt_tp_scroll=0;
+v_razdel=false;
 //=================================================================================================
 function on_tp(deistvie, nomer) {
     name=nm+'_'+(nr-1)+'_'+np+'_'+nomer;  
@@ -6169,8 +6175,8 @@ function tp_telo(nomer_p) {
 function tp_telos(deistvie_ps,nomer_ps){
     //deistvie_ps=tp_up(nomer_ps);
     name_ps = nm + '_' + (nr-1) + '_' + np+'_'+nomer_ps;
-    if(deistvie_ps==0) document.getElementById('tp_'+name_ps+'_telo').innerHTML='<div id="tp_'+name_ps+'" class="paragraf" onmouseover="on_tp(1,'+nomer_ps+')"onmouseout="on_tp(2,'+nomer_ps+')"onmousedown="tp_telos(1,'+nomer_ps+')">' +ar_tp[nm][nr-1][np][nomer_ps]+'</div>';
-    else document.getElementById('tp_'+name_ps+'_telo').innerHTML= '<div id="tp_'+name_ps+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_ps + ')"onmouseout="on_tp(4,' + nomer_ps + ')"onmousedown="tp_telos(0,'+nomer_ps+')">'+ar_tp[nm][nr-1][np][nomer_ps]+'</div><div id="ten_kn_tp_'+name_ps+'"class="c_ten_kn_tp"></div><div id="kn_tp_'+name_ps+'"class="c_kn_tp" onmouseover="on_kn_tp(1,' + nomer_ps + ')"onmouseout="on_kn_tp(2,' + nomer_ps + ')"onmousedown="on_kn_tp(4,'+nomer_ps+')"><div id="svet_tp_'+name_ps+'"class="c_svet_tp"></div><div id="ris_tp_'+name_ps+'"class="c_ris_tp"></div><div id="ten_tp_'+name_ps+'"class="c_ten_tp"></div></div><p><hr width="100%"size="2"color="black"/><p>'+on_tp_t(nomer_ps)+'<hr width="100%"size="2"color="black"/>';
+    if(deistvie_ps==0) {document.getElementById('tp_'+name_ps+'_telo').innerHTML='<div id="tp_'+name_ps+'" class="paragraf" onmouseover="on_tp(1,'+nomer_ps+')"onmouseout="on_tp(2,'+nomer_ps+')"onmousedown="tp_telos(1,'+nomer_ps+')">' +ar_tp[nm][nr-1][np][nomer_ps]+'</div>';ar_tp_up[nm][nr-1][np][nomer_ps]=0;}
+    else {document.getElementById('tp_'+name_ps+'_telo').innerHTML= '<div id="tp_'+name_ps+'_v" class="paragraf_v" onmouseover="on_tp(3,' + nomer_ps + ')"onmouseout="on_tp(4,' + nomer_ps + ')"onmousedown="tp_telos(0,'+nomer_ps+')">'+ar_tp[nm][nr-1][np][nomer_ps]+'</div><div id="ten_kn_tp_'+name_ps+'"class="c_ten_kn_tp"></div><div id="kn_tp_'+name_ps+'"class="c_kn_tp" onmouseover="on_kn_tp(1,' + nomer_ps + ')"onmouseout="on_kn_tp(2,' + nomer_ps + ')"onmousedown="on_kn_tp(4,'+nomer_ps+')"><div id="svet_tp_'+name_ps+'"class="c_svet_tp"></div><div id="ris_tp_'+name_ps+'"class="c_ris_tp"></div><div id="ten_tp_'+name_ps+'"class="c_ten_tp"></div></div><p><hr width="100%"size="2"color="black"/><p>'+on_tp_t(nomer_ps)+'<hr width="100%"size="2"color="black"/>';ar_tp_up[nm][nr-1][np][nomer_ps]=1;}
     up();
 }    
 //=================================================================================================

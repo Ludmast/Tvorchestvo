@@ -363,7 +363,11 @@ zagol.style.left=smena_izmen_gl+'px';
                 
                 localStorage.setItem('np_2',np_2);
                 localStorage.setItem('np_3',np_3);
-                scroll(0, tp_scroll);
+                if(v_razdel){
+                    v_razdel=false;
+//if(innerHeight>pamyt_tp_scroll)
+    scroll(0,pamyt_tp_scroll);
+                }else scroll(0, 0);
            
                 if(odin==0){//_na_stranice==false){
                     ten1_gl_p.style.visibility=
@@ -518,8 +522,9 @@ kn.style.color=color_str_kn_nevidel;
                     
                     //odin=1;//_na_stranice=true;
                     if(ar_tp_text[nm][nr-1][np][nom_t][0]<nom_t){
-                       nom_t--;
-                    
+                    ar_tp_up[nm][nr-1][np][nom_t]=0;
+                        nom_t--;
+                    ar_tp_up[nm][nr-1][np][nom_t]=1;
                        smena_stranic_0();    
                        
                     } else {
@@ -534,8 +539,9 @@ kn.style.color=color_str_kn_nevidel;
                     //odin=1;//_na_stranice=true;
                     //bob.innerHTML=nom_t;
                     if(ar_tp_text[nm][nr-1][np][nom_t][1]>nom_t){
-                        
+                        ar_tp_up[nm][nr-1][np][nom_t]=0;
                         nom_t++;
+                        ar_tp_up[nm][nr-1][np][nom_t]=1;
                         smena_stranic_0();
                     } else{
                         on_kn_tp_na_str(4,3);
@@ -546,9 +552,11 @@ kn.style.color=color_str_kn_nevidel;
                         ten_stranici.style.top=stranica.style.top='240px';
                         smena_var=0;
                         
-                        pamyt_tp_scroll=0;
+                        v_razdel=true;
                         smena_stranic_0();
+                        
                         odin=0;
+                        localStorage.setItem('odin',odin);
                     }
                     else {
                         odin=0;
