@@ -363,12 +363,13 @@ zagol.style.left=smena_izmen_gl+'px';
                 
                 localStorage.setItem('np_2',np_2);
                 localStorage.setItem('np_3',np_3);
-                if(v_razdel){
-                    v_razdel=false;
+                //if(v_razdel){
+                //    v_razdel=false;
+                //    bob.innerHTML='yra'; 
 //if(innerHeight>pamyt_tp_scroll)
     scroll(0,pamyt_tp_scroll);
-                }else scroll(0, 0);
-           
+                //}else scroll(0, 0);
+             // bob.innerHTML='yra'; 
                 if(odin==0){//_na_stranice==false){
                     ten1_gl_p.style.visibility=
                     ten2_gl_p.style.visibility=
@@ -389,8 +390,10 @@ zagol.style.left=smena_izmen_gl+'px';
                     
                // bob.innerHTML=nomer_str_nazad;
                 smena_izmen_gl=osnova.clientWidth;
-                gl_p.style.left= razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =smena_izmen_gl+'px';
+                if(odin==0){
+                    gl_p.style.left= razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =smena_izmen_gl+'px';
                 ten1_gl_p.style.left=ten2_gl_p.style.left=smena_izmen_gl+5+'px';
+                }
                 //stranica.style.top=razdel.clientHeight+'px';
                 smena_index=0;
                 smena_delimoe_gl=Math.floor((smena_izmen_gl-125)/10);
@@ -422,6 +425,7 @@ zagol.style.left=smena_izmen_gl+'px';
                     
                 }
                 if(odin==1)ten_stranici.style.top=stranica.style.top= razdel.offsetTop+razdel.clientHeight+10+'px';
+                
                 razdel.style.left=razdel_teni.style.left='10px';
                 
                 ten_stranici.style.left = stranica.style.left='125px';
@@ -437,56 +441,69 @@ zagol.style.left=smena_izmen_gl+'px';
 function on_str_0() {
   ar='';ark='';
         arra='';
-      if(odin>0){
-    if(nm==0&&nr==3){
-          razdel.innerHTML=razdel_teni.innerHTML='Один из умельцев';//else razdel.innerHTML=razdel_teni.innerHTML='Один'; 
-                arra =chel(localStorage.getItem('np_1')-1);// array_text[0][2][6][0][0];
-      
-}else if(nm==1&&nr==1){
-   switch(np){
+    
+        if(odin==1){
+               
+            zag=document.getElementById('razdel');
+            tex=document.getElementById('t_s');
+            
+        }else{
+            zag=document.getElementById('zagol');
+            tex=document.getElementById('text_osnov');
+        }
+if(odin>0){
+        if(np_1!=0&&np_2==0){
+            
+            zag.innerHTML='Один из умельцев';//else razdel.innerHTML=razdel_teni.innerHTML='Один'; 
+            tex.innerHTML=chel(localStorage.getItem('np_1')-1);
+            localStorage.setItem('np_1',np_1);
+            if(odin==1){
+                razdel_teni.innerHTML=zag.innerHTML;
+                text_stranici.style.paddingTop='30px';
+            }
+        } else if(np_1!=0&&np_2!=0){
+            
+            zag.innerHTML=ar_ym[np_1-1][1];
+            localStorage.setItem('np_1',np_1);
+            localStorage.setItem('np_2',np_2);
+            localStorage.setItem('np_3',np_3);
+            if(odin==1)razdel_teni.innerHTML=zag.innerHTML;
+            
+            switch(np_2){
                 case 1:
-                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    arra=chel_rab(np_1-1,np_3-1);
-                    //bob.innerHTML=np_1;
-                break;
-                case 2:
-                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    arra =chel_yr(np_1-1,np_3-1);
-                break;
-                case 3:
-                    razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                    arra =chel_inter(np_1-1,np_3-1);
+                    tex.innerHTML=chel_rab(np_1-1,np_3-1);
                     
                 break;
+                case 2:
+                    tex.innerHTML=chel_yr(np_1-1,np_3-1);
+                break;
+                case 3:
+                    tex.innerHTML =chel_inter(np_1-1,np_3-1);
+                break;
                 case 4:
-                   
+                    tex.innerHTML=chel_all_yr(np_1-1);
                 break;
             }
-        
-}else{    
+            
+        }else{    
          
-           /* if(np_2>0){
-                razdel.innerHTML=razdel_teni.innerHTML=ar_ym[np_1-1][1];
-                arra =chel_all_yr(np_1-1);
-            }else{
-            }
-*/
+            
                    
-         razdel.innerHTML=razdel_teni.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
-                    ar='';ark='';
-                    if(nm-0==0&&nr-0==1&&(np==0||(np==1&&nom_t==0))){ar=array_text[0][0][0][26];ark='"';}
-                  
-                    arra=on_tp_t(nom_t);            
-         //           razdel_teni.style.maxWidth=razdel.style.maxWidth=osnova.clientWidth-okna.clientWidth-10+'px';
-                    ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
-        document.getElementById('t_s').innerHTML=ark+arra+ar;
-        //sam_text.style.textIndent='30px';
-        //if(np_2==3)for(iaa=1;iaa<ar_int[np_1-1][np_3-1].length;iaa++)if(document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).clientWidth+50>ten_stranici.clientWidth)document.getElementById('img_iz_int_'+(np_1-1)+'_'+(np_3-1)+'_'+iaa).style.width=ten_stranici.clientWidth-50+'px';                        
-        
-        text_stranici.style.paddingTop= 10+'px';
-        osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
-}    } else{
-         text_str();
+            zag.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t]+'</small>';
+            //bob.innerHTML='yra';
+            ar='';ark='';
+            if(nm-0==0&&nr-0==1&&(np==0||(np==1&&nom_t==0))){ar=array_text[0][0][0][26];ark='"';}
+            arra=on_tp_t(nom_t);            
+            tex.innerHTML=ark+arra+ar;
+            if(odin==1){
+                razdel_teni.innerHTML=zag.innerHTML;
+                ten_stranici.style.top=stranica.style.top=razdel.clientHeight+150+'px';
+                text_stranici.style.paddingTop= 10+'px';
+                osnova.style.height=osnova.clientHeight-gl_p.clientHeight+30+'px';
+            }
+        }
+}else{
+        text_str();
         switch(dz){
             case 1:soderg_razdela_1();break;
             default:soderg_razdela_0();break;
@@ -494,8 +511,7 @@ function on_str_0() {
         document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
         ten1_gl_p.style.left= gl_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2+'px';
         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2-60+'px';
-        
-    }
+    }    
 }
 //=================================================================================================
 function on_kn_tp_na_str(deistvie_kn_tp,n_kn){
@@ -506,13 +522,13 @@ function on_kn_tp_na_str(deistvie_kn_tp,n_kn){
     kn=document.getElementById('kn_tp_na_str_'+n_kn);
     switch(deistvie_kn_tp){
         case 1://over
-kn.style.backgroundColor=color_kn_videl;
-kn.style.color=color_kn_nevidel;
+            kn.style.backgroundColor=color_kn_videl;
+            kn.style.color=color_kn_nevidel;
 
         break;
         case 2://out
-kn.style.backgroundColor=color_kn_nevidel;
-kn.style.color=color_str_kn_nevidel;
+            kn.style.backgroundColor=color_kn_nevidel;
+            kn.style.color=color_str_kn_nevidel;
 
         break;
         case 4://down
@@ -520,7 +536,7 @@ kn.style.color=color_str_kn_nevidel;
                 case 1:case 5:
                     smena_var=0;
                     
-                    //odin=1;//_na_stranice=true;
+                    
                     if(ar_tp_text[nm][nr-1][np][nom_t][0]<nom_t){
                     ar_tp_up[nm][nr-1][np][nom_t]=0;
                         nom_t--;
@@ -552,7 +568,7 @@ kn.style.color=color_str_kn_nevidel;
                         ten_stranici.style.top=stranica.style.top='240px';
                         smena_var=0;
                         
-                        v_razdel=true;
+                        //v_razdel=true;
                         smena_stranic_0();
                         
                         odin=0;
@@ -576,6 +592,7 @@ kn.style.color=color_str_kn_nevidel;
                         
                         localStorage.setItem('odin',2);
                         localStorage.setItem('nom_t',nom_t);
+                       
                         Sait_load();
                 }
                 break;

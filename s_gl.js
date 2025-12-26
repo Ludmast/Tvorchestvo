@@ -338,8 +338,9 @@ ar_ts=
                     ,'<b>"Справка / Инструкция по сайту / Боковая панель с окнами"</b>'
                     ,'<b>"Справка / Инструкция по сайту"</b>'
                 ]
-                ,[
-                    'Перейти в раздел'
+                ,
+                [
+                    'Перейти в данный раздел'
                 ]
             ]
             ,[
@@ -522,44 +523,43 @@ array_text =
                     ,'<p>Ещё не написан'
                     ,'<dd><p>Изучаю информатику со школьной скамьи. Первой игрушкой запрограммированной мной на Basic стал лаберинт. Сейчас уже знаю много языков программирования и хочу поделиться своими знаниями с окружающими.'+
                      '<p>Но информатика не ограничивается только знанием программных языков. Она затрагивает всё, что связанно с компьютерами на начальном уровне. Здесь представленны только мои навыки работы в этой сфере.</dd>'
-              
-                    ,'<span id="ts_0_0_2_3" class="ssilka" onmousedown = "on_ts_0_0_2(3)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_4" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_5" class="ssilka" onmousedown = "on_ts_0_0_2(5)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_6" class="ssilka" onmousedown = "on_ts_0_0_2(6)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_7" class="ssilka" onmousedown = "on_ts_0_0_2(7)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_8" class="ssilka" onmousedown = "on_ts_0_0_2(8)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_9" class="ssilka" onmousedown = "on_ts_0_0_2(9)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_10" class="ssilka" onmousedown = "on_ts_0_0_2(10)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_11" class="ssilka" onmousedown = "on_ts_0_0_2(11)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_12" class="ssilka" onmousedown = "on_ts_0_0_2(12)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_13" class="ssilka" onmousedown = "on_ts_0_0_2(13)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_14" class="ssilka" onmousedown = "on_ts_0_0_2(14)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_15" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_16" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_17" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_18" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_19" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_20" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_21" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_22" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_23" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_24" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_25" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_26" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_27" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_28" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_29" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_30" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_31" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_32" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_33" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_34" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_35" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_36" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_37" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_38" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
-                    ,'<span id="ts_0_0_2_39" class="ssilka" onmousedown = "on_ts_0_0_2(4)" onmouseover="on_ts(1,0,0,2,5)" onmouseout="on_ts(2,0,0,2,5)">Перейти в раздел</span><p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
+                    ,'<p>Ещё не написан'
                     
                     
 
@@ -3443,9 +3443,8 @@ function on_tp_t(nomer_pt){
                                 case 1:pp=tp_t2(ar1,ar2);break;
                                 case 2:pp=tp_t2(ar2,ar3);break;
                                 case 3:pp=tp_t2(ar3,ar4);break;
-                                case 4:pp=array_text[0][0][2][2];break;
-                                case 5:pp=array_text[0][0][2][3];break;
-                                default:pp=array_text[0][0][2][nomer_pt-2];break;
+                                case 4:case 5:case 6:pp=array_text[0][0][2][nomer_pt-2];break; 
+                                default:pp=ts_telo(nomer_pt-7)+ array_text[0][0][2][nomer_pt-2];break;
                             }
                         break;
                         case 3:
@@ -4549,6 +4548,14 @@ function on_ts_t(nomer){
                                 case 5:nm = 3; nr = 1;np = 0;break;
                             }
                         break;
+                        case 2:
+                            switch(nomer){
+                                case 0:case 1:case 2:case 3:case 4:case 5:case 6:nm=0;nr=nomer+1;np=0;break;
+                                case 7:case 8:case 9:case 10:case 11:case 12:case 13:case 14:case 15:case 16:case 17:case 18:case 19:case 20:case 21:case 22:case 23:case 24:case 25:case 26:case 27:case 28:case 29:nm=1;nr=nomer-6;np=0;break;
+                                case 30:case 31:case 32:nm=2;nr=nomer-29;np=0;break;
+                                case 33:case 34:case 35:nm=3;nr=nomer-32;np=0;break;
+                            }
+                        break;
                     }
                 break;
             }
@@ -4673,7 +4680,7 @@ ar_np_1=
 ]
 //=================================================================================================
 function Sait_load() {
-
+    
     if(localStorage.getItem('odin')){}else
         localStorage.setItem('odin',0);//0-не один,1-один на странице,2-один на сайте
     odin=localStorage.getItem('odin');
@@ -4684,11 +4691,11 @@ function Sait_load() {
         localStorage.setItem('nr', 1);//nomer_razdela_v_menu (r_p)
     if (localStorage.getItem('np')) { } else
         localStorage.setItem('np', 0);//nomer_punkta_v_razdele (n_r)
-    //if(localStorage.getItem('np_1')){}else
+    if(localStorage.getItem('np_1')){}else
     localStorage.setItem('np_1',0);//nomer_paragraf_1_v_punkte
-    //if(localStorage.getItem('np_2')){}else
+    if(localStorage.getItem('np_2')){}else
     localStorage.setItem('np_2',0);//nomer_paragraf_2_v_punkte
-    //if(localStorage.getItem('np_3')){}else
+    if(localStorage.getItem('np_3')){}else
     localStorage.setItem('np_3',0);//nomer_paragraf_3_v_punkte
     localStorage.setItem('nn', 1);//nomer_name
     nm=localStorage.getItem('nm');
@@ -4727,9 +4734,9 @@ if(localStorage.getItem('not')){}else
         kn_tp_na_str_4.style.right=kn_tp_na_str_8.style.right='5px';
 
         kn_tp_na_str_3.style.right=kn_tp_na_str_7.style.right=kn_tp_na_str_4.clientWidth+10+'px';
-kn_tp_na_str_1.style.top=kn_tp_na_str_2.style.top=kn_tp_na_str_3.style.top=kn_tp_na_str_4.style.top=zagol.clientHeight+30+'px';
+        kn_tp_na_str_1.style.top=kn_tp_na_str_2.style.top=kn_tp_na_str_3.style.top=kn_tp_na_str_4.style.top=zagol.clientHeight+30+'px';
         kn_tp_na_str_5.style.bottom=kn_tp_na_str_6.style.bottom=kn_tp_na_str_7.style.bottom=kn_tp_na_str_8.style.bottom='10px';
- if(osnova.clientWidth<kn_tp_na_str_1.clientWidth+kn_tp_na_str_2.clientWidth+kn_tp_na_str_3.clientWidth+kn_tp_na_str_4.clientWidth+25){
+        if(osnova.clientWidth<kn_tp_na_str_1.clientWidth+kn_tp_na_str_2.clientWidth+kn_tp_na_str_3.clientWidth+kn_tp_na_str_4.clientWidth+25){
             kn_tp_na_str_1.innerHTML=kn_tp_na_str_5.innerHTML='<';
             kn_tp_na_str_2.innerHTML=kn_tp_na_str_6.innerHTML='>';
             kn_tp_na_str_3.innerHTML=kn_tp_na_str_7.innerHTML='^';
@@ -4742,8 +4749,8 @@ kn_tp_na_str_1.style.top=kn_tp_na_str_2.style.top=kn_tp_na_str_3.style.top=kn_tp
         //ar_tp[nm][nr-1][np][nom_t];
 
 
-text_osnov.style.top=zagol.clientHeight+kn_tp_na_str_1.clientHeight+50+'px';
-porydok.style.height=zagol.clientHeight+text_osnov.clientHeight+200+'px';
+        text_osnov.style.top=zagol.clientHeight+kn_tp_na_str_1.clientHeight+50+'px';
+        porydok.style.height=zagol.clientHeight+text_osnov.clientHeight+200+'px';
         
 
         osnova.style.height=porydok.clientHeight+200+'px';
@@ -5020,30 +5027,46 @@ okno_name_besedi.innerHTML = 'Беседы';
     
     //// -------------УРА!!!! Зделала ;) -------------------
     if(odin!=0){
- 
-        //if(np_3>0){
-          //  if(np_2>0){
-                //if(np_1==1&&np_3==1)
-                document.getElementById('t_s').innerHTML = on_tp_t(nom_t-0);
-                localStorage.setItem('nom_t',nom_t-0);
-                //else  document.getElementById('t_s').innerHTML = on_tp_t(np_2);//chel_yr(np_1,np_2,np_3);
-            //}
-            //else document.getElementById('t_s').innerHTML = chel_rab(localStorage.getItem('np_1')-1,localStorage.getItem('np_3')-1);
-        //}
-        //else{ 
-        //    if(np_2>0)document.getElementById('t_s').innerHTML = chel_all_yr(localStorage.getItem('np_1')-1);
-        //    else document.getElementById('t_s').innerHTML = chel(localStorage.getItem('np_1')-1);
-        //}
+        if(odin==1){
+            tex=document.getElementById('t_s');
+        }else{
+            tex=document.getElementById('text_osnov');
+        }
+        if(np_1!=0){
+        if(np_3>0){
+            switch(np_2){
+                case 1:
+                    tex.innerHTML=chel_rab(np_1-1,np_3-1);
+                    
+                break;
+                case 2:
+                    tex.innerHTML=chel_yr(np_1-1,np_3-1);
+                break;
+                case 3:
+                    tex.innerHTML =chel_inter(np_1-1,np_3-1);
+                break;
+                case 4:
+                    tex.innerHTML=chel_all_yr(np_1-1);
+                break;
+            }
+        
+            
+            
+        }
+        else{ 
+            if(np_2>0)tex.innerHTML = chel_all_yr(localStorage.getItem('np_1')-1);
+            else tex.innerHTML = chel(localStorage.getItem('np_1')-1);
+        }
+    }else tex.innerHTML=on_tp_t(nom_t);
 
 
-        //odin_na_stranice=true;
+        
     }else{
 
         text_str();
-    //odin_na_stranice=false;
 
     }
-
+    localStorage.setItem('nom_t',nom_t-0);
     up();
     //---------------------------------------------------------------------------------------------
     //имя с тенью раздела сайта на который перешли
@@ -5588,7 +5611,8 @@ return str_fragment_texta;
 //=================================================================================================
 function chel(nomer_chel){
     odin_na_stranice=true;
-str_chel='';
+if(odin==0)odin=1;
+    str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center" colspan=2><big>'+ar_ym[nomer_chel][0]+'</big><h1>'+ar_ym[nomer_chel][1]+'</h1></td></tr>';
 
 //bob.innerHTML='tdrt';
@@ -5626,6 +5650,7 @@ return str_chel;
 
 function chel_rab(nomer_chel,nomer_izd){
     odin_na_stranice=true;
+    if(odin==0)odin=1;
 str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np][np_2]+' / Изделие '+np_3+'</h3></big></td></tr>';
 
@@ -5644,7 +5669,7 @@ str_chel+='</td></tr><tr><td>';
 nm=0;
 nr=3;
 np=nomer_chel;
-nom_t=nomer_chel+1;//np_1=nomer_chel+1;
+np_1=nomer_chel+1;//np_1=nomer_chel+1;
 localStorage.setItem('np_1',np_1);
 localStorage.setItem('np_2', np_2);
 np_3=nomer_izd+1;
@@ -5662,10 +5687,11 @@ return str_chel;
 
 function chel_all_yr(nomer_chel){
     odin_na_stranice=true;
-str_chel='';
+if(odin==0)odin=1;
+    str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np][1]+'</h3></big></td></tr>';
-//np_1=nomer_chel+1;
-nom_t=nomer_chel+1;
+np_1=nomer_chel+1;
+//nom_t=nomer_chel+1;
 str_chel+='<tr><td>'+on_tp_t(1)+'</td></tr></table>';
 
 localStorage.setItem('np_1',np_1);
@@ -5683,22 +5709,23 @@ return str_chel;
 
 function chel_yr(nomer_chel,nomer_yroka){
     odin_na_stranice=true;
-//np_2=nomer_predmeta+1;
 
+//np_2=nomer_predmeta+1;
+if(odin==0)odin=1;
 str_chel='';
 str_chel+='<p><table width="100%"><tr ><td align="center"><big><h3 style="line-height: 45px;">'+ar_tp[nm][nr-1][np_1-1][ar_ym_yr[np_1-1][0][0]]+' / Урок '+np_3+'.</h3></big></td></tr>';
-//np_1=nomer_chel+1;
-//np_3=nomer_yroka+1;
+np_1=nomer_chel+1;
+np_3=nomer_yroka+1;
 np=1;
 //bob.innerHTML=nomer_predmeta+1;//ar_ym_yr[nomer_chel][nomer_predmeta+1][nomer_yroka];
 str_chel+='<tr><td>'+ar_ym_yr[nomer_chel][1][nomer_yroka]+'</td></tr></table>';
 
-//localStorage.setItem('np',np);
-//localStorage.setItem('np_1',np_1);
+localStorage.setItem('np',np);
+localStorage.setItem('np_1',np_1);
 
-//localStorage.setItem('np_2', np_2);
+localStorage.setItem('np_2', np_2);
 
-//localStorage.setItem('np_3',np_3);
+localStorage.setItem('np_3',np_3);
 
 
 return str_chel;
@@ -5709,23 +5736,24 @@ return str_chel;
 
 function chel_inter(nomer_chel,nomer_pic){
     odin_na_stranice=true;
-//np_2=nomer_predmeta+1;
+if(odin==0)odin=1;
+    //np_2=nomer_predmeta+1;
 np_1_m=np_1-1;
 str_chel='';
 str_chel+='<p><table width="100%"><tr><td align="center"><big><h3 style="line-height: 45px;">'+'Скаченные из общедоступного интернета / '+ar_int[nomer_chel][nomer_pic][0]+'.</h3></big></td></tr><tr><td align="center">';
-//np_1=nomer_chel+1;
-//np_3=nomer_yroka+1;
-np=1;
+np_1=nomer_chel+1;
+np_3=nomer_pic+1;
+np=0;
 //bob.innerHTML=nomer_predmeta+1;//ar_ym_yr[nomer_chel][nomer_predmeta+1][nomer_yroka];
     for(ia=1;ia<ar_int[nomer_chel][nomer_pic].length;ia++)str_chel+='<img id="img_iz_int_'+nomer_chel+'_'+nomer_pic+'_'+ia+'" src="'+ar_int[nomer_chel][nomer_pic][ia]+'"class="foto_rab"></img><br>';
 str_chel+='</td></tr></table>';
 
-//localStorage.setItem('np',np);
-//localStorage.setItem('np_1',np_1);
+localStorage.setItem('np',np);
+localStorage.setItem('np_1',np_1);
 
-//localStorage.setItem('np_2', np_2);
+localStorage.setItem('np_2', np_2);
 
-//localStorage.setItem('np_3',np_3);
+localStorage.setItem('np_3',np_3);
 
 return str_chel;
 }
@@ -5747,8 +5775,9 @@ str_rab = true;
             np=0;
 
             np_2=1;
-            //np_3=
-            nom_t=nomer_izdel+1;
+            np_3=
+            //nom_t=
+            nomer_izdel+1;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -5797,8 +5826,9 @@ str_rab = true;
             np=0;
 
             np_2=3;
-            //np_3
-            nom_t=nomer_int+1;
+            np_3
+            //nom_t
+            =nomer_int+1;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
@@ -5888,17 +5918,13 @@ function tn_telos(deistvie_ns,nomer_ns) {
 function on_tym(deistvie,nomer) {
     switch(deistvie){
     case 3:
-    //str_rab = true;
-    
-    //str_var=0;
-           
     smena_deistvie=6;
      smena_var=0;
     nm=0;
             nr=3;
-            np=0;
-            //np_1=
-            nom_t=nomer+1;
+            np=np_1-1;
+            np_1= nomer+1;
+        if(odin==0)odin=1;    
             np_2=0;
             np_3=0;
     switch(dz){
@@ -5906,8 +5932,7 @@ function on_tym(deistvie,nomer) {
         default:smena_stranic_0();break;
     
     }
-     odin_na_stranice=true;
-//odin_na_stranice=true;
+
     
     up();
     break;
@@ -5940,17 +5965,19 @@ function on_tym_rab(deistvie,nomer_ym,nomer_rab) {
             nm=0;
             nr=3;
             np=0;
-            //np_1=
-            nom_t=nomer_ym+1;
+            np_1=
+            //nom_t=
+            nomer_ym+1;
             np_2=1;
             np_3=nomer_rab+1;
+                    if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
             smena_var=0;
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
     
     }
-odin_na_stranice=true;
+
     
     up();
     break;
@@ -5968,6 +5995,7 @@ function tym_rab_telo(nomer_ym,nomer_rab) {
 function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
     switch(deistvie){
     case 3:
+
     //str_rab = true;
       //      str_var=0;
             //odin_na_stranice=true;
@@ -5975,19 +6003,21 @@ function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
             nm=0;
             nr=3;
             np=1;
-            //np_1
-            nom_t=nomer_ym+1;
+            np_1
+            //nom_t
+            =nomer_ym+1;
    // bob.innerHTML=ar_ym_yr[nomer_ym][0][0];
             np_2=2;
             
             np_3=nomer_yroka+1;
             smena_var=0;
+            if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
     switch(dz){
         case 1:smena_stranic_1();break;
         default:smena_stranic_0();break;
     
     }
-odin_na_stranice=true;
+
     up();
     break;
     }
@@ -6008,10 +6038,11 @@ if(deistvie==3){    //str_rab = true;
            nm=0;
             nr=3;
             np=0;
-            //np_1=
-            nom_t=nomer_ym+1;
-            np_2=2;
-            
+            np_1=
+            //nom_t=
+            nomer_ym+1;
+            np_2=4;
+        if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}    
             np_3=0;
             smena_var=0;
    switch(dz){
@@ -6020,7 +6051,7 @@ if(deistvie==3){    //str_rab = true;
     
     }
 
-    odin_na_stranice=true;
+    
     
     up();
 }
@@ -6043,10 +6074,11 @@ if(deistvie==3){    //str_rab = true;
            nm=0;
             nr=3;
             np=0;
-            //np_1=
-            nom_t=nomer_ym+1;
+            np_1=
+            //nom_t=
+            nomer_ym+1;
             np_2=3;
-            
+            if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
             np_3=nomer_pik+1;
             smena_var=0;
     switch(dz){
@@ -6055,7 +6087,7 @@ if(deistvie==3){    //str_rab = true;
     
     }
 
-    odin_na_stranice=true;
+    
     
     up();
 }
@@ -6106,11 +6138,16 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
             document.getElementById('ten_tp_'+name_kn).style.visibility='hidden';
             document.getElementById('ten_kn_tp_'+name_kn).style.visibility='hidden';
     smena_deistvie=6;
-    odin=1;
+    
+    if(odin==0)odin=1;else{
+        if(tp_1>0){
+            tp=tp_1+1;
+        }
+    }
     localStorage.setItem('odin',odin);
      smena_var=0;
     //bob.innerHTML=;//document.getElementById('kn_tp_'+name_kn);
-            
+       
     //np_1=ar_np_1[nm][nr-1][np];
   pamyt_nom_t=nom_t=nomer_kn;
   localStorage.setItem('nom_t',nom_t);
@@ -6120,9 +6157,10 @@ function on_kn_tp(deistvie_kn,nomer_kn) {
     ;
    ar_tp_up[nm][nr-1][np][nomer_kn]=1;
    //document.getElementById('tp_'+name_kn+'_telo').scrollIntoView({block:'center'});
-   
+       
    pamyt_tp_scroll=document.getElementById('kn_tp_'+name_kn).offsetTop;  
    tp_scroll=0;
+   
    //bob.innerHTML=ar_tp_up[nm][nr-1][np][nomer_kn];
    //bob.innerHTML=pamyt_tp_scroll;
     switch(dz){
@@ -6235,7 +6273,8 @@ idnom = document.getElementById('ts_'+name);
 //=================================================================================================
 function ts_telo(nomer_s) {
     name_s = nm + '_' + (nr-1) + '_' + np+'_'+nomer_s;    
-    return '<span id="ts_'+name_s+'" class="ssilka" onmouseover="on_ts(1,'+nomer_s+')"onmouseout="on_ts(2,'+nomer_s+')"onmousedown="on_ts_t('+nomer_s+')">' +ar_ts[nm][nr-1][np][nomer_s]+'</span>';
+    if(nm==0&&nr==1&&np==2)return '<span id="ts_'+name_s+'" class="ssilka" onmouseover="on_ts(1,'+nomer_s+')"onmouseout="on_ts(2,'+nomer_s+')"onmousedown="on_ts_t('+nomer_s+')">' +ar_ts[nm][nr-1][np]+'</span>';
+    else return '<span id="ts_'+name_s+'" class="ssilka" onmouseover="on_ts(1,'+nomer_s+')"onmouseout="on_ts(2,'+nomer_s+')"onmousedown="on_ts_t('+nomer_s+')">' +ar_ts[nm][nr-1][np][nomer_s]+'</span>';
 }
 //=================================================================================================
 //=================================================================================================
