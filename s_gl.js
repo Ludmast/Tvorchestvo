@@ -6,7 +6,7 @@ predupregd = 'Сайт находится в разработке';
 //=================================================================================================
 array_menu = [["Главное", "Обучение", "Обсуждение", "Справка"],
 ["От создателя сайта", "Чего новенького", "Люди-умельцы", "Творческие работы", "Поиск по сайту", "История просмотра", "Регистрация"],
-["Обучение от умельцев", "Творчество", "Информатика", "Геометрия и алгебра", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика",'Философия', "Литература", "Языки нaродов мира", "Астрономия", "Черчение", "Музыка", "Физкультура", "Для дошколят", "Энциклопедии","Атласы и карты","Законы и кодексы", "Заметки"],
+["Обучение от умельцев","Творчество", "Информатика", "Геометрия и алгебра", "Физика", "Химия", "Биология", "История", "География", "Обществознание", "Экономика",'Философия', "Литература", "Языки нaродов мира", "Астрономия", "Черчение", "Музыка", "Физкультура", "Для дошколят", "Энциклопедии","Атласы и карты","Законы и кодексы", "Заметки"],
 ["Беседы", "Предложения/критика", "Написать письмо"],
 ["Инструкция по сайту", "Донаты", "Об авторе сайта"]];
 //=================================================================================================
@@ -348,6 +348,18 @@ ar_ts=
 
             ]
             ,[
+            ]
+        ]
+        ,[
+            []
+            ,[]
+            ,[
+                [
+                    [
+                        'Записать в шпоргалку'
+                        ,'Записать в шпоргалку'
+                    ]
+                ]
             ]
         ]
     ];
@@ -1073,7 +1085,9 @@ array_text =
                 [//Информатика(школьный курс)
                     'При открытии "Содержания" или "Подготовка к контрольным и ЕГЭ" Вы не раз увидите в начале параграфа в правом верхнем углу кнопку ... При нажатии на неё весь материал откроется на отдельной страничке. Это сделано для более лучшего усвоения текста.<p>Но вначале, рекомендую, зайти в "Шпоргалки" и открыть нужный Вам фрагмент изучаемого материала поверх другого содержимого сайта. Мне, например, эта функция помогает более продуктивно повторять темы и решать задачки. '
                     //'Информатика мне понравилась сразу при начальном изучении её в школе. Только книг по данному предмету в те годы, когда я училась, ещё не выдавали. <p>Если хотите как я шарить в компьютерах, то для начала советую пройти данный школьный курс, чтобы понять сможете Вы или нет двигаться дальше в этом направлении.'
-                    
+                    ,[
+                        'Записать в шпору'
+                    ]
 
                 ],
                 [//Редакторы изображения и видео
@@ -1384,7 +1398,21 @@ array_text =
             ]
         ]
     ];
+//=================================================================================================
+ar_shp=
+    [
+        [
+        [
+['шпора',0]
+,['шпора 2',0]
+        ]
+    ]
+        ,[]
+        ,[
+            
+        ]
 
+    ];
 //=================================================================================================
 ar_tp=
     [
@@ -2473,9 +2501,22 @@ ar_tp=
                 ]
             ],[//Информатика
                 [
-                    ['Содержание',0,0,1,0]
+                    ['Школьный курс информатики',0,0,1,0]
                     ,['Шпоргалки',0,0,2,0]
                     ,['Подготовка к контрольным и ЕГЭ',0,1,2,0]
+                    //-----------------------------------
+                    //Школьный курс информатики
+                    ,['Информационные процессы',0,3,4,1]
+                    ,['Компьютерные технологии (КТ)',0,3,5,1]
+                    ,['Алгоритмы и программирование',0,4,6,1]
+                    ,['Информационная деятельность',0,5,6,1]
+                    //-----------------------------------
+                    //Шпоргалки
+                    ,['Системы счисления',0,7,8,2]
+                    ,['',0,,]
+                    ,['',0,,]
+                    //-----------------------------------
+                    //Подготовка к контрольным и ЕГЭ
                 ]
                 ,[
                     ['Paint - редактор точечного изображения',0,0,1,0]
@@ -3634,9 +3675,16 @@ function on_tp_t(nomer_pt){
                     }    
                 break;
                 case 3://Информатика
-                switch(np-0){
-                
-                }
+                    switch(np-0){
+                        case 0:
+                            switch(nomer_pt){
+                                case 0:pp=tp_to(3,7);break;
+                                case 1:pp=tp_to(7,8);break;
+                                case 7:pp=tshp_telo(0)+tshp_telo(1)+ar_ts[nm][nr-1][np][0][0]+'<p>'+array_text[nm][nr-1][np][1];break;
+                            }
+                        break;
+
+                    }
                 break;
                 case 4://Алгебра и геометрия
                 break;
@@ -4234,6 +4282,8 @@ ar_np_1=
 
 ]
 //=================================================================================================
+
+//=================================================================================================
 function Sait_load() {
     
     if(localStorage.getItem('odin')){}else
@@ -4476,7 +4526,7 @@ dat=new Date();
     //---------------------------------------------------------------------------------------------
     
     //шпоргалки
-    str += "<div id='shporgalki'class='c_shpor'>yyy</div>";
+    str += "<div id='shporgalki'class='shpora_v'><big>Шпорка</big></div>";
     //---------------------------------------------------------------------------------------------
     //верхняя полоска меню
     str += "<table><tr><td id='menu_line'onmouseout = 'menu_(2,0,0)'><table id = 'menu' onmouseout = 'menu_(2,0,0)'><tr><td id = 'm_g' class='c_m_g' onmouseover = 'menu_(1,0,0)' onmouseout = 'menu_(2,0,0)' onmousemove='menu_(3,0,0)'></td ><td id='m_razdelitel'align='center'>|</td><td id='m_y' class='c_m_g' onmouseover='menu_(1,0,1)' onmouseout='menu_(2,0,1)'onmousemove='menu_(3,0,1)'></td><td align='center'>|</td><td id='m_os' class='c_m_g' onmouseover='menu_(1,0,2)' onmouseout='menu_(2,0,2)'onmousemove='menu_(3,0,2)'></td><td align='center'>|</td><td id='m_s' class='c_m_g' onmouseover='menu_(1,0,3)' onmouseout='menu_(2,0,3)'onmousemove='menu_(3,0,3)'></td></tr></table ></td></tr></table>";
@@ -4707,25 +4757,25 @@ function sait_load_dopolnit() {
     ms = [["m_g", 8, m1_left, 4], ["m_y", 24, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
     //---------------------------------------------------------------------------------------------
     str = "<div id='ten_m'></div>";
-    str += "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseleave='menu_(2,1,0)'onmousemove='menu_(3,1,0)'>"
+    str += "<div id='m_g_0'class='c_m_o'onmouseover='menu_(1,1,0)'onmouseleave='menu_(2,1,0)'>"
     for (i = 1; i < ms[0][1]; i++)str += "<div id='m_g_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",0)'onmouseout='menu_(2," + (i + 1) + ",0)'onclick='menu_(4," + (i + 1) + ",0)'></div>";
     str += "<hr id='m_g_l_0'class='c_m_line_0'color='black'size='1'/><hr id='m_g_l_1'class='c_m_line_1'color='white'size='1'/><hr id='m_g_l_2'class='c_m_line_2'color='black'size='1'/><hr id='m_g_l_3'class='c_m_line_3'color='white'size='1'/></div>";
     m1.innerHTML = str;
     for (i = 0; i < ms[0][1] - 1; i++)document.getElementById(ms[0][0] + '_' + (i + 1)).innerText = array_menu[1][i];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'onmousemove='menu_(3,1,1)'>"
+    str = "<div id='m_y_0'class='c_m_o'onmouseover='menu_(1,1,1)'onmouseout='menu_(2,1,1)'>"
     for (i = 1; i < ms[1][1]; i++)str += "<div id='m_y_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",1)'onmouseout='menu_(2," + (i + 1) + ",1)'onclick='menu_(4," + (i + 1) + ",1)'></div>";
     str += "<hr id='m_y_l_0' class='c_m_line_0' color='black' size='1'/><hr id='m_y_l_1' class='c_m_line_1' color='white' size='1'/><hr id='m_y_l_2'class='c_m_line_4' color='black' size='1'/><hr id='m_y_l_3'class='c_m_line_5' color='white' size='1'/><hr id='m_y_l_4'class='c_m_line_6' color='black' size='1'/><hr id='m_y_l_5'class='c_m_line_7' color='white' size='1'/></div > ";
     m2.innerHTML = str;
     for (i = 0; i < ms[1][1] - 1; i++)document.getElementById(ms[1][0] + '_' + (i + 1)).innerText = array_menu[2][i];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'onmousemove='menu_(3,1,2)'>"
+    str = "<div id='m_os_0'class='c_m_o'onmouseover='menu_(1,1,2)'onmouseout='menu_(2,1,2)'>"
     for (i = 1; i < ms[2][1]; i++)str += "<div id='m_os_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",2)'onmouseout='menu_(2," + (i + 1) + ",2)'onclick='menu_(4," + (i + 1) + ",2)'></div>";
     str += "<hr id='m_os_l_0' class='c_m_line_0' color='black' size='1'/><hr id='m_os_l_1' class='c_m_line_1' color='white' size='1'/></div > ";
     m3.innerHTML = str;
     for (i = 0; i < ms[2][1] - 1; i++)document.getElementById(ms[2][0] + '_' + (i + 1)).innerText = array_menu[3][i];
     //---------------------------------------------------------------------------------------------
-    str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'onmousemove='menu_(3,1,3)'>"
+    str = "<div id='m_s_0'class='c_m_o'onmouseover='menu_(1,1,3)'onmouseout='menu_(2,1,3)'>"
     for (i = 1; i < ms[3][1]; i++)str += "<div id='m_s_" + i + "'class='c_m'onmouseover='menu_(1," + (i + 1) + ",3)'onmouseout='menu_(2," + (i + 1) + ",3)'onclick='menu_(4," + (i + 1) + ",3)'></div>";
     str += "<hr id='m_s_l_0'class='c_m_line_0' color='black' size='1'/><hr id='m_s_l_1'class='c_m_line_1' color='white' size='1'/></div > ";
     m4.innerHTML = str;
@@ -4815,7 +4865,8 @@ met_tr.stroke();
     //kn_poisk_down=false;
     /////
     //kn_mneniy_down=false;
-    
+    shporgalki_id=0;
+
     paragraf_nomer=0;
     reshenie_nomer=0;
 //ym_div_on=false;
@@ -4891,16 +4942,58 @@ function self_random(nachalo = 1, konec = 2) {
 //=================================================================================================
 //=================================================================================================
 function menu_open(){
-    if (m_g_0.style.visibility == 'visible') { if (event.clientY >m_g_0.offsetTop+m_g_0.clientHeight||event.clientX<m_g_0.offsetLeft||event.clientX>m_g_0.offsetLeft+m_g_0.clientWidth){menu_vis(0, 0); 
-           m_g.style.backgroundColor = color_menu;
-                m_g.style.color = 'black';
-                //if (event.clientY < 42)menu_vis(idnomer,0);
-            }        } 
-    if (m_y_0.style.visibility == 'visible') { if (event.clientY >m_y_0.offsetTop+m_y_0.clientHeight||event.clientX<m_y_0.offsetLeft||event.clientX>m_y_0.offsetLeft+m_y_0.clientWidth)menu_vis(1, 0);}     
-    if (m_os_0.style.visibility == 'visible') { if (event.clientY >m_os_0.offsetTop+m_os_0.clientHeight||event.clientX<m_os_0.offsetLeft||event.clientX>m_os_0.offsetLeft+m_os_0.clientWidth)menu_vis(2, 0);}          
-    if (m_s_0.style.visibility == 'visible') { if (event.clientY > m_s_0.offsetTop+m_s_0.clientHeight||event.clientX<m_s_0.offsetLeft||event.clientX>m_s_0.offsetLeft+m_s_0.clientWidth)menu_vis(3, 0);}          
-        
-        
+    if (m_g_0.style.visibility == 'visible') {
+        if ((event.clientY<m_g_0.offsetTop&&(event.clientY<m_g.offsetTop||event.clientX<m_g.offsetLeft||event.clientX>m_g.offsetLeft+m_g.clientWidth))||event.clientY >m_g_0.offsetTop+m_g_0.clientHeight||event.clientX<m_g_0.offsetLeft||event.clientX>m_g_0.offsetLeft+m_g_0.clientWidth){
+            menu_vis(0, 0); 
+            m_g.style.backgroundColor = color_menu;
+            m_g.style.color = 'black';
+        }
+    }else {
+        if(event.clientY>m_g.offsetTop&&event.clientY<m_g.offsetTop+m_g.clientHeight&&event.clientX>m_g.offsetLeft&&event.clientX<m_g.offsetLeft+m_g.clientWidth) {
+            menu_vis(0, 1);
+            m_g.style.background=color_nadpisi;
+            m_g.style.color=color_videl;
+        }
+    }
+    if (m_y_0.style.visibility == 'visible') {
+        if ((event.clientY<m_y_0.offsetTop&&(event.clientY<m_y.offsetTop||event.clientX<m_y.offsetLeft||event.clientX>m_y.offsetLeft+m_y.clientWidth))||event.clientY >m_y_0.offsetTop+m_y_0.clientHeight||event.clientX<m_y_0.offsetLeft||event.clientX>m_y_0.offsetLeft+m_y_0.clientWidth){
+            menu_vis(1, 0);           
+            m_y.style.backgroundColor = color_menu;
+            m_y.style.color = 'black';
+        }        
+    } else {
+        if(event.clientY>m_y.offsetTop&&event.clientY<m_y.offsetTop+m_y.clientHeight&&event.clientX>m_y.offsetLeft&&event.clientX<m_y.offsetLeft+m_y.clientWidth) {
+            menu_vis(1, 1);
+            m_y.style.background=color_nadpisi;
+            m_y.style.color=color_videl;
+        }
+    }
+    if (m_os_0.style.visibility == 'visible') { 
+        if ((event.clientY<m_os_0.offsetTop&&(event.clientY<m_os.offsetTop||event.clientX<m_os.offsetLeft||event.clientX>m_os.offsetLeft+m_os.clientWidth))||event.clientY >m_os_0.offsetTop+m_os_0.clientHeight||event.clientX<m_os_0.offsetLeft||event.clientX>m_os_0.offsetLeft+m_os_0.clientWidth){
+            menu_vis(2, 0);           
+            m_os.style.backgroundColor = color_menu;
+            m_os.style.color = 'black';
+        } 
+    } else {
+        if(event.clientY>m_os.offsetTop&&event.clientY<m_os.offsetTop+m_os.clientHeight&&event.clientX>m_os.offsetLeft&&event.clientX<m_os.offsetLeft+m_os.clientWidth) {
+            menu_vis(2, 1);
+            m_os.style.background=color_nadpisi;
+            m_os.style.color=color_videl;
+        }
+    }     
+    if (m_s_0.style.visibility == 'visible') {
+        if ((event.clientY<m_s_0.offsetTop&&(event.clientY<m_s.offsetTop||event.clientX<m_s.offsetLeft||event.clientX>m_s.offsetLeft+m_s.clientWidth))||event.clientY > m_s_0.offsetTop+m_s_0.clientHeight||event.clientX<m_s_0.offsetLeft||event.clientX>m_s_0.offsetLeft+m_s_0.clientWidth){
+            menu_vis(3, 0);
+            m_s.style.backgroundColor = color_menu;
+            m_s.style.color = 'black';
+        }
+    } else {
+        if(event.clientY>m_s.offsetTop&&event.clientY<m_s.offsetTop+m_s.clientHeight&&event.clientX>m_s.offsetLeft&&event.clientX<m_s.offsetLeft+m_s.clientWidth) {
+            menu_vis(3, 1);
+            m_s.style.background=color_nadpisi;
+            m_s.style.color=color_videl;
+        }
+    }
 }
 //=================================================================================================
 function menu_vis(id_el, deistvie) {
@@ -4911,9 +5004,8 @@ function menu_vis(id_el, deistvie) {
     ten_m.style.left = ms[id_el][2] + 'px';
     ten_m.style.width = document.getElementById(ms[id_el][0] + '_0').clientWidth + 2 + 'px';
     ten_m.style.visibility = deistvie;
+             
 }
-
-
 //=================================================================================================
 function menu_(deistvie, nomer, idnomer) {
     //---------------------------------------------------------------------------------------------
@@ -4930,18 +5022,7 @@ function menu_(deistvie, nomer, idnomer) {
     switch (deistvie) {
         //-----------------------------------------------------------------------------------------
         case 1://over
-            if (nomer == 0) {
-
-                m[0].style.cursor = 'pointer';
-                m[0].style.backgroundColor = color_nadpisi;
-                m[0].style.color = color_videl;
-                if (idnomer != 0 && m_g_0.style.visibility == 'visible') menu_vis(0, 0);
-                else if (idnomer != 1 && m_y_0.style.visibility == 'visible') menu_vis(1, 0);
-                else if (idnomer != 2 && m_os_0.style.visibility == 'visible') menu_vis(2, 0);
-                else if (idnomer != 3 && m_s_0.style.visibility == 'visible') menu_vis(3, 0);
-                menu_vis(idnomer, 1);
-            }
-            else if (nomer == 1) {
+         if (nomer <2) {
                 m[1].style.cursor = 'pointer';
                 m[0].style.backgroundColor = color_nadpisi;
                 m[0].style.color = color_videl;
@@ -4963,15 +5044,7 @@ function menu_(deistvie, nomer, idnomer) {
             }
             break;
         //-----------------------------------------------------------------------------------------
-        case 3://move
-            if (nomer == 0) {
-                if (idnomer == 0 && m_g_0.style.visibility == 'hidden') menu_vis(0, 1);
-                else if (idnomer == 1 && m_y_0.style.visibility == 'hidden') menu_vis(1, 1);
-                else if (idnomer == 2 && m_os_0.style.visibility == 'hidden') menu_vis(2, 1);
-                else if (idnomer == 3 && m_s_0.style.visibility == 'hidden') menu_vis(3, 1);
-            }
-            
-            break;
+        
         //-----------------------------------------------------------------------------------------
         case 4://down
             m[nomer].style.backgroundColor = 'black';
@@ -5512,7 +5585,7 @@ function on_tym(deistvie,nomer) {
      smena_var=0;
     nm=0;
             nr=3;
-            np=np_1-1;
+            np=np_1;
             np_1= nomer+1;
         if(odin==0)odin=1;    
             np_2=0;
@@ -5539,7 +5612,7 @@ function on_tym(deistvie,nomer) {
 function tym_telo(nomer_ym) {
     
     tym_str='<table id="ym_'+nomer_ym+'" class="ymelec"onmouseover="on_tym(1,'+nomer_ym+')"onmouseout="on_tym(2,'+nomer_ym+')"onmousedown="on_tym(3,'+nomer_ym+')"><tr><td align="center"><img class="foto_ymelca" src="ym_'+nomer_ym+'_foto/ym_'+nomer_ym+'_foto_1.jpg">'+(nomer_ym==0?'<br><small>(фотография умельца)</small>':'')+'</td><td id="lud_'+nomer_ym+'_name">'+ar_ym[nomer_ym][0]+' <big><b>'+ar_ym[nomer_ym][1]+'</b></big><p>'+ ar_ym[nomer_ym][2]+'<b><i><ul><li>';
-    for(i=3;i<ar_ym[nomer_ym].length-2;i++)tym_str+=ar_ym[nomer_ym][i]+'</li><li>';
+    for(i=3;i<ar_ym[nomer_ym].length-1;i++)tym_str+=ar_ym[nomer_ym][i]+'</li><li>';
     tym_str+=ar_ym[nomer_ym][ar_ym[nomer_ym].length-2]+'</li></ul></i></b>'+ ar_ym[nomer_ym][ar_ym[nomer_ym].length-1]+'</td></tr></table>';
     return tym_str;
 }
@@ -5695,6 +5768,112 @@ function tym_pik_telo(nomer_ym,nomer_pik) {
     tym_str+='</td></tr></table>';
     return tym_str;
 }
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+function on_shpora() {
+    switch(shpora_var){
+        case 0:
+             shporgalki.style.visibility='visible';
+                shporgalki.style.top=scrollY+20+'px';
+                shporgalki.style.height='5px';
+                shpora_var++;
+                shpora_del=10;
+                shpora_izmen=5;
+                shpora_index=0;
+            break;
+            case 1:
+                if(shpora_index<10){
+                    shpora_index++;
+                    shpora_izmen+=shpora_del;
+                    shporgalki.style.height=shpora_izmen+'px';
+                }else{
+                    shpora_rab=false;
+                    shpora_var=0;
+                }
+
+                break;   
+            case 2:
+                 shpora_var++;
+
+                shpora_del=10;
+                shpora_izmen=5;
+                shpora_index=0;
+                
+                break;
+    }
+    if(shpora_rab)setTimeout('on_shpora()',30);
+}
+//=================================================================================================
+function on_tshp(deistvie, nomer_shp) {
+    name_shp=nm+'_'+(nr-1)+'_'+np+'_'+nomer_shp;  
+    idnom = document.getElementById('tshp_'+name_shp);
+    switch (deistvie) {
+        case 1://over
+        if(ar_shp[nr-3][np][nomer_shp][1]==0){
+            idnom.style.background = '#eea';
+            idnom.style.color = '#620';
+        }
+        break;
+        case 2://out
+        if(ar_shp[nr-3][np][nomer_shp][1]==0){ 
+            idnom.style.background = '#a62';
+            idnom.style.color = '#eea';
+        }
+        break;
+        case 3://over v
+            if(shporgalki_id<1){ 
+                shporgalki_id++;                
+                shpora_var=0;
+                shpora_rab=true;
+                on_shpora();
+            }
+            if(ar_shp[nr-3][np][nomer_shp][1]==0){
+                shporgalki_id++;
+
+                idnom.style.background='#c0ffe0';
+                idnom.style.color = '#620';
+                galka=document.getElementById('tshp_'+name_shp+'_galka');
+                galka.style.paddingLeft='5px';
+                galka.style.paddingRight='5px';
+                galka.innerHTML='<tt>V</tt>';
+                ar_shp[nr-3][np][nomer_shp][1]=shporgalki.innerHTML.length;
+                shporgalki.innerHTML=shporgalki.innerHTML+'<hr width="100%"size="2"color="black"/>'+ar_shp[nr-3][np][nomer_shp][0];
+                shporgalki.style.height=shporgalki.clientHeight+idnom.clientHeight+'px';
+            }else{
+                shporgalki_id--;
+                idnom.style.background = '#eea';
+                idnom.style.color = '#620';
+                galka=document.getElementById('tshp_'+name_shp+'_galka');
+                galka.style.paddingLeft='0px';
+                galka.style.paddingRight='0px';
+                galka.innerHTML='__';
+                dlina=ar_shp[nr-3][np][nomer_shp][0].length;
+                isk=ar_shp[nr-3][np][nomer_shp][1];
+                ar_shp[nr-3][np][nomer_shp][1]=0;
+                primshp=ar_shp[nr-3][np].length;
+                for(ishp=0;ishp<primshp;ishp++)if(ar_shp[nr-3][np][ishp][1]>isk)ar_shp[nr-3][np][ishp][1]=ar_shp[nr-3][np][ishp][1]-dlina-40;
+                shporgalki.style.height=shporgalki.clientHeight-idnom.clientHeight-11+'px';
+                shporgalki.innerHTML=shporgalki.innerHTML.slice(0,isk)+shporgalki.innerHTML.slice(dlina+isk+(dlina+isk<shporgalki.innerHTML.length?40:0),shporgalki.innerHTML.length);    
+                if(shporgalki_id<2){
+                    shporgalki_id=0;
+                    shporgalki.style.visibility='hidden'
+                }
+            }
+            break;
+    }
+}
+//=================================================================================================
+function tshp_telo(nomer_shp) {
+    
+    name_shp = nm + '_' + (nr-1) + '_' + np+'_'+nomer_shp;
+
+    return'<p><center><table border="2"align="middle"><tr border="2"id="tshp_'+name_shp+'"  class="shpora" onmouseover="on_tshp(1,'+nomer_shp+')"onmouseout="on_tshp(2,'+nomer_shp+')"onmousedown="on_tshp(3,'+nomer_shp+')"><td>Занести в шпоргалки  <span id="tshp_'+name_shp+'_galka"class="shpora_g">__ </span></td></tr><tr><td>'+ar_shp[nr-3][np][nomer_shp][0]+'</td></tr></table></center><p>';
+    
+}
+//=================================================================================================
+  
+//=================================================================================================
 //=================================================================================================
 //=================================================================================================
 function on_kn_tp(deistvie_kn,nomer_kn) {
@@ -6520,7 +6699,9 @@ function izmen_win() {
             kn_nazad_vidna = true;
             ten_kn_nazad.style.visibility = kn_nazad.style.visibility = 'visible';
         }
-        
+        if(shporgalki_id!=0&&scrollY>40){
+            shporgalki.style.top=scrollY+20+'px';
+        }
         if (kn_nazad_vidna) ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight-100 + scrollY + 'px';
         ten_kn_nazad.style.left=kn_nazad.style.left=osnova.clientWidth-okna.clientWidth-30+'px';        
        if(odin_na_stranice){
