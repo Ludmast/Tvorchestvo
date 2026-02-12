@@ -708,11 +708,12 @@ color:#eea;
     position: absolute;
     top:100px;
     left: 20px;
-    background-color: #c0ffe0dd;
+    background-color: #c0ffe0d9;
     border: 2px solid #023c4e;
 width: 100px;
 height: 100px;
 color:black;
+
 
 
     padding-top: 1px;
@@ -720,8 +721,9 @@ color:black;
     padding-left: 7px;
     padding-right: 7px;
     cursor: pointer;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 visibility: hidden;
-
+overflow:hidden;
 }
 .shpora_g{
     width: 20px;
@@ -730,6 +732,7 @@ visibility: hidden;
     background: white;
     padding-left: 0px;
     padding-right: 0px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .paragraf,.paragraf_v,.reshenie,.reshenie_v,.ssilka,.ssilka_v,.metka,.metka_v,.interes,.interes_v {
     padding-top: 1px;

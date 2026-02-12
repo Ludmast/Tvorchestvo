@@ -15,8 +15,10 @@ function soderg_razdela_0() {
     
     //---------------------------------------------------------------------------------------------
     //подсветка и сами названия содержания страниц
-    str_2+= "<div id='ten1_gl_p'></div><div id='gl_p_za_str'class='c_gl_p_0'>Содержимое раздела: <div id='kn_za_str2' onmouseover='kn_za_str2_0(1)' onmouseout='kn_za_str2_0(2)' onmousedown='kn_za_str2_0(4)'></div>";
-    str += "<div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p_0'>Содержимое раздела:<div id='kn_za_str' onmouseover='kn_za_str_0(1)' onmouseout='kn_za_str_0(2)' onmousedown='kn_za_str_0(4)'></div>";
+    str_2+= "<div id='ten1_gl_p'></div><div id='gl_p_za_str'class='c_gl_p_0'>Содержимое раздела:";
+    // <div id='kn_za_str2' onmouseover='kn_za_str2_0(1)' onmouseout='kn_za_str2_0(2)' onmousedown='kn_za_str2_0(4)'></div>";
+    str += "<div id='ten2_gl_p'></div><div id='gl_p'class='c_gl_p_0'>Содержимое раздела:";
+    //<div id='kn_za_str' onmouseover='kn_za_str_0(1)' onmouseout='kn_za_str_0(2)' onmousedown='kn_za_str_0(4)'></div>";
     for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
     str += "<div id='tp_" + i + "'class='c_ten_p_0'></div><div id='p_" + i + "'class='c_p_0' onmouseover='p_videlen_0(1, " + i + ")' onmouseout='p_videlen_0(2," + i + ")' onmousedown='p_videlen_0(4," + i + ")'></div>";
     str_2+= "<div id='tp_" + i + "_2'class='c_ten_p_0'></div><div id='p_" + i + "_2'class='c_p_0'></div></div>";
@@ -31,7 +33,8 @@ function soderg_razdela_0() {
 
     //---------------------------------------------------------------------------------------------
     
-    gl_p.style.width=gl_p_za_str.style.width=(osnova.clientWidth/100)*55+'px';
+    gl_p.style.width=//gl_p_za_str.style.width=
+    (osnova.clientWidth/100)*55+'px';
 
     if (localStorage.getItem('s_l')) {
 
@@ -45,8 +48,9 @@ function soderg_razdela_0() {
     for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
     
         odin_og = document.getElementById("p_" + i);
-        odin_og_2=document.getElementById("p_" + i+"_2");
-        odin_og.innerHTML =odin_og_2.innerHTML= array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1][i];
+        //odin_og_2=document.getElementById("p_" + i+"_2");
+        odin_og.innerHTML =//odin_og_2.innerHTML= 
+        array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1][i];
         if (ogl_vibrono == i) {
             ogl_vibrono_copiy.innerHTML = odin_og.innerHTML;
             ogl_vibrono_copiy.style.top = 200+50+t - 4 + 'px';
@@ -59,18 +63,23 @@ function soderg_razdela_0() {
             //odin_og_2.style.visibility='hidden';
             
         }
-        perem = odin_og.style.top =odin_og_2.style.top = 50+t + 'px';
-       odin_og.style.width= odin_og_2.style.width = gl_p.clientWidth-45 + 'px';
+        perem = odin_og.style.top =//odin_og_2.style.top = 
+        50+t + 'px';
+       odin_og.style.width=// odin_og_2.style.width =
+        gl_p.clientWidth-45 + 'px';
 
-       odin_og_2.style.visibility='hidden'; 
+       //odin_og_2.style.visibility='hidden'; 
         odin_ogt = document.getElementById("tp_" + i);
-        odin_ogt_2 = document.getElementById("tp_" + i+"_2");
-        odin_ogt.style.top =odin_ogt_2.style.top = 52+t+'px';
-        odin_ogt.style.left =odin_ogt_2.style.left = odin_og.clientWidth +39+ 'px';
-    odin_ogt.style.height=odin_ogt_2.style.height=odin_og.clientHeight+2+'px';
+        //odin_ogt_2 = document.getElementById("tp_" + i+"_2");
+        odin_ogt.style.top =//odin_ogt_2.style.top =
+         52+t+'px';
+        odin_ogt.style.left =//odin_ogt_2.style.left =
+         odin_og.clientWidth +39+ 'px';
+    odin_ogt.style.height=//odin_ogt_2.style.height=
+    odin_og.clientHeight+2+'px';
    
-    odin_ogt_2.style.visibility='hidden';
-        if (ogl_vibrono == i) {odin_ogt_2.style.visibility='hidden';}
+    //odin_ogt_2.style.visibility='hidden';
+        //if (ogl_vibrono == i) {odin_ogt_2.style.visibility='hidden';}
         t += odin_og.clientHeight + 15;
     }
    
@@ -89,7 +98,8 @@ p_0.style.visibility=
             'visible';
     
             gl_p_za_str.style.visibility = 'hidden';
-            kn_tp_na_str_1.style.visibility=kn_tp_na_str_2.style.visibility=kn_tp_na_str_3.style.visibility=kn_tp_na_str_4.style.visibility=kn_tp_na_str_5.style.visibility=kn_tp_na_str_6.style.visibility=kn_tp_na_str_7.style.visibility=kn_tp_na_str_8.style.visibility='hidden';
+            kn_tp_na_str_1.style.visibility=kn_tp_na_str_2.style.visibility=
+            kn_tp_na_str_3.style.visibility=kn_tp_na_str_4.style.visibility=kn_tp_na_str_5.style.visibility=kn_tp_na_str_6.style.visibility=kn_tp_na_str_7.style.visibility=kn_tp_na_str_8.style.visibility='hidden';
     gl_p_za_str.style.height =gl_p.style.height = t +50+ 'px';
     text_stranici.style.paddingTop=gl_p.clientHeight-20+'px';
 
@@ -116,10 +126,10 @@ p_0.style.visibility=
     //---------------------------------------------------------------------------------------------
     //кнопка прячущая за страницу
     
-    kn_za_str.innerHTML = "<div id='ris_kn_za_str'></div><div id='ris_min'></div><div id='ris_v'></div><div id='ris_str'></div>";
-    kn_za_str2.innerHTML="<div id='ris_kn_za_str2'></div><div id='ris_min2'></div><div id='ris_v2'></div><div id='ris_str2'></div>";
-    ris_v.innerHTML = ris_v2.innerHTML = 'v';
-    kn_za_str.style.left=kn_za_str2.style.left = gl_p.clientWidth - 70 + 'px';
+    //kn_za_str.innerHTML = "<div id='ris_kn_za_str'></div><div id='ris_min'></div><div id='ris_v'></div><div id='ris_str'></div>";
+    //kn_za_str2.innerHTML="<div id='ris_kn_za_str2'></div><div id='ris_min2'></div><div id='ris_v2'></div><div id='ris_str2'></div>";
+    //ris_v.innerHTML = ris_v2.innerHTML = 'v';
+    //kn_za_str.style.left=kn_za_str2.style.left = gl_p.clientWidth - 70 + 'px';
  
     localStorage.setItem('np_1',0);
     localStorage.setItem('np_2',0);
@@ -303,7 +313,7 @@ if(np_2==0){
             }
         }
                     }else{
-                        zagol.innerHTML='<big><center ><b><big><span style="color:red">'+array_menu[(nm-0)+1][nr-1]+' /</span> <br/><span style="color:green">'+array_razd_p[nm][nr-1][np]+' / </span><br/></big>'+ ar_tp[nm][nr-1][np][nom_t][0]+'</b></center></big><p>';
+                        zagol.innerHTML='<big><center ><b><big><span style="color:red">'+ar_menu[(nm-0)+1][nr-1][0]+' /</span> <br/><span style="color:green">'+array_razd_p[nm][nr-1][np]+' / </span><br/></big>'+ ar_tp[nm][nr-1][np][nom_t][0]+'</b></center></big><p>';
                         text_osnov.innerHTML=on_tp_t(nom_t);
                     }
                     osnova.style.height=zagol.clientHeight+text_osnov.clientHeight+400+'px';          
@@ -456,7 +466,7 @@ function on_str_0() {
                 case 4: tex.innerHTML=chel_all_yr(np_1-1); break;
             }
         }else{    
-            zag.innerHTML=array_menu[(nm-0)+1][nr-1]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t][0]+'</small>';
+            zag.innerHTML=ar_menu[(nm-0)+1][nr-1][0]+' / <br/>'+array_razd_p[nm][nr-1][np]+' / <br/><small>'+ ar_tp[nm][nr-1][np][nom_t][0]+'</small>';
             //bob.innerHTML='yra';
             ar='';ark='';
             if(nm-0==0&&nr-0==1&&(np==0||(np==1&&nom_t==0))){ar=array_text[0][0][0][26];ark='"';}
@@ -475,7 +485,7 @@ function on_str_0() {
             case 1:soderg_razdela_1();break;
             default:soderg_razdela_0();break;
         }
-        document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = array_menu[nm-0 + 1][nr - 1];
+        document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = ar_menu[nm-0 + 1][nr - 1][0];
         ten1_gl_p.style.left= gl_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2+'px';
         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=(osnova.clientWidth-gl_p.clientWidth)/2-60+'px';
     }    
