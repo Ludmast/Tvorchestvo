@@ -481,12 +481,13 @@ array_text =
                     '<p>Это полезно для тех, кто хочет расширить свой кругозор и увеличить уровень знаний.'
                     //----------------------------------------------------------------------------
                     ,'<dd><p>При нажатии на выбранный заголовок новости откроется текст статьи. Ниже представлен образец одной из полос: <p>'
+                    ,'<dd><p>При нажатии на выбранную полосу Вы переноситесь на записанный в ней пункт раздела. Ниже представлен лишь образец одной из полос:<p>'
                     ,'<dd><p>При нажатии на выбранного мастера Вы переходите на его страничку. Ниже представлен образец одной из полос, при нажатии на которую откроется окно умельца: <p>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера к этой работе. Ниже представлен лишь образец одной из полос:<p>'
-                    ,'<dd><p>При нажатии на выбранную полосу Вы переноситесь на записанный в ней пункт раздела. Ниже представлен лишь образец одной из полос:<p>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера к началу данной темы. Ниже представлен лишь образец одной из полос:<p>'
                     ,'<dd><p>При нажатии на выбранный вариант Вы переноситесь на страничку мастера в раздел "Обучение". Ниже представлен лишь образец одной из полос:<p>'
                     ,'<dd><p>Изображения у разных мастеров может совпадать или принадлежать другим авторам, так как здесь выставляется материал взятый с общего доступа в Интернете. При нажатии на выбранную коллекцию Вы переноситесь на страничку мастера к соответствуещему разделу. Ниже представлен лишь образец одной из полос:<p>'
+                    ,'<dd><p>Вы сможете выбирать содержание окна со шпоргалками. При нажатии на надпись "Занести в шпоргалки" содержимое, представленное ниже, отразится в появившемся окне. Так же окно со шпоргалками можно будет передвигать по экрану:<p>'
                     ,'</dd>'
                     //----------------------------------------------------------------------------
                     
@@ -1403,8 +1404,21 @@ ar_shp=
     [
         [
             [
-                ['шпора',0]
-                ,['шпора 2',0]
+                []
+                ,[
+                    ['Один из пробников',0]
+                ]
+            ]
+        ]
+        ,[
+            []
+            ,[]
+            ,[
+                [
+                    ['шпора',0]
+                    ,['шпора 2',0]
+                    ,['шпора 3',0]
+                ]
             ]
         ]
         ,[]
@@ -1427,12 +1441,13 @@ ar_tp=
                     ,['Здесь перечисленны конкретные разделы содержащие списки из цветных контейнеров с текстом и, если нужно, фотографиями: ',1,1,2,0]
                     ,['<b>Розовым цветом</b>',0,3,3,1]
                     ,['Раздел "Чего новенького" содержит список новостей.',0,4,5,2]
-                    ,['Раздел "Люди-умельцы" содержит список учасников группы.',0,4,6,2]
-                    ,['Раздел "Творческие работы" содержит список изделий от авторов.',0,5,7,2]
-                    ,['Раздел "История просмотра" содержит пополняемый список Ваших передвижений по сайту при данном посящении.',0,6,8,2]
+                    ,['Раздел "История просмотра" содержит пополняемый список Ваших передвижений по сайту при данном посящении.',0,4,6,2]
+                    ,['Раздел "Люди-умельцы" содержит список учасников группы.',0,5,7,2]
+                    ,['Раздел "Творческие работы" содержит список изделий от авторов.',0,6,8,2]
                     ,['Раздел "Обучение от умельцев" содержит список уроков от мастеров.',0,7,9,2]
                     ,['Раздел "Обучение от умельцев" содержит пункт <b>"Обучение от конкретного мастера"</b>, где указывается список умельцев, способных обучить определённым навыкам пользователя.',0,8,10,2]
-                    ,['Раздел "Обучение от умельцев" еще содержит пункт <b>"Схемы и картинки от умельцев"</b>, в котором представлены коллекции различного фото-материала.',0,9,10,2]
+                    ,['Раздел "Обучение от умельцев" еще содержит пункт <b>"Схемы и картинки от умельцев"</b>, в котором представлены коллекции различного фото-материала.',0,9,11,2]
+                    ,['В меню "Обучение" все разделы, содержащие пункт "Шпоргалки", позволяют открывать окно с формулами, определениями, правилами.',0,10,11,2]
                 ] 
                 //----------------------------------------------------------------------------
                 ,[//Содержимое сайта
@@ -3015,15 +3030,16 @@ function on_tp_t(nomer_pt){
                                     pp+=tm_telo(0)+array_text[0][0][1][11]+'</li><li>';
                                     pp+=ti_telo(0)+array_text[0][0][1][12]+ '</li></ul>';
                                     break;
-                                case 1:pp=tp_t(3,10); break;
+                                case 1:pp=tp_t(3,11); break;
                                 case 2:pp='<dd>'+ array_text[0][0][1][13]+'</dd>';break;
-                                case 3:pp=array_text[0][0][1][17]+tn_telo(0,0)+array_text[0][0][1][24]; break;
-                                case 4:pp=array_text[0][0][1][18]+tym_telo(0)+array_text[0][0][1][24];break;
-                                case 5:pp=array_text[0][0][1][19]+tym_rab_telo(0,0)+ array_text[0][0][1][24];break;
-                                case 6:pp=array_text[0][0][1][20]+tistor_telo(0)+array_text[0][0][1][24];break;
-                                case 7:pp=array_text[0][0][1][21]+tym_yrok_telo(0,0,0)+ array_text[0][0][1][24];break;
-                                case 8:pp=array_text[0][0][1][22]+tym_yroki_mast_telo(0)+array_text[0][0][1][24];break;
-                                case 9:pp=array_text[0][0][1][23]+tym_pik_telo(0,0)+ array_text[0][0][1][24];break;
+                                case 3:pp=array_text[0][0][1][17]+tn_telo(0,0)+array_text[0][0][1][25]; break;
+                                case 4:pp=array_text[0][0][1][18]+tistor_telo(0)+array_text[0][0][1][25];break;
+                                case 5:pp=array_text[0][0][1][19]+tym_telo(0)+ array_text[0][0][1][25];break;
+                                case 6:pp=array_text[0][0][1][20]+tym_rab_telo(0,0)+array_text[0][0][1][25];break;
+                                case 7:pp=array_text[0][0][1][21]+tym_yrok_telo(0,0,0)+ array_text[0][0][1][25];break;
+                                case 8:pp=array_text[0][0][1][22]+tym_yroki_mast_telo(0)+array_text[0][0][1][25];break;
+                                case 9:pp=array_text[0][0][1][23]+tym_pik_telo(0,0)+ array_text[0][0][1][25];break;
+                                case 10:pp=array_text[0][0][1][24]+tshp_telo(0)+ array_text[0][0][1][25];break;
                             }
                         break;
                         case 2:
@@ -4711,6 +4727,7 @@ okno_name_besedi.innerHTML = 'Беседы';
     }else document.getElementById('razdel_teni').innerHTML = document.getElementById('razdel').innerHTML = ar_menu[localStorage.getItem('nm') - 0 + 1][localStorage.getItem('nr') - 1][0];
     //---------------------------------------------------------------------------------------------
     //---------------------------------------------------------------------------------------------
+    glazik=45;
     pomoshnik.innerHTML = "<span id='ten_pomoshnika'></span><span id='telo'></span><span id='svet_tela'></span><span id='glaz_l'></span><span id='glaz_r'></span><span id='guba'></span>";
     glaz_l.innerHTML = "<span id='svet_glaz_l' class='c_svet_glaz'></span><span id='sheka_l'></span>";
     glaz_r.innerHTML = "<span id='svet_glaz_r' class='c_svet_glaz'></span><span id='sheka_r'></span>";
@@ -4885,7 +4902,7 @@ interes_nomer=0;
     metka_nomer=0;
     metka_left=0;
 
-
+sravnenie=scrollY;
 
     gl_p_vis_hidden = false;
     deform_okno_besedi_down = false;
@@ -5786,7 +5803,7 @@ function on_shpora_move(deistvie_shp) {
     switch(deistvie_shp){
         case 3:
             if(shpora_move){
-                shpora_y=event.clientY-40;
+                shpora_y=event.clientY-shpora_y_plus;
                 shporgalki.style.top=shpora_y+scrollY+'px';
                 shporgalki.style.left=event.clientX-shpora_x+'px';
                // bob.innerHTML='yra';
@@ -5799,8 +5816,8 @@ function on_shpora_move(deistvie_shp) {
 shpora_move=true;
 
 shpora_x=event.clientX-shporgalki.offsetLeft;
-
-//bob.innerHTML=shpora_y;
+shpora_y_plus=scrollY+event.clientY-shporgalki.offsetTop;
+//pomoshnik.style.top=pomoshnik.offsetTop-100+'px';//bob.innerHTML=shpora_y;
                event.returnValue=false;
 
         break;
@@ -5855,13 +5872,13 @@ function on_tshp(deistvie, nomer_shp) {
     idnom = document.getElementById('tshp_'+name_shp);
     switch (deistvie) {
         case 1://over
-        if(ar_shp[nr-3][np][nomer_shp][1]==0){
+        if(ar_shp[nm][nr-1][np][nomer_shp][1]==0){
             idnom.style.background = '#eea';
             idnom.style.color = '#620';
         }
         break;
         case 2://out
-        if(ar_shp[nr-3][np][nomer_shp][1]==0){ 
+        if(ar_shp[nm][nr-1][np][nomer_shp][1]==0){ 
             idnom.style.background = '#a62';
             idnom.style.color = '#eea';
         }
@@ -5873,7 +5890,8 @@ function on_tshp(deistvie, nomer_shp) {
                 shpora_rab=true;
                 on_shpora();
             }
-            if(ar_shp[nr-3][np][nomer_shp][1]==0){
+            
+            if(ar_shp[nm][nr-1][np][nomer_shp][1]==0){
                 shporgalki_id++;
                 
                 idnom.style.background='#c0ffe0';
@@ -5883,8 +5901,8 @@ function on_tshp(deistvie, nomer_shp) {
                 galka.style.paddingRight='5px';
                 
                 galka.innerHTML='V';
-                ar_shp[nr-3][np][nomer_shp][1]=shporgalki.innerHTML.length;
-                shporgalki.innerHTML=shporgalki.innerHTML+'<hr width="100%"size="2"color="black"/>'+ar_shp[nr-3][np][nomer_shp][0];
+                ar_shp[nm][nr-1][np][nomer_shp][1]=shporgalki.innerHTML.length;
+                shporgalki.innerHTML=shporgalki.innerHTML+'<hr width="100%"size="2"color="black"/>'+ar_shp[nm][nr-1][np][nomer_shp][0];
                 shporgalki.style.height=shporgalki.clientHeight+idnom.clientHeight+'px';
             }else{
                 
@@ -5896,11 +5914,11 @@ function on_tshp(deistvie, nomer_shp) {
                 galka.style.paddingLeft='0px';
                 galka.style.paddingRight='0px';
                 galka.innerHTML='__';
-                dlina=ar_shp[nr-3][np][nomer_shp][0].length;
-                isk=ar_shp[nr-3][np][nomer_shp][1];
-                ar_shp[nr-3][np][nomer_shp][1]=0;
-                primshp=ar_shp[nr-3][np].length;
-                for(ishp=0;ishp<primshp;ishp++)if(ar_shp[nr-3][np][ishp][1]>isk)ar_shp[nr-3][np][ishp][1]=ar_shp[nr-3][np][ishp][1]-dlina-40;
+                dlina=ar_shp[nm][nr-1][np][nomer_shp][0].length;
+                isk=ar_shp[nm][nr-1][np][nomer_shp][1];
+                ar_shp[nm][nr-1][np][nomer_shp][1]=0;
+                primshp=ar_shp[nm][nr-1][np].length;
+                for(ishp=0;ishp<primshp;ishp++)if(ar_shp[nm][nr-1][np][ishp][1]>isk)ar_shp[nm][nr-1][np][ishp][1]=ar_shp[nm][nr-1][np][ishp][1]-dlina-40;
                 shporgalki.style.height=shporgalki.clientHeight-idnom.clientHeight-11+'px';
                 shporgalki.innerHTML=shporgalki.innerHTML.slice(0,isk)+shporgalki.innerHTML.slice(dlina+isk+(dlina+isk<shporgalki.innerHTML.length?40:0),shporgalki.innerHTML.length);    
                 if(shporgalki_id<2){
@@ -5913,11 +5931,16 @@ function on_tshp(deistvie, nomer_shp) {
 }
 //=================================================================================================
 function tshp_telo(nomer_shp) {
-    
-    name_shp = nm + '_' + (nr-1) + '_' + np+'_'+nomer_shp;
+name_shp = nm + '_' + (nr-1) + '_' + np+'_'+nomer_shp;
+    //if(nm==0){
+//return'<p><center><table border="2"align="middle"><tr border="2"id="tshp_'+name_shp+'"  class="shpora" onmouseover="on_tshp(1,'+nomer_shp+')"onmouseout="on_tshp(2,'+nomer_shp+')"onmousedown="on_tshp(3,'+nomer_shp+')"><td>Занести в шпоргалки  <span id="tshp_'+name_shp+'_galka"class="shpora_g">__ </span></td></tr><tr><td>Один из пробников</td></tr></table></center><p>';    
+//}else{ 
 
-    return'<p><center><table border="2"align="middle"><tr border="2"id="tshp_'+name_shp+'"  class="shpora" onmouseover="on_tshp(1,'+nomer_shp+')"onmouseout="on_tshp(2,'+nomer_shp+')"onmousedown="on_tshp(3,'+nomer_shp+')"><td>Занести в шпоргалки  <span id="tshp_'+name_shp+'_galka"class="shpora_g">__ </span></td></tr><tr><td>'+ar_shp[nr-3][np][nomer_shp][0]+'</td></tr></table></center><p>';
     
+return'<p><center><table border="2"align="middle"><tr border="2"id="tshp_'+name_shp+'"  class="shpora" onmouseover="on_tshp(1,'+nomer_shp+')"onmouseout="on_tshp(2,'+nomer_shp+')"onmousedown="on_tshp(3,'+nomer_shp+')"><td>Занести в шпоргалки  <span id="tshp_'+name_shp+'_galka"class="shpora_g">__ </span></td></tr><tr><td>'+ar_shp[nm][nr-1][np][nomer_shp][0]+'</td></tr></table></center><p>';
+//} 
+
+
 }
 //=================================================================================================
   
@@ -6732,6 +6755,7 @@ function izmen_win() {
         ten_kn_nazad.style.top = kn_nazad.style.top = innerHeight - 80 + scrollY + 'px';
         line_pomoshnik.style.top = innerHeight - 73 + 'px';
         ten_line_pomoshnik.style.top = innerHeight - 61 + 'px';
+        glazik=45;
         pomoshnik_go(0);
                 
         ten_kn_prydki.style.top = innerHeight - 60 + 'px';
@@ -6770,8 +6794,9 @@ function izmen_win() {
         ten_line_pomoshnik.style.top = innerHeight - 60 + scrollY + 'px';
         
         pomoshnik.style.left='40px';
+        if(sravnenie<scrollY)glazik=50;else glazik=40;
         pomoshnik_go(0);
-
+        sravnenie=scrollY;
         ten_kn_prydki.style.top = innerHeight - 60 + scrollY + 'px';
         kn_prydki.style.top = innerHeight - 64 + scrollY + 'px';
         ten_stranici.style.height = stranica.clientHeight + 'px';
@@ -6813,7 +6838,7 @@ posle_scroll = false;
 
         line_pomoshnik.style.top = innerHeight - 73 + 'px';
         ten_line_pomoshnik.style.top = innerHeight - 60 + 'px';
-
+glazik=45;
         //sleva
         pomoshnik_go(0);
     

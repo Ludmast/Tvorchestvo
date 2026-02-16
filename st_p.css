@@ -58,6 +58,7 @@ body
     position: absolute;
     bottom: 55px;
     left: 40px;
+    
 }
 #ten_pomoshnika{
     position:absolute;
@@ -79,6 +80,7 @@ body
     background-color: #d0c040;
     border-radius: 50%;
     border: 2px solid #f37a29;
+    cursor: pointer;
 }
 #svet_tela {
     position: absolute;
@@ -89,6 +91,7 @@ body
     filter: blur(15px);
     background-color: #ffff60;
     border-radius: 50%;
+    cursor: pointer;
 }
 #glaz_l,#glaz_r{
     position: absolute;
@@ -97,7 +100,7 @@ body
     bottom: 60px;
     background-color: black;
     border-radius: 50%;
-
+cursor: pointer;
 }
 #glaz_l {
     left: 25px;

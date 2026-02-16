@@ -29,7 +29,7 @@ function prydki_() {
         case 1:
             if (prydki_index > -prydki_del) {
                 prydki_index -= prydki_del;
-                pomoshnik.style.left = pomoshnik.style.left.slice(0, pomoshnik.style.left.length - 2) - prydki_del + 'px';
+                pomoshnik.style.left = pomoshnik.offsetLeft - prydki_del + 'px';
                 line_pomoshnik.style.width = prydki_index + 'px';
                 ten_line_pomoshnik.style.width = prydki_index + 10 + 'px';
                 ten_kn_prydki.style.left = kn_prydki.style.left = line_pomoshnik.clientWidth + 'px';
