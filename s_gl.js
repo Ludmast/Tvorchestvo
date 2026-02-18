@@ -3060,8 +3060,8 @@ function on_tp_t(nomer_pt){
                         case 3:
                             switch(nomer_pt){
                                 case 0:
-                                    pp+='<p align="center"><span><table border="2px"><tr><td align="center"><img src="dizain/f1.png"class="foto_rab"></img></td></tr><tr><td align="center">hikuh</td></tr></table></span><img src="dizain/f1.png"class="foto_rab"></img><img src="dizain/f1.png"class="foto_rab"></img>';
-                                    for(i=0;i<5;i++)pp+='<span id="dizain_sait_'+i+'"class="dizain"> text </span>';
+                                    pp+=tdizain_table(['Авторский','Карточный','Стеклянный','Книжный','Газетный']);
+                                    
                                 break;
                             }
                         
@@ -5797,7 +5797,53 @@ function tym_pik_telo(nomer_ym,nomer_pik) {
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
+function on_dizain(deistvie_diz,nomer_dizs) {
+    color_diz_videlen='#a75';
+    color_diz_nevidelen='#fff8e0';
+    name_dizs= nm + '_' + (nr-1) + '_' + np+'_'+nomer_dizs;    
+    diz=document.getElementById('diz_'+name_dizs).style;
+    switch(deistvie_diz){
+        case 1://over
+            diz.color=color_diz_nevidelen;
+            diz.background=color_diz_videlen;
+            document.getElementById('svet_nad_'+name_dizs).style.visibility='visible';
+            document.getElementById('ten_nad_'+name_dizs).style.visibility='visible';
+        break;
+        case 2://out
+            diz.color='black';
+            diz.background=color_diz_nevidelen;
+            document.getElementById('svet_nad_'+name_dizs).style.visibility='hidden';
+            document.getElementById('ten_nad_'+name_dizs).style.visibility='hidden';
+        break;
 
+    }
+}
+//=================================================================================================
+function tdizain_telo(text,nomer_diz) {
+name_diz= nm + '_' + (nr-1) + '_' + np+'_'+nomer_diz;
+return '<div id="diz_'+name_diz+'" class="c_dizain" onmouseover="on_dizain(1,'+nomer_diz+')"onmouseout="on_dizain(2,'+nomer_diz+')"><center><div id="svet_nad_'+name_diz+'"class="c_svet_nad_diz"></div><table><td  align="center"><img src="dizain/f'+nomer_diz+'.png"class="foto_rab"></img></td></tr><tr><td align="center">'+text+'</td></tr></table></center><div id="ten_nad_'+name_diz+'"class="c_ten_nad_diz"></div></div>';
+}
+//=================================================================================================
+function tdizain_table(text_diz) {
+    per=text_diz.length+1;
+    j_diz=Math.floor((200*per)/(stranica.clientWidth-300));
+    i_j=Math.floor(per/j_diz);
+    ii_j=1;
+    str_diz='<center><table><tr>';
+    for(i_diz=1;i_diz<per;i_diz++){
+        if(ii_j>=i_j){
+            ii_j=0;
+            str_diz+='</tr><tr>';
+        }else ii_j++;
+        str_diz+='<td>'+tdizain_telo(text_diz[i_diz-1],i_diz)+'</td>';
+    }
+    str_diz+='</tr></table></center>';
+    return str_diz;
+}
+
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
 
 function on_shpora_move(deistvie_shp) {
     switch(deistvie_shp){
@@ -6373,9 +6419,9 @@ function panel_izmen(deistvie) {
 
         case 3://move
             if (event.clientX > osnova.clientWidth - okno_besedi.clientWidth && event.clientX < osnova.clientWidth - 10 &&
-                okno_besedi.style.visibility == 'visible' && ((event.clientY > okb - scrollY + okno_besedi.clientHeight - 5 && event.clientY < okb - scrollY + okno_besedi.clientHeight + 5) ||
-                    (event.clientY > okn - scrollY + okno_novosti.clientHeight - 5 && event.clientY < okn - scrollY + okno_novosti.clientHeight + 5) ||
-                    (event.clientY > okz - scrollY + okno_zametki.clientHeight - 5 && event.clientY < okz - scrollY + okno_zametki.clientHeight + 5))) okna.style.cursor = 'ns-resize';
+                okno_besedi.style.visibility == 'visible' && ((event.clientY > okb + scrollY + okno_besedi.clientHeight - 5 && event.clientY < okb + scrollY + okno_besedi.clientHeight + 5) ||
+                    (event.clientY > okn + scrollY + okno_novosti.clientHeight - 5 && event.clientY < okn + scrollY + okno_novosti.clientHeight + 5) ||
+                    (event.clientY > okz + scrollY + okno_zametki.clientHeight - 5 && event.clientY < okz + scrollY + okno_zametki.clientHeight + 5))) okna.style.cursor = 'ns-resize';
             else okna.style.cursor = 'default';
             if (deform_okno_besedi_down) {
 
