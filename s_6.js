@@ -1,4 +1,4 @@
-function Sait_load_0()
+function Sait_load_6()
 {
     if(odin==2){
         
@@ -438,17 +438,12 @@ okno_name_besedi.innerHTML = 'Беседы';
     //---------------------------------------------------------------------------------------------
    
     osnova_razvernuta=false;
-    sait_load_menu_0();
+    sait_load_menu_6();
     setTimeout('peremennie()', 10);
     }    
 }
 //=================================================================================================
-function sait_load_dopolnit(){
-
-}
-
-//=================================================================================================
-function sait_load_menu_0() {
+function sait_load_menu_6() {
     menu_width = 280;
     m1_left = 22; m2_left = m1_left + m_g.clientWidth + m_razdelitel.clientWidth + 4; m3_left = m2_left + m_y.clientWidth + m_razdelitel.clientWidth + 4; m4_left = m3_left + m_os.clientWidth + m_razdelitel.clientWidth + 4; m_b = 1;
     ms = [["m_g", 8, m1_left, 4], ["m_y", 24, m2_left, 6], ["m_os", 4, m3_left, 2], ["m_s", 4, m4_left, 2]];
@@ -497,7 +492,7 @@ function sait_load_menu_0() {
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
-function soderg_razdela_0() {
+function soderg_razdela_6() {
     
     t = 0;
     text_size = 35;
@@ -512,13 +507,13 @@ function soderg_razdela_0() {
     //подсветка и сами названия содержания страниц
     //str_2+= "<div id='ten1_gl_p'></div><div id='gl_p_za_str'class='c_gl_p_0'>Содержимое раздела:";
     // <div id='kn_za_str2' onmouseover='kn_za_str2_0(1)' onmouseout='kn_za_str2_0(2)' onmousedown='kn_za_str2_0(4)'></div>";
-    str += "<div id='ten_gl_p'></div><div id='gl_p'class='c_gl_p_0'>Содержимое раздела:";
+    str += "<div id='ten_gl_p'></div><div id='gl_p'class='c_gl_p_4'>Содержимое раздела:";
     //<div id='kn_za_str' onmouseover='kn_za_str_0(1)' onmouseout='kn_za_str_0(2)' onmousedown='kn_za_str_0(4)'></div>";
     for (i = 0; i < array_razd_p[localStorage.getItem('nm')][localStorage.getItem('nr') - 1].length; i++) {
-    str += "<div id='tp_" + i + "'class='c_ten_p_0'></div><div id='p_" + i + "'class='c_p_0' onmouseover='p_videlen_0(1, " + i + ")' onmouseout='p_videlen_0(2," + i + ")' onmousedown='p_videlen_0(4," + i + ")'></div>";
+    str += "<div id='tp_" + i + "'class='c_ten_p_4'></div><div id='p_" + i + "'class='c_p_4' onmouseover='p_videlen_4(1, " + i + ")' onmouseout='p_videlen_4(2," + i + ")' onmousedown='p_videlen_4(4," + i + ")'></div>";
     //str_2+= "<div id='tp_" + i + "_2'class='c_ten_p_0'></div><div id='p_" + i + "_2'class='c_p_0'></div></div>";
     }
-    str += "<div id='ten2'></div></div><div id='ten_vibronogo_p'class='c_ten_vibronogo_p_0'></div><div id='ogl_vibrono_copiy'class='c_ogl_vibrono_copiy_0'></div>";
+    str += "<div id='ten2'></div></div><div id='ten_vibronogo_p'class='c_ten_vibronogo_p_4'></div><div id='ogl_vibrono_copiy'class='c_ogl_vibrono_copiy_4'></div>";
     //---------------------------------------------------------------------------------------------
     //in_load_1.innerHTML='<table><tr><td>'+str_2+'</td></tr></table>';
     in_load_3.innerHTML ='<table><tr><td>'+ str+'</td></tr></table>';
@@ -645,75 +640,10 @@ p_0.style.visibility=
 
 
 }
-//=================================================================================================
-function kn_za_str_0(deistvie) {
-    color_kn = '#b0c0f0';
-    color_ris = '#304050';
-    color_videl = '#6080c0';
-    color_videl_ris = '#c0ffe0';
-    switch (deistvie) {
-        case 1://over
-            kn_za_str.style.backgroundColor = color_videl;
-            ris_min.style.backgroundColor = color_videl;
-            ris_min.style.borderColor = color_videl_ris;
-            ris_v.style.color = color_videl_ris;
-            ris_kn_za_str.style.borderColor = color_videl_ris;
-            ris_str.style.backgroundColor = color_videl_ris;
-            kn_za_str.style.cursor = 'default';
-            break;
-        case 2://out
-            kn_za_str.style.backgroundColor = color_kn;
-            ris_min.style.backgroundColor = color_kn;
-            ris_min.style.borderColor = color_ris;
-            ris_v.style.color = color_ris;
-            ris_kn_za_str.style.borderColor = color_ris;
-            ris_str.style.backgroundColor = color_ris;
-            break;
-        case 3://move
 
-            break;
-        case 4://douwn
-            scroll(0, 0);
-            gl_p.style.visibility = 'visible';
-            soderg_var=0;
-            setTimeout('on_kn_za_str_0()', 10);
-            up();
-            break;
-
-    }
-}
-//=================================================================================================
-function on_kn_za_str_0() {
-    switch(soderg_var){
-        case 0:
-            soderg_izmen=soderg_izmen_2= 30;
-            soderg_del=(gl_p.clientWidth)/10;
-            soderg_index=0;
-            soderg_rab = true;
-
-            gl_p.style.left=ten1_gl_p.style.left=soderg_izmen+'px';
-            soderg_var++;
-        break;
-        case 1:
-            if(soderg_index<9){
-                soderg_index++;
-                soderg_izmen-=soderg_del;
-                gl_p.style.left=ten1_gl_p.style.left=ten_gl_p.style.left=soderg_izmen+'px';
-            }
-            else{
-                gl_p.style.visibility=ten_gl_p.style.visibility='hidden';
-                gl_p_za_str.style.visibility='visible';
-                gl_p_za_str.style.left=gl_p.style.left;
-                soderg_var++;
-            }
-        break;
-        
-    }
-    if(soderg_rab)setTimeout('on_kn_za_str_0()',100);
-}
 //=================================================================================================
 //=================================================================================================
-function p_videlen_0(deystvie, idnomer) {
+function p_videlen_6(deystvie, idnomer) {
     videl_chast = '#6080c0';
     ne_videl_chast = '#a0c0ff';
     videl_text = '#c0e0ff';
@@ -771,7 +701,7 @@ function p_videlen_0(deystvie, idnomer) {
 //=================================================================================================
 
 //=================================================================================================
-function smena_stranic_0() {
+function smena_stranic_6() {
      
     if(odin>1) switch(smena_var){
             case 0:
@@ -837,11 +767,10 @@ if(np_2==0){
                     smena_var=0;
                 }
             break;
-    }else switch(smena_deistvie){
-        default:
-            switch(smena_var){
+    }else switch(smena_var){
+        case 0:
         //bob.innerHTML=odin_na_stranice;
-        case 0:    smena_delimoe_gl=Math.floor((stranica.clientWidth+125)/10);
+            smena_delimoe_gl=Math.floor((stranica.clientWidth+125)/10);
             smena_izmen_gl= 30;
             smena_index=0;
              if(odin>0){//_na_stranice){
@@ -896,7 +825,7 @@ if(np_2==0){
                     kn_tp_na_str_1.style.visibility=kn_tp_na_str_2.style.visibility=kn_tp_na_str_3.style.visibility=kn_tp_na_str_4.style.visibility=kn_tp_na_str_5.style.visibility=kn_tp_na_str_6.style.visibility=kn_tp_na_str_7.style.visibility=kn_tp_na_str_8.style.visibility='hidden';
                     soderg_razdela_0();
                 }else kn_tp_na_str_1.style.visibility=kn_tp_na_str_2.style.visibility=kn_tp_na_str_3.style.visibility=kn_tp_na_str_4.style.visibility=kn_tp_na_str_5.style.visibility=kn_tp_na_str_6.style.visibility=kn_tp_na_str_7.style.visibility=kn_tp_na_str_8.style.visibility='visible';
-                on_str_0();
+                on_str_4();
                 smena_izmen_gl=osnova.clientWidth;
                 if(odin==0){
                     gl_p.style.left= razdel.style.left=razdel_teni.style.left=ten_stranici.style.left = stranica.style.left =smena_izmen_gl+'px';
@@ -935,15 +864,14 @@ if(np_2==0){
                 razdel.style.left=razdel_teni.style.left='10px';
                 ten_stranici.style.left = stranica.style.left='125px';
             }
-        }
             break;
         //---------------------------------------------------------------------------------------
     }
-    if(smena_rab)setTimeout('smena_stranic_0()',30);
+    if(smena_rab)setTimeout('smena_stranic_6()',30);
 }
 
 //=================================================================================================
-function on_str_0() {
+function on_str_6() {
     ar='';ark='';
     arra='';
     if(odin==1){
@@ -1001,7 +929,7 @@ function on_str_0() {
     }    
 }
 //=================================================================================================
-function on_kn_tp_na_str(deistvie_kn_tp,n_kn){
+function on_kn_tp_na_str_6(deistvie_kn_tp,n_kn){
     color_kn_videl='#68a';
     color_kn_nevidel='#d0e0ff';
     color_str_kn_nevidel='black';
@@ -1089,9 +1017,10 @@ function on_kn_tp_na_str(deistvie_kn_tp,n_kn){
         break;
     }
 }
+
 //=================================================================================================
 
-function kn_nazad_0(deistvie) {
+function kn_nazad_6(deistvie) {
     color_kn = '#5080b0';
     color_videl = '#80b0e0';
     switch (deistvie) {

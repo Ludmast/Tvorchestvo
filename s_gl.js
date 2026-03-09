@@ -3060,7 +3060,7 @@ function on_tp_t(nomer_pt){
                         case 3:
                             switch(nomer_pt){
                                 case 0:
-                                    pp+=tdizain_table(['Авторский','Карточный','Стеклянный','Книжный','Газетный']);
+                                    pp+=tdizain_table(['Авторский','Карточный','Стеклянный','Книжный','Газетный','Исчезающий','Мобильный']);
                                     
                                 break;
                             }
@@ -4343,6 +4343,10 @@ function Sait_load() {
     if(localStorage.getItem('svo')){}else
         localStorage.setItem('svo',0);//смена варианта появления окон при данном дизайне страницы (окно: меню, содержание раздела, выбранная страница, панель окон беседы-новости-заметки)
     svo=localStorage.getItem('svo');
+if(localStorage.getItem('o_c')){}else
+    localStorage.setItem('o_c','#5080b0b0');
+o_c=localStorage.getItem('o_c');
+
     //---------------------------------------------------------------------------------------------
 
 if(localStorage.getItem('not')){}else
@@ -4364,9 +4368,81 @@ switch(dz){
 //=================================================================================================
 //=================================================================================================
 //=================================================================================================
+function smena_stranic(){
+
+    switch(dz){
+
+        case 1:smena_stranic_1();break;
+        case 2:smena_stranic_2();break;
+        case 3:smena_stranic_3();break;
+        case 4:smena_stranic_4();break;
+        case 5:smena_stranic_5();break;
+        case 6:smena_stranic_6();break;
+        case 7:smena_stranic_7();break;
+        default:smena_stranic_0();break;
+    
+    }
+}
+
+//=================================================================================================
 
 
 function peremennie() {
+    //---------------------------------------------------------------------------------------------
+    in_tr=interes_treug.getContext('2d');
+
+      interes_treug.width=20;
+    interes_treug.height=20;
+    in_tr.beginPath();  
+    in_tr.fillStyle='#ffefe0';
+    in_tr.fillRect(10,2,1,2);
+    in_tr.fillRect(9,4,2,2);
+    in_tr.fillRect(8,6,3,2);
+    in_tr.fillRect(7,8,5,2);
+    in_tr.fillRect(6,10,6,2);
+    in_tr.fillRect(5,12,8,2);
+    in_tr.fillRect(4,14,9,2);
+    in_tr.fillRect(3,16,11,2);
+    in_tr.fillRect(2,18,12,2);
+    
+    in_tr.strokeStyle='#604020';
+    
+    in_tr.lineWidth=2;
+
+    in_tr.moveTo(10,0);
+    in_tr.lineTo(1,20);
+    in_tr.moveTo(10,0);
+    in_tr.lineTo(15,20);
+    
+in_tr.stroke();
+    //---------------------------------------------------------------------------------------------
+    //metka_treug.style.visibility='hidden';
+    met_tr=metka_treug.getContext('2d');
+    metka_treug.style.top='120px';
+      metka_treug.width=20;
+    metka_treug.height=20;
+    met_tr.beginPath();  
+    
+    
+    met_tr.fillStyle='#efffe0';
+    met_tr.fillRect(10,2,1,2);
+    met_tr.fillRect(9,4,2,2);
+    met_tr.fillRect(8,6,3,2);
+    met_tr.fillRect(7,8,5,2);
+    met_tr.fillRect(6,10,6,2);
+    met_tr.fillRect(5,12,8,2);
+    met_tr.fillRect(4,14,9,2);
+    met_tr.fillRect(3,16,11,2);
+    met_tr.fillRect(2,18,12,2);
+    met_tr.strokeStyle='#00a010';
+    
+    met_tr.lineWidth=2;
+
+    met_tr.moveTo(10,0);
+    met_tr.lineTo(1,20);
+    met_tr.moveTo(10,0);
+    met_tr.lineTo(15,20);
+met_tr.stroke();
 
     //---------------------------------------------------------------------------------------------
     stranici_right = stranica_left + stranica.clientHeight;
@@ -4421,7 +4497,8 @@ sravnenie=scrollY;
     dvig_pan_konec = osnova.clientWidth - 20;
     dvig_pan_index = 0;
     //---------------------------------------
-
+o_cur='pointer';
+s_cur='hidden';
 
     prydki_index = 0;
     prydki_variant = 0;
@@ -4429,6 +4506,8 @@ sravnenie=scrollY;
     prydki_del = 0;
     prydki_perem = 0;
 
+stranica_izmen_width=false;
+    okna_izmen_width=false;
     
     setTimeout('izmen_win()', 4);
     pom_etap_vipolnen = false;
@@ -4443,7 +4522,7 @@ function up() {
     if(osnova.clientHeight<innerHeight){osnova.style.height=innerHeight+'px';}
     if(odin<2){
         okna.style.height=osnova.clientHeight+scrollY+'px';
-    ten_stranici.style.width=   stranica.style.width=(osnova.clientWidth/100)*60+'px';
+    stranica.style.width=ten_stranici.style.width=   text_stranici.clientWidth+5+'px';//=(osnova.clientWidth/100)*60+'px';
     ten_stranici.style.height=stranica.clientHeight+'px';
 }
 }
@@ -4586,13 +4665,14 @@ function menu_(deistvie, nomer, idnomer) {
                         case 3:smena_deistvie=3;break;
                         default: smena_deistvie=0;break;
                     }
-                    smena_stranic_1();
+                    
                 break;
                 default:
                     smena_deistvie=0;
-                    smena_stranic_0();
+                    
                 break;
             }
+            smena_stranic();
             np_1=0;
             np_2=0;
             np_3=0;
@@ -4631,11 +4711,7 @@ function on_gl_p(deistvie_gl){
                 if(event.clientY<250+scrollY||event.clientX<70){
                     smena_deistvie=5;
                     smena_var=0;
-switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
+                    smena_stranic();
 
                 }
             }
@@ -4692,50 +4768,7 @@ function on_form_text_on()
 
 }
 //=================================================================================================
-//=================================================================================================
-//============================== Подслушиватели ===================================================
-//=================================================================================================
-//=================================================================================================
-document.addEventListener('mousedown',event=>{
-   
-   if(metka_on){if(event.target.id!='metka_div'){metka_chet++;if(metka_chet>1)tm_telos(0,nomer_metki_pamyt);}}
-   if(interes_on){if(event.target.id!='interes_div'){interes_chet++;if(interes_chet>1)ti_telos(0,nomer_interesa_pamyt);}}
-});
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
-document.addEventListener('mousemove',event=>{
-   menu_open();
-});
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
-document.addEventListener('scroll',event=>{
-    
-});
 
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
-document.addEventListener('keydown',event=>{
-//const item=document.querySelector(`[data-scroll=" "]`);
-//if(item)scrollTo(item);
-    if(form_text_aktiv)/*switch(event.key){
-        case key.backSpace: form_vvod_text[nomer_f_text_cop]=form_vvod_text[nomer_f_text_cop].pop();break;
-        default:*/
-        
-        if(event.key=='Backspace'){
-            
-            id_form.innerHTML= ar_form_vvod_text[nomer_f_text_cop]=ar_form_vvod_text[nomer_f_text_cop].slice(0,ar_form_vvod_text[nomer_f_text_cop].length-1);}
-        else
-        if(event.key.length<2){id_form.innerHTML= ar_form_vvod_text[nomer_f_text_cop]=ar_form_vvod_text[nomer_f_text_cop]+event.key;}
-        if(event.key==='Enter'){}
-})
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
-//=================================================================================================
 function form_text_on()
 {
     
@@ -4957,11 +4990,7 @@ str_rab = true;
             np_3=
             //nom_t=
             nomer_izdel+1;
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
+    smena_stranic();
  //odin_na_stranice=true;
     
     up();
@@ -5008,12 +5037,7 @@ str_rab = true;
             np_3
             //nom_t
             =nomer_int+1;
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
+    smena_stranic();
  odin_na_stranice=true;    
     up();
 
@@ -5106,12 +5130,8 @@ function on_tym(deistvie,nomer) {
         if(odin==0)odin=1;    
             np_2=0;
             np_3=0;
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
+            smena_stranic();
     
-    }
-
     
     up();
     break;
@@ -5152,13 +5172,8 @@ function on_tym_rab(deistvie,nomer_ym,nomer_rab) {
             np_3=nomer_rab+1;
                     if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
             smena_var=0;
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
-    
+    smena_stranic();
+            
     up();
     break;
     }
@@ -5192,12 +5207,7 @@ function on_tym_yrok(deistvie,nomer_ym,nomer_predmeta,nomer_yroka) {
             np_3=nomer_yroka+1;
             smena_var=0;
             if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
+    smena_stranic();
     up();
     break;
     }
@@ -5225,14 +5235,7 @@ if(deistvie==3){    //str_rab = true;
         if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}    
             np_3=0;
             smena_var=0;
-   switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
-    
-    
+            smena_stranic();
     up();
 }
 
@@ -5261,12 +5264,7 @@ if(deistvie==3){    //str_rab = true;
             if(odin==0){odin=1;text_stranici.style.paddingTop='10px';}
             np_3=nomer_pik+1;
             smena_var=0;
-    switch(dz){
-        case 1:smena_stranic_1();break;
-        default:smena_stranic_0();break;
-    
-    }
-
+    smena_stranic();
     
     
     up();
@@ -5356,7 +5354,7 @@ else
 function tdizain_telo(text,nomer_diz) {
     
 name_diz= nm + '_' + (nr-1) + '_' + np+'_'+nomer_diz;
-return '<div id="diz_'+name_diz+'" class="c_dizain" onmouseover="on_dizain(1,'+nomer_diz+')"onmouseout="on_dizain(2,'+nomer_diz+')"onmousedown="on_dizain(4,'+nomer_diz+')"><center><div id="svet_nad_'+name_diz+'"class="c_svet_nad_diz"></div><table><td  align="center"><img src="dizain/f'+nomer_diz+'.png"class="foto_rab"></img></td></tr><tr><td align="center">'+text+'</td></tr></table></center><div id="ten_nad_'+name_diz+'"class="c_ten_nad_diz"></div></div>';
+return '<div id="diz_'+name_diz+'" class="c_dizain" onmouseover="on_dizain(1,'+nomer_diz+')"onmouseout="on_dizain(2,'+nomer_diz+')"onmousedown="on_dizain(4,'+nomer_diz+')"><center><div id="svet_nad_'+name_diz+'"class="c_svet_nad_diz"></div><table><td  align="center"><img src="dizain/f'+nomer_diz+'.png"class="foto_rab"alt=" Подождите... "></img></td></tr><tr><td align="center">'+text+'</td></tr></table></center><div id="ten_nad_'+name_diz+'"class="c_ten_nad_diz"></div></div>';
 }
 //=================================================================================================
 function tdizain_table(text_diz) {
@@ -6134,11 +6132,11 @@ function dvig_panel() {
 function top_ok(idnomer) {
     switch (idnomer) {
         //besedi
-        case 0: idnomer = okno_besedi.style.top.slice(0, okno_besedi.style.top.length - 2); break;
+        case 0: idnomer = okno_besedi.offsetTop;break;//style.top.slice(0, okno_besedi.style.top.length - 2); break;
         //novosti
-        case 1: idnomer = okno_novosti.style.top.slice(0, okno_novosti.style.top.length - 2); break;
+        case 1: idnomer = okno_novosti.offsetTop;break;//style.top.slice(0, okno_novosti.style.top.length - 2); break;
         //pometki
-        case 2: idnomer = okno_zametki.style.top.slice(0, okno_zametki.style.top.length - 2); break;
+        case 2: idnomer = okno_zametki.offsetTop;break;//style.top.slice(0, okno_zametki.style.top.length - 2); break;
     }
     idnomer -= 0;
     return idnomer;
@@ -6176,14 +6174,7 @@ function kn_okna_videlen(deistvie, idnomer) {
         //-----------------------------------------------------------------------------------------
     }
 }
-//=================================================================================================
-function kn_na_str(pologenie) {
-    kn_stran_nazad.style.top=pologenie+'px';
-    pologenie+=kn_stran_nazad.clientHeight+20;
-    kn_poisk.style.top=pologenie+'px';
-    pologenie+=kn_poisk.clientHeight+20;
-    kn_mneniy.style.top=pologenie+'px';
-}
+
 //=================================================================================================
 function okna_umen() {
     if (innerHeight < okno_top + okno_besedi.clientHeight + okno_novosti.clientHeight + okno_zametki.clientHeight + 30 - scrollY) {
@@ -6263,10 +6254,9 @@ function izmen_win() {
         stranica.style.width = (osnova.clientWidth/100)*60 + 'px';
         gl_p.style.width=(osnova.clientWidth/100)*55+'px';
         switch(dz){
-            case 1:ten1_gl_p.style.width=gl_p.clientWidth+2+'px';break;
+            case 1:ten_gl_p.style.width=gl_p.clientWidth+2+'px';break;
             default:
-                ten1_gl_p.style.width=ten2_gl_p.style.width=gl_p.clientWidth+2+'px';
-                kn_za_str.style.left=gl_p.clientWidth-70+'px';
+                ten_gl_p.style.width=gl_p.clientWidth+2+'px';
             break;
         }
         ten_vibronogo_p.style.width=gl_p.clientWidth+20+'px';
@@ -6294,7 +6284,7 @@ function izmen_win() {
                     //if(ij==iij-1){
                         ijpt=ijp.style.top.slice(0,ijp.style.top.length-2)-0;
                         gl_p.style.height=ijp.clientHeight+ijpt+15+'px';
-                        ten1_gl_p.style.height=ten2_gl_p.style.height=ijp.clientHeight+ijpt+25+'px';
+                        ten_gl_p.style.height=ijp.clientHeight+ijpt+25+'px';
                     //}               
                 }
             //}
@@ -6452,6 +6442,117 @@ glazik=45;
     setTimeout('izmen_win()', 4);
    //  bb=event.srcElement;
 }
+//=================================================================================================
+//=================================================================================================
+//============================== Подслушиватели ===================================================
+//=================================================================================================
+//=================================================================================================
+document.addEventListener('mousedown',event=>{
+   
+    if(metka_on){if(event.target.id!='metka_div'){metka_chet++;if(metka_chet>1)tm_telos(0,nomer_metki_pamyt);}}
+    if(interes_on){if(event.target.id!='interes_div'){interes_chet++;if(interes_chet>1)ti_telos(0,nomer_interesa_pamyt);}}
+    if(event.clientX>okna.offsetLeft-2&&event.clientX<okna.offsetLeft+10){
+        
+        okna.style.cursor='col-resize';
+        event.returnValue=false;
+        okna_izmen_width=true;
+    }else if(event.clientX>stranica.offsetLeft+stranica.clientWidth-10&&event.clientX<stranica.offsetLeft+stranica.clientWidth+2){
+        
+        stranica.style.cursor='col-resize';
+        event.returnValue=false;
+        stranica_izmen_width=true;
+    }
+
+});
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+document.addEventListener('mousemove',event=>{
+    
+    if(okna_izmen_width==true){
+        event.returnValue=false;
+        okna.style.cursor='col-resize';   
+        okna.style.left=event.clientX+'px';
+
+        okna.style.width=osnova.clientWidth-okna.offsetLeft+'px';
+        
+        if(okna.offsetLeft>200&&okna.offsetLeft<osnova.clientWidth-150){
+            okno_besedi.style.width=okno_novosti.style.width=okno_zametki.style.width=osnova.clientWidth-okna.offsetLeft-32+'px';
+            dvigenie_paneli.style.left=okna.offsetLeft-10+'px';
+        }
+        else {
+            if(okna.offsetLeft<=200) okna.style.left=205+'px';
+            else okna.style.left=osnova.clientWidth-155+'px';
+            okna.style.width=osnova.clientWidth-okna.offsetLeft+'px';
+            okno_besedi.style.width=okno_novosti.style.width=okno_zametki.style.width=osnova.clientWidth-okna.offsetLeft-32+'px';
+            dvigenie_paneli.style.left=okna.offsetLeft-10+'px';
+            event.returnValue=true;
+        }
+    
+    }
+    else if(stranica_izmen_width==true){
+        event.returnValue=false;
+        stranica.style.cursor='col-resize';   
+        stranica.style.width=ten_stranici.style.width=event.clientX-stranica.offsetLeft+'px';
+        if(stranica.clientWidth>osnova.clientWidth-stranica.offsetLeft-150){
+            stranica.style.width=ten_stranici.style.width=osnova.clientWidth-stranica.offsetLeft-160+'px';
+            stranica_izmen_width=false;
+            event.returnValue=true;
+stranica.style.cursor='default';
+        }
+        up();
+        
+    }
+    else if(event.clientX>okna.offsetLeft-2&&event.clientX<okna.offsetLeft+10) okna.style.cursor='col-resize';   
+    else if(event.clientX>stranica.offsetLeft+stranica.clientWidth-10&&event.clientX<stranica.offsetLeft+stranica.clientWidth+2)stranica.style.cursor='col-resize';
+    else {okna.style.cursor=stranica.style.cursor='default';
+        
+    }
+    menu_open();
+});
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+document.addEventListener('mouseup',event=>{
+   if(okna_izmen_width){
+    event.returnValue=true;
+    okna_izmen_width=false;
+    okna.style.background=o_c;    
+   }
+   if(stranica_izmen_width){
+        event.returnValue=true;
+        stranica_izmen_width=false;
+   }
+
+});
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+document.addEventListener('scroll',event=>{
+    
+});
+
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+document.addEventListener('keydown',event=>{
+//const item=document.querySelector(`[data-scroll=" "]`);
+//if(item)scrollTo(item);
+    if(form_text_aktiv)/*switch(event.key){
+        case key.backSpace: form_vvod_text[nomer_f_text_cop]=form_vvod_text[nomer_f_text_cop].pop();break;
+        default:*/
+        
+        if(event.key=='Backspace'){
+            
+            id_form.innerHTML= ar_form_vvod_text[nomer_f_text_cop]=ar_form_vvod_text[nomer_f_text_cop].slice(0,ar_form_vvod_text[nomer_f_text_cop].length-1);}
+        else
+        if(event.key.length<2){id_form.innerHTML= ar_form_vvod_text[nomer_f_text_cop]=ar_form_vvod_text[nomer_f_text_cop]+event.key;}
+        if(event.key==='Enter'){}
+})
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
+//=================================================================================================
 //=================================================================================================
 /*
 function Sait_load() {

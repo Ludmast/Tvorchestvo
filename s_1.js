@@ -502,7 +502,7 @@ function soderg_razdela_1() {
         str ="";
         //---------------------------------------------------------------------------------------------
         //подсветка и сами названия содержания страниц
-        str += "<div id='ten1_gl_p'></div><div id='gl_p'class='c_gl_p'onmouseover='on_gl_p(1)'onmouseout='on_gl_p(2)'onmousedown='on_gl_p(4)'>Содержимое раздела:";
+        str += "<div id='ten_gl_p'></div><div id='gl_p'class='c_gl_p'onmouseover='on_gl_p(1)'onmouseout='on_gl_p(2)'onmousedown='on_gl_p(4)'>Содержимое раздела:";
         for (i = 0; i < array_razd_p[localStorage.getItem('nm')-0][localStorage.getItem('nr') - 1].length; i++) {
             str += "<div id='h_"+i+"' class='c_h'></div><div id='p_" + i + "'class='c_p' onmouseover='p_videlen_1(1, " + i + ")' onmouseout='p_videlen_1(2," + i + ")' onmousedown='p_videlen_1(4," + i + ")'></div>";
         }
@@ -557,14 +557,14 @@ function soderg_razdela_1() {
             ogl_vibrono=0;
             localStorage.setItem('np',ogl_vibrono);
             //---------------------------------------------------------------------------------------------
-            ten1_gl_p.style.position =  'absolute';
-            ten1_gl_p.style.left = '30px';
-            ten1_gl_p.style.top = '202px';
-            ten1_gl_p.style.width = gl_p.clientWidth + 2 + 'px';
-            ten1_gl_p.style.height = gl_p.clientHeight + 'px';
-            ten1_gl_p.style.backgroundColor = 'black';
-            ten1_gl_p.style.borderRadius = '10px';
-            ten1_gl_p.style.filter = 'blur(12px)';
+            ten_gl_p.style.position =  'absolute';
+            ten_gl_p.style.left = '30px';
+            ten_gl_p.style.top = '202px';
+            ten_gl_p.style.width = gl_p.clientWidth + 2 + 'px';
+            ten_gl_p.style.height = gl_p.clientHeight + 'px';
+            ten_gl_p.style.backgroundColor = 'black';
+            ten_gl_p.style.borderRadius = '10px';
+            ten_gl_p.style.filter = 'blur(12px)';
             //---------------------------------------------------------------------------------------------
             //кнопка прячущая за страницу
             localStorage.setItem('np_1',0);
@@ -664,10 +664,10 @@ function smena_stranic_1() {
                     smena_delimoe_str=(osnova.clientWidth)/smena_delitel;
                     smena_izmen_gl=30;
                     smena_izmen_str=osnova.clientWidth-50;
-                    ten1_gl_p.style.top= gl_p.style.top='200px';
+                    ten_gl_p.style.top= gl_p.style.top='200px';
                     razdel.style.top='120px';
                     razdel_teni.style.top='122px';
-                    ten1_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
+                    ten_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
                     razdel.style.left=razdel_teni.style.left=smena_izmen_gl-20+'px';
                     ten_stranici.style.height=stranica.style.height;
                     ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
@@ -680,10 +680,10 @@ function smena_stranic_1() {
                     smena_delimoe_str=(osnova.clientWidth-120)/smena_delitel;
                     smena_izmen_gl=30;
                     smena_izmen_str=100;
-                    ten1_gl_p.style.top= gl_p.style.top='200px';
+                    ten_gl_p.style.top= gl_p.style.top='200px';
                     razdel.style.top='120px';
                     razdel_teni.style.top='122px';
-                    ten1_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
+                    ten_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
                     razdel.style.left=razdel_teni.style.left=smena_izmen_gl-20+'px';
                     //ten_stranici.style.height=stranica.style.height;
                     ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
@@ -694,7 +694,7 @@ function smena_stranic_1() {
                 case 3:case 7:case 9:
                     smena_delimoe_str=(osnova.clientWidth-50)/smena_delitel;
                     smena_izmen_str=100;
-                    ten1_gl_p.style.left= gl_p.style.left= razdel.style.left=razdel_teni.style.left=-gl_p.clientWidth-10+'px';
+                    ten_gl_p.style.left= gl_p.style.left= razdel.style.left=razdel_teni.style.left=-gl_p.clientWidth-10+'px';
                     //ten_stranici.style.height=stranica.style.height;
                     ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
                     ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_str-15+'px';
@@ -716,10 +716,10 @@ function smena_stranic_1() {
                     okna.style.height=osnova.clientHeight+scrollY+'px';
                     smena_delimoe_str=(osnova.clientWidth-50)/smena_delitel;
                     smena_izmen_str=osnova.clientWidth+30;
-                    ten1_gl_p.style.top= gl_p.style.top='200px';
+                    ten_gl_p.style.top= gl_p.style.top='200px';
                     razdel.style.top='120px';
                     razdel_teni.style.top='122px';
-                    ten1_gl_p.style.left= gl_p.style.left='30px';
+                    ten_gl_p.style.left= gl_p.style.left='30px';
                     razdel.style.left='20px';
                     razdel_teni.style.left='22px';
                     //ten_stranici.style.height=stranica.style.height;
@@ -735,10 +735,10 @@ function smena_stranic_1() {
                     okna.style.height=osnova.clientHeight+scrollY+'px';
                     smena_delimoe_str=(osnova.clientWidth-50)/smena_delitel;
                     smena_izmen_str=100;
-                    ten1_gl_p.style.top= gl_p.style.top='200px';
+                    ten_gl_p.style.top= gl_p.style.top='200px';
                     razdel.style.top='120px';
                     razdel_teni.style.top='122px';
-                    ten1_gl_p.style.left= gl_p.style.left='30px';
+                    ten_gl_p.style.left= gl_p.style.left='30px';
                     razdel.style.left='20px';
                     razdel_teni.style.left='22px';
                     //ten_stranici.style.height=stranica.style.height;
@@ -752,10 +752,10 @@ function smena_stranic_1() {
                     smena_delimoe_str=(osnova.clientWidth-50)/smena_delitel;
                     smena_izmen_gl=30;
                     smena_izmen_str=100;
-                    ten1_gl_p.style.top= gl_p.style.top='200px';
+                    ten_gl_p.style.top= gl_p.style.top='200px';
                     razdel.style.top='120px';
                     razdel_teni.style.top='122px';
-                    ten1_gl_p.style.left= gl_p.style.left='30px';
+                    ten_gl_p.style.left= gl_p.style.left='30px';
                     razdel.style.left='20px';
                     razdel_teni.style.left='22px';
                     ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
@@ -780,7 +780,7 @@ function smena_stranic_1() {
                 case 1:
                     if(smena_izmen_gl>smena_index){
                         smena_izmen_gl-=smena_delimoe_gl;
-                        ten1_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
+                        ten_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
                         razdel.style.left=razdel_teni.style.left=smena_izmen_gl-20+'px';    
                     }else smena_var++;
                 break;
@@ -788,13 +788,13 @@ function smena_stranic_1() {
                 case 2:case 10:
                     if(smena_izmen_gl>smena_index){
                         smena_izmen_gl-=smena_delimoe_gl;
-                        ten1_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
+                        ten_gl_p.style.left= gl_p.style.left=smena_izmen_gl+'px';
                         razdel.style.left=razdel_teni.style.left=smena_izmen_gl-20+'px';    
                         smena_izmen_str+=smena_delimoe_str;
                         ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
                         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_str-15+'px';
                     }else{
-                        ten1_gl_p.style.left= gl_p.style.left=smena_index+'px';
+                        ten_gl_p.style.left= gl_p.style.left=smena_index+'px';
                         razdel.style.left=razdel_teni.style.left=smena_index-20+'px';    
                         ten_stranici.style.left= stranica.style.left=osnova.clientWidth-30+'px';
                         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=osnova.clientWidth-45+'px';
@@ -838,7 +838,7 @@ function smena_stranic_1() {
                 case 6: 
                     if(smena_izmen_str>smena_index){
                         smena_izmen_str-=smena_delimoe_str;
-                        ten1_gl_p.style.left= gl_p.style.left=smena_izmen_str-70+'px';
+                        ten_gl_p.style.left= gl_p.style.left=smena_izmen_str-70+'px';
                         razdel.style.left=razdel_teni.style.left=smena_izmen_str-80+'px';    
                         
                         ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
@@ -869,10 +869,10 @@ function smena_stranic_1() {
                     okna.style.height=osnova.clientHeight+scrollY+'px';
                     smena_delimoe_gl=(gl_p.clientHeight+200)/smena_delitel;
                     smena_izmen_gl=-gl_p.clientHeight+50;
-                    ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
+                    ten_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
                     razdel.style.top=smena_izmen_gl-80+'px';
                     razdel_teni.style.top=smena_izmen_gl-78+'px';
-                    ten1_gl_p.style.left= gl_p.style.left=30+'px';
+                    ten_gl_p.style.left= gl_p.style.left=30+'px';
                     razdel.style.left=razdel_teni.style.left=10+'px'; 
                     smena_index=200;
                 break;
@@ -919,19 +919,19 @@ function smena_stranic_1() {
                     okna.style.height=osnova.clientHeight+scrollY+'px';
                     smena_delimoe_gl=(gl_p.clientHeight+200)/smena_delitel;
                     smena_izmen_gl=-gl_p.clientHeight+50;
-                    ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
+                    ten_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
                     razdel.style.top=smena_izmen_gl-80+'px';
                     razdel_teni.style.top=smena_izmen_gl-78+'px';
-                    ten1_gl_p.style.left= gl_p.style.left=30+'px';
+                    ten_gl_p.style.left= gl_p.style.left=30+'px';
                     razdel.style.left=razdel_teni.style.left=10+'px'; 
                     
                     smena_delimoe_str=(osnova.clientWidth-50)/smena_delitel;
                     
                     smena_izmen_str=osnova.clientWidth+30;
-                    //ten1_gl_p.style.top= gl_p.style.top='200px';
+                    //ten_gl_p.style.top= gl_p.style.top='200px';
                     //razdel.style.top='120px';
                     //razdel_teni.style.top='122px';
-                    //ten1_gl_p.style.left= gl_p.style.left='30px';
+                    //ten_gl_p.style.left= gl_p.style.left='30px';
                     //razdel.style.left='20px';
                     //razdel_teni.style.left='22px';
                     ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
@@ -949,12 +949,12 @@ function smena_stranic_1() {
                 case 1:case 2:case 3:
                     if(smena_izmen_gl<smena_index){
                         smena_izmen_gl+=smena_delimoe_gl;
-                        ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
+                        ten_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
                         razdel.style.top=smena_izmen_gl-80+'px';
                         razdel_teni.style.top=smena_izmen_gl-78+'px';
                     }else{
                         smena_izmen_gl=200;
-                        ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
+                        ten_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
                         razdel.style.top=smena_izmen_gl-80+'px';
                         razdel_teni.style.top=smena_izmen_gl-78+'px';
                         smena_var=0;
@@ -982,14 +982,14 @@ function smena_stranic_1() {
                     if(smena_izmen_str>smena_index){
                         smena_izmen_gl+=smena_delimoe_gl;
                         smena_izmen_str-=smena_delimoe_str;
-ten1_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
+ten_gl_p.style.top= gl_p.style.top=smena_izmen_gl+'px';
                         razdel.style.top=smena_izmen_gl-80+'px';
                         razdel_teni.style.top=smena_izmen_gl-78+'px';
                         ten_stranici.style.left= stranica.style.left=smena_izmen_str+'px';
                         ogl_vibrono_copiy.style.left=ten_vibronogo_p.style.left=smena_izmen_str-15+'px';
                         
                     }else{
-                        ten1_gl_p.style.top= gl_p.style.top=200+'px';
+                        ten_gl_p.style.top= gl_p.style.top=200+'px';
                         razdel.style.top=200-80+'px';
                         razdel_teni.style.top=200-78+'px';
                         ten_stranici.style.left= stranica.style.left=100+'px';
