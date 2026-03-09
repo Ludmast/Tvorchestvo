@@ -741,6 +741,9 @@ overflow:hidden;
     padding-right: 7px;
     cursor: pointer;
 }
+.c_tp_telo{
+    border: 2px solid black;
+}
 .paragraf {
     background: #ffb0a0;
     font-weight: 800;
